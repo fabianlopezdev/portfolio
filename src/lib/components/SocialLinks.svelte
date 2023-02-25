@@ -6,19 +6,32 @@
 	const gitHubLink = 'https://github.com/Fabs-and';
 </script>
 
-<a
+<div class="icons">
+	<a
 	href={linkedInLink}
+	style='color: #016AA1'
 	title="Visit my LinkedIn profile"
 	aria-label="Link to my LinkedIn profile"
-	class="icons"
 	target="_blank"
 	rel="noopener noreferrer"><LinkedInIcon /></a
->
-<a
+	>
+	<a
+	style='color: black'
 	href={gitHubLink}
 	title="Visit my GitHub profile"
 	aria-label="Link to my GitHub profile"
-	class="icons"
 	target="_blank"
 	rel="noopener noreferrer"><GitHubIcon /></a
->
+	>
+</div>
+
+<style>
+	div {
+		display: flex;
+		justify-content: center;
+		width: 5em;
+		gap: 1em;
+		
+		
+	}
+</style>

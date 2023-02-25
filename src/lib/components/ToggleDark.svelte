@@ -8,7 +8,7 @@
 	{#if isDark}
   <MoonIcon/>
   {:else}
-  <SunIcon />
+  <SunIcon style='color: #016AA1'/>
 {/if}
 </button>
 

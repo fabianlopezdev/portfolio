@@ -1,6 +1,7 @@
-<script>
-	function scrollTo({ target }) {
-		const element = document.querySelector(target.getAttribute('href'));
+<script lang='ts'>
+	function scrollTo(event: Event) {
+		const target = event.target as HTMLAnchorElement
+		const element = document.querySelector(target.getAttribute('href') as string);
 		if (element) {
 			element.scrollIntoView({ behavior: 'smooth' });
 		}
@@ -20,7 +21,10 @@
 <style>
   ul {
     display: flex;
-    gap: 1em;
+		margin:0;
+		padding:0;	
+    gap: 2em;
+
   }
 	li {
 		list-style: none;

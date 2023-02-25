@@ -2,18 +2,18 @@
 
 <style>
 	:global(body) {
-		background-color: #d6e8ef;
+		background-color: #ebf2f5;
     font-family: system-ui;
 	}
   :global(.icons) {
     background: none;
-		color: inherit;
+		color: gray;
 		border: none;
 		padding: 0;
 		font: inherit;
 		cursor: pointer;
 		outline: inherit;
-    width: 1em;
-    height: 1em;
+    width: 1.5em;
+    height: 1.5em;
   }
 </style>
