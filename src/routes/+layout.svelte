@@ -2,8 +2,13 @@
 
 <style>
 	:global(body) {
-		background-color: #ebf2f5;
+		background-color: #f9fcfd;
     font-family: system-ui;
+	}
+	:global(body.dark) {
+		background-color: black;
+		font-family: system-ui;
+		color: white;
 	}
   :global(.icons) {
     background: none;

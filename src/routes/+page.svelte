@@ -5,7 +5,11 @@
 
 	const linkedInLink = 'https://www.linkedin.com/in/fabian-lopez-gonzalez/';
 	const gitHubLink = 'https://github.com/Fabs-and';
+	let isDark: boolean = false;
+
+	$: activeClass = isDark ? 'dark' : 'light'
 </script>
+
 
 <header>
 	<div class="container">
@@ -16,7 +20,7 @@
 		<div class='rombhoid-letters'>Fabs<br> Codes</div>
 	</div>
 		<div class="both">
-			<ToggleDark />
+			<ToggleDark bind:isDark />
 			<SocialLinks />
 		</div>
 	</div>
@@ -25,7 +29,7 @@
 	</div>
 </header>
 
-<main>
+<main >
 	<About />
 	<Projects />
 	<Contact />
