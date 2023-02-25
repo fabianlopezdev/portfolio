@@ -9,7 +9,8 @@
 
 
 	<a href="">
-		<slot />
+		<slot>Contact me</slot>
+
     <div class='icons'>
       {#if icon === 'envelope'}
       <EnvelopeIcon/>
@@ -40,4 +41,22 @@
     color: white;
   }
 
+   @media screen and (max-width: 570px) {
+    slot {
+      display: none;
+    }
+		a {
+     color: white;
+		background-color: var(--color, black);
+		padding: 1em;
+		border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 215px;
+    width: 5em;
+    justify-content: center;
+    margin-bottom: 3em;
+    }
+	}
 </style>

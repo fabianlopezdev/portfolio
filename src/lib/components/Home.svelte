@@ -2,14 +2,14 @@
 	import { Button } from '$components';
 </script>
 
-<section class="home-section">
+<section>
 	<h2>
 		Transforming your web vision into a <span>stunning</span> and
 		<span >functional</span> reality.
 	</h2>
 	<h1 style="color: #016AA1">Hello, I am Fabian!</h1>
 	<div style="display: flex; gap: 1em;">
-		<Button --color="blue" icon={'envelope'}>Contact me</Button>
+		<Button --color="blue" icon={'envelope'}/>
 		<Button --color="black" icon={''}>Resume</Button>
 	</div>
 </section>
@@ -34,7 +34,7 @@
 		background-color: blue;
 	}
 
-	.home-section {
+	section {
 		height: calc(100vh - 66px);
 		display: flex;
 		flex-direction: column;
@@ -52,5 +52,21 @@
 		text-align: center;
 		line-height: 1;
 		margin: 0 0 0 0;
+	}
+  @media screen and (max-width: 570px) {
+    h2 {
+      font-size: 2.5rem;
+    }
+	}
+
+  @media screen and (max-height: 600px) {
+		section {
+      margin-top: 1em;
+      height: 100vh;
+      margin-bottom: 10em;
+    }
+    h2 {
+      font-size: 2.5rem;
+    }
 	}
 </style>
