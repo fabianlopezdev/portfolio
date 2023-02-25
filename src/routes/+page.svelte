@@ -1,24 +1,22 @@
 <script lang="ts">
-	import { Nav, About, Projects, Contact, ToggleDark, SocialLinks } from '$components';
-	import LinkedInIcon from 'svelte-icons/fa/FaLinkedinIn.svelte';
-	import GithubIcon from 'svelte-icons/di/DiGithubBadge.svelte';
-
-	const linkedInLink = 'https://www.linkedin.com/in/fabian-lopez-gonzalez/';
-	const gitHubLink = 'https://github.com/Fabs-and';
+	import {
+		Nav,
+		About,
+		Projects,
+		Contact,
+		ToggleDark,
+		SocialLinks,
+		Logo,
+		Button
+	} from '$components';
 	let isDark: boolean = false;
 
-	$: activeClass = isDark ? 'dark' : 'light'
+	$: activeClass = isDark ? 'dark' : 'light';
 </script>
-
 
 <header>
 	<div class="container">
-		<div class='rombhoid-container'>
-			<div class='rombhoid'		
-			>
-		</div>
-		<div class='rombhoid-letters'>Fabs<br> Codes</div>
-	</div>
+		<Logo />
 		<div class="both">
 			<ToggleDark bind:isDark />
 			<SocialLinks />
@@ -29,7 +27,18 @@
 	</div>
 </header>
 
-<main >
+<main>
+	<section class="home-section">
+  <h2>
+    Transforming your web vision into a <span class="highlight">stunning</span> and 
+    <span class="highlight">functional</span> reality.
+  </h2>
+  <h1 style='color: #016AA1'>Hello, I am Fabian<span >!</span></h1>
+  <div style="display: flex; gap: 1em;">
+    <Button --color="blue" icon={'envelope'}>Contact me</Button>
+    <Button --color="black">Resume</Button>
+  </div>
+</section>
 	<About />
 	<Projects />
 	<Contact />
@@ -40,32 +49,54 @@
 </footer>
 
 <style>
-	.rombhoid {
-		transform: skewX(-30deg);
-		background-color: #016AA1; 
-		color: white;
-		padding: 2em;
-		width: 60px;
-		border-radius: 0.5em;
-		box-shadow: 3px -3px 3px  #888888;
+	.highlight {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+	color: white;
+}
+
+.highlight::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 90%;
+	top: 10px;
+  left: -2px;
+  /* bottom: px; */
+  z-index: -1;
+  transform: rotate(-1deg);
+  background-color: blue;
+}
+
+	.icon {
+		width: 30px;
 	}
-	.rombhoid-container {
-		position: relative;
+	h1 {
+		margin-top: 0;
+	}
+	.home-section {
+		height: calc(100vh - 66px);
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		margin-left: 2em;
+		color: #6a6b6b;
+		font-size: 1.5em;
+		margin: 0 0 0 0;
+		gap: 2em;
 	}
-
-	.rombhoid-letters {
-		position: absolute;
-		color: white;
-		text-align: left;
-		font-weight:500;
-		font-size: 1.3em;
+	h2 {
+		font-size: 3.8rem;
+		color: black;
+		max-width: 800px;
+		text-align: center;
+		line-height: 1;
+		margin: 0 0 0 0;
 	}
 	header {
 		position: relative;
+		margin: 0;
 	}
 	.container {
 		height: 66px;
@@ -74,7 +105,7 @@
 		align-items: center;
 		max-width: 866px;
 		text-align: center;
-		margin: 2em auto 2em auto;
+		margin: 0.7em auto 0 auto;
 	}
 	.both {
 		display: flex;
@@ -86,14 +117,14 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 	}
-	@media screen and (max-width:570px) {
+	@media screen and (max-width: 570px) {
 		.container {
 			flex-direction: column;
 			gap: 1em;
 			margin: 2em;
 		}
 		.nav {
-			display:none;
+			display: none;
 		}
 		.both {
 			gap: 1em;
