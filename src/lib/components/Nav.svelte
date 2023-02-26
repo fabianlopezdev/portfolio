@@ -6,14 +6,17 @@
 			element.scrollIntoView({ behavior: 'smooth' });
 		}
 	}
+	
+	const links = [{href:'#about', name:'About'},{href:'#about', name:'Projects'},{href:'#about', name:'Contact'}]
+
   import { ToggleDark } from '$components'
 </script>
 
 <nav>
 	<ul>
-		<li><a href="#about" on:click|preventDefault={scrollTo}>About</a></li>
-		<li><a href="#projects" on:click|preventDefault={scrollTo}>Projects</a></li>
-		<li class='svg-size'><a href="#contact" on:click|preventDefault={scrollTo}>Contact</a></li>
+		{#each links as {href, name}}
+		<li><a href={href} on:click|preventDefault={scrollTo}>{name}</a></li>
+		{/each}
 	</ul>
 </nav>
 
@@ -31,8 +34,15 @@
 	}
 	a {
     text-decoration: none;
-    color: inherit;
+    color: #016AA1;
     font-size: 1em;
+		padding: 0.2rem 0.5rem;
   }
+	a:hover {
+		background-color: #e2e8ec;
+		color: black;
+		border-radius: 6px;
+		transition: color .3s ease, background-color .3s ease;
+	}
 
 </style>
