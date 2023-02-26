@@ -11,7 +11,6 @@
  
 </script>
 
-
 	<a {href} on:click|preventDefault target={href === '#contact' ? null : '_blank'}>
 		<slot>Contact me</slot>
     <div class='icons'>
