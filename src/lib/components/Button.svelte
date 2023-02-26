@@ -3,14 +3,17 @@
   import EnvelopeIcon from 'svelte-icons/fa/FaRegEnvelope.svelte'
   import FileDownloadIcon from 'svelte-icons/fa/FaFileDownload.svelte'
 
-  export let icon;
 
+  export let href;
+  export let icon;
+  // console.log(href)
+
+ 
 </script>
 
 
-	<a href="">
+	<a {href} on:click|preventDefault target={href === '#contact' ? null : '_blank'}>
 		<slot>Contact me</slot>
-
     <div class='icons'>
       {#if icon === 'envelope'}
       <EnvelopeIcon/>

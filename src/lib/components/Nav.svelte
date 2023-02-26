@@ -1,13 +1,7 @@
 <script lang='ts'>
-	function scrollTo(event: Event) {
-		const target = event.target as HTMLAnchorElement
-		const element = document.querySelector(target.getAttribute('href') as string);
-		if (element) {
-			element.scrollIntoView({ behavior: 'smooth' });
-		}
-	}
+	import scrollTo from '../../utils/functions'
 	
-	const links = [{href:'#about', name:'About'},{href:'#about', name:'Projects'},{href:'#about', name:'Contact'}]
+	const links = [{href:'#about', name:'About'},{href:'#projects', name:'Projects'},{href:'#contact', name:'Contact'}]
 
   import { ToggleDark } from '$components'
 </script>
@@ -15,7 +9,7 @@
 <nav>
 	<ul>
 		{#each links as {href, name}}
-		<li><a href={href} on:click|preventDefault={scrollTo}>{name}</a></li>
+		<li><a {href} on:click|preventDefault={scrollTo}>{name}</a></li>
 		{/each}
 	</ul>
 </nav>

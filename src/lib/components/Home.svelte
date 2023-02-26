@@ -1,5 +1,7 @@
 <script>
 	import { Button } from '$components';
+	import scrollTo from '../../utils/functions'
+
 </script>
 
 <section>
@@ -9,8 +11,8 @@
 	</h2>
 	<h1 style="color: #016AA1">Hello, I am Fabian!</h1>
 	<div style="display: flex; gap: 1em;">
-		<Button --color="blue" icon={'envelope'}/>
-		<Button --color="black" icon={''}>Resume</Button>
+		<Button --color="blue" on:click={scrollTo} href={'#contact'} icon={'envelope'}/>
+		<Button --color="black" href={'/Fabian-Lopez-Resume.pdf'} icon={''}>Resume</Button>
 	</div>
 </section>
 
