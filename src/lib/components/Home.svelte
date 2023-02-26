@@ -1,18 +1,25 @@
 <script>
 	import { Button } from '$components';
-	import scrollTo from '../../utils/functions'
+	import scrollTo from '../../utils/functions';
+	let envResumeLink = import.meta.env.VITE_RESUME_LINK
 
 </script>
 
 <section>
 	<h2>
 		Transforming your web vision into a <span>stunning</span> and
-		<span >functional</span> reality.
+		<span>functional</span> reality.
 	</h2>
-	<h1 style="color: #016AA1">Hello, I am Fabian!</h1>
+	<h1 style="color: var(--clr-secondary)">Hello, I am Fabian!</h1>
 	<div style="display: flex; gap: 1em;">
-		<Button --color=var(--clr-accent) on:click={scrollTo} href={'#contact'} icon={'envelope'}>Contact Me</Button>
-		<Button --color=var(--clr-font) href={'https://portfolio-fabs-and.vercel.app/Fabian-Lopez-Resume.pdf'} icon={''}>Resume</Button>
+		<Button --color="var(--clr-accent)" on:click={scrollTo} href={'#contact'} icon={'envelope'}
+			>Contact Me</Button
+		>
+		<Button
+			--color="var(--clr-font)"
+			href={envResumeLink}
+			icon={'download'}>Resume</Button
+		>
 	</div>
 </section>
 
@@ -42,34 +49,29 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		/* color: #6a6b6b; */
 		font-size: 1.5em;
 		margin: 0 0 0 0;
 		gap: 2em;
 	}
 	h2 {
 		font-size: 3.8rem;
-		/* color: black; */
 		max-width: 800px;
 		text-align: center;
 		line-height: 1;
 		margin: 0 0 0 0;
 	}
-  @media screen and (max-width: 668px) {
-    h2 {
-      font-size: 2.5rem;
-    }
+	@media screen and (max-width: 668px) {
+		h2 {
+			font-size: 2.5rem;
+		}
 	}
 
-  @media screen and (max-height: 668px) {
+	@media screen and (max-height: 668px) {
 		section {
-      /* margin-top: 10em; */
-      /* height: 100vh; */
-      /* margin-bottom: 10em; */
-      gap: 1em;
-    }
-    h2 {
-      font-size: 2.5rem;
-    }
+			gap: 1em;
+		}
+		h2 {
+			font-size: 2.5rem;
+		}
 	}
 </style>

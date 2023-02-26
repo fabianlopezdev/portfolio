@@ -1,34 +1,22 @@
-<script lang="ts">
-	import {
-		Nav,
-		About,
-		Projects,
-		Contact,
-		ToggleDark,
-		SocialLinks,
-		Logo,
-		Home,
-	} from '$components';
-	let isDark: boolean = false;
-
-	$: activeClass = isDark ? 'dark' : 'light';
+<script>
+	import { Nav, About, Projects, Contact, ToggleDark, SocialLinks, Logo, Home } from '$components';
 </script>
 
 <header>
-	<div class="container">
+	<div class="header-container">
 		<Logo />
-		<div class="both">
-			<ToggleDark bind:isDark />
+		<div class="toggle-and-socialLinks">
+			<ToggleDark />
 			<SocialLinks />
 		</div>
 	</div>
-	<div class="nav">
+	<div class="not-in-header-container">
 		<Nav />
 	</div>
 </header>
 
 <main>
-	<Home/>
+	<Home />
 	<About />
 	<Projects />
 	<Contact />
@@ -39,43 +27,43 @@
 </footer>
 
 <style>
-
 	header {
 		position: relative;
 		margin: 0;
 	}
-	.container {
+	.header-container {
 		height: 66px;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		max-width: 866px;
 		text-align: center;
-		margin: 0.7em auto 0 auto;
+		margin: 0.7rem auto 0 auto;
 	}
-	.both {
+	.toggle-and-socialLinks {
 		display: flex;
-		gap: 2em;
+		gap: 2rem;
 	}
-	.nav {
+	.not-in-header-container {
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 	}
 	@media screen and (max-width: 570px) {
-		.container {
+		.header-container {
 			flex-direction: column;
-			gap: 1em;
-			margin: 2em;
+			gap: 1rem;
+			margin: 2rem;
 		}
-		.nav {
+		.not-in-header-container {
 			display: none;
 		}
-		.both {
-			gap: 1em;
+
+		.toggle-and-socialLinks {
+			gap: 1rem;
 			justify-content: space-around;
-			margin-left: 1em;
+			margin-left: 1rem;
 		}
 	}
 </style>

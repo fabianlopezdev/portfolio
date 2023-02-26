@@ -1,10 +1,12 @@
 <script>
 	import MoonIcon from 'svelte-icons/fa/FaRegMoon.svelte';
   import SunIcon from 'svelte-icons/fa/FaRegSun.svelte'
+  import {tick } from 'svelte'
   export let isDark = false;
 
-  function toggleTheme() {
+  async function toggleTheme() {
     window.document.body.classList.toggle('dark') 
+    await tick()
     isDark =!isDark;
 
   }

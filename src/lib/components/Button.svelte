@@ -4,8 +4,8 @@
   import FileDownloadIcon from 'svelte-icons/fa/FaFileDownload.svelte'
 
 
-  export let href;
-  export let icon;
+  export let href = '';
+  export let icon = '';
  
 
 </script>
