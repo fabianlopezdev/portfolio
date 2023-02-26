@@ -2,23 +2,21 @@
 	import LinkedInIcon from 'svelte-icons/fa/FaLinkedinIn.svelte';
 	import GitHubIcon from 'svelte-icons/fa/FaGithub.svelte';
 
-	const linkedInLink = 'https://www.linkedin.com/in/fabian-lopez-gonzalez/';
-	const gitHubLink = 'https://github.com/Fabs-and';
+	const envLinkedInLink = import.meta.env.VITE_LINKEDIN_LINK;
+	const envGitHubLink = import.meta.env.VITE_GITHUB_LINK;
 </script>
 
 <div class="icons">
 	<a
-		href={linkedInLink}
+		href={envLinkedInLink}
 		style="color: #016AA1"
-		title="Visit my LinkedIn profile"
 		aria-label="Link to my LinkedIn profile"
 		target="_blank"
 		rel="noopener noreferrer"><LinkedInIcon /></a
 	>
 	<a
 		style="color:#016AA1"
-		href={gitHubLink}
-		title="Visit my GitHub profile"
+		href={envGitHubLink}
 		aria-label="Link to my GitHub profile"
 		target="_blank"
 		rel="noopener noreferrer"><GitHubIcon /></a
