@@ -28,7 +28,7 @@
 	}
 	a {
     text-decoration: none;
-    color: #016AA1;
+    color: var(--clr-font);
     font-size: 1em;
 		padding: 0.2rem 0.5rem;
   }

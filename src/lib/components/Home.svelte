@@ -11,8 +11,8 @@
 	</h2>
 	<h1 style="color: #016AA1">Hello, I am Fabian!</h1>
 	<div style="display: flex; gap: 1em;">
-		<Button --color="blue" on:click={scrollTo} href={'#contact'} icon={'envelope'}>Contact Me</Button>
-		<Button --color="black" href={'https://portfolio-fabs-and.vercel.app/Fabian-Lopez-Resume.pdf'} icon={''}>Resume</Button>
+		<Button --color=var(--clr-accent) on:click={scrollTo} href={'#contact'} icon={'envelope'}>Contact Me</Button>
+		<Button --color=var(--clr-font) href={'https://portfolio-fabs-and.vercel.app/Fabian-Lopez-Resume.pdf'} icon={''}>Resume</Button>
 	</div>
 </section>
 
@@ -21,7 +21,7 @@
 		display: inline-block;
 		position: relative;
 		z-index: 1;
-		color: white;
+		color: var(--clr-font-contrast);
 	}
 
 	span::before {
@@ -33,7 +33,7 @@
 		left: -2px;
 		z-index: -1;
 		transform: rotate(-1deg);
-		background-color: blue;
+		background-color: var(--clr-accent);
 	}
 
 	section {
@@ -42,14 +42,14 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		color: #6a6b6b;
+		/* color: #6a6b6b; */
 		font-size: 1.5em;
 		margin: 0 0 0 0;
 		gap: 2em;
 	}
 	h2 {
 		font-size: 3.8rem;
-		color: black;
+		/* color: black; */
 		max-width: 800px;
 		text-align: center;
 		line-height: 1;

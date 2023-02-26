@@ -12,7 +12,7 @@
 
 <button class='icons' aria-label='Toggle between light and dark mode' on:click|preventDefault={toggleTheme}>
 	{#if isDark}
-  <SunIcon style='color: #016AA1'/>
+  <SunIcon/>
   {:else}
   <MoonIcon/>
 {/if}

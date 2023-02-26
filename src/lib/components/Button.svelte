@@ -6,9 +6,8 @@
 
   export let href;
   export let icon;
-  // console.log(href)
-
  
+
 </script>
 
 {#if icon === 'envelope'}
@@ -30,9 +29,9 @@
 
 <style>
 	a {
-		color: white;
+		color: var(--clr-font-contrast);
 		text-decoration: none;
-		background-color: var(--color, black);
+		background-color: var(--color);
 		padding: 1em;
 		border-radius: 1rem;
     display: flex;
@@ -45,24 +44,14 @@
 	}
 
   div {
-    color: white;
+    color: var(--clr-font-contrast);
   }
 
    @media screen and (max-width: 668px) {
-    slot {
-      display: none;
-    }
 		a {
-     color: white;
-		background-color: var(--color, black);
-		padding: 1em;
-		border-radius: 1rem;
-    display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 215px;
     width: 5em;
-    justify-content: center;
     margin-top: 0em;
     margin-bottom: 7em;
     }
