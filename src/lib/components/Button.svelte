@@ -11,16 +11,21 @@
  
 </script>
 
-	<a {href} on:click|preventDefault target={href === '#contact' ? null : '_blank'}>
-		<slot>Contact me</slot>
+{#if icon === 'envelope'}
+  <a {href} on:click|preventDefault >
+    <slot/>
     <div class='icons'>
-      {#if icon === 'envelope'}
       <EnvelopeIcon/>
-      {:else}
-      <FileDownloadIcon/>
-      {/if}
     </div>
 	</a>
+  {:else}
+	<a {href} target={'_blank'}>
+		<slot/>
+    <div class='icons'>
+      <FileDownloadIcon/>
+    </div>
+	</a>
+  {/if}
 
 
 <style>
