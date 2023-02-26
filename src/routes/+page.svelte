@@ -2,6 +2,7 @@
 	import { Nav, About, Projects, Contact, ToggleDark, SocialLinks, Logo, Home } from '$components';
 </script>
 
+
 <header>
 	<div class="header-container">
 		<Logo />
