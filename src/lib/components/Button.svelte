@@ -43,7 +43,7 @@
     color: white;
   }
 
-   @media screen and (max-width: 570px) {
+   @media screen and (max-width: 668px) {
     slot {
       display: none;
     }
@@ -58,7 +58,8 @@
     max-width: 215px;
     width: 5em;
     justify-content: center;
-    margin-bottom: 3em;
+    margin-top: 0em;
+    margin-bottom: 7em;
     }
 	}
 </style>

@@ -55,17 +55,18 @@
 		line-height: 1;
 		margin: 0 0 0 0;
 	}
-  @media screen and (max-width: 570px) {
+  @media screen and (max-width: 668px) {
     h2 {
       font-size: 2.5rem;
     }
 	}
 
-  @media screen and (max-height: 600px) {
+  @media screen and (max-height: 668px) {
 		section {
-      margin-top: 1em;
-      height: 100vh;
-      margin-bottom: 10em;
+      /* margin-top: 10em; */
+      /* height: 100vh; */
+      /* margin-bottom: 10em; */
+      gap: 1em;
     }
     h2 {
       font-size: 2.5rem;
