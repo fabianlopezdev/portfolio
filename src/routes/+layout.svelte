@@ -8,6 +8,7 @@
 		--clr-font: black;
 		--clr-font-contrast: white;
 		--clr-toggle: gray;
+		--size-header: 5rem;
 	}
 
 	:global(.dark) {
@@ -22,6 +23,8 @@
 		background-color: var(--clr-bg);
 		font-family: system-ui;
 		color: var(--clr-font);
+		min-width: 450px;
+		
 	}
 	
 	:global(body .dark) {
