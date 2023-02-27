@@ -44,7 +44,9 @@
 	}
 
 	section {
-		height: calc(100vh - 66px);
+		margin-top: var(--size-header);
+		height: 100vh;
+		height: 100svh;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
