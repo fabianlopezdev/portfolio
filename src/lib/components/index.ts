@@ -7,3 +7,4 @@ export { default as SocialLinks } from './SocialLinks.svelte';
 export { default as Logo } from './Logo.svelte';
 export { default as Button } from './Button.svelte';
 export { default as Home } from './Home.svelte';
+export { default as ContactCard } from './ContactCard.svelte';

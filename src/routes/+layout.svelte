@@ -11,25 +11,21 @@
 		--size-header: 5rem;
 	}
 
-	:global(.dark) {
-		--clr-bg: black;
-		--clr-secondary: #016aa1;
-		--clr-font: white;
-		--clr-font-contrast: rgb(148, 146, 146);
-		--clr-toggle: rgb(149, 149, 66);
-	}
-
 	:global(body) {
 		background-color: var(--clr-bg);
 		font-family: system-ui;
 		color: var(--clr-font);
-		min-width: 450px;
-		
 	}
-	
-	:global(body .dark) {
-		background-color: var(--clr-bg);
-		font-family: system-ui;
+
+	:global(section) {
+		height: 100vh;
+		height: 100svh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	:global(a) {
+		text-decoration: none;
 		color: var(--clr-font);
 	}
 
@@ -43,5 +39,13 @@
 		outline: inherit;
 		width: 1.5em;
 		height: 1.5em;
+	}
+
+	:global(.dark) {
+		--clr-bg: black;
+		--clr-secondary: #016aa1;
+		--clr-font: white;
+		--clr-font-contrast: rgb(148, 146, 146);
+		--clr-toggle: rgb(149, 149, 66);
 	}
 </style>

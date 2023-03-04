@@ -43,13 +43,12 @@
 		color: var(--clr-font-contrast);
 	}
 
-	@media screen and (max-width: 668px) {
+	@media (max-width: 544px) {
 		a {
 			flex-direction: column;
 			align-items: center;
 			width: 5em;
 			margin-top: 0em;
-			margin-bottom: 7em;
 		}
 	}
 </style>

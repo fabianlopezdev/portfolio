@@ -29,8 +29,6 @@
 		list-style: none;
 	}
 	a {
-		text-decoration: none;
-		color: var(--clr-font);
 		font-size: 1em;
 		padding: 0.2rem 0.5rem;
 	}

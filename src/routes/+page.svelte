@@ -15,7 +15,7 @@
 	</div>
 </header>
 
-<main >
+<main>
 	<Home />
 	<About />
 	<Projects />
@@ -29,20 +29,21 @@
 <style>
 	header {
 		position: relative;
-		margin: 0;
-
+		box-sizing: border-box;
+		display: flex;
+		justify-content: center;
 	}
 	.header-container {
 		height: var(--size-header);
 		display: flex;
-		justify-content: space-between;
+		align-self: center;
 		align-items: center;
-		max-width: 866px;
-		text-align: center;
-		margin: 0.7rem auto 0.7rem auto;
+		justify-content: space-between;
+		width: clamp(375px, (100vw - 40px), 866px); 
 	}
 	.toggle-and-socialLinks {
 		display: flex;
+		align-items: center;
 		gap: 2rem;
 	}
 	.not-in-header-container {
@@ -52,41 +53,15 @@
 		transform: translate(-50%, -50%);
 	}
 
-	main {
-			/* margin-top: calc(var(--size-header)); */
-		}
-	@media screen and (max-width: 604px) {
-		.header-container {
-			flex-direction: column;
-			gap: 0.5rem;
-			margin: 1.5rem;
-			--size-header: 6rem;
-			height: var(--size-header);
-		}
-		.not-in-header-container {
-			display: none;
+	 @media (max-width: 658px) {
+			.not-in-header-container {
+				display: none;
+			}
+			.toggle-and-socialLinks {
+				gap: 1rem;
+				justify-content: space-around;
+				margin-left: 1rem;
+			}
 		}
 
-		.toggle-and-socialLinks {
-			gap: 1rem;
-			justify-content: space-around;
-			margin-left: 1rem;
-		}
-		
-
-		
-	}
-	@media screen and (max-height: 626px) {
-		main {
-						margin-top: var(--size-header);
-
-		}
-		
-	}	
-		@media screen and (max-height: 412px) {
-		main {
-						margin-top: calc(var(--size-header) + 5rem);
-
-		}
-	}
 </style>
