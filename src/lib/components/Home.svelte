@@ -55,4 +55,15 @@
 		background-color: var(--clr-accent);
 	}
 
+ 
+	@media (max-width: 544px) {
+		section {
+			gap: 0.5em;
+		}
+
+		h1 {
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+		}
+	}
 </style>
