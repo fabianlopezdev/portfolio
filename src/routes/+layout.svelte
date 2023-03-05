@@ -46,6 +46,6 @@
 		--clr-secondary: #016aa1;
 		--clr-font: white;
 		--clr-font-contrast: rgb(148, 146, 146);
-		--clr-toggle: rgb(149, 149, 66);
+	
 	}
 </style>
