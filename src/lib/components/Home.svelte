@@ -66,4 +66,11 @@
 			margin-bottom: 1rem;
 		}
 	}
+
+	@media (max-height: 463px) {
+		section {
+			margin-top: 2rem;
+			height: 100%;
+		}
+	}
 </style>
