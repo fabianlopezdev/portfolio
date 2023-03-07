@@ -54,12 +54,10 @@ else language = spanish;
 </header>
 
 <main>
-	<h1>Your current lang is {lang}</h1>
-	<h1>Your current lang is {language.home.slogan}</h1>
-	<Home />
-	<About />
-	<Projects />
-	<Contact />
+	<Home language={language.home} />
+	<About language={language.about}/>
+	<Projects language={language.projects} />
+	<Contact language={language.contact}/>
 </main>
 
 <footer>

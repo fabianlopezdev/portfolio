@@ -1,3 +1,9 @@
 {
-	"home": { "slogan": "Transformando realidades" }
+	"home": {
+		"slogan1": "Transformo tu visión web en una",
+		"sloganSpan1": "fabulosa",
+		"slogan2": "y",
+		"sloganSpan2": "funcional",
+		"slogan3": "realidad"
+	}
 }

@@ -1,13 +1,14 @@
 <script>
 	import { Button } from '$components';
 	import scrollTo from '../../utils/functions';
+	export let language;
 	let envResumeLink = import.meta.env.VITE_RESUME_LINK;
 </script>
 
 <section>
 	<h2>
-		Transforming your web vision into a <span>stunning</span> and
-		<span>functional</span> reality.
+		{language.slogan1} <span>{language.sloganSpan1} </span> {language.slogan2}
+		<span>{language.sloganSpan2} </span> {language.slogan3}.
 	</h2>
 	<h1 style="color: var(--clr-secondary)">Hello, I am Fabian!</h1>
 	<div style="display: flex; gap: 1em; flex-wrap:wrap;">
