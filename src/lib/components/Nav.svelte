@@ -21,6 +21,7 @@
 		padding: 0;
 		gap: 2em;
 		font-size: 1rem;
+		font-weight: 700;
 	}
 	
 	.nav.modal {
@@ -33,7 +34,7 @@
 		gap: 2em;
 		font-size: 2rem;
 		color: var(--clr-secondary);
-		font-weight: 700;
+		/* font-weight: 700; */
 	}
 	li {
 		list-style: none;

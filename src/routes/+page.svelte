@@ -1,4 +1,7 @@
-<script>
+<script lang="ts">
+	import { enhance } from '$app/forms';
+	import english from '../lib/languages/en.json'
+	import spanish from '../lib/languages/es.json'
 	import {
 		Nav,
 		About,
@@ -10,6 +13,20 @@
 		Home,
 		Menu
 	} from '$components';
+
+	export let data;
+	let language;
+	// Destructure lang from data and make it reactive
+$: ({lang} = data);
+
+// Assign language based on lang and make it reactive
+$: if (lang === 'en') language = english;
+else language = spanish;
+
+	function submitOnChange(event) {
+		event.target.parentElement.submit()
+	}
+
 </script>
 
 <header>
@@ -25,12 +42,20 @@
 			</div>
 		</div>
 	</div>
+	<form method='POST' action="/?/setLang" use:enhance>
+		<select name="lang" on:change={submitOnChange} bind:value={lang}>
+			<option value="en">EN</option>
+			<option value="es">ES</option>
+		</select>
+	</form>
 	<div class="not-in-header-container">
 		<Nav />
 	</div>
 </header>
 
 <main>
+	<h1>Your current lang is {lang}</h1>
+	<h1>Your current lang is {language.home.slogan}</h1>
 	<Home />
 	<About />
 	<Projects />
