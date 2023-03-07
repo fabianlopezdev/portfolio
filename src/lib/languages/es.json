@@ -4,6 +4,9 @@
 		"sloganSpan1": "fabulosa",
 		"slogan2": "y",
 		"sloganSpan2": "funcional",
-		"slogan3": "realidad"
+		"slogan3": "realidad",
+    "welcome": "Hola, soy Fabian!",
+    "buttonContact": "Contáctame",
+    "buttonResume": "CV"
 	}
 }

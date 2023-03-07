@@ -4,6 +4,9 @@
 		"sloganSpan1": "stunning",
 		"slogan2": "and",
 		"sloganSpan2": "functional",
-		"slogan3": "reality"
+		"slogan3": "reality",
+    "welcome": "Hello, I am Fabian!",
+    "buttonContact": "Contact Me",
+    "buttonResume": "Resume"
 	}
 }

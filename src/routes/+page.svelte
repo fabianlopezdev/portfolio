@@ -72,6 +72,7 @@
 		padding-left: 0.2rem;
 		padding-right: 0.2rem;
 		cursor: pointer;
+		background-color: var(--clr-bg)
 	}
 	header {
 		position: relative;

@@ -10,12 +10,12 @@
 		{language.slogan1} <span>{language.sloganSpan1} </span> {language.slogan2}
 		<span>{language.sloganSpan2} </span> {language.slogan3}.
 	</h2>
-	<h1 style="color: var(--clr-secondary)">Hello, I am Fabian!</h1>
+	<h1 style="color: var(--clr-secondary)">{language.welcome}</h1>
 	<div style="display: flex; gap: 1em; flex-wrap:wrap;">
 		<Button --color="var(--clr-accent)" on:click={scrollTo} href={'#contact'} icon={'envelope'}
-			>Contact Me</Button
+			>{language.buttonContact}</Button
 		>
-		<Button --color="var(--clr-font)" href={envResumeLink} icon={'download'}>Resume</Button>
+		<Button --color="var(--clr-font)" href={envResumeLink} icon={'download'}>{language.buttonResume}</Button>
 	</div>
 </section>
 
@@ -49,7 +49,7 @@
 		position: absolute;
 		width: 100%;
 		height: 90%;
-		top: 10px;
+		top: 5px;
 		left: -2px;
 		z-index: -1;
 		transform: rotate(-1deg);
