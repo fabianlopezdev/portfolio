@@ -25,7 +25,6 @@
     <MenuIcon/>
     {/if}
   </button>
-  <ToggleDark/>
 </div>
 
 <style>

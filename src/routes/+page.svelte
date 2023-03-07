@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import english from '../lib/languages/en.json'
-	import spanish from '../lib/languages/es.json'
+	import english from '../lib/languages/en.json';
+	import spanish from '../lib/languages/es.json';
 	import {
 		Nav,
 		About,
@@ -17,37 +17,34 @@
 	export let data;
 	let language;
 	// Destructure lang from data and make it reactive
-$: ({lang} = data);
+	$: ({ lang } = data || 'en');
 
-// Assign language based on lang and make it reactive
-$: if (lang === 'en') language = english;
-else language = spanish;
+	// Assign language based on lang and make it reactive
+	$: if (lang === 'en') language = english;
+	else language = spanish;
 
 	function submitOnChange(event) {
-		event.target.parentElement.submit()
+		event.target.parentElement.submit();
 	}
-
 </script>
 
 <header>
 	<div class="header-container">
 		<Menu />
 		<Logo />
-		<div class='toggle-and-socialLinks'>
-			<div class='toggle'>
-				<ToggleDark/>
+		<div class="toggle-and-socialLinks">
+			<div class="toggle">
+				<ToggleDark />
 			</div>
-			<div class="socialLinks">
-				<SocialLinks />
-			</div>
+			<form method="POST" action="/?/setLang" use:enhance>
+				<select name="lang" on:change={submitOnChange} bind:value={lang}>
+					<option value="en">EN</option>
+					<option value="es">ES</option>
+				</select>
+			</form>
 		</div>
 	</div>
-	<form method='POST' action="/?/setLang" use:enhance>
-		<select name="lang" on:change={submitOnChange} bind:value={lang}>
-			<option value="en">EN</option>
-			<option value="es">ES</option>
-		</select>
-	</form>
+
 	<div class="not-in-header-container">
 		<Nav />
 	</div>
@@ -55,9 +52,9 @@ else language = spanish;
 
 <main>
 	<Home language={language.home} />
-	<About language={language.about}/>
+	<About language={language.about} />
 	<Projects language={language.projects} />
-	<Contact language={language.contact}/>
+	<Contact language={language.contact} />
 </main>
 
 <footer>
@@ -65,6 +62,17 @@ else language = spanish;
 </footer>
 
 <style>
+	select {
+		appearance: none;
+		border: none;
+		border-radius: none;
+		color: gray;
+		font-weight: 500;
+		font-size: 1rem;
+		padding-left: 0.2rem;
+		padding-right: 0.2rem;
+		cursor: pointer;
+	}
 	header {
 		position: relative;
 		box-sizing: border-box;
@@ -81,8 +89,14 @@ else language = spanish;
 	}
 	.toggle-and-socialLinks {
 		display: flex;
-		align-items: center;
+		/* align-items: center; */
+		/* justify-content: center; */
 		gap: 2rem;
+	}
+	.toggle {
+		display: flex;
+		align-self:center;
+		justify-self:center;
 	}
 	.not-in-header-container {
 		position: absolute;
@@ -95,9 +109,7 @@ else language = spanish;
 		.not-in-header-container {
 			display: none;
 		}
-		.toggle {
-			display: none;
-		}
+	
 		.toggle-and-socialLinks {
 			gap: 1rem;
 			justify-content: space-around;
