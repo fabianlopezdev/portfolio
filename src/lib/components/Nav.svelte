@@ -1,10 +1,21 @@
 <script lang="ts">
 	import scrollTo from '../../utils/functions';
-	import { links } from '../../utils/data';
 	export let customClass = '';
+	export let language;
+	
+
+		let links;
+	$: if (language) {
+		links = [
+			{ href: '#about', name: language.about },
+			{ href: '#projects', name: language.projects },
+			{ href: '#contact', name: language.contact }
+		];
+	}
 </script>
 
 <nav >
+	{#if links}
 	<ul class='nav {customClass}'>
 		{#each links as { href, name }}
 			<li>
@@ -12,6 +23,7 @@
 			</li>
 		{/each}
 	</ul>
+	{/if}
 </nav>
 
 <style>
@@ -34,7 +46,7 @@
 		gap: 2em;
 		font-size: 2rem;
 		color: var(--clr-secondary);
-		/* font-weight: 700; */
+		font-weight: 700;
 	}
 	li {
 		list-style: none;

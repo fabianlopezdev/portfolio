@@ -8,5 +8,11 @@
     "welcome": "Hello, I am Fabian!",
     "buttonContact": "Contact Me",
     "buttonResume": "Resume"
+	},
+  "nav": {
+		"about": "About",
+		"projects": "Projects",
+		"contact": "Contact",
+		"": ""
 	}
 }

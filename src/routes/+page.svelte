@@ -38,15 +38,15 @@
 			</div>
 			<form method="POST" action="/?/setLang" use:enhance>
 				<select name="lang" on:change={submitOnChange} bind:value={lang}>
-					<option value="en">EN</option>
-					<option value="es">ES</option>
+					<option value="en">ES</option>
+					<option value="es">EN</option>
 				</select>
 			</form>
 		</div>
 	</div>
 
 	<div class="not-in-header-container">
-		<Nav />
+		<Nav language={language.nav}/>
 	</div>
 </header>
 

@@ -5,8 +5,14 @@
 		"slogan2": "y",
 		"sloganSpan2": "funcional",
 		"slogan3": "realidad",
-    "welcome": "Hola, soy Fabian!",
-    "buttonContact": "Contáctame",
-    "buttonResume": "CV"
+		"welcome": "Hola, soy Fabian!",
+		"buttonContact": "Contáctame",
+		"buttonResume": "CV"
+	},
+	"nav": {
+		"about": "Perfil",
+		"projects": "Proyectos",
+		"contact": "Contacto",
+		"": ""
 	}
 }
