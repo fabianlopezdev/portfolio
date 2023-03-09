@@ -48,6 +48,7 @@
 			flex-direction: column;
 			align-items: center;
 			width: 5em;
+			height: 5em;
 			margin-top: 0em;
 		}
 	}
