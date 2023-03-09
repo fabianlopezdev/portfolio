@@ -2,16 +2,11 @@
 	import scrollTo from '../../utils/functions';
 	export let customClass = '';
 	export let language;
-	
+	import { getNavLinks } from '../../utils/data';
 
 		let links;
-	$: if (language) {
-		links = [
-			{ href: '#about', name: language.about },
-			{ href: '#projects', name: language.projects },
-			{ href: '#contact', name: language.contact }
-		];
-	}
+	$: if (language) links = getNavLinks(language)
+	
 </script>
 
 <nav >
@@ -59,6 +54,7 @@
 		background-color: #e2e8ec;
 		color: black;
 		border-radius: 6px;
+		padding: 0.5rem;
 		transition: color 0.3s ease, background-color 0.3s ease;
 	}
 </style>

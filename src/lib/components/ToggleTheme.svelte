@@ -22,3 +22,17 @@
 		<MoonIcon />
 	{/if}
 </button>
+
+<style>
+
+.icons {
+	width: 1em;
+	height: 1em;
+}
+
+/* button {
+	margin: 1rem;
+} */
+
+
+</style>

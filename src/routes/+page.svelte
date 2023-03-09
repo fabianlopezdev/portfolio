@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
-	import english from '../lib/languages/en.json';
-	import spanish from '../lib/languages/es.json';
+	import english from '../languages/en.json';
+	import spanish from '../languages/es.json';
 	import {
 		Nav,
 		About,
@@ -36,7 +36,7 @@
 			<div class="toggle">
 				<ToggleDark />
 			</div>
-			<form method="POST" action="/?/setLang" use:enhance>
+			<form class="toggle" method="POST" action="/?/setLang" use:enhance>
 				<select name="lang" on:change={submitOnChange} bind:value={lang}>
 					<option value="en">ES</option>
 					<option value="es">EN</option>
@@ -68,11 +68,16 @@
 		border-radius: none;
 		color: gray;
 		font-weight: 500;
-		font-size: 1rem;
-		padding-left: 0.2rem;
-		padding-right: 0.2rem;
+		/* font-size: 1rem; */
+		padding: 0.5;
 		cursor: pointer;
-		background-color: var(--clr-bg)
+		background-color: inherit;
+		outline: none;
+	}
+
+	option {
+		font-size: 1.1em;
+		/* padding: 1rem; */
 	}
 	header {
 		position: relative;
@@ -98,7 +103,16 @@
 		display: flex;
 		align-self:center;
 		justify-self:center;
+		padding: 0.5rem;
 	}
+
+	.toggle:hover {
+		background-color: #e2e8ec;
+		color: black;
+		border-radius: 6px;
+		/* margin: 1rem; */
+		transition: color 0.3s ease, background-color 0.3s ease;
+}
 	.not-in-header-container {
 		position: absolute;
 		top: 50%;

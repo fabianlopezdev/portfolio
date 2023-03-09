@@ -1,6 +1,7 @@
-
-export const links = [
-	{ href: '#about', name: 'About' },
-	{ href: '#projects', name: 'Projects' },
-	{ href: '#contact', name: 'Contact' }
+export const getNavLinks = (language) => {
+	return [
+	{ href: '#about', name: language.about },
+	{ href: '#projects', name: language.projects },
+	{ href: '#contact', name: language.contact }
 ];
+}
