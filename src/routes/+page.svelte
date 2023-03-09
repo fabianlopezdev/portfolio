@@ -133,6 +133,7 @@
 
 		.toggle:hover {
 			background-color:transparent;
+			color: inherit;
 		}
 	}
 </style>
