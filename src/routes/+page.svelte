@@ -130,5 +130,9 @@
 			justify-content: space-around;
 			margin-left: 1rem;
 		}
+
+		.toggle:hover {
+			background-color:transparent;
+		}
 	}
 </style>
