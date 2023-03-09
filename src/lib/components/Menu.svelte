@@ -2,6 +2,7 @@
   import MenuIcon from 'svelte-icons/io/IoIosMenu.svelte'
   import { ToggleDark, Nav } from '$components';
   import CloseIcon from 'svelte-icons/io/IoIosClose.svelte'
+  export let language;
   let isShowMenu = false;
   function toggleMenu() {
     isShowMenu = !isShowMenu;
@@ -18,7 +19,7 @@
         <CloseIcon/>
       </div>
       <div class='nav'>
-        <Nav customClass='modal'/>
+        <Nav {language} customClass='modal'/>
       </div>
     </modal>
     {:else} 

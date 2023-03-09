@@ -20,27 +20,31 @@
 	$: ({ lang } = data || 'en');
 
 	// Assign language based on lang and make it reactive
-	$: if (lang === 'en') language = english;
-	else language = spanish;
+	$: language = lang === 'en' ? english : spanish;
 
-	function submitOnChange(event) {
-		event.target.parentElement.submit();
+	function toggleLang(event) {
+		 if (lang === 'en') {
+      lang = 'es';
+    } else {
+      lang = 'en';
+    }
+    document.getElementById('lang-form').submit();
 	}
 </script>
 
 <header>
 	<div class="header-container">
-		<Menu />
+		<Menu language={language.nav}/>
 		<Logo />
 		<div class="toggle-and-socialLinks">
 			<div class="toggle">
 				<ToggleDark />
 			</div>
 			<form class="toggle" method="POST" action="/?/setLang" use:enhance>
-				<select name="lang" on:change={submitOnChange} bind:value={lang}>
-					<option value="en">ES</option>
-					<option value="es">EN</option>
-				</select>
+				  <input type="hidden" name="lang" bind:value={lang} />
+  <button on:click={toggleLang}>
+    {lang === 'en' ? 'ES' : 'EN'}
+  </button>
 			</form>
 		</div>
 	</div>
@@ -62,23 +66,19 @@
 </footer>
 
 <style>
-	select {
+	button {
 		appearance: none;
 		border: none;
 		border-radius: none;
 		color: gray;
 		font-weight: 500;
-		/* font-size: 1rem; */
+		/* font-size: 0.8rem; */
 		padding: 0.5;
 		cursor: pointer;
 		background-color: inherit;
 		outline: none;
 	}
 
-	option {
-		font-size: 1.1em;
-		/* padding: 1rem; */
-	}
 	header {
 		position: relative;
 		box-sizing: border-box;
