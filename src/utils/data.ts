@@ -1,7 +1,9 @@
-export const getNavLinks = (language) => {
+import type { Language } from "../types";
+
+export const generateNavigationLinks = ({ about, projects, contact }: Language['nav']) => {
 	return [
-	{ href: '#about', name: language.about },
-	{ href: '#projects', name: language.projects },
-	{ href: '#contact', name: language.contact }
-];
-}
+		{ href: '#about', name: about },
+		{ href: '#projects', name: projects },
+		{ href: '#contact', name: contact }
+	];
+};

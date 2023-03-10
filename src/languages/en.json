@@ -9,7 +9,7 @@
     "buttonContact": "Contact Me",
     "buttonResume": "Resume"
 	},
-  "nav": {
+  "navLinks": {
 		"about": "About",
 		"projects": "Projects",
 		"contact": "Contact",

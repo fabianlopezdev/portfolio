@@ -1,6 +1,6 @@
 <script>
-  import MenuIcon from 'svelte-icons/io/IoIosMenu.svelte'
-  import { ToggleDark, Nav } from '$components';
+  import HamburgerMenuIcon from 'svelte-icons/io/IoIosMenu.svelte'
+  import { ToggleTheme, NavLinks } from '$components';
   import CloseIcon from 'svelte-icons/io/IoIosClose.svelte'
   export let language;
   let isShowMenu = false;
@@ -23,12 +23,18 @@
       </div>
     </modal>
     {:else} 
-    <MenuIcon/>
+    <div class='icons menuIcon'>
+      
+      <HamburgerMenuIcon/>
+    </div>
     {/if}
   </button>
 </div>
 
 <style>
+  .menuIcon {
+    margin-left: 1rem;
+  }
   .menu-and-toggle {
     display: none;
   }

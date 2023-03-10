@@ -1,6 +1,6 @@
 <script>
 	import { Button } from '$components';
-	import scrollTo from '../../utils/functions';
+	import scrollTo from '../../../utils/functions';
 	export let language;
 	let envResumeLink = import.meta.env.VITE_RESUME_LINK;
 </script>
