@@ -1,11 +1,11 @@
 <script lang="ts">
 	import scrollTo from '../../utils/functions';
 	export let customClass = '';
-	export let language;
+	export let navLinks;
 	import { generateNavigationLinks } from '../../utils/data';
 
 		let links;
-	$: if (language) links = generateNavigationLinks(language)
+	$: if (navLinks) links = generateNavigationLinks(navLinks)
 	
 </script>
 

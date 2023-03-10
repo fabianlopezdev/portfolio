@@ -10,4 +10,4 @@ export { default as Logo } from './Logo.svelte';
 export { default as Button } from './Button.svelte';
 export { default as Home } from './home/Home.svelte';
 export { default as ContactCard } from './contact/ContactCard.svelte';
-export { default as Menu } from './header/Menu.svelte';
+export { default as ModalMenu } from './header/ModalMenu.svelte';

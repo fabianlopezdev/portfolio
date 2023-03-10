@@ -25,7 +25,7 @@
 </main>
 
 <footer>
-	<NavLinks language={navLinks} />
+	<NavLinks {navLinks} />
 </footer>
 
 <style>
