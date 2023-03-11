@@ -2,11 +2,8 @@
 	import HamburgerMenuIcon from 'svelte-icons/io/IoIosMenu.svelte';
 	import CloseIcon from 'svelte-icons/io/IoIosClose.svelte';
 	import { NavLinks } from '$components';
-
 	export let navLinks: Object;
-
 	let isShowMenu = false;
-
 	function toggleMenu() {
 		isShowMenu = !isShowMenu;
 	}
@@ -36,11 +33,9 @@
 		background-color: var(--clr-bg);
 		padding: 0;
 	}
-
 	.header-icons {
 		z-index: 2;
 	}
-
 	modal {
 		display: flex;
 		flex-direction: column;
@@ -52,7 +47,6 @@
 		height: 100svh;
 		width: 100svw;
 	}
-
 	nav {
 		display: flex;
 		flex-direction: column;
@@ -64,10 +58,10 @@
 		right: 0;
 		bottom: 0;
 	}
-
 	@media (max-width: 658px) {
 		button {
 			display: flex;
 		}
 	}
 </style>
+

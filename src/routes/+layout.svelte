@@ -41,8 +41,8 @@
 		font: inherit;
 		cursor: pointer;
 		outline: inherit;
-		width: 1.5em;
-		height: 1.5em;
+		width: 1rem;
+		height: 1rem;
 		padding: 0.3rem;
 	}
 

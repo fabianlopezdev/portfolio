@@ -34,6 +34,7 @@
 
 	.toggles-container {
 		display: flex;
+		gap: 0.5rem;
 		/* gap: 0.5rem; */
 		margin: 0;
 		/* margin-right: 1rem; */
