@@ -30,6 +30,9 @@
 </button>
 
 <style>
+	form {
+		padding: 0;
+	}
 	button {
 		display: none;
 		border: none;

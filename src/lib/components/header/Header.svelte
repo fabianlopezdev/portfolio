@@ -9,17 +9,17 @@
 	<ModalMenu {navLinks} />
 	<Logo />
 	<ul class="toggles-container">
-		<li class="toggle">
+		<li class="header-icons">
 			<ToggleTheme />
 		</li>
-		<li class="toggle">
+		<li class="header-icons">
 			<ToggleLang {lang} />
 		</li>
 	</ul>
 </nav>
 
 <nav class="nav-links-container">
-	<NavLinks language={navLinks} />
+	<NavLinks {navLinks} />
 </nav>
 
 <style>
@@ -34,33 +34,18 @@
 
 	.toggles-container {
 		display: flex;
-		gap: 0.5rem;
+		/* gap: 0.5rem; */
 		margin: 0;
-		margin-right: 1rem;
+		/* margin-right: 1rem; */
 		padding: 0;
 	}
 
-	.toggle {
-		display: flex;
-		align-items: center;
-		justify-self: center;
-		/* padding: 0.5rem; */
-		/* width: 18px; */
-		/* height: 18px; */
-	}
-
-	/* .toggle:hover {
-		background-color: #e2e8ec;
-		border-radius: 6px;
-		color: black;
-		transition: color 0.3s ease, background-color 0.3s ease;
-	} */
 
 	li {
 		appearance: none;
 		list-style: none; /* Remove bullet points on list item */
 		margin: 0; /* Remove default margin */
-		padding: 0; /* Remove default padding */
+
 	}
 
 	.nav-links-container {

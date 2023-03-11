@@ -31,16 +31,19 @@
 	}
 
 	:global(.header-icons) {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		background: none;
 		color: var(--clr-toggle);
 		border: none;
-		padding: 0;
+		/* padding: 0; */
 		font: inherit;
 		cursor: pointer;
 		outline: inherit;
 		width: 1.5em;
 		height: 1.5em;
-		padding: 0.5rem;
+		padding: 0.3rem;
 	}
 
 	:global(.header-icons:hover) {

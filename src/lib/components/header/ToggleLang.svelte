@@ -13,7 +13,7 @@
 
 <form  method="POST" action="/?/setLang" use:enhance>
 	<input type="hidden" name="lang" bind:value={lang} />
-	<button class='menu-icons'on:click={toggleLang}>
+	<button on:click={toggleLang}>
 		{lang === 'en' ? 'ES' : 'EN'}
 	</button>
 </form>
@@ -31,6 +31,7 @@
 		cursor: pointer;
 		background-color: inherit;
 		outline: none;
+		padding: 0;
 	}
 
 
