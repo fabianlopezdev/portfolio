@@ -33,7 +33,9 @@
 		display: inline-block;
 		position: relative;
 		z-index: 1;
-		color: gray;
+		color: black;
+		letter-spacing: -0.1rem;
+		margin:0;
 	}
 
 	/* h1::before {
@@ -103,8 +105,8 @@
 		}
 
 		.header-container {
-			margin-left: 0.5rem;
-			margin-right: 0.5rem;
+			margin: 0.4rem 0.5rem 0.3rem 0.8rem;
+		
 		}
 	}
 </style>

@@ -33,6 +33,11 @@
 		/* color: black; */
 	}
 
+	.header-icons {
+		width: 1rem;
+		padding-left: 0.45rem;
+		padding-right: 0.45rem;
+	}
 	/* button {
 	margin: 1rem;
 } */
