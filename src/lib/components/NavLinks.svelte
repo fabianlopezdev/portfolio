@@ -1,20 +1,30 @@
+<!-- NavLinks.svelte -->
 <script lang="ts">
+	import { createEventDispatcher } from 'svelte';
 	import scrollTo from '../../utils/functions';
+
 	export let customClass = '';
 	export let navLinks;
+	
 	import { generateNavigationLinks } from '../../utils/data';
 
-		let links;
+	let links;
 	$: if (navLinks) links = generateNavigationLinks(navLinks)
-	
+
+	const dispatch = createEventDispatcher();
+
+	function handleClick(link, event) {
+		dispatch('linkClick', link);
+		scrollTo(event);
+	}
 </script>
 
-<nav >
+<nav class="{customClass}">
 	{#if links}
 	<ul class='nav {customClass}'>
 		{#each links as { href, name }}
 			<li>
-				<a {href} on:click|preventDefault={scrollTo} aria-label={`Scroll to ${name}`}>{name}</a>
+				<a {href} on:click|preventDefault={event => handleClick(name, event)} aria-label={`Scroll to ${name}`}>{name}</a>
 			</li>
 		{/each}
 	</ul>

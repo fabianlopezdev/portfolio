@@ -7,24 +7,30 @@
 	function toggleMenu() {
 		isShowMenu = !isShowMenu;
 	}
+	
+	function handleLinkClick(event) {
+		toggleMenu();
+	}
 </script>
 
-<button on:click|preventDefault={toggleMenu}>
-	{#if isShowMenu}
-	<modal>
+{#if isShowMenu}
+	<button on:click|preventDefault={toggleMenu}>
+		<div class="header-icons">
+			<CloseIcon />
+		</div>
+	</button>
+	<div class="modal">
 		<nav>
-			<NavLinks {navLinks} customClass="modal" />
+			<NavLinks {navLinks} customClass="modal" on:linkClick={handleLinkClick} />
 		</nav>
-	</modal>
-	<div class="header-icons">
-		<CloseIcon />
 	</div>
-	{:else}
-	<div class="header-icons">
-		<HamburgerMenuIcon />
-	</div>
-	{/if}
-</button>
+{:else}
+	<button on:click|preventDefault={toggleMenu}>
+		<div class="header-icons">
+			<HamburgerMenuIcon />
+		</div>
+	</button>
+{/if}
 
 <style>
 	button {
@@ -32,11 +38,12 @@
 		border: none;
 		background-color: var(--clr-bg);
 		padding: 0;
+		z-index: 100;
 	}
-	.header-icons {
+	/* .header-icons {
 		z-index: 2;
-	}
-	modal {
+	} */
+	.modal {
 		display: flex;
 		flex-direction: column;
 		background-color: var(--clr-bg);
