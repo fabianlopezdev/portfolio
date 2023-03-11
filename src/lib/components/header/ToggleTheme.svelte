@@ -17,7 +17,7 @@
 			<SunIcon />
 		</div>
 	{:else}
-		<div class="header-icons">
+		<div class="header-icons moon">
 			<MoonIcon />
 		</div>
 	{/if}

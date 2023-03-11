@@ -34,7 +34,7 @@
 
 <style>
 	button {
-	position:absolute;
+	/* position:absolute; */
 		display: flex;
 		border: none;
 		background-color: var(--clr-bg);
@@ -49,7 +49,6 @@
 		flex-direction: column;
 		background-color: var(--clr-bg);
 		position: fixed;
-		z-index: 2;
 		top: 0;
 		left: 0;
 		height: 100svh;

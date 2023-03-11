@@ -28,8 +28,8 @@
 <style>
 	.h1-font {
 		font-family: 'League Spartan', sans-serif;
-		font-size: 2.3rem;
-		/* font-weight: 300; */
+		font-size: 2rem;
+		font-weight: 500;
 		display: inline-block;
 		position: relative;
 		z-index: 1;
@@ -39,13 +39,13 @@
 	h1::before {
 		content: '';
 		position: absolute;
-		width: 110%;
+		width: 100%;
 		height: 110%;
-		top: -3px;
-		left: -10px;
+		top: -5px;
+		left: 0px;
 		z-index: -1;
 		transform: rotate(-1deg);
-		background-color: var(--clr-accent);
+		background-color: var(--clr-secondary);
 	}
 
 	.header-container {
@@ -56,7 +56,7 @@
 		height: var(--size-header);
 		width: clamp(375px, (100vw - 40px), 866px);
 	}
-
+	
 	.toggles-container {
 		display: flex;
 		gap: 0.5rem;
@@ -95,7 +95,8 @@
 		}
 
 		.modal {
-			display: block;
+			display: flex;
+			z-index:3;
 		}
 	}
 </style>
