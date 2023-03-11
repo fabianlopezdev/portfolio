@@ -14,7 +14,9 @@
 <form  method="POST" action="/?/setLang" use:enhance>
 	<input type="hidden" name="lang" bind:value={lang} />
 	<button on:click={toggleLang}>
-		{lang === 'en' ? 'ES' : 'EN'}
+		<div class='header-icons'>
+			{lang === 'en' ? 'ES' : 'EN'}
+		</div>
 	</button>
 </form>
 

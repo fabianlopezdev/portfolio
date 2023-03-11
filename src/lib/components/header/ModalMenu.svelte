@@ -14,25 +14,22 @@
 
 <button on:click|preventDefault={toggleMenu}>
 	{#if isShowMenu}
-		<modal>
-			<nav>
-				<NavLinks {navLinks} customClass="modal" />
-			</nav>
-		</modal>
-		<div class="header-icons">
-			<CloseIcon />
-		</div>
+	<modal>
+		<nav>
+			<NavLinks {navLinks} customClass="modal" />
+		</nav>
+	</modal>
+	<div class="header-icons">
+		<CloseIcon />
+	</div>
 	{:else}
-		<div class="header-icons">
-			<HamburgerMenuIcon />
-		</div>
+	<div class="header-icons">
+		<HamburgerMenuIcon />
+	</div>
 	{/if}
 </button>
 
 <style>
-	form {
-		padding: 0;
-	}
 	button {
 		display: none;
 		border: none;

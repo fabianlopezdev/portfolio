@@ -9,10 +9,10 @@
 	<ModalMenu {navLinks} />
 	<Logo />
 	<ul class="toggles-container">
-		<li class="header-icons">
+		<li>
 			<ToggleTheme />
 		</li>
-		<li class="header-icons">
+		<li >
 			<ToggleLang {lang} />
 		</li>
 	</ul>

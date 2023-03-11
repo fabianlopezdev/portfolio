@@ -11,28 +11,29 @@
 	}
 </script>
 
-<button
-	class="icons"
-	aria-label="Toggle between light and dark mode"
-	on:click|preventDefault={toggleTheme}
->
+<button aria-label="Toggle between light and dark mode" on:click|preventDefault={toggleTheme}>
 	{#if isDark}
-		<SunIcon />
+		<div class="header-icons">
+			<SunIcon />
+		</div>
 	{:else}
-		<MoonIcon />
+		<div class="header-icons">
+			<MoonIcon />
+		</div>
 	{/if}
 </button>
 
 <style>
+	button {
+		/* display: none; */
+		border: none;
+		appearance: none;
+		background-color: var(--clr-bg);
+		padding: 0;
+		/* color: black; */
+	}
 
-.icons {
-	width: 1em;
-	height: 1em;
-}
-
-/* button {
+	/* button {
 	margin: 1rem;
 } */
-
-
 </style>
