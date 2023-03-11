@@ -6,14 +6,17 @@
 </script>
 
 <nav class="header-container">
-	<ModalMenu {navLinks} />
-	<Logo />
+	<!-- <ModalMenu {navLinks} /> -->
+	<h1 class="h1-font">Fabian Lopez</h1>
 	<ul class="toggles-container">
 		<li>
 			<ToggleTheme />
 		</li>
 		<li >
 			<ToggleLang {lang} />
+		</li>
+		<li class="modal" >
+			<ModalMenu {navLinks} />
 		</li>
 	</ul>
 </nav>
@@ -23,6 +26,28 @@
 </nav>
 
 <style>
+	.h1-font {
+		font-family: 'League Spartan', sans-serif;
+		font-size: 2.3rem;
+		/* font-weight: 300; */
+		display: inline-block;
+		position: relative;
+		z-index: 1;
+		color: var(--clr-font-contrast);
+	}
+
+	h1::before {
+		content: '';
+		position: absolute;
+		width: 110%;
+		height: 110%;
+		top: -3px;
+		left: -10px;
+		z-index: -1;
+		transform: rotate(-1deg);
+		background-color: var(--clr-accent);
+	}
+
 	.header-container {
 		display: flex;
 		align-self: center;
@@ -49,6 +74,9 @@
 
 	}
 
+	.modal {
+		display: none;
+	}
 	.nav-links-container {
 		position: absolute;
 		top: 50%;
@@ -56,7 +84,7 @@
 		transform: translate(-50%, -50%);
 	}
 
-	@media (max-width: 658px) {
+	@media (max-width: 745px) {
 		.nav-links-container {
 			display: none;
 		}
@@ -64,6 +92,10 @@
 		.toggles-container:hover {
 			background-color: transparent;
 			color: inherit;
+		}
+
+		.modal {
+			display: block;
 		}
 	}
 </style>

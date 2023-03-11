@@ -9,7 +9,7 @@
 		--clr-font-contrast: white;
 		--clr-toggle: gray;
 		--clr-hover: #e2e8ec;
-		--size-header: 5rem;
+		--size-header: 3rem;
 	}
 
 	:global(body) {
@@ -70,7 +70,7 @@
 		--clr-bg: black;
 		--clr-secondary: #016aa1;
 		--clr-font: white;
-		--clr-font-contrast: rgb(148, 146, 146);
+		/* --clr-font-contrast: rgb(148, 146, 146); */
 	
 	}
 </style>

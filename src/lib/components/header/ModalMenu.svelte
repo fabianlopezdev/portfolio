@@ -34,11 +34,12 @@
 
 <style>
 	button {
-		display: none;
+	position:absolute;
+		display: flex;
 		border: none;
 		background-color: var(--clr-bg);
 		padding: 0;
-		z-index: 100;
+		z-index: 3;
 	}
 	/* .header-icons {
 		z-index: 2;
