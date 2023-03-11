@@ -34,7 +34,6 @@
 		position: relative;
 		z-index: 1;
 		color: gray;
-		letter-spacing: 0.1rem
 	}
 
 	/* h1::before {
