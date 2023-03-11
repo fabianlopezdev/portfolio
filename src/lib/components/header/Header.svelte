@@ -29,11 +29,12 @@
 	.h1-font {
 		font-family: 'League Spartan', sans-serif;
 		font-size: 2rem;
-		font-weight: 500;
+		/* font-weight: 500; */
 		display: inline-block;
 		position: relative;
 		z-index: 1;
 		color: gray;
+		letter-spacing: 0.1rem
 	}
 
 	/* h1::before {
@@ -87,7 +88,7 @@
 		transform: translate(-50%, -50%);
 	}
 
-	@media (max-width: 905px) {
+	@media only screen and (orientation: portrait) {
 		.nav-links-container {
 			display: none;
 		}
@@ -100,6 +101,11 @@
 		.modal {
 			display: flex;
 			z-index:3;
+		}
+
+		.header-container {
+			margin-left: 0.5rem;
+			margin-right: 0.5rem;
 		}
 	}
 </style>
