@@ -7,8 +7,10 @@
 		--clr-secondary: #016aa1;
 		--clr-font: black;
 		--clr-font-contrast: white;
+		--clr-font-contrast-black-bg: white;
 		--clr-toggle: gray;
 		--clr-hover: #e2e8ec;
+		--clr-shadow: #0000001A;
 		--size-header: 3rem;
 	}
 
@@ -48,7 +50,7 @@
 	}
 
 	:global(.header-icons:hover) {
-		background-color: var(--clr-hover);
+		background-color: gray;
 		border-radius: 6px;
 		color: black;
 		transition: color 0.3s ease, background-color 0.3s ease;
@@ -71,7 +73,8 @@
 		--clr-bg: black;
 		--clr-secondary: #016aa1;
 		--clr-font: white;
+		--clr-font-contrast-black-bg: var(--clr-accent);
 		/* --clr-font-contrast: rgb(148, 146, 146); */
-	
+		--clr-shadow: #d3d3d54d;
 	}
 </style>

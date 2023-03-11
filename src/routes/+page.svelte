@@ -58,7 +58,7 @@
 	.shadow {
 		height: 100%;
 		width: 100%;
-		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		border-bottom: 1px solid var(--clr-shadow);
+		box-shadow: 0 2px 4px var(--clr-shadow);
 	}
 </style>

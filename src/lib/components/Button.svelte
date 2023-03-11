@@ -15,7 +15,7 @@
 		</div>
 	</a>
 {:else}
-	<a {href} target={'_blank'} aria-label="Download resume">
+	<a {href} class='file' target={'_blank'} aria-label="Download resume">
 		<slot />
 		<div class="icons">
 			<FileDownloadIcon />
@@ -43,6 +43,14 @@
 		color: var(--clr-font-contrast);
 	}
 
+	.file {
+		color: var(--clr-font-contrast-black-bg)
+	}
+
+	.file .icons {
+  color: inherit;
+}
+
 	@media (max-width: 544px) {
 		a {
 			flex-direction: column;
@@ -51,5 +59,7 @@
 			height: 5em;
 			margin-top: 0em;
 		}
+
+		
 	}
 </style>

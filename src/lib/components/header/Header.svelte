@@ -33,7 +33,7 @@
 		display: inline-block;
 		position: relative;
 		z-index: 1;
-		color: black;
+		color: var(--clr-font);
 		letter-spacing: -0.1rem;
 		margin:0;
 	}
@@ -49,7 +49,7 @@
 		transform: rotate(-1deg);
 		background-color: var(--clr-secondary);
 	} */
-
+	
 	.header-container {
 		position: relative;
 		display: flex;
@@ -58,12 +58,15 @@
 		justify-content: space-between;
 		height: var(--size-header);
 		width: clamp(375px, (100vw - 40px), 866px);
+		margin: 0.4rem 0.5rem 0.3rem 0.8rem;
 		/* margin-top:1rem; */
 
 	}
 	
 	.toggles-container {
 		display: flex;
+		align-items: center;
+		height: inherit;
 		gap: 0.5rem;
 		/* gap: 0.5rem; */
 		margin: 0;
@@ -104,9 +107,8 @@
 			z-index:3;
 		}
 
-		.header-container {
+		/* .header-container {
 			margin: 0.4rem 0.5rem 0.3rem 0.8rem;
-		
-		}
+		} */
 	}
 </style>
