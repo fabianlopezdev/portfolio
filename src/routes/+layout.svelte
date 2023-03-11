@@ -16,6 +16,7 @@
 		background-color: var(--clr-bg);
 		font-family: system-ui;
 		color: var(--clr-font);
+		margin: 0;
 	}
 
 	:global(section) {

@@ -19,11 +19,11 @@
 			<ModalMenu {navLinks} />
 		</li>
 	</ul>
+	<nav class="nav-links-container">
+		<NavLinks {navLinks} />
+	</nav>
 </nav>
 
-<nav class="nav-links-container">
-	<NavLinks {navLinks} />
-</nav>
 
 <style>
 	.h1-font {
@@ -33,10 +33,10 @@
 		display: inline-block;
 		position: relative;
 		z-index: 1;
-		color: var(--clr-font-contrast);
+		color: gray;
 	}
 
-	h1::before {
+	/* h1::before {
 		content: '';
 		position: absolute;
 		width: 100%;
@@ -46,15 +46,18 @@
 		z-index: -1;
 		transform: rotate(-1deg);
 		background-color: var(--clr-secondary);
-	}
+	} */
 
 	.header-container {
+		position: relative;
 		display: flex;
 		align-self: center;
 		align-items: center;
 		justify-content: space-between;
 		height: var(--size-header);
 		width: clamp(375px, (100vw - 40px), 866px);
+		/* margin-top:1rem; */
+
 	}
 	
 	.toggles-container {
@@ -84,7 +87,7 @@
 		transform: translate(-50%, -50%);
 	}
 
-	@media (max-width: 745px) {
+	@media (max-width: 905px) {
 		.nav-links-container {
 			display: none;
 		}

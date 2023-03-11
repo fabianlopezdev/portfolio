@@ -38,7 +38,7 @@
 		padding: 0;
 		gap: 2em;
 		font-size: 1rem;
-		font-weight: 700;
+		/* font-weight: 700; */
 	}
 	
 	.nav.modal {
