@@ -1,33 +1,36 @@
-<!-- NavLinks.svelte -->
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
 	import scrollTo from '../../utils/functions';
+	import { generateNavigationLinks } from '../../utils/data';
+	import type { Language } from '../../types';
 
 	export let customClass = '';
-	export let navLinks;
-	
-	import { generateNavigationLinks } from '../../utils/data';
+	export let navLinks: Language['navLinks'];
 
-	let links;
-	$: if (navLinks) links = generateNavigationLinks(navLinks)
+	let links: { href: string; name: string }[] = [];
+	$: if (navLinks) links = generateNavigationLinks(navLinks);
 
 	const dispatch = createEventDispatcher();
 
-	function handleClick(link, event) {
+	function handleClick(link: string, event: MouseEvent) {
 		dispatch('linkClick', link);
 		scrollTo(event);
 	}
 </script>
 
-<nav class="{customClass}">
+<nav class={customClass}>
 	{#if links}
-	<ul class='nav {customClass}'>
-		{#each links as { href, name }}
-			<li>
-				<a {href} on:click|preventDefault={event => handleClick(name, event)} aria-label={`Scroll to ${name}`}>{name}</a>
-			</li>
-		{/each}
-	</ul>
+		<ul class="nav {customClass}">
+			{#each links as { href, name }}
+				<li>
+					<a
+						{href}
+						on:click|preventDefault={(event) => handleClick(name, event)}
+						aria-label={`Scroll to ${name}`}>{name}</a
+					>
+				</li>
+			{/each}
+		</ul>
 	{/if}
 </nav>
 
@@ -36,19 +39,14 @@
 		display: flex;
 		margin: 0;
 		padding: 0;
-		gap: 2em;
+		gap: 2rem;
 		font-size: 1rem;
-		/* font-weight: 700; */
 	}
-	
+
 	.nav.modal {
-		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		margin: 0;
-		padding: 0;
-		gap: 2em;
 		font-size: 2rem;
 		color: var(--clr-secondary);
 		font-weight: 700;
@@ -61,7 +59,7 @@
 		padding: 0.2rem 0.5rem;
 	}
 	a:hover {
-		background-color: #e2e8ec;
+		background-color: var(--clr-hover);
 		color: black;
 		border-radius: 6px;
 		padding: 0.5rem;

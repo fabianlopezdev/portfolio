@@ -1,4 +1,4 @@
-<script>
+<script lang='ts'>
 	import LinkedInIcon from 'svelte-icons/fa/FaLinkedinIn.svelte';
 	import GitHubIcon from 'svelte-icons/fa/FaGithub.svelte';
 

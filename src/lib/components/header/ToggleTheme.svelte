@@ -2,6 +2,7 @@
 	import MoonIcon from 'svelte-icons/fa/FaRegMoon.svelte';
 	import SunIcon from 'svelte-icons/fa/FaRegSun.svelte';
 	import { tick } from 'svelte';
+
 	export let isDark = false;
 
 	async function toggleTheme() {
@@ -11,26 +12,22 @@
 	}
 </script>
 
-<button aria-label="Toggle between light and dark mode" on:click|preventDefault={toggleTheme}>
-	{#if isDark}
-		<div class="header-icons">
+<button aria-label="Toggle between light and dark mode" on:click={toggleTheme}>
+	<span class="header-icons">
+		{#if isDark}
 			<SunIcon />
-		</div>
-	{:else}
-		<div class="header-icons moon">
+		{:else}
 			<MoonIcon />
-		</div>
-	{/if}
+		{/if}
+	</span>
 </button>
 
 <style>
 	button {
-		/* display: none; */
 		border: none;
 		appearance: none;
 		background-color: var(--clr-bg);
 		padding: 0;
-		/* color: black; */
 	}
 
 	.header-icons {
@@ -38,7 +35,4 @@
 		padding-left: 0.45rem;
 		padding-right: 0.45rem;
 	}
-	/* button {
-	margin: 1rem;
-} */
 </style>

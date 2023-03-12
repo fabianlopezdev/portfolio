@@ -1,21 +1,21 @@
 <script lang="ts">
-	import { ToggleLang, ToggleTheme, ModalMenu, Logo, NavLinks } from '$components';
+	import { ToggleLang, ToggleTheme, ModalMenu, NavLinks } from '$components';
+	import type { Language } from '../../../types';
 
 	export let lang: string | undefined;
-	export let navLinks: Object;
+	export let navLinks: Language['navLinks'];
 </script>
 
 <nav class="header-container">
-	<!-- <ModalMenu {navLinks} /> -->
 	<h1 class="h1-font">Fabian Lopez</h1>
 	<ul class="toggles-container">
 		<li>
 			<ToggleTheme />
 		</li>
-		<li >
+		<li>
 			<ToggleLang {lang} />
 		</li>
-		<li class="modal" >
+		<li class="modal">
 			<ModalMenu {navLinks} />
 		</li>
 	</ul>
@@ -24,32 +24,18 @@
 	</nav>
 </nav>
 
-
 <style>
 	.h1-font {
 		font-family: 'League Spartan', sans-serif;
 		font-size: 2rem;
-		/* font-weight: 500; */
 		display: inline-block;
 		position: relative;
 		z-index: 1;
 		color: var(--clr-font);
 		letter-spacing: -0.1rem;
-		margin:0;
+		margin: 0;
 	}
 
-	/* h1::before {
-		content: '';
-		position: absolute;
-		width: 100%;
-		height: 110%;
-		top: -5px;
-		left: 0px;
-		z-index: -1;
-		transform: rotate(-1deg);
-		background-color: var(--clr-secondary);
-	} */
-	
 	.header-container {
 		position: relative;
 		display: flex;
@@ -59,32 +45,27 @@
 		height: var(--size-header);
 		width: clamp(375px, (100vw - 40px), 866px);
 		margin: 0.4rem 0.5rem 0.3rem 0.8rem;
-		/* margin-top:1rem; */
-
 	}
-	
+
 	.toggles-container {
 		display: flex;
 		align-items: center;
 		height: inherit;
 		gap: 0.5rem;
-		/* gap: 0.5rem; */
 		margin: 0;
-		/* margin-right: 1rem; */
 		padding: 0;
 	}
-
 
 	li {
 		appearance: none;
 		list-style: none; /* Remove bullet points on list item */
 		margin: 0; /* Remove default margin */
-
 	}
 
 	.modal {
 		display: none;
 	}
+
 	.nav-links-container {
 		position: absolute;
 		top: 50%;
@@ -104,11 +85,7 @@
 
 		.modal {
 			display: flex;
-			z-index:3;
+			z-index: 3;
 		}
-
-		/* .header-container {
-			margin: 0.4rem 0.5rem 0.3rem 0.8rem;
-		} */
 	}
 </style>

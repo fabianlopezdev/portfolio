@@ -10,7 +10,7 @@
 		--clr-font-contrast-black-bg: white;
 		--clr-toggle: gray;
 		--clr-hover: #e2e8ec;
-		--clr-shadow: #0000001A;
+		--clr-shadow: #0000001a;
 		--size-header: 3rem;
 	}
 
@@ -40,7 +40,6 @@
 		background: none;
 		color: var(--clr-toggle);
 		border: none;
-		/* padding: 0; */
 		font: inherit;
 		cursor: pointer;
 		outline: inherit;
@@ -50,12 +49,12 @@
 	}
 
 	:global(.header-icons:hover) {
-		background-color: gray;
+		background-color: var(--clr-hover);
 		border-radius: 6px;
 		color: black;
 		transition: color 0.3s ease, background-color 0.3s ease;
 	}
-		:global(.icons) {
+	:global(.icons) {
 		background: none;
 		color: var(--clr-toggle);
 		border: none;
@@ -65,16 +64,12 @@
 		outline: inherit;
 		width: 1.5rem;
 		height: 1.5rem;
-		/* padding:1rem; */
 	}
-	
 
 	:global(.dark) {
 		--clr-bg: black;
-		--clr-secondary: #016aa1;
 		--clr-font: white;
 		--clr-font-contrast-black-bg: var(--clr-accent);
-		/* --clr-font-contrast: rgb(148, 146, 146); */
-		--clr-shadow: #d3d3d54d;
+		--clr-shadow: #cccccc;
 	}
 </style>

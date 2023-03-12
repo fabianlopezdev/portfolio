@@ -2,19 +2,23 @@
 	import HamburgerMenuIcon from 'svelte-icons/io/IoIosMenu.svelte';
 	import CloseIcon from 'svelte-icons/io/IoIosClose.svelte';
 	import { NavLinks } from '$components';
-	export let navLinks: Object;
+	import type { Language } from '../../../types';
+
+	export let navLinks: Language['navLinks'];
+
 	let isShowMenu = false;
+
 	function toggleMenu() {
 		isShowMenu = !isShowMenu;
 	}
-	
-	function handleLinkClick(event) {
+
+	function handleLinkClick() {
 		toggleMenu();
 	}
 </script>
 
 {#if isShowMenu}
-	<button on:click|preventDefault={toggleMenu}>
+	<button type="button" on:click|preventDefault={toggleMenu} aria-label="Close menu">
 		<div class="header-icons">
 			<CloseIcon />
 		</div>
@@ -25,7 +29,7 @@
 		</nav>
 	</div>
 {:else}
-	<button on:click|preventDefault={toggleMenu}>
+	<button type="button" on:click|preventDefault={toggleMenu} aria-label="Open menu">
 		<div class="header-icons">
 			<HamburgerMenuIcon />
 		</div>
@@ -34,16 +38,13 @@
 
 <style>
 	button {
-	/* position:absolute; */
 		display: flex;
 		border: none;
 		background-color: var(--clr-bg);
 		padding: 0;
 		z-index: 3;
 	}
-	/* .header-icons {
-		z-index: 2;
-	} */
+
 	.modal {
 		display: flex;
 		flex-direction: column;
@@ -71,4 +72,3 @@
 		}
 	}
 </style>
-

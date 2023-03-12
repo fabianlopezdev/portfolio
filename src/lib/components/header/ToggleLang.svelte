@@ -1,41 +1,34 @@
-<script>
+<script lang="ts">
 	import { enhance } from '$app/forms';
-	export let lang;
-	function toggleLang(event) {
-		if (lang === 'en') {
-			lang = 'es';
-		} else {
-			lang = 'en';
+	export let lang: string | undefined;
+	function toggleLang() {
+		lang = lang === 'en' ? 'es' : 'en';
+		const langForm = document.getElementById('lang-form') as HTMLFormElement;
+		if (langForm) {
+			langForm.submit();
 		}
-		document.getElementById('lang-form').submit();
 	}
 </script>
 
-<form  method="POST" action="/?/setLang" use:enhance>
+<form method="POST" action="/?/setLang" use:enhance>
 	<input type="hidden" name="lang" bind:value={lang} />
 	<button on:click={toggleLang}>
-		<div class='header-icons'>
+		<span class="header-icons">
 			{lang === 'en' ? 'ES' : 'EN'}
-		</div>
+		</span>
 	</button>
 </form>
 
 <style>
-  button {
+	button {
 		appearance: none;
 		border: none;
 		border-radius: none;
 		color: gray;
 		font-size: 0.9rem;
-		/* font-weight: 500; */
-		/* font-size: 0.8rem; */
-		/* padding: 0.5; */
-    /* padding:0; */
 		cursor: pointer;
 		background-color: inherit;
 		outline: none;
 		padding: 0;
 	}
-
-
 </style>

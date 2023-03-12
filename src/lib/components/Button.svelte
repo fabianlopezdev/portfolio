@@ -1,5 +1,4 @@
-<script>
-	// export let buttonIcon = null;
+<script lang="ts">
 	import EnvelopeIcon from 'svelte-icons/fa/FaRegEnvelope.svelte';
 	import FileDownloadIcon from 'svelte-icons/fa/FaFileDownload.svelte';
 
@@ -8,58 +7,57 @@
 </script>
 
 {#if icon === 'envelope'}
-	<a {href} on:click|preventDefault aria-label="Contact me">
+	<a {href} on:click|preventDefault aria-label="Contact">
 		<slot />
 		<div class="icons">
-			<EnvelopeIcon />
+			<EnvelopeIcon aria-hidden="true" />
 		</div>
 	</a>
 {:else}
-	<a {href} class='file' target={'_blank'} aria-label="Download resume">
+	<a {href} class="file" target={'_blank'} aria-label="Download resume">
 		<slot />
 		<div class="icons">
-			<FileDownloadIcon />
+			<FileDownloadIcon aria-hidden="true" />
 		</div>
 	</a>
 {/if}
 
 <style>
 	a {
+		display: flex;
+		justify-content: center;
 		color: var(--clr-font-contrast);
 		text-decoration: none;
-		background-color: var(--color);
-		padding: 1em;
-		border-radius: 1rem;
-		display: flex;
 		max-width: 215px;
-		width: 15em;
-		gap: 1em;
-		justify-content: center;
+		width: 15rem;
+		padding: 1rem;
+		border-radius: 1rem;
 		font-size: 15.8px;
 		font-weight: 700;
+		color: var(--clr-font-contrast);
+		background-color: var(--color);
+		gap: 1rem;
 	}
 
-	div {
-		color: var(--clr-font-contrast);
+	.icons {
+		color: inherit;
 	}
 
 	.file {
-		color: var(--clr-font-contrast-black-bg)
+		color: var(--clr-font-contrast-black-bg);
 	}
 
 	.file .icons {
-  color: inherit;
-}
+		color: inherit;
+	}
 
 	@media (max-width: 544px) {
 		a {
 			flex-direction: column;
 			align-items: center;
-			width: 5em;
-			height: 5em;
-			margin-top: 0em;
+			width: 5rem;
+			height: 5rem;
+			margin-top: 0;
 		}
-
-		
 	}
 </style>
