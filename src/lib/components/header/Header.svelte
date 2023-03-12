@@ -4,6 +4,8 @@
 
 	export let lang: string | undefined;
 	export let navLinks: Language['navLinks'];
+
+	$: console.log(navLinks)
 </script>
 
 <nav class="header-container">

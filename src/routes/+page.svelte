@@ -13,7 +13,7 @@
 	let navLinks: Language['navLinks']
 	let home: Language['home']
 	// Assign language based on lang and make it reactive
-	$: navLinks = lang === 'en' ? english.nav : spanish.nav;
+	$: navLinks = lang === 'en' ? english.navLinks : spanish.navLinks;
 	$: home = lang === 'en' ? english.home : spanish.home;
 
 	// Declare a variable to store the scroll position

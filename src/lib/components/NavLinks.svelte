@@ -9,7 +9,7 @@
 
 	let links: { href: string; name: string }[] = [];
 	$: if (navLinks) links = generateNavigationLinks(navLinks);
-
+	$: console.log('links',links)
 	const dispatch = createEventDispatcher();
 
 	function handleClick(link: string, event: MouseEvent) {
