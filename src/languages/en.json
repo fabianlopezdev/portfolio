@@ -1,11 +1,8 @@
 {
 	"home": {
-		"slogan1": "Transforming your web vision into a ",
-		"sloganSpan1": "stunning",
-		"slogan2": "and",
-		"sloganSpan2": "functional",
-		"slogan3": "reality",
-    "welcome": "Hello, I am Fabian!",
+		"slogan1": "Let's make your vision ",
+		"sloganSpan1": "your website",
+    "welcome": "Hello, I am Fabian and I develop webs.",
     "buttonContact": "Contact",
     "buttonResume": "Resume"
 	},

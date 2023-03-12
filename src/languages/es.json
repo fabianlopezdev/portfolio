@@ -1,11 +1,8 @@
 {
 	"home": {
-		"slogan1": "Transformo tu visión web en una",
-		"sloganSpan1": "fabulosa",
-		"slogan2": "y",
-		"sloganSpan2": "funcional",
-		"slogan3": "realidad",
-		"welcome": "Hola, soy Fabián!",
+		"slogan1": "Hagamos de tu visión ",
+		"sloganSpan1": "tu página web",
+		"welcome": "Hola, soy Fabián y desarrollo páginas web",
 		"buttonContact": "Contáctame",
 		"buttonResume": "CV"
 	},
