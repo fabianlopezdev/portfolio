@@ -1,7 +1,9 @@
 {
 	"home": {
-		"slogan1": "Hagamos de tu visión ",
-		"sloganSpan1": "tu página web",
+		"slogan1": "Hagamos de tu ",
+		"highlight1": "visión",
+		"slogan2": "tu página ",
+		"highlight2": "web",
 		"welcome": "Hola, soy Fabián y desarrollo páginas web",
 		"buttonContact": "Contáctame",
 		"buttonResume": "CV"

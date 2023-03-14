@@ -13,7 +13,11 @@
 	<h2>
 		{home.slogan1}
 		<span>
-			{home.sloganSpan1}
+			{home.highlight1}
+		</span>
+		{home.slogan2}
+		<span>
+			{home.highlight2}
 		</span>.
 		<!-- {home.slogan2} -->
 	</h2>
@@ -41,7 +45,7 @@
 		padding: 2.5rem 0;
 	}
 	h2 {
-		font-size: clamp(2.4rem, 6vw, 5rem);
+		font-size: clamp(2.9rem, 6vw, 5rem);
 		font-weight: 800;
 		width: 75%;
 		line-height: 1;
@@ -87,7 +91,7 @@
 		}
 
 		h1 {
-			margin: 1rem;
+			margin: 2rem;
 		}
 	}
 

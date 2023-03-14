@@ -1,10 +1,9 @@
 export interface Language {
 	home: {
 		slogan1: string;
-		sloganSpan1: string;
+		highlight1: string;
 		slogan2: string;
-		sloganSpan2: string;
-		slogan3: string;
+		highlight2: string;
 		welcome: string;
 		buttonContact: string;
 		buttonResume: string;

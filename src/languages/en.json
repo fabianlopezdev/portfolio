@@ -1,10 +1,12 @@
 {
 	"home": {
-		"slogan1": "Let's make your vision ",
-		"sloganSpan1": "your website",
-    "welcome": "Hello, I am Fabian and I develop webs.",
-    "buttonContact": "Contact",
-    "buttonResume": "Resume"
+		"slogan1": "Let's make your",
+		"highlight1": "vision ",
+		"slogan2": "your ",
+		"highlight2": "website",
+		"welcome": "Hello, I am Fabian and I develop webs.",
+		"buttonContact": "Contact",
+		"buttonResume": "Resume"
 	},
   "navLinks": {
 		"about": "About",
