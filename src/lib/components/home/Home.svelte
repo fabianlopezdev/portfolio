@@ -11,7 +11,7 @@
 <section id="home">
 	<div class='welcome-container'>
 	<h1>{home.welcome}</h1>
-		<SocialLinks />
+		
 	</div>
 	<h2>
 		{home.slogan1}
@@ -103,6 +103,9 @@
 		h1 {
 			margin: 0 2rem;
 		}
+		.buttons {
+			gap: 0.5rem;
+		}
 	}
 
 	@media (max-height: 463px) {
@@ -110,5 +113,6 @@
 			margin-top: 2rem;
 			height: 100%;
 		}
+
 	}
 </style>

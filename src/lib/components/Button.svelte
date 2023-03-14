@@ -53,11 +53,12 @@
 
 	@media (max-width: 544px) {
 		a {
-			flex-direction: column;
-			align-items: center;
-			width: 5rem;
-			height: 5rem;
-			margin-top: 0;
+			/* flex-direction: column;
+			align-items: center; */
+			width: 8rem;
+			/* height: 5rem; */
+			margin: 0;
+			/* gap: 0; */
 		}
 	}
 </style>
