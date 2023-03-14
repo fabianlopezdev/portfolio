@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button } from '$components';
+	import { Button, SocialLinks } from '$components';
 	import scrollTo from '../../../utils/functions';
 	import type { Language } from '../../../types';
 
@@ -9,7 +9,10 @@
 </script>
 
 <section>
+	<div class='welcome-container'>
 	<h1>{home.welcome}</h1>
+		<SocialLinks />
+	</div>
 	<h2>
 		{home.slogan1}
 		<span>
@@ -33,6 +36,13 @@
 </section>
 
 <style>
+	.welcome-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap:1rem;
+		/* color: var(--clr-accent) */
+	}
 	section {
 		/* height: calc(100svh - var(--size-header)); */
 		/* display: flex;

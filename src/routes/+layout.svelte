@@ -66,6 +66,8 @@
 		height: 1.5rem;
 	}
 
+	
+
 	:global(.dark) {
 		--clr-bg: black;
 		--clr-font: white;
