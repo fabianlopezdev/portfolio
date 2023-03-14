@@ -91,7 +91,7 @@
 		}
 
 		h1 {
-			margin: 2rem;
+			margin: 0 2rem;
 		}
 	}
 
