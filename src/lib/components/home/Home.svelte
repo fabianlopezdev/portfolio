@@ -8,7 +8,7 @@
 	let envResumeLink = import.meta.env.VITE_RESUME_LINK;
 </script>
 
-<section>
+<section id="home">
 	<div class='welcome-container'>
 	<h1>{home.welcome}</h1>
 		<SocialLinks />

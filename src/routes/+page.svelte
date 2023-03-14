@@ -31,7 +31,6 @@
 </script>
 
 <svelte:window on:scroll={handleScroll} />
-
 <header class:header-bottom-shadow={bottomShadow}>
 	<Header {lang} {navLinks} />
 </header>

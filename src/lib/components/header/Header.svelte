@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { ToggleLang, ToggleTheme, ModalMenu, NavLinks } from '$components';
 	import type { Language } from '../../../types';
-
+	import scrollTo from '../../../utils/functions';
 	export let lang: string | undefined;
 	export let navLinks: Language['navLinks'];
-
-	$: console.log(navLinks)
 </script>
 
 <nav class="header-container">
-	<h1 class="h1-font">Fabian Lopez</h1>
+	<h1>
+		<a href="#home" class="h1-font" on:click|preventDefault={(e) => scrollTo(e)}>Fabian Lopez </a>
+	</h1>
 	<ul class="toggles-container">
 		<li>
 			<ToggleTheme />

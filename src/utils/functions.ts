@@ -1,4 +1,5 @@
 export default function scrollTo(event: MouseEvent) {
+	console.log('event', event)
 	const target = event.target as HTMLAnchorElement;
 	// Retrieve the `href` attribute of the target.
 	const selector = target.getAttribute('href');
