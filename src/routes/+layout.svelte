@@ -54,14 +54,30 @@
 		color: black;
 		transition: color 0.3s ease, background-color 0.3s ease;
 	}
-	:global(.icons) {
-		background: none;
-		color: var(--clr-toggle);
-		border: none;
-		padding: 0;
-		font: inherit;
+	:global(.button) {
+		display: flex;
+		justify-content: center;
+		color: var(--clr-font-contrast);
+		text-decoration: none;
+		max-width: 215px;
+		width: 15rem;
+		padding: 1rem;
+		border-radius: 1rem;
+		font-size: 15.8px;
+		font-weight: 700;
+		color: var(--clr-font-contrast);
+		background-color: var(--color);
+		gap: 1rem;
 		cursor: pointer;
-		outline: inherit;
+	}
+	:global(.icons) {
+		/* background: none; */
+		color: var(--clr-toggle);
+		/* border: none; */
+		padding: 0;
+		/* font: inherit; */
+		cursor: pointer;
+		/* outline: inherit; */
 		width: 1.5rem;
 		height: 1.5rem;
 	}

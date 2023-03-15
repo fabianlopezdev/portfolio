@@ -2,12 +2,15 @@
 	export let href = '';
 	export let contactInfo = '';
 	export let cardTitle = '';
+
 </script>
 
+
 <div class="contact-card">
-	<div class="icons">
-   <slot/>
+<div class='icons'>
+	<slot/>
 </div>
+
 	<div>
 		{cardTitle}
 		<br />
