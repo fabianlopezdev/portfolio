@@ -71,6 +71,7 @@
 		/* height: fit-content; */
 		/* margin: 0 1rem 0 0.5rem; */
 	}
+
 input, textarea {
         box-sizing: border-box; /* Add box-sizing property */
         width: 100%;
@@ -78,11 +79,14 @@ input, textarea {
         border-width: 0.3rem;
         border-color: var(--clr-secondary);
         font-size: 1.15rem;
-        padding: 0rem 1rem;
+        padding-left: 1rem;
+				padding-right: 1rem;
     }
 
     input {
         height: 2rem;
+				padding-top: 1rem;
+				padding-bottom: 1rem;
     }
     
     textarea {
