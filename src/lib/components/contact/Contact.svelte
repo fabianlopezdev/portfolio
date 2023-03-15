@@ -3,6 +3,7 @@
 	import EnvelopeIcon from 'svelte-icons/fa/FaRegEnvelope.svelte';
 	//  cont iconImg = <EnvelopeIcon/>
 	import GoCalendar from 'svelte-icons/go/GoCalendar.svelte';
+	import Icon from '@iconify/svelte';
 	import { HtmlTag } from 'svelte/internal';
 </script>
 
@@ -47,6 +48,13 @@
 				contactInfo={'/fabian-lopez-gonzalez'}
 			>
 				<GoCalendar />
+			</ContactCard>	
+			<ContactCard
+				href={'https://wa.me/34664359284'}
+				cardTitle={'Whatsapp me!'}
+				contactInfo={'/Fabi'}
+			>
+				<Icon icon="ic:baseline-whatsapp" />
 			</ContactCard>
 		</div>
 	</div>

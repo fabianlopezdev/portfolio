@@ -14,7 +14,7 @@
 	<div>
 		{cardTitle}
 		<br />
-		<a {href} class="email">{contactInfo} </a>
+		<a {href} target='_blank'class="email">{contactInfo} </a>
 	</div>
 </div>
 
