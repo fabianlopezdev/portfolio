@@ -38,10 +38,10 @@
 	}
 
 	@media (max-width: 544px) {
-		a {
+		.button {
 			/* flex-direction: column;
 			align-items: center; */
-			width: 10rem;
+			width: 8.5rem;
 			/* height: 5rem; */
 			margin: 0;
 			/* gap: 0; */

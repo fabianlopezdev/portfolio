@@ -64,9 +64,10 @@
 		flex-direction: column;
 		/* align-items: center; */
 		gap: 0.5rem;
-		border: 0.5rem solid var(--clr-secondary);
+		border: 0.3rem solid var(--clr-secondary);
 		border-radius: 1rem;
 		padding: 1rem;
+		margin: 0 1rem;
 		/* height: fit-content; */
 		/* margin: 0 1rem 0 0.5rem; */
 	}
