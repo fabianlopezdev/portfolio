@@ -8,14 +8,18 @@
 
 {#if icon === 'envelope'}
 	<a {href} on:click|preventDefault aria-label="Contact">
-		<slot />
+		<div class='icons slot-text'>
+			<slot />
+		</div>
 		<div class="icons">
 			<EnvelopeIcon aria-hidden="true" />
 		</div>
 	</a>
 {:else}
 	<a {href} class="file" target={'_blank'} aria-label="Download resume">
-		<slot />
+			<div class='icons slot-text'>
+			<slot />
+		</div>
 		<div class="icons">
 			<FileDownloadIcon aria-hidden="true" />
 		</div>
@@ -23,9 +27,13 @@
 {/if}
 
 <style>
+	.slot-text {
+		width: fit-content;
+	}
 	a {
 		display: flex;
 		justify-content: center;
+		align-items: center;
 		color: var(--clr-font-contrast);
 		text-decoration: none;
 		max-width: 215px;
@@ -41,6 +49,8 @@
 
 	.icons {
 		color: inherit;
+		align-self: center;
+		justify-self: center;
 	}
 
 	.file {
