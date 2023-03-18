@@ -24,7 +24,7 @@
 		align-items: center;
     /* justify-content: start; */
 		gap: 1rem;
-    width: 18rem;
+    width: 17rem;
 	}
 
 	.email {
@@ -35,5 +35,7 @@
   	.icons {
 		width: 3rem;
 		height: 3rem;
+		display: flex;
+		justify-content: center;
 	}
 </style>
