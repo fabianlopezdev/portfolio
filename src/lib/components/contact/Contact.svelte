@@ -3,6 +3,10 @@
 	import EnvelopeIcon from 'svelte-icons/fa/FaRegEnvelope.svelte';
 	//  cont iconImg = <EnvelopeIcon/>
 	import GoCalendar from 'svelte-icons/go/GoCalendar.svelte';
+	import IoMdSend from 'svelte-icons/io/IoMdSend.svelte';
+	import FaWhatsapp from 'svelte-icons/fa/FaWhatsapp.svelte'
+	import LinkedInIcon from 'svelte-icons/fa/FaLinkedinIn.svelte';
+  import GitHubIcon from 'svelte-icons/fa/FaGithub.svelte';
 	import Icon from '@iconify/svelte';
 	import { HtmlTag } from 'svelte/internal';
 </script>
@@ -28,7 +32,7 @@
 			<textarea id="message" placeholder="How can I help you?" />
 
 			<button class='button'> Submit <div class='icons'>
-
+				<IoMdSend/>
 			</div></button>
 			
 
@@ -43,7 +47,7 @@
 				<EnvelopeIcon />
 			</ContactCard>
 			<ContactCard
-				href={'fabianlopez@pm.me'}
+				href={'https://calendly.com/fabian-lopez-gonzalez'}
 				cardTitle={'Schedule a call with Calendy'}
 				contactInfo={'/fabian-lopez-gonzalez'}
 			>
@@ -54,7 +58,21 @@
 				cardTitle={'Whatsapp me!'}
 				contactInfo={'/Fabi'}
 			>
-				<Icon icon="ic:baseline-whatsapp" />
+				<FaWhatsapp />
+			</ContactCard>
+			<ContactCard
+				href={'https://www.linkedin.com/in/fabian-lopez-gonzalez/'}
+				cardTitle={'Check my LinkedIn'}
+				contactInfo={'/fabian-lopez-gonzalez'}
+			>
+				<LinkedInIcon />
+			</ContactCard>
+			<ContactCard
+				href={'https://github.com/Fabs-and'}
+				cardTitle={'Check my GitHub'}
+				contactInfo={'/Fabs-and'}
+			>
+				<GitHubIcon />
 			</ContactCard>
 		</div>
 	</div>
@@ -131,6 +149,9 @@ input, textarea {
 		align-items: center;
 	}
 	
+	.icons {
+		color: white;
+	}
 	.contact-card-container {
 		margin-top: 3rem;
 		display: flex;
