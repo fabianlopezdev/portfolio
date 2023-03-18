@@ -1,3 +1,4 @@
+<!-- Parent Grid Code -->
 <script>
   import { ContactCard } from '$components';
   import EnvelopeIcon from 'svelte-icons/fa/FaRegEnvelope.svelte';
@@ -8,50 +9,37 @@
   import FaRegCalendarCheck from 'svelte-icons/fa/FaRegCalendarCheck.svelte';
 </script>
 
-<div class="outer-container">
-  <div class="contact-card-container">
-    <ContactCard
-      href={'fabianlopez@pm.me'}
-      cardTitle={'Send me an email:'}
-      contactInfo={'fabianlopez@pm.me'}
-    >
-      <EnvelopeIcon />
-    </ContactCard>
-    <ContactCard
-      href={'https://calendly.com/fabian-lopez-gonzalez'}
-      cardTitle={'Schedule a call with Calendy'}
-      contactInfo={'/fabian-lopez-gonzalez'}
-    >
-      <FaRegCalendarCheck />
-    </ContactCard>
-		<div class='whatsapp'>
-
-			<ContactCard href={'https://wa.me/34664359284'} cardTitle={'Whatsapp me!'} contactInfo={'/Fabi'}>
-				<FaWhatsapp />
-			</ContactCard>
-		</div>
-		</div>
+<div class="contact-card-container">
+  <ContactCard
+    href={'fabianlopez@pm.me'}
+    cardTitle={'Send me an email:'}
+    contactInfo={'fabianlopez@pm.me'}
+  >
+    <EnvelopeIcon />
+  </ContactCard>
+  <ContactCard
+    href={'https://wa.me/34664359284'}
+    cardTitle={'Whatsapp me!'}
+    contactInfo={'/Fabi'}
+    centered={true}
+  >
+    <FaWhatsapp />
+  </ContactCard>
+  <ContactCard
+    href={'https://calendly.com/fabian-lopez-gonzalez'}
+    cardTitle={'Schedule a call with Calendy'}
+    contactInfo={'/fabian-lopez-gonzalez'}
+  >
+    <FaRegCalendarCheck />
+  </ContactCard>
 </div>
 
 <style>
-  .outer-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-
   .contact-card-container {
-    display: flex;
-    flex-wrap: wrap;
-		justify-content: center;
-    align-content: flex-start;
+    display: grid;
+    max-width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
     gap: 1rem;
-    padding: 0.5rem;
-    width: auto;
+    padding: 2rem;
   }
-@media (max-width: 886px) {
-  .contact-card-container {
-    justify-content: space-evenly;
-  }
-}
 </style>
