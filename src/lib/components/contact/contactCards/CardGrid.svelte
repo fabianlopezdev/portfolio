@@ -1,5 +1,5 @@
 <!-- Parent Grid Code -->
-<script>
+<script lang='ts'>
   import { ContactCard } from '$components';
   import EnvelopeIcon from 'svelte-icons/fa/FaRegEnvelope.svelte';
   import GoCalendar from 'svelte-icons/go/GoCalendar.svelte';
@@ -7,27 +7,31 @@
   import LinkedInIcon from 'svelte-icons/fa/FaLinkedinIn.svelte';
   import GitHubIcon from 'svelte-icons/fa/FaGithub.svelte';
   import FaRegCalendarCheck from 'svelte-icons/fa/FaRegCalendarCheck.svelte';
+	import Home from '$components/home/Home.svelte';
+	import type { Language } from '../../../../types';
+
+	export let cardGrid: Language['contact']['cardGrid'];
 </script>
 
 <div class="contact-card-container">
   <ContactCard
-    href={'fabianlopez@pm.me'}
-    cardTitle={'Send me an email:'}
-    contactInfo={'fabianlopez@pm.me'}
+    href={cardGrid.emailCard.href}
+    cardTitle={cardGrid.emailCard.title}
+    contactInfo={cardGrid.emailCard.info}
   >
     <EnvelopeIcon />
   </ContactCard>
   <ContactCard
-    href={'https://wa.me/34664359284'}
-    cardTitle={'Whatsapp me!'}
-    contactInfo={'/Fabi'}
+   href={cardGrid.whatsappCard.href}
+    cardTitle={cardGrid.whatsappCard.title}
+    contactInfo={cardGrid.whatsappCard.info}
   >
     <FaWhatsapp />
   </ContactCard>
   <ContactCard
-    href={'https://calendly.com/fabian-lopez-gonzalez'}
-    cardTitle={'Schedule a call with Calendy'}
-    contactInfo={'/fabian-lopez-gonzalez'}
+    href={cardGrid.calendlyCard.href}
+    cardTitle={cardGrid.calendlyCard.title}
+    contactInfo={cardGrid.calendlyCard.info}
   >
     <FaRegCalendarCheck />
   </ContactCard>

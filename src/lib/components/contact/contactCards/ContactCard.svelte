@@ -33,27 +33,15 @@
 	border: 0.1rem solid var(--clr-secondary);
 	padding: 1rem 1.5rem;
 		background: white;
-	position: relative
+	/* position: relative */
 	}
+.contact-card:hover {
+	 box-shadow: 0 0 20px rgba(30, 144, 255, 0.2),
+              0 0 20px rgba(30, 144, 255, 0.2),
+              0 0 20px rgba(30, 144, 255, 0.2),
+              0 0 20px rgba(30, 144, 255, 0.2);
+}
 
-	.contact-card::before,
-	.contact-card::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-		z-index: -1;
-		background: var(--clr-accent);
-		border-radius: inherit;
-	}
-	
-	
-	
-	.contact-card:hover::after{
-		animation: rotation 20s linear infinite;
-		filter: blur(0.5rem);
-		border-radius: inherit;
-	}
-	
 	.email {
 		font-size: 1.15rem;
 		font-weight: 700;

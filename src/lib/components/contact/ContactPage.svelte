@@ -1,13 +1,16 @@
-<script>
+<script lang='ts'>
 	import CardGrid from './contactCards/CardGrid.svelte';
 	import ContactForm from './ContactForm.svelte';
+	import type { Language } from '../../../types';
+
+	export let contact: Language['contact'];
 </script>
 
 <section id="contact">
 	<h1>Let me know about your project.</h1>
 	<div class='contact-container'>
 
-		<CardGrid />
+		<CardGrid cardGrid={contact.cardGrid}/>
 		<ContactForm />
 	</div>
 </section>

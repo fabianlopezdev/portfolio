@@ -63,7 +63,15 @@
 		padding-left: 1rem;
 		padding-right: 1rem;
 	}
+	
+	.button {
+		align-items: center;
+		padding: 0.5rem; 
+		border-radius: 0.5rem;
+		width: 20rem;
+		max-width: 100%;
 
+	}
 	input {
 		height: 2rem;
 		padding-top: 1rem;
@@ -73,7 +81,7 @@
 	textarea {
 		resize: none;
 		height: 7rem;
-		margin-bottom: 1.5rem;
+		/* margin-bottom: 1.5rem; */
 	}
 
 	form::before {
@@ -87,21 +95,12 @@
 	}
 
 	button {
-		position: absolute;
-		bottom: 0;
-		left: 50%;
-		transform: translate(-50%, 55%);
-		/* margin-top: 21rem; */
-		/* margin-top: 0.5rem; */
-		/* left: 6.5rem; */
 		border: none;
 		color: var(--clr-font-contrast);
 		background-color: var(--clr-accent);
+		margin-top: 0.5rem;
 	}
 
-	.button {
-		align-items: center;
-	}
 
 	.icons {
 		color: white;

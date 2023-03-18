@@ -8,6 +8,25 @@ export interface Language {
 		buttonContact: string;
 		buttonResume: string;
 	};
+	contact: {
+		cardGrid: {
+			emailCard: {
+				href: string;
+				title: string;
+				info: string;
+			};
+			whatsappCard: {
+				href: string;
+				title: string;
+				info: string;
+			};
+			calendlyCard: {
+				href: string;
+				title: string;
+				info: string;
+			};
+		};
+	};
 	navLinks: {
 		about: string;
 		projects: string;

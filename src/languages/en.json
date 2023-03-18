@@ -1,6 +1,6 @@
 {
 	"home": {
-		"slogan1": "Let's make your",
+		"slogan1": "Let's make your ",
 		"highlight1": "vision ",
 		"slogan2": "your ",
 		"highlight2": "website",
@@ -8,7 +8,16 @@
 		"buttonContact": "Contact",
 		"buttonResume": "Resume"
 	},
-  "navLinks": {
+	"contact": {
+
+		"cardGrid": {
+			"emailCard": { "href": "fabianlopez@pm.me", "title": "Send me an email:", "info": "fabianlopez@pm.me" },
+			"whatsappCard": { "href": "https://wa.me/34664359284", "title": "Whatsapp me:", "info": "/Fabi" },
+			"calendlyCard": { "href": "https://calendly.com/fabian-lopez-gonzalez", "title": "Schedule a call with Calendy:", "info": "/fabian-lopez-gonzalez" }
+		},
+		"contactForm": {}
+	},
+	"navLinks": {
 		"about": "About",
 		"projects": "Projects",
 		"contact": "Contact",

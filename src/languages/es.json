@@ -8,6 +8,26 @@
 		"buttonContact": "Contáctame",
 		"buttonResume": "CV"
 	},
+	"contact": {
+		"cardGrid": {
+			"emailCard": {
+				"href": "fabianlopez@pm.me",
+				"title": "Mándame un email:",
+				"info": "fabianlopez@pm.me"
+			},
+			"whatsappCard": {
+				"href": "https://wa.me/34664359284",
+				"title": "Envíame un WhatsApp:",
+				"info": "/Fabi"
+			},
+			"calendlyCard": {
+				"href": "https://calendly.com/fabian-lopez-gonzalez",
+				"title": "Reserva una llamada:",
+				"info": "/fabian-lopez-gonzalez"
+			}
+		},
+		"contactForm": {}
+	},
 	"navLinks": {
 		"about": "Perfil",
 		"projects": "Proyectos",
