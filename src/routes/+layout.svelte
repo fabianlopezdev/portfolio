@@ -14,6 +14,9 @@
 		--size-header: 3rem;
 	}
 
+	:global(html) {
+		scroll-padding-top:3.7rem;
+	}
 	:global(body) {
 		background-color: var(--clr-bg);
 		font-family: system-ui;

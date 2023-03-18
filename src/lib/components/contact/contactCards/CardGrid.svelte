@@ -49,7 +49,9 @@
     padding: 0.5rem;
     width: auto;
   }
-	.whatsapp{
-		align-self: start;
-	}
+@media (max-width: 886px) {
+  .contact-card-container {
+    justify-content: space-evenly;
+  }
+}
 </style>
