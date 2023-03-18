@@ -31,7 +31,7 @@
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 	border-radius: 1rem;
 	border: 0.1rem solid var(--clr-secondary);
-	padding: 1rem;
+	padding: 1rem 1.5rem;
 		background: white;
 	position: relative
 	}
@@ -50,8 +50,8 @@
 	
 	.contact-card:hover::after{
 		animation: rotation 20s linear infinite;
-		filter: blur(0.5rem)
-
+		filter: blur(0.5rem);
+		border-radius: inherit;
 	}
 	
 	.email {
@@ -66,14 +66,5 @@
 		justify-content: center;
 	}
 
-@property --gradient-angle {
-	syntax: "<angle>";
-	initial-value: 0deg;
-	inherits: false;
-}
 
-@keyframes rotation {
-	0% { --gradient-angle: 0deg;}
-	100% { --gradient-angle: 360deg;}
-}
 </style>

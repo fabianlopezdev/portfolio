@@ -42,4 +42,12 @@
 	h1 {
 		margin: 0;
 	}
+
+	@media (max-width: 749px) {
+		section {
+			margin: 4rem 2rem;
+		/* padding: 0 2rem; */
+		/* max-height: fit-content; */
+	}
+	}
 </style>

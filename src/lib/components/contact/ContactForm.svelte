@@ -44,7 +44,7 @@
 		border-radius: 1rem;
 		padding: 1rem;
 		width: 18rem; 
-		margin-bottom: 4rem;
+		
 
 		/* max-width: 866px; */
 
