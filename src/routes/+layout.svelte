@@ -26,7 +26,7 @@
 
 	:global(section) {
 		box-sizing: border-box;
-		height: calc(100svh - 3.7rem);
+		min-height: calc(100svh - 3.7rem);
 		display: flex;
 		flex-direction: column;
 	}

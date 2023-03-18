@@ -3,8 +3,8 @@
 </script>
 
 <div class="form-container">
-			<p>Send me a message:</p>
-			<form>
+	<form>
+				<p>Send me a message:</p>
 				<label for="name" />
 				<input id="name" type="text" placeholder="Name" />
 
@@ -26,6 +26,9 @@
 		</div>
 
     <style>
+			p {
+				margin: 0 auto;
+			}
       	.form-container{
 		display: flex;
 		flex-direction: column;
@@ -41,6 +44,7 @@
 		border-radius: 1rem;
 		padding: 1rem;
 		width: 18rem; 
+		margin-bottom: 4rem;
 
 		/* max-width: 866px; */
 

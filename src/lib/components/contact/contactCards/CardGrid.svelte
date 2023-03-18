@@ -21,7 +21,6 @@
     href={'https://wa.me/34664359284'}
     cardTitle={'Whatsapp me!'}
     contactInfo={'/Fabi'}
-    centered={true}
   >
     <FaWhatsapp />
   </ContactCard>
@@ -36,10 +35,8 @@
 
 <style>
   .contact-card-container {
-    display: grid;
-    max-width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
-    gap: 1rem;
-    padding: 2rem;
+  display: flex;
+	flex-direction: column;
+	gap: 2rem;
   }
 </style>
