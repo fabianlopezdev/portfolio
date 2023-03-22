@@ -9,6 +9,8 @@
 		"buttonResume": "CV"
 	},
 	"contact": {
+		"h1": "¿Tienes una idea? Cuéntamela.",
+
 		"cardGrid": {
 			"emailCard": {
 				"href": "fabianlopez@pm.me",
@@ -26,7 +28,14 @@
 				"info": "/fabian-lopez-gonzalez"
 			}
 		},
-		"contactForm": {}
+		"contactForm": {
+			"p": "Envíame un mensaje:",
+			"name": "Nombre",
+			"email": "Email",
+			"subject": "Asunto",
+			"message": "En que puedo ayudarte?",
+			"button": "Enviar"
+		}
 	},
 	"navLinks": {
 		"about": "Perfil",

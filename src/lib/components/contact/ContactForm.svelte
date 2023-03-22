@@ -1,24 +1,27 @@
-<script>
+<script lang='ts'>
   	import IoMdSend from 'svelte-icons/io/IoMdSend.svelte';
+	import type { Language } from '../../../types';
+
+		export let form: Language['contact']['form']
 </script>
 
 <div class="form-container">
 	<form>
-				<p>Send me a message:</p>
+				<p>{form.p}</p>
 				<label for="name" />
-				<input id="name" type="text" placeholder="Name" />
+				<input id="name" type="text" placeholder={form.name} />
 
 				<label for="email" />
-				<input id="email" type="text" placeholder="Email" />
+				<input id="email" type="text" placeholder={form.email} />
 
 				<label for="subject" />
-				<input id="email" type="text" placeholder="Subject" />
+				<input id="subject" type="text" placeholder={form.subject} />
 
 				<label for="message" />
-				<textarea id="message" placeholder="How can I help you?" />
+				<textarea id="message" placeholder={form.message} />
 
 				<button class="button">
-					Submit <div class="icons">
+					{form.button}<div class="icons">
 						<IoMdSend />
 					</div></button
 				>

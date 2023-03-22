@@ -26,7 +26,15 @@ export interface Language {
 				info: string;
 			};
 		};
+		form: {
+			name: string;
+			email: string;
+			subject: string;
+			message: string;
+			button: string;
+		};
 	};
+
 	navLinks: {
 		about: string;
 		projects: string;

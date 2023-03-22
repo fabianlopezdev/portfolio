@@ -9,13 +9,20 @@
 		"buttonResume": "Resume"
 	},
 	"contact": {
-
+		"h1": "Let me know about your project.",
 		"cardGrid": {
 			"emailCard": { "href": "fabianlopez@pm.me", "title": "Send me an email:", "info": "fabianlopez@pm.me" },
 			"whatsappCard": { "href": "https://wa.me/34664359284", "title": "Whatsapp me:", "info": "/Fabi" },
 			"calendlyCard": { "href": "https://calendly.com/fabian-lopez-gonzalez", "title": "Schedule a call with Calendy:", "info": "/fabian-lopez-gonzalez" }
 		},
-		"contactForm": {}
+		"contactForm": {
+			"p": "Send me a message:",
+			"name": "Name",
+			"email": "Email",
+			"subject": "Subject",
+			"message": "How can I help you?",
+			"button": "Submit"
+		}
 	},
 	"navLinks": {
 		"about": "About",

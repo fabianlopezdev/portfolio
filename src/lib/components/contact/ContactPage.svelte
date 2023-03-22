@@ -4,14 +4,16 @@
 	import type { Language } from '../../../types';
 
 	export let contact: Language['contact'];
+
+
 </script>
 
 <section id="contact">
-	<h1>Let me know about your project.</h1>
+	<h1>{contact.h1}</h1>
 	<div class='contact-container'>
 
 		<CardGrid cardGrid={contact.cardGrid}/>
-		<ContactForm />
+		<ContactForm form={contact.contactForm} />
 	</div>
 </section>
 
