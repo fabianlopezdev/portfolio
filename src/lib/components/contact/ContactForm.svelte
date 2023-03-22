@@ -3,24 +3,26 @@
 	import type { Language } from '../../../types';
 
 		export let form: Language['contact']['form']
+
+		const handleSubmit = (event) => {
+	
+		}
 </script>
 
 <div class="form-container">
-	<form>
+	<form method='POST' action='/?/sendEmail' >
 				<p>{form.p}</p>
-				<label for="name" />
-				<input id="name" type="text" placeholder={form.name} />
+				<label>
+					<input name="name" type="text" placeholder={form.name} required>
+				</label>
+				<label>
+					<input name="email" type="email" placeholder={form.email}>
+				</label>
+				<label>
+					<textarea name="message" placeholder={form.message} required/>
+				</label>
 
-				<label for="email" />
-				<input id="email" type="text" placeholder={form.email} />
-
-				<label for="subject" />
-				<input id="subject" type="text" placeholder={form.subject} />
-
-				<label for="message" />
-				<textarea id="message" placeholder={form.message} />
-
-				<button class="button">
+				<button class="button" type='submit'>
 					{form.button}<div class="icons">
 						<IoMdSend />
 					</div></button
@@ -28,7 +30,7 @@
 			</form>
 		</div>
 
-    <style>
+  <style>
 			p {
 				margin: 0 auto;
 			}
@@ -108,4 +110,5 @@
 	.icons {
 		color: white;
 	}
-    </style>
+
+</style>

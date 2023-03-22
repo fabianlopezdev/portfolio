@@ -31,7 +31,7 @@
 		"contactForm": {
 			"p": "Envíame un mensaje:",
 			"name": "Nombre",
-			"email": "Email",
+			"email": "Tu correo electrónico",
 			"subject": "Asunto",
 			"message": "En que puedo ayudarte?",
 			"button": "Enviar"

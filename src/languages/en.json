@@ -18,7 +18,7 @@
 		"contactForm": {
 			"p": "Send me a message:",
 			"name": "Name",
-			"email": "Email",
+			"email": "Your email",
 			"subject": "Subject",
 			"message": "How can I help you?",
 			"button": "Submit"
