@@ -1,5 +1,5 @@
-import {post} from '../nodemailer';
-
+import { post } from '../services/nodemailer';
+import type { PostRequest } from '../../../../../Development/svelte/portfolio/src/types';
 export const actions = {
 	setLang: async ({ cookies, request }) => {
 		const formData = await request.formData();
@@ -9,15 +9,23 @@ export const actions = {
 			success: true
 		};
 	},
-	sendEmail: async ({request}) => {
-			const formData = await request.formData();
-			const name = formData.get('name');			
-			const email = formData.get('email');
-			const message = formData.get('message');
-			console.log(name, email, message);
-			await post(request)
+	sendEmail: async ({ request }) => {
+		const formData = await request.formData();
+		const name = formData.get('name');
+		const email = formData.get('email');
+		const message = formData.get('message');
+		console.log(name, email, message);
+
+		const postRequest: PostRequest = {
+			body: {
+				name: name as string,
+				email: email as string,
+				message: message as string
+			}
+		};
+		await post(postRequest);
 		// console.log('event', name, email, message)
-	},
+	}
 };
 
 //Read cookie to pass value to the page

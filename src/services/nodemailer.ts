@@ -1,29 +1,29 @@
 import nodemailer from 'nodemailer';
+import type { PostRequest } from '../types';
 const envNodemailerPass = import.meta.env.VITE_NODEMAILER_PASS;
 
-export async function post(request) {
-	
+export async function post(request: PostRequest) {
 	const { name, email, message } = request.body;
-	
+
 	// Validate form input
 	if (!name || !email || !message) {
 		return { status: 400, body: { error: 'All fields are required.' } };
 	}
 	console.log('name:', name);
-	
+
 	// Set up Nodemailer transporter
 	const transporter = nodemailer.createTransport({
 		service: 'gmail',
 		auth: {
 			user: 'fabianin86@gmail.com',
-			pass: envNodemailerPass,
+			pass: envNodemailerPass
 		}
 	});
 
 	// Set up email options
 	const mailOptions = {
 		from: email,
-		to: 'fabianlopez@pm.me',
+		to: 'fabianin86@gmail.com',
 		subject: 'New contact form submission',
 		text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
 	};

@@ -1,3 +1,13 @@
+type PostRequestBody = {
+	name: string;
+	email: string;
+	message: string;
+};
+
+export type PostRequest = {
+	body: PostRequestBody;
+};
+
 export interface Language {
 	home: {
 		slogan1: string;
