@@ -1,26 +1,29 @@
 import nodemailer from 'nodemailer';
+const envNodemailerPass = import.meta.env.VITE_NODEMAILER_PASS;
 
-export default async function post(name, email, message) {
-	console.log('heerrreeee');
-
+export async function post(request) {
+	
+	const { name, email, message } = request.body;
+	
 	// Validate form input
 	if (!name || !email || !message) {
-		return res.status(400).json({ error: 'All fields are required.' });
+		return { status: 400, body: { error: 'All fields are required.' } };
 	}
-
+	console.log('name:', name);
+	
 	// Set up Nodemailer transporter
 	const transporter = nodemailer.createTransport({
 		service: 'gmail',
 		auth: {
 			user: 'fabianin86@gmail.com',
-			pass: 'here is my password'
+			pass: envNodemailerPass,
 		}
 	});
 
 	// Set up email options
 	const mailOptions = {
 		from: email,
-		to: 'fabianin86@gmail.com',
+		to: 'fabianlopez@pm.me',
 		subject: 'New contact form submission',
 		text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
 	};
@@ -28,9 +31,9 @@ export default async function post(name, email, message) {
 	// Send the email
 	try {
 		await transporter.sendMail(mailOptions);
-		res.status(200).json({ message: 'Email sent successfully.' });
+		return { status: 200, body: { message: 'Email sent successfully.' } };
 	} catch (error) {
 		console.error('Error sending email:', error);
-		res.status(500).json({ error: 'Failed to send email.' });
+		return { status: 500, body: { error: 'Failed to send email.' } };
 	}
 }
