@@ -14,6 +14,14 @@
 		--size-header: 3rem;
 	}
 
+		:global(.dark) {
+		--clr-bg: #000020;
+		--clr-font: #D0DFF0;
+		--clr-font-contrast-black-bg: var(--clr-accent);
+		--clr-shadow: #cccccc;
+		--clr-accent: #007BFF;
+	}
+
 	:global(html) {
 		scroll-padding-top:3.7rem;
 	}
@@ -87,10 +95,5 @@
 
 	
 
-	:global(.dark) {
-		--clr-bg: black;
-		--clr-font: white;
-		--clr-font-contrast-black-bg: var(--clr-accent);
-		--clr-shadow: #cccccc;
-	}
+
 </style>

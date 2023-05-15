@@ -1,27 +1,27 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
 	import IoMdSend from 'svelte-icons/io/IoMdSend.svelte';
 	import type { Language } from '../../../types';
 
-	export let form: Language['contact']['form'];
+	export let formLang: Language['contact']['form'];
 
-	const handleSubmit = (event) => {};
 </script>
 
 <div class="form-container">
-	<form method="POST" action="/?/sendEmail">
-		<p>{form.p}</p>
+	<form method="POST" action="/?/sendEmail" use:enhance>
+		<p>{formLang.p}</p>
 		<label>
-			<input name="name" type="text" placeholder={form.name} required />
+			<input name="name" type="text" placeholder={formLang.name} required />
 		</label>
 		<label>
-			<input name="email" type="email" placeholder={form.email} />
+			<input name="email" type="email" placeholder={formLang.email} />
 		</label>
 		<label>
-			<textarea name="message" placeholder={form.message} required />
+			<textarea name="message" placeholder={formLang.message} required />
 		</label>
 
 		<button class="button" type="submit">
-			{form.button}
+			{formLang.button}
 			<div class="icons">
 				<IoMdSend />
 			</div></button

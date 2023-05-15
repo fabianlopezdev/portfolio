@@ -20,6 +20,9 @@
 </a>
 
 <style>
+	a {
+		color: black;
+	}
 	.contact-card {
 		display: flex;
 		align-items: center;

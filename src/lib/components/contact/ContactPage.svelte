@@ -13,7 +13,7 @@
 	<div class='contact-container'>
 
 		<CardGrid cardGrid={contact.cardGrid}/>
-		<ContactForm form={contact.contactForm} />
+		<ContactForm formLang={contact.contactForm} />
 	</div>
 </section>
 
@@ -43,9 +43,6 @@
 		flex-wrap: wrap;
 		padding: 0 2rem;
 		/* max-height: fit-content; */
-	}
-	h1 {
-		margin: 0;
 	}
 
 	@media (max-width: 749px) {
