@@ -20,7 +20,7 @@
 		--clr-bg-items: #D0DFF0;
 		--clr-font: #D0DFF0;
 		--clr-font-contrast-black-bg: var(--clr-accent);
-		--clr-shadow: #cccccc;
+		--clr-shadow: #202040;
 		--clr-accent: #007BFF;
 	}
 
