@@ -30,12 +30,11 @@
     /* justify-content: start; */
 		gap: 1rem;
     width: 17.5rem;
-		  /* background-color: #fff; */
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 	border-radius: 1rem;
 	border: 0.1rem solid var(--clr-secondary);
 	padding: 1rem 1.5rem;
-		background: white;
+		background: var(--clr-bg-items);
 	/* position: relative */
 	}
 .contact-card:hover {

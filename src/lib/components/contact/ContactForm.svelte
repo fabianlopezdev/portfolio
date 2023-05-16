@@ -4,7 +4,6 @@
 	import type { Language } from '../../../types';
 
 	export let formLang: Language['contact']['form'];
-
 </script>
 
 <div class="form-container">
@@ -65,6 +64,7 @@
 		font-size: 1.15rem;
 		padding-left: 1rem;
 		padding-right: 1rem;
+		background: var(--clr-bg-items);
 	}
 
 	textarea:focus {

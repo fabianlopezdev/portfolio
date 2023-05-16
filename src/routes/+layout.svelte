@@ -3,6 +3,7 @@
 <style>
 	:root {
 		--clr-bg: #f9fcfd;
+		--clr-bg-items: white;
 		--clr-accent: blue;
 		--clr-secondary: #016aa1;
 		--clr-font: black;
@@ -16,6 +17,7 @@
 
 		:global(.dark) {
 		--clr-bg: #000020;
+		--clr-bg-items: #D0DFF0;
 		--clr-font: #D0DFF0;
 		--clr-font-contrast-black-bg: var(--clr-accent);
 		--clr-shadow: #cccccc;
