@@ -2,20 +2,36 @@
 	export let href = '';
 	export let contactInfo = '';
 	export let cardTitle = '';
+	export let clicked = '';
+
+	$: isEmail = href.startsWith('fabianlopez')
+	$: isEmailCopied = false;
+
+	const copyEmail = (e) => {
+		e.preventDefault()
+		navigator.clipboard.writeText(href);
+		isEmailCopied = true
+	}
+	
 </script>
 
 
 
-<a href="{href}" target="_blank">
+<a href="{href}" target="{isEmail ? "" : "_blank"}" on:click={isEmail && copyEmail}>
   <div class="contact-card">
     <div class="icons">
       <slot />
     </div>
+		{#if isEmailCopied}
+		<p>{clicked}</p>
+		{:else}
     <div>
       {cardTitle}
       <br />
       <span class="email">{contactInfo}</span>
     </div>
+
+		{/if}
   </div>
 </a>
 

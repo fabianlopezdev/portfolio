@@ -15,7 +15,8 @@
 			"emailCard": {
 				"href": "fabianlopez@pm.me",
 				"title": "Mándame un email:",
-				"info": "fabianlopez@pm.me"
+				"info": "fabianlopez@pm.me",
+				"clicked": "Email copiado en el portapapeles"
 			},
 			"whatsappCard": {
 				"href": "https://wa.me/34664359284",

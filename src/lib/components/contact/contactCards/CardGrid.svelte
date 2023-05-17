@@ -18,6 +18,7 @@
     href={cardGrid.emailCard.href}
     cardTitle={cardGrid.emailCard.title}
     contactInfo={cardGrid.emailCard.info}
+    clicked={cardGrid.emailCard.clicked}
   >
     <EnvelopeIcon />
   </ContactCard>
