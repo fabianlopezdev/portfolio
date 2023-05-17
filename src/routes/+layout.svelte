@@ -22,6 +22,7 @@
 		--clr-font-contrast-black-bg: var(--clr-accent);
 		--clr-shadow: #202040;
 		--clr-accent: #007BFF;
+		--clr-hover: #202040;
 	}
 
 	:global(html) {
@@ -64,7 +65,7 @@
 	:global(.header-icons:hover) {
 		background-color: var(--clr-hover);
 		border-radius: 6px;
-		color: black;
+		/* color: black; */
 		transition: color 0.3s ease, background-color 0.3s ease;
 	}
 	:global(.button) {

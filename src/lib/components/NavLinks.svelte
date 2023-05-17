@@ -59,7 +59,7 @@
 	}
 	a:hover {
 		background-color: var(--clr-hover);
-		color: black;
+		/* color: black; */
 		border-radius: 6px;
 		padding: 0.5rem;
 		transition: color 0.3s ease, background-color 0.3s ease;
