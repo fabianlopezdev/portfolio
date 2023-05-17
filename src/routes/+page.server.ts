@@ -23,7 +23,7 @@ export const actions = {
 				message: message as string
 			}
 		};
-		await post(postRequest);
+		return await post(postRequest);
 		// console.log('event', name, email, message)
 	}
 };

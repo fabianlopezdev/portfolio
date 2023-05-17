@@ -24,6 +24,7 @@ export interface Language {
 				href: string;
 				title: string;
 				info: string;
+				clicked: string;
 			};
 			whatsappCard: {
 				href: string;
