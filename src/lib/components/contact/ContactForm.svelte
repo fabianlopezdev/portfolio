@@ -38,10 +38,10 @@
 		</label>
 		{#if isEmailSent === true} 
 		Message was sent
-		{:else if isEmailSent ===false}
+		{:else if isEmailSent === false}
 		Try again
 		{/if}
-		<button class="button" type="submit">
+		<button class="button" type="submit" disabled={loading}>
 			{#if loading}
 			Loading
 			{:else}
@@ -110,6 +110,10 @@
 		width: 20rem;
 		max-width: 100%;
 	}
+	button:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+	} 
 	input {
 		height: 2rem;
 		padding-top: 1rem;
