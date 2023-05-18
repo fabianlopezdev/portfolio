@@ -4,10 +4,28 @@
 	import type { Language } from '../../../types';
 
 	export let formLang: Language['contact']['form'];
+
+	$: loading = false;
+	$: isEmailSent = null;
+	const onSubmit = () => {
+		loading = true;
+    return ({ result, update }) => {
+				loading = false;
+        if (result.type === "success") {
+						isEmailSent = true;
+            console.log("helloooooo");
+            update();
+        }
+        else {
+						isEmailSent = false;
+            update();
+        }
+    }
+}
 </script>
 
 <div class="form-container">
-	<form method="POST" action="/?/sendEmail" use:enhance>
+	<form method="POST" action="/?/sendEmail" use:enhance={onSubmit}>
 		<p>{formLang.p}</p>
 		<label>
 			<input name="name" type="text" placeholder={formLang.name} required />
@@ -18,12 +36,21 @@
 		<label>
 			<textarea name="message" placeholder={formLang.message} required />
 		</label>
-
+		{#if isEmailSent === true} 
+		Message was sent
+		{:else if isEmailSent ===false}
+		Try again
+		{/if}
 		<button class="button" type="submit">
+			{#if loading}
+			Loading
+			{:else}
 			{formLang.button}
 			<div class="icons">
 				<IoMdSend />
-			</div></button
+			</div>
+			{/if}
+			</button
 		>
 	</form>
 </div>
