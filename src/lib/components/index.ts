@@ -12,3 +12,4 @@ export { default as ContactCard } from './contact/contactCards/ContactCard.svelt
 export { default as CardGrid } from './contact/contactCards/CardGrid.svelte';
 export { default as ContactForm } from './contact/ContactForm.svelte';
 export { default as ModalMenu } from './header/ModalMenu.svelte';
+export { default as Spinner } from './Spinner.svelte';

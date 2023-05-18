@@ -2,26 +2,26 @@
 	import { enhance } from '$app/forms';
 	import IoMdSend from 'svelte-icons/io/IoMdSend.svelte';
 	import type { Language } from '../../../types';
-
+	import { Spinner } from '$components';
 	export let formLang: Language['contact']['form'];
 
-	$: loading = false;
+	$: isLoading = false;
 	$: isEmailSent = null;
 	const onSubmit = () => {
-		loading = true;
-    return ({ result, update }) => {
-				loading = false;
-        if (result.type === "success") {
-						isEmailSent = true;
-            console.log("helloooooo");
-            update();
-        }
-        else {
-						isEmailSent = false;
-            update();
-        }
-    }
-}
+		isEmailSent = null;
+		isLoading = true;
+		return ({ result, update }) => {
+			isLoading = false;
+			if (result.type === 'success') {
+				isEmailSent = true;
+				console.log('helloooooo');
+				update();
+			} else {
+				isEmailSent = false;
+				update();
+			}
+		};
+	};
 </script>
 
 <div class="form-container">
@@ -36,22 +36,23 @@
 		<label>
 			<textarea name="message" placeholder={formLang.message} required />
 		</label>
-		{#if isEmailSent === true} 
-		Message was sent
+		{#if isEmailSent === true}
+			Message was sent
 		{:else if isEmailSent === false}
-		Try again
+			Try again
 		{/if}
-		<button class="button" type="submit" disabled={loading}>
-			{#if loading}
-			Loading
+		<button class="button" type="submit" disabled={isLoading}>
+			{#if isLoading}
+				<Spinner />
 			{:else}
-			{formLang.button}
-			<div class="icons">
-				<IoMdSend />
-			</div>
+				<div class="button-content">
+					{formLang.button}
+					<div class="icons">
+						<IoMdSend />
+					</div>
+				</div>
 			{/if}
-			</button
-		>
+		</button>
 	</form>
 </div>
 
@@ -111,9 +112,14 @@
 		max-width: 100%;
 	}
 	button:disabled {
-		opacity: 0.6;
+		opacity: 0.4;
 		cursor: not-allowed;
-	} 
+	}
+	.button-content {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 	input {
 		height: 2rem;
 		padding-top: 1rem;
