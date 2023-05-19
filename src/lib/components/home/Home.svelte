@@ -93,6 +93,7 @@
 		display: flex;
 		gap: 1em;
 		flex-wrap: wrap;
+		justify-content: center;
 	}
 
 	@media (max-width: 544px) {

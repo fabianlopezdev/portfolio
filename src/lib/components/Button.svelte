@@ -41,9 +41,9 @@
 		.button {
 			/* flex-direction: column;
 			align-items: center; */
-			width: 8.5rem;
+			/* width: 8.5rem; */
 			/* height: 5rem; */
-			margin: 0;
+			/* margin: 0; */
 			/* gap: 0; */
 		}
 	}
