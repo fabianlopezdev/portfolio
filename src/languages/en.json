@@ -34,7 +34,9 @@
 			"email": "Your email",
 			"subject": "Subject",
 			"message": "How can I help you?",
-			"button": "Submit"
+			"button": "Submit",
+			"success": "Message sent.",
+			"error": "Error sending message. Try again."
 		}
 	},
 	"navLinks": {

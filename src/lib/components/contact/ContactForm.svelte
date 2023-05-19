@@ -37,19 +37,21 @@
 			<textarea name="message" placeholder={formLang.message} required />
 		</label>
 		{#if isEmailSent === true}
-			Message was sent
+			<div class="success-alert">
+				<p>{formLang.success}</p>
+			</div>
 		{:else if isEmailSent === false}
-			Try again
+			<div class="error-alert">
+				<p>{formLang.error}</p>
+			</div>
 		{/if}
 		<button class="button" type="submit" disabled={isLoading}>
 			{#if isLoading}
 				<Spinner />
 			{:else}
-				<div class="button-content">
-					{formLang.button}
-					<div class="icons">
-						<IoMdSend />
-					</div>
+				{formLang.button}
+				<div class="icons">
+					<IoMdSend />
 				</div>
 			{/if}
 		</button>
@@ -104,22 +106,8 @@
 		outline: none;
 		border-color: var(--clr-secondary);
 	}
-	.button {
-		align-items: center;
-		padding: 0.5rem;
-		border-radius: 0.5rem;
-		width: 20rem;
-		max-width: 100%;
-	}
-	button:disabled {
-		opacity: 0.4;
-		cursor: not-allowed;
-	}
-	.button-content {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
+	
+	
 	input {
 		height: 2rem;
 		padding-top: 1rem;
@@ -142,6 +130,18 @@
 		background-color: transparent;
 	}
 
+	.button {
+		align-items: center;
+		padding: 0.5rem;
+		border-radius: 0.5rem;
+		width: 20rem;
+		max-width: 100%;
+	}
+	button:disabled {
+		opacity: 0.4;
+		cursor: not-allowed;
+	}
+
 	button {
 		border: none;
 		color: var(--clr-font-contrast);
@@ -151,5 +151,31 @@
 
 	.icons {
 		color: white;
+	}
+
+	.success-alert {
+		background-color: #D5EDDB;
+		color:#2C693A;
+		display: flex;
+		justify-content: center;
+		padding: 0.5rem;
+		border-radius: 0.5rem;
+		width: 20rem;
+		max-width: 100%;
+		font-weight: 500;
+		box-sizing: border-box;
+	}
+
+	.error-alert{
+		background-color: #F8D6DB;
+		color:#721C24;
+		display: flex;
+		justify-content: center;
+		padding: 0.5rem;
+		border-radius: 0.5rem;
+		width: 20rem;
+		max-width: 100%;
+		font-weight: 500;
+		box-sizing: border-box;
 	}
 </style>

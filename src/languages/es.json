@@ -35,7 +35,9 @@
 			"email": "Tu correo electrónico",
 			"subject": "Asunto",
 			"message": "En que puedo ayudarte?",
-			"button": "Enviar"
+			"button": "Enviar",
+			"success": "Mensaje enviado.",
+			"error": "Error enviando el mensaje. Prueba otra vez."
 		}
 	},
 	"navLinks": {
