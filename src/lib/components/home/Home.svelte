@@ -104,9 +104,9 @@
 		h1 {
 			margin: 0 2rem;
 		}
-		.buttons {
+		/* .buttons {
 			gap: 0.5rem;
-		}
+		} */
 	}
 
 	@media (max-height: 463px) {
