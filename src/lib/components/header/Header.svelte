@@ -45,7 +45,7 @@
 		align-items: center;
 		justify-content: space-between;
 		height: var(--size-header);
-		width: clamp(375px, (100vw - 40px), 866px);
+		width: clamp(375px, 100vw, 866px);
 		margin: 0.4rem 0.5rem 0.3rem 0.8rem;
 	}
 
