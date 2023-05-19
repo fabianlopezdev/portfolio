@@ -60,7 +60,7 @@
 		width: 75%;
 		line-height: 1;
 		margin: 0;
-		padding: 0 0 2.5rem 0;
+		padding: 0 0 1rem 0;
 		/* color: gray; */
 	}
 	span {
