@@ -51,9 +51,9 @@
 		background-color: var(--clr-bg);
 		position: fixed;
 		top: 0;
-		left: 0;
-		height: 100svh;
-		width: 100svw;
+		bottom: 0;
+		   left: 0;
+    right: 0;
 	}
 	nav {
 		display: flex;
