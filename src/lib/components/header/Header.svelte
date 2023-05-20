@@ -8,7 +8,7 @@
 
 <nav class="header-container">
 	<h1>
-		<a href="#home" class="h1-font" on:click|preventDefault={(e) => scrollTo(e)}>Fabian Lopez </a>
+		<a href="#home" class="h1-font" on:click|preventDefault={(e) => scrollTo(e)}>fab<span style='color: blue'>. </span> </a>
 	</h1>
 	<ul class="toggles-container">
 		<li>
@@ -29,7 +29,8 @@
 <style>
 	.h1-font {
 		font-family: 'League Spartan', sans-serif;
-		font-size: 2rem;
+		font-size: 2.5rem;
+		font-weight: 900;
 		display: inline-block;
 		position: relative;
 		z-index: 1;
