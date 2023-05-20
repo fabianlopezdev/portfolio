@@ -66,6 +66,14 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+		border-radius: 1rem;
+	}
+
+	.form-container:hover {
+		box-shadow: 0 0 20px rgba(30, 144, 255, 0.2),
+              0 0 20px rgba(30, 144, 255, 0.2),
+              0 0 20px rgba(30, 144, 255, 0.2),
+              0 0 20px rgba(30, 144, 255, 0.2);
 	}
 	form {
 		position: relative;

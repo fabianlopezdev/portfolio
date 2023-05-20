@@ -7,6 +7,5 @@
   <style>
 	section {
 		min-height: 100vh;
-		background-color: blue;
 	}
 </style>

@@ -9,7 +9,7 @@
 </script>
 
 <section id="contact">
-	<h1>{contact.h1}</h1>
+	<h1>{contact.h1}<span>.</span></h1>
 	<div class='contact-container'>
 
 		<CardGrid cardGrid={contact.cardGrid}/>
@@ -19,6 +19,7 @@
 
 <style>
 	section {
+		background-color: #c0e6ef;
 		align-items: center;
 		justify-content: center;
 		gap: 3rem;
@@ -27,14 +28,22 @@
 		/* max-height: 100%; */
 		/* margin-top: 3.7rem;
 		margin-bottom: 3.7rem; */
-	}
+
+  --mask: conic-gradient(from 117.5deg at top,#0000,#000 1deg 124deg,#0000 125deg) 50%/142.15px 100%;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+}
+	
 
 	h1 {
 		font-size: clamp(1.5rem, 3vw, 2rem);
 		color: var(--clr-secondary);
 		margin: 0;
 	}
-
+	span {
+		color: black;
+		font-size: 3rem;
+	}
 	.contact-container {
 		display: flex;
 		align-items: center;

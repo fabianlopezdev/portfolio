@@ -42,6 +42,17 @@
 		flex-direction: column;
 	}
 
+	:global(.waves) {
+		background-color:  #b2d6e9;
+  --mask:
+    radial-gradient(63.09px at 50% 85.50px,#000 99%,#0000 101%) calc(50% - 60px) 0/120px 51% repeat-x,
+    radial-gradient(63.09px at 50% -55.5px,#0000 99%,#000 101%) 50% 30px/120px calc(51% - 30px) repeat-x,
+    radial-gradient(63.09px at 50% calc(100% - 85.50px),#000 99%,#0000 101%) calc(50% - 60px) 100%/120px 51% repeat-x,
+    radial-gradient(63.09px at 50% calc(100% + 55.50px),#0000 99%,#000 101%) 50% calc(100% - 30px)/120px calc(51% - 30px) repeat-x;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+}
+	
 	:global(a) {
 		text-decoration: none;
 		color: var(--clr-font);
