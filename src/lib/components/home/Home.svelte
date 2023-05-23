@@ -9,21 +9,22 @@
 </script>
 
 <section id="home">
-	<div class='welcome-container'>
-	<h1>{home.welcome}</h1>
-		
-	</div>
-	<h2>
+		<h1>
 		{home.slogan1}
 		<span>
 			{home.highlight1}
 		</span>
 		{home.slogan2}
 		<span>
-			{home.highlight2}
-		</span>.
+			{home.highlight2}.
+		</span>
 		<!-- {home.slogan2} -->
-	</h2>
+	</h1>
+	<div class='welcome-container'>
+	<h2>{home.welcome}</h2>
+		
+	</div>
+
 	
 	<div class="buttons">
 		<Button --color="var(--clr-accent)" on:click={scrollTo} href={'#contact'} icon={'envelope'}
@@ -40,7 +41,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap:1rem;
+		/* gap:1rem; */
 		/* color: var(--clr-accent) */
 	}
 	section {
@@ -49,12 +50,12 @@
 		flex-direction: column; */
 		justify-content: center;
 		align-items: center;
-		font-size: 1.5rem;
+		/* font-size: 1.5rem; */
 		text-align: center;
 		gap: 5rem;
 		padding: 2.5rem 0;
 	}
-	h2 {
+	h1 {
 		font-size: clamp(2.9rem, 6vw, 5rem);
 		font-weight: 800;
 		width: 75%;
@@ -83,10 +84,11 @@
 		background-color: var(--clr-accent);
 	}
 	
-	h1 {
+	h2 {
 		font-size: clamp(1.5rem, 3vw, 2rem);
 		color: var(--clr-secondary);
 		margin: 0;
+		font-weight: 300;
 	}
 
 	.buttons {
@@ -94,6 +96,7 @@
 		gap: 1em;
 		flex-wrap: wrap;
 		justify-content: center;
+		 margin-top: -2rem; 
 	}
 
 	@media (max-width: 544px) {
@@ -102,6 +105,11 @@
 		}
 
 		h1 {
+			width: 80%;
+			margin: 0 2rem;
+		}
+
+			h2 {
 			margin: 0 2rem;
 		}
 		/* .buttons {
