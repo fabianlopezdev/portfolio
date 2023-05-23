@@ -27,12 +27,14 @@
 
 	:global(html) {
 		scroll-padding-top:3.7rem;
+
 	}
 	:global(body) {
 		background-color: var(--clr-bg);
 		font-family: system-ui;
 		color: var(--clr-font);
 		margin: 0;
+		
 	}
 
 	:global(section) {
@@ -40,6 +42,11 @@
 		min-height: calc(100svh - 3.7rem);
 		display: flex;
 		flex-direction: column;
+	}
+
+	/*This is to make the website 100% of the screen view no matter the scroll-bar*/
+	:global(*) {
+		box-sizing: border-box;
 	}
 
 	:global(.waves) {

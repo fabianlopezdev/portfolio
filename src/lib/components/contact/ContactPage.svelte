@@ -56,7 +56,7 @@
 
 	@media (max-width: 749px) {
 		section {
-			margin: 4rem 2rem;
+			margin: 4rem 0rem;
 		/* padding: 0 2rem; */
 		/* max-height: fit-content; */
 	}
