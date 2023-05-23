@@ -13,9 +13,14 @@
 		--clr-hover: #e2e8ec;
 		--clr-shadow: #0000001a;
 		--size-header: 3rem;
+		/* overflow-x: hidden; */
 	}
-
-		:global(.dark) {
+	
+/*To make the width to fit the entire screen*/	
+	:global(*) { 
+		box-sizing: border-box;
+}
+	:global(.dark) {
 		--clr-bg: #000020;
 		--clr-bg-items: #D0DFF0;
 		--clr-font: #D0DFF0;
@@ -27,26 +32,22 @@
 
 	:global(html) {
 		scroll-padding-top:3.7rem;
-
+		width: 100%;
 	}
 	:global(body) {
 		background-color: var(--clr-bg);
 		font-family: system-ui;
 		color: var(--clr-font);
 		margin: 0;
-		
+		min-width: 100%;
 	}
+	
 
 	:global(section) {
 		box-sizing: border-box;
 		min-height: calc(100svh - 3.7rem);
 		display: flex;
 		flex-direction: column;
-	}
-
-	/*This is to make the website 100% of the screen view no matter the scroll-bar*/
-	:global(*) {
-		box-sizing: border-box;
 	}
 
 	:global(.waves) {
@@ -75,8 +76,8 @@
 		font: inherit;
 		cursor: pointer;
 		outline: inherit;
-		width: 1.3rem;
-		height: 1.3rem;
+		width: 1.5rem;
+		height: 1.5rem;
 		padding: 0.3rem;
 	}
 

@@ -24,15 +24,21 @@
 
 <style>
 	button {
+	appearance: none;
+	
 		border: none;
-		appearance: none;
-		background-color: var(--clr-bg);
+		border-radius: none;
+		color: gray;
+		font-size: 0.9rem;
+		cursor: pointer;
+		background-color: inherit;
+		outline: none;
 		padding: 0;
 	}
+	/* .header-icons {
+			width: 20.8px;
+		height: 20.8px;
+	} */
 
-	.header-icons {
-		width: 1rem;
-		padding-left: 0.45rem;
-		padding-right: 0.45rem;
-	}
+
 </style>

@@ -33,11 +33,13 @@
 </script>
 
 <svelte:window on:scroll={handleScroll} />
-<header class:header-bottom-shadow={bottomShadow}>
-	<Header {lang} {navLinks} />
-</header>
 
-<main>
+
+	<header class:header-bottom-shadow={bottomShadow}>
+		<Header {lang} {navLinks} />
+	</header>
+	
+	<main>
 	<Home {home} />
 	<About />
 	<Projects />
@@ -47,6 +49,7 @@
 <footer>
 	<NavLinks {navLinks} />
 </footer>
+
 
 <style>
 	header {
