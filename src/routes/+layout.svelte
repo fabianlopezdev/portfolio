@@ -2,7 +2,7 @@
 <script>
   let title = 'fab. Apps';
   let description = 'Fabian Lopez Gonzalez Portfolio';
-  let image = `https://portfolio-fabs-and.vercel.app/portfolio-favicon1.png`;
+  let image = `https://portfolio-fabs-and.vercel.app/meta-image.png`;
   let url = 'https://portfolio-fabs-and.vercel.app/';
 </script>
 
