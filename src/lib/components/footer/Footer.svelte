@@ -30,22 +30,27 @@
 </div>
 
  <div class='small-screen'>
-   <SocialLinks/>
    <div class='logo-svelte-container'>
-    <div class='logo-copyright'>
-      <h1 class='h1-font'>
-      fab<span style='color: blue'>.</span>
-    </h1>
-    ©{currentYear} fab. Apps
-  </div>
-  <div class='toggles-container'>
-    Made with
-    <div class='icons'>
-      <IoMdHeart/>
-    </div>
-    <a href='https://svelte.dev/' target="_blank" rel="noopener noreferrer">
-      Svelte
-    </a>
+     <div class='logo-copyright'>
+       <h1 class='h1-font'>
+         fab<span style='color: blue'>.</span>
+        </h1>
+        ©{currentYear} fab. Apps
+      </div>
+      <div class='social-and-svelte'>
+        <div class='social'>
+
+          <SocialLinks/>
+        </div>
+        <div class='toggles-container'>
+          Made with
+          <div class='icons'>
+            <IoMdHeart/>
+          </div>
+          <a href='https://svelte.dev/' target="_blank" rel="noopener noreferrer">
+            Svelte
+          </a>
+        </div>
   </div>
    </div>
     
@@ -117,11 +122,27 @@
       }
       .small-screen {
         display: block;
-        padding: 0rem 2rem;
       }
+
        .logo-svelte-container {
       display: flex;
       width: clamp(375px, 100vw, 866px);
+      justify-content: space-between;
+      padding: 0rem 1rem;
+    }
+
+    .social-and-svelte {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between
+    }
+    .social {
+      align-self: flex-end;
+    }
+
+    .icons {
+      width: 1rem;
+      height: 1rem;
     }
 	}
 
