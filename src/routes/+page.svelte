@@ -1,7 +1,7 @@
 <script lang="ts">
 	import english from '../languages/en.json'
 	import spanish from '../languages/es.json';
-	import { NavLinks, About, Projects, Contact, Header, Home } from '$components';
+	import { NavLinks, About, Projects, Contact, Header, Home, Footer } from '$components';
 	import type { Language } from '../types';
 
 	//Data is received from a load function in page.server.ts
@@ -35,8 +35,8 @@
 <svelte:window on:scroll={handleScroll} />
 
 
-	<header class:header-bottom-shadow={bottomShadow}>
-		<Header {lang} {navLinks} />
+	<header class="header" class:header-bottom-shadow={bottomShadow}>
+		<Header  {lang} {navLinks} />
 	</header>
 	
 	<main>
@@ -46,13 +46,13 @@
 	<Contact {contact} />
 </main>
 
-<footer>
-	<NavLinks {navLinks} />
+<footer class='header'>
+	<Footer {lang} {navLinks}/>
 </footer>
 
 
 <style>
-	header {
+	.header {
 		position: sticky;
 		top: 0;
 		z-index: 4;

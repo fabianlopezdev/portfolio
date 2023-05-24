@@ -15,7 +15,7 @@
 		--size-header: 3rem;
 		/* overflow-x: hidden; */
 	}
-	
+
 /*To make the width to fit the entire screen*/	
 	:global(*) { 
 		box-sizing: border-box;
@@ -51,7 +51,8 @@
 	}
 
 	:global(.waves) {
-		background-color:  #b2d6e9;
+		background: red;
+
   --mask:
     radial-gradient(63.09px at 50% 85.50px,#000 99%,#0000 101%) calc(50% - 60px) 0/120px 51% repeat-x,
     radial-gradient(63.09px at 50% -55.5px,#0000 99%,#000 101%) 50% 30px/120px calc(51% - 30px) repeat-x,

@@ -5,6 +5,7 @@ export { default as Contact } from './contact/ContactPage.svelte';
 export { default as ToggleTheme } from './header/ToggleTheme.svelte';
 export { default as ToggleLang } from './header/ToggleLang.svelte';
 export { default as Header } from './header/Header.svelte';
+export { default as Footer } from './footer/Footer.svelte';
 export { default as SocialLinks } from './SocialLinks.svelte';
 export { default as Button } from './Button.svelte';
 export { default as Home } from './home/Home.svelte';

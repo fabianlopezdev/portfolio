@@ -1,4 +1,4 @@
-<section id="about" class="waves">
+<section id="about">
 		<h2>
 			About
 		</h2>
