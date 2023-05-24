@@ -9,7 +9,7 @@
 <svelte:head>
   {@html `<meta property="og:title" content="${title}" />`}
   {@html `<meta property="og:description" content="${description}" />`}
-  {@html `<meta property="og:image" content="${image}" />`}
+  {@html `<meta property="og:image" itemprop="image" content="${image}" />`}
   {@html `<meta property="og:url" content="${url}" />`}
   {@html `<meta name="twitter:card" content="summary_large_image" />`}
 </svelte:head>
