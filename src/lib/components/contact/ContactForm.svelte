@@ -67,6 +67,7 @@
 		flex-direction: column;
 		gap: 1rem;
 		border-radius: 1rem;
+		
 	}
 
 	.form-container:hover {
@@ -84,7 +85,7 @@
 		border: 0.3rem solid var(--clr-secondary);
 		border-radius: 1rem;
 		padding: 1rem;
-		width: 18rem;
+		width: 20rem;
 
 		/* max-width: 866px; */
 

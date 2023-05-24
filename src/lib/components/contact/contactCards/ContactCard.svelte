@@ -45,7 +45,7 @@
 		/* justify-content: center; */
     /* justify-content: start; */
 		gap: 1rem;
-    width: 17.5rem;
+    width: 20rem;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 	border-radius: 1rem;
 	border: 0.1rem solid var(--clr-secondary);

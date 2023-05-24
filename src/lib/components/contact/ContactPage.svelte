@@ -23,15 +23,14 @@
 		align-items: center;
 		justify-content: center;
 		gap: 3rem;
+		padding-bottom: 2rem;
 		/* overflow: hidden; */
 		/* height:min-content; */
 		/* max-height: 100%; */
 		/* margin-top: 3.7rem;
 		margin-bottom: 3.7rem; */
 
-  --mask: conic-gradient(from 117.5deg at top,#0000,#000 1deg 124deg,#0000 125deg) 50%/142.15px 100%;
-  -webkit-mask: var(--mask);
-          mask: var(--mask);
+
 }
 	
 
@@ -50,15 +49,9 @@
 		justify-content: center;
 		gap: 3rem;
 		flex-wrap: wrap;
-		padding: 0 2rem;
+		/* padding: 0 0rem; */
 		/* max-height: fit-content; */
 	}
 
-	@media (max-width: 749px) {
-		section {
-			margin: 4rem 0rem;
-		/* padding: 0 2rem; */
-		/* max-height: fit-content; */
-	}
-	}
+	
 </style>
