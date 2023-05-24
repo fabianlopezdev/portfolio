@@ -1,9 +1,9 @@
 <slot />
 <script>
-  let title = 'Your Portfolio Title';
-  let description = 'Brief description of your portfolio';
-  let image = 'URL of your image';
-  let url = 'URL of your portfolio';
+  let title = 'fab. Apps';
+  let description = 'Fabian Lopez Gonzalez Portfolio';
+  let image = `$static + '/portfolio-favicon1.png'`;
+  let url = 'https://portfolio-fabs-and.vercel.app/';
 </script>
 
 <svelte:head>
