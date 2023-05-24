@@ -32,7 +32,7 @@
 
 	:global(html) {
 		scroll-padding-top:3.7rem;
-		/* width: 100%; */
+		width: 100%;
 	}
 	:global(body) {
 		background-color: var(--clr-bg);
