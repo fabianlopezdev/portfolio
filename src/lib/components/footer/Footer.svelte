@@ -129,6 +129,7 @@
       width: clamp(375px, 100vw, 866px);
       justify-content: space-between;
       padding: 0rem 1rem;
+      padding-bottom: 1rem;
     }
 
     .social-and-svelte {
