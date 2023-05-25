@@ -95,7 +95,7 @@
 		}
 
 		.footer {
-			padding: 1rem;
+			padding-bottom: 1rem;
 		}
 
 		.social-and-svelte {
