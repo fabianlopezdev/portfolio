@@ -32,7 +32,7 @@
 		</nav>
 		<div class='socialLinks'>
 
-			<SocialLinks/>
+			<SocialLinks gap={1}/>
 		</div>
 	</div>
 {:else}
@@ -51,7 +51,10 @@
 	}
 
 	.socialLinks {
-		padding-top: 20rem;
+		position: absolute;
+		left: 0;
+		right:0;
+		top: 30rem;
 	}
 	button {
 		display: flex;

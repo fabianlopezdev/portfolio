@@ -6,6 +6,7 @@
   const envLinkedInLink = import.meta.env.VITE_LINKEDIN_LINK;
   const envGitHubLink = import.meta.env.VITE_GITHUB_LINK;
 
+  export let gap;
   let linkedinTooltip = '';
   let githubTooltip = '';
 
@@ -23,7 +24,7 @@
   }
 </script>
 
-<div>
+<div style="gap:{gap}rem">
   <div
     class="icon-container"
     on:mouseover={() => showTooltip('linkedin')}
@@ -73,7 +74,7 @@
     display: flex;
     justify-content: center;
 
-    gap: 0.5rem;
+    /* gap: 0.5rem; */
 		color: gray;
   }
 

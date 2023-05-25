@@ -36,7 +36,7 @@
 	</div>
 	<div class="social-and-svelte">
 		<div class="social">
-			<SocialLinks />
+			<SocialLinks gap={0.5} />
 		</div>
 		<small class="madewith-mobile-container">
 			{footerLang.madeWith}
