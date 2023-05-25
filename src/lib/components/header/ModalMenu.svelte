@@ -10,6 +10,11 @@
 
 	function toggleMenu() {
 		isShowMenu = !isShowMenu;
+		  if (isShowMenu) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
 	}
 
 	function handleLinkClick() {
@@ -70,7 +75,7 @@
 		background-color: var(--clr-bg);
 		position: fixed;
 		top: 0;
-		height: 100vh;
+		bottom: 0;
 		left: 0;
 		right: 0;
 	}
