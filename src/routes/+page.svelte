@@ -13,10 +13,12 @@
 	let navLinks: Language['navLinks']
 	let home: Language['home']
 	let contact: Language['contact']
+	let footer: Language['footer']
 	// Assign language based on lang and make it reactive
 	$: navLinks = lang === 'en' ? english.navLinks : spanish.navLinks;
 	$: home = lang === 'en' ? english.home : spanish.home;
 	$: contact = lang === 'en' ? english.contact : spanish.contact;
+	$: footerLang = lang === 'en' ? english.footer : spanish.footer;
 
 	// Declare a variable to store the scroll position
 	let scrollY = 0;
@@ -47,7 +49,7 @@
 </main>
 
 <footer class='header'>
-	<Footer {lang} {navLinks}/>
+	<Footer {footerLang}/>
 </footer>
 
 

@@ -45,7 +45,10 @@ export interface Language {
 			button: string;
 		};
 	};
-
+	footer: {
+		madeWith: string;
+		language: string;
+	};
 	navLinks: {
 		about: string;
 		projects: string;

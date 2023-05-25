@@ -39,6 +39,10 @@
 			"error": "Error sending message. Try again."
 		}
 	},
+	"footer": {
+		"madeWith":"Made with",
+		"language": "Svelte"
+	},
 	"navLinks": {
 		"about": "About",
 		"projects": "Projects",

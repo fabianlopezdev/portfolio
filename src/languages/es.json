@@ -40,6 +40,10 @@
 			"error": "Error enviando el mensaje. Prueba otra vez."
 		}
 	},
+	"footer": {
+		"madeWith": "Hecho con",
+		"language": "Svelte"
+	},
 	"navLinks": {
 		"about": "Perfil",
 		"projects": "Proyectos",

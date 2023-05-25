@@ -1,8 +1,8 @@
 <script lang='ts'>
- import { NavLinks, SocialLinks } from '$components';
- export let lang: string | undefined;
- export let navLinks: Language['navLinks'];
+ import { SocialLinks } from '$components';
+ export let footerLang: Language['footer'];
  import IoMdHeart from 'svelte-icons/io/IoMdHeart.svelte'
+	import type { Language } from '../../../types';
 
  const currentYear = new Date().getFullYear();
 
@@ -15,15 +15,15 @@
       <h1 class='h1-font'>
       fab<span style='color: blue'>.</span>
     </h1>
-    ©{currentYear} fab. Apps
+    ©{currentYear} Fabulous Apps
   </div>
   <div class='toggles-container'>
-    Made with
+    {footerLang.madeWith}
     <div class='icons'>
       <IoMdHeart/>
     </div>
     <a href='https://svelte.dev/' target="_blank" rel="noopener noreferrer">
-      Svelte
+      {footerLang.language}
     </a>
   </div>
   <SocialLinks/>
@@ -35,7 +35,7 @@
        <h1 class='h1-font'>
          fab<span style='color: blue'>.</span>
         </h1>
-        ©{currentYear} fab. Apps
+        ©{currentYear} Fabulous Apps
       </div>
       <div class='social-and-svelte'>
         <div class='social'>
@@ -43,12 +43,12 @@
           <SocialLinks/>
         </div>
         <div class='toggles-container'>
-          Made with
+          {footerLang.madeWith}
           <div class='icons'>
             <IoMdHeart/>
           </div>
           <a href='https://svelte.dev/' target="_blank" rel="noopener noreferrer">
-            Svelte
+            {footerLang.language}
           </a>
         </div>
   </div>
@@ -116,6 +116,10 @@
       text-decoration: underline;
     }
 
+    .icons {
+      width: 1rem;
+      height: 1rem;
+    }
     @media (max-width: 544px) {
       .desktop-screen {
         display: none;
@@ -141,10 +145,7 @@
       align-self: flex-end;
     }
 
-    .icons {
-      width: 1rem;
-      height: 1rem;
-    }
+    
 	}
 
 </style>
