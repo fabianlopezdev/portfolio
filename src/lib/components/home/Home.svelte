@@ -3,35 +3,35 @@
 	import scrollTo from '../../../utils/functions';
 	import type { Language } from '../../../types';
 
-	export let home: Language['home'];
+	export let homeLang: Language['home'];
 
 	let envResumeLink = import.meta.env.VITE_RESUME_LINK;
 </script>
 
 <section id="home">
 		<h1>
-		{home.slogan1}
+		{homeLang.slogan1}
 		<span>
-			{home.highlight1}
+			{homeLang.highlight1}
 		</span>
-		{home.slogan2}
+		{homeLang.slogan2}
 		<span>
-			{home.highlight2}.
+			{homeLang.highlight2}.
 		</span>
-		<!-- {home.slogan2} -->
+		<!-- {homeLang.slogan2} -->
 	</h1>
 	<div class='welcome-container'>
-	<h2>{home.welcome}</h2>
+	<h2>{homeLang.welcome}</h2>
 		
 	</div>
 
 	
 	<div class="buttons">
 		<Button --color="var(--clr-accent)" on:click={scrollTo} href={'#contact'} icon={'envelope'}
-			>{home.buttonContact}</Button
+			>{homeLang.buttonContact}</Button
 		>
 		<Button --color="var(--clr-font)" href={envResumeLink} icon={'download'}
-			>{home.buttonResume}</Button
+			>{homeLang.buttonResume}</Button
 		>
 	</div>
 </section>

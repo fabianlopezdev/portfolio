@@ -3,17 +3,17 @@
 	import ContactForm from './ContactForm.svelte';
 	import type { Language } from '../../../types';
 
-	export let contact: Language['contact'];
+	export let contactLang: Language['contact'];
 
 
 </script>
 
 <section id="contact">
-	<h1>{contact.h1}<span>.</span></h1>
+	<h1>{contactLang.h1}<span>.</span></h1>
 	<div class='contact-container'>
 
-		<CardGrid cardGrid={contact.cardGrid}/>
-		<ContactForm formLang={contact.contactForm} />
+		<CardGrid cardGrid={contactLang.cardGrid}/>
+		<ContactForm formLang={contactLang.contactForm} />
 	</div>
 </section>
 

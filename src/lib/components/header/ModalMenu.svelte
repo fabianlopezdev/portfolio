@@ -4,7 +4,7 @@
 	import { NavLinks } from '$components';
 	import type { Language } from '../../../types';
 
-	export let navLinks: Language['navLinks'];
+	export let navLinksLang: Language['navLinks'];
 
 	let isShowMenu = false;
 
@@ -25,7 +25,7 @@
 	</button>
 	<div class="modal">
 		<nav>
-			<NavLinks {navLinks} customClass="modal" on:linkClick={handleLinkClick} />
+			<NavLinks {navLinksLang} customClass="modal" on:linkClick={handleLinkClick} />
 		</nav>
 	</div>
 {:else}

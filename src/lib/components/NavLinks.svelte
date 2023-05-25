@@ -5,10 +5,10 @@
 	import type { Language } from '../../types';
 
 	export let customClass = '';
-	export let navLinks: Language['navLinks'];
+	export let navLinksLang: Language['navLinks'];
 
 	let links: { href: string; name: string }[] = [];
-	$: if (navLinks) links = generateNavigationLinks(navLinks);
+	$: if (navLinksLang) links = generateNavigationLinks(navLinksLang);
 	const dispatch = createEventDispatcher();
 
 	function handleClick(link: string, event: MouseEvent) {

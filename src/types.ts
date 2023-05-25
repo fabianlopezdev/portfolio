@@ -19,6 +19,7 @@ export interface Language {
 		buttonResume: string;
 	};
 	contact: {
+		h1: string;
 		cardGrid: {
 			emailCard: {
 				href: string;
@@ -37,12 +38,15 @@ export interface Language {
 				info: string;
 			};
 		};
-		form: {
+		contactForm: {
+			p:string;
 			name: string;
 			email: string;
 			subject: string;
 			message: string;
 			button: string;
+			success: string;
+			error: string;
 		};
 	};
 	footer: {

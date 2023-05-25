@@ -3,7 +3,7 @@
 	import type { Language } from '../../../types';
 	import scrollTo from '../../../utils/functions';
 	export let lang: string | undefined;
-	export let navLinks: Language['navLinks'];
+	export let navLinksLang: Language['navLinks'];
 </script>
 
 <nav class="header-container">
@@ -18,11 +18,11 @@
 			<ToggleLang {lang} />
 		</li>
 		<li class="modal">
-			<ModalMenu {navLinks} />
+			<ModalMenu {navLinksLang} />
 		</li>
 	</ul>
 	<nav class="nav-links-container">
-		<NavLinks {navLinks} />
+		<NavLinks {navLinksLang} />
 	</nav>
 </nav>
 

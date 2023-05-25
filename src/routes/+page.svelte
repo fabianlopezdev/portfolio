@@ -15,9 +15,9 @@
 	let contact: Language['contact']
 	let footer: Language['footer']
 	// Assign language based on lang and make it reactive
-	$: navLinks = lang === 'en' ? english.navLinks : spanish.navLinks;
-	$: home = lang === 'en' ? english.home : spanish.home;
-	$: contact = lang === 'en' ? english.contact : spanish.contact;
+	$: navLinksLang = lang === 'en' ? english.navLinks : spanish.navLinks;
+	$: homeLang = lang === 'en' ? english.home : spanish.home;
+	$: contactLang = lang === 'en' ? english.contact : spanish.contact;
 	$: footerLang = lang === 'en' ? english.footer : spanish.footer;
 
 	// Declare a variable to store the scroll position
@@ -38,14 +38,15 @@
 
 
 	<header class="header" class:header-bottom-shadow={bottomShadow}>
-		<Header  {lang} {navLinks} />
+		<!-- Passing lang, because header has the language toggle -->
+		<Header  {lang} {navLinksLang} />
 	</header>
 	
 	<main>
-	<Home {home} />
+	<Home {homeLang} />
 	<About />
 	<Projects />
-	<Contact {contact} />
+	<Contact {contactLang} />
 </main>
 
 <footer class='header'>
