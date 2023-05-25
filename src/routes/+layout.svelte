@@ -67,6 +67,11 @@
 		color: var(--clr-font);
 	}
 
+	:global(img) {
+		max-width: 100%;
+		display: block;
+	}
+
 	:global(.button) {
 		display: flex;
 		justify-content: center;
