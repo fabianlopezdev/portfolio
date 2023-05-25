@@ -75,6 +75,7 @@
 		right: 0;
 	}
 	nav {
+		position:relative;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
