@@ -1,17 +1,18 @@
-<slot />
 <script>
-  let title = 'Fabulous Apps';
-  let description = 'Fabian Lopez Portfolio';
-  let image = `https://portfolio-fabs-and.vercel.app/meta-image.png`;
-  let url = 'https://portfolio-fabs-and.vercel.app/';
+	let title = 'Fabulous Apps';
+	let description = 'Fabian Lopez Portfolio';
+	let image = `https://portfolio-fabs-and.vercel.app/meta-image.png`;
+	let url = 'https://portfolio-fabs-and.vercel.app/';
 </script>
 
+<slot />
+
 <svelte:head>
-  {@html `<meta property="og:title" content="${title}" />`}
-  {@html `<meta property="og:description" content="${description}" />`}
-  {@html `<meta property="og:image" itemprop="image" content="${image}" />`}
-  {@html `<meta property="og:url" content="${url}" />`}
-  {@html `<meta name="twitter:card" content="summary_large_image" />`}
+	{@html `<meta property="og:title" content="${title}" />`}
+	{@html `<meta property="og:description" content="${description}" />`}
+	{@html `<meta property="og:image" itemprop="image" content="${image}" />`}
+	{@html `<meta property="og:url" content="${url}" />`}
+	{@html `<meta name="twitter:card" content="summary_large_image" />`}
 </svelte:head>
 
 <style>
@@ -23,85 +24,49 @@
 		--clr-font: black;
 		--clr-font-contrast: white;
 		--clr-font-contrast-black-bg: white;
-		--clr-toggle: gray;
+		--clr-icons: gray;
 		--clr-hover: #e2e8ec;
 		--clr-shadow: #0000001a;
-		--size-header: 3rem;
-		/* overflow-x: hidden; */
+		--height-header: 3rem;
 	}
 
-/*To make the width to fit the entire screen*/	
-	:global(*) { 
-		box-sizing: border-box;
-}
-	:global(.dark) {
+	:global(.dark-mode) {
 		--clr-bg: #000020;
-		--clr-bg-items: #D0DFF0;
-		--clr-font: #D0DFF0;
+		--clr-bg-items: #d0dff0;
+		--clr-font: #d0dff0;
 		--clr-font-contrast-black-bg: var(--clr-accent);
 		--clr-shadow: #202040;
-		--clr-accent: #007BFF;
+		--clr-accent: #007bff;
 		--clr-hover: #202040;
 	}
 
-	:global(html) {
-		scroll-padding-top:3.7rem;
-		width: 100%;
+	/*To make the width to fit the entire screen in smaller screens*/
+	:global(*) {
+		box-sizing: border-box;
 	}
+
+	:global(html) {
+		scroll-padding-top: 3.7rem;
+	}
+
 	:global(body) {
 		background-color: var(--clr-bg);
 		font-family: system-ui;
 		color: var(--clr-font);
 		margin: 0;
-		min-width: 100%;
 	}
-	
 
 	:global(section) {
-		box-sizing: border-box;
 		min-height: calc(100svh - 3.7rem);
 		display: flex;
 		flex-direction: column;
 	}
 
-	:global(.waves) {
-		background: red;
-
-  --mask:
-    radial-gradient(63.09px at 50% 85.50px,#000 99%,#0000 101%) calc(50% - 60px) 0/120px 51% repeat-x,
-    radial-gradient(63.09px at 50% -55.5px,#0000 99%,#000 101%) 50% 30px/120px calc(51% - 30px) repeat-x,
-    radial-gradient(63.09px at 50% calc(100% - 85.50px),#000 99%,#0000 101%) calc(50% - 60px) 100%/120px 51% repeat-x,
-    radial-gradient(63.09px at 50% calc(100% + 55.50px),#0000 99%,#000 101%) 50% calc(100% - 30px)/120px calc(51% - 30px) repeat-x;
-  -webkit-mask: var(--mask);
-          mask: var(--mask);
-}
-	
 	:global(a) {
 		text-decoration: none;
 		color: var(--clr-font);
 	}
 
-	:global(.header-icons) {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background: none;
-		color: var(--clr-toggle);
-		border: none;
-		font: inherit;
-		cursor: pointer;
-		outline: inherit;
-		width: 1.5rem;
-		height: 1.5rem;
-		padding: 0.3rem;
-	}
-
-	:global(.header-icons:hover) {
-		background-color: var(--clr-hover);
-		border-radius: 6px;
-		/* color: black; */
-		transition: color 0.3s ease, background-color 0.3s ease;
-	}
 	:global(.button) {
 		display: flex;
 		justify-content: center;
@@ -118,19 +83,37 @@
 		gap: 1rem;
 		cursor: pointer;
 	}
+
 	:global(.icons) {
-		/* background: none; */
-		color: var(--clr-toggle);
-		/* border: none; */
+		color: var(--clr-icons);
 		padding: 0;
-		/* font: inherit; */
 		cursor: pointer;
-		/* outline: inherit; */
 		width: 1.5rem;
 		height: 1.5rem;
 	}
 
-	
+	:global(.header-icons) {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		width: 1.5rem;
+		height: 1.5rem;
+		padding: 0.3rem;
+	}
 
+	:global(.header-icons:hover) {
+		background-color: var(--clr-hover);
+		border-radius: 6px;
+		transition: color 0.3s ease, background-color 0.3s ease;
+	}
 
+	:global(.icons-container) {
+		display: flex;
+		align-items: center;
+		/* height: inherit; */
+		gap: 0.5rem;
+		margin: 0;
+		padding: 0;
+	}
 </style>

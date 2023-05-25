@@ -2,7 +2,7 @@
 	import { enhance } from '$app/forms';
 	import IoMdSend from 'svelte-icons/io/IoMdSend.svelte';
 	import type { Language } from '../../../types';
-	import { Spinner } from '$components';
+	import { LoadingSpinner } from '$components';
 	export let formLang: Language['contact']['form'];
 
 	$: isLoading = false;
@@ -47,7 +47,7 @@
 		{/if}
 		<button class="button" type="submit" disabled={isLoading}>
 			{#if isLoading}
-				<Spinner />
+				<LoadingSpinner />
 			{:else}
 				{formLang.button}
 				<div class="icons">

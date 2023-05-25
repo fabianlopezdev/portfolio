@@ -6,7 +6,7 @@
 	export let isDark = false;
 
 	async function toggleTheme() {
-		window.document.body.classList.toggle('dark');
+		window.document.body.classList.toggle('dark-mode');
 		await tick();
 		isDark = !isDark;
 	}

@@ -2,8 +2,8 @@ export { default as NavLinks } from './NavLinks.svelte';
 export { default as About } from './about/About.svelte';
 export { default as Projects } from './projects/Projects.svelte';
 export { default as Contact } from './contact/ContactPage.svelte';
-export { default as ToggleTheme } from './header/ToggleTheme.svelte';
-export { default as ToggleLang } from './header/ToggleLang.svelte';
+export { default as LightDarkModeToggle } from './header/LightDarkModeToggle.svelte';
+export { default as LanguageToggle } from './header/LanguageToggle.svelte';
 export { default as Header } from './header/Header.svelte';
 export { default as Footer } from './footer/Footer.svelte';
 export { default as SocialLinks } from './SocialLinks.svelte';
@@ -13,4 +13,5 @@ export { default as ContactCard } from './contact/contactCards/ContactCard.svelt
 export { default as CardGrid } from './contact/contactCards/CardGrid.svelte';
 export { default as ContactForm } from './contact/ContactForm.svelte';
 export { default as ModalMenu } from './header/ModalMenu.svelte';
-export { default as Spinner } from './Spinner.svelte';
+export { default as LoadingSpinner } from './LoadingSpinner.svelte';
+export { default as Logo } from './Logo.svelte';
