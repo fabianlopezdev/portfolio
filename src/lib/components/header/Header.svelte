@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { Logo, LanguageToggle, LightDarkModeToggle, ModalMenu, NavLinks } from '$components';
 	import type { Language } from '../../../types';
-	
+
 	export let lang: string | undefined;
 	export let navLinksLang: Language['navLinks'];
 </script>
 
 <nav class="header-container">
 	<!-- fontSize value is in rem -->
-	<Logo fontSize={3}/>
+	<Logo fontSize={3} />
 	<ul class="icons-container">
 		<li>
 			<LightDarkModeToggle />
@@ -26,8 +26,6 @@
 </nav>
 
 <style>
-	
-
 	.header-container {
 		position: relative;
 		display: flex;

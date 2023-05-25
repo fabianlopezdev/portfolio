@@ -72,8 +72,8 @@
   div {
     display: flex;
     justify-content: center;
-    width: 5rem;
-    gap: 1rem;
+
+    gap: 0.5rem;
 		color: gray;
   }
 
