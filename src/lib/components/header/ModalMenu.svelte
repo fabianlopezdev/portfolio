@@ -51,7 +51,7 @@
 	}
 
 	.socialLinks {
-		position: absolute;
+		position: fixed;
 		left: 0;
 		right:0;
 		top: 30rem;
@@ -70,17 +70,16 @@
 		background-color: var(--clr-bg);
 		position: fixed;
 		top: 0;
-		bottom: 0;
+		height: 100vh;
 		left: 0;
 		right: 0;
 	}
 	nav {
-		position:relative;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;
