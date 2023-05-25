@@ -7,7 +7,7 @@
 	const currentYear = new Date().getFullYear();
 </script>
 
-<footer class="footer desktop">
+<nav class="footer desktop">
 	<div class="logo-and-copyright">
 		<!-- fontSize value is in rem -->
 		<Logo fontSize={2} />
@@ -24,13 +24,15 @@
 		</a>
 	</small>
 	<SocialLinks />
-</footer>
+</nav>
 
-<footer class="footer mobile">
+<nav class="footer mobile">
 	<div class="logo-and-copyright">
 		<!-- fontSize value is in rem -->
-		<Logo fontSize={2} />
-		<small>©{currentYear} FabulousApps</small>
+    <Logo fontSize={2} />
+		<small>
+      
+      ©{currentYear} FabulousApps</small>
 	</div>
 	<div class="social-and-svelte">
 		<div class="social">
@@ -46,7 +48,7 @@
 			</a>
 		</small>
 	</div>
-</footer>
+</nav>
 
 <style>
 	a:hover {

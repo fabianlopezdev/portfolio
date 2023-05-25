@@ -1,7 +1,7 @@
 <script lang="ts">
 	import HamburgerMenuIcon from 'svelte-icons/io/IoIosMenu.svelte';
 	import CloseIcon from 'svelte-icons/io/IoIosClose.svelte';
-	import { NavLinks } from '$components';
+	import { Logo, NavLinks, SocialLinks } from '$components';
 	import type { Language } from '../../../types';
 
 	export let navLinksLang: Language['navLinks'];
@@ -24,9 +24,16 @@
 		</div>
 	</button>
 	<div class="modal">
+		<div class='logo'>
+			<Logo fontSize={4}/>
+		</div>
 		<nav>
 			<NavLinks {navLinksLang} customClass="modal" on:linkClick={handleLinkClick} />
 		</nav>
+		<div class='socialLinks'>
+
+			<SocialLinks/>
+		</div>
 	</div>
 {:else}
 	<button type="button" on:click|preventDefault={toggleMenu} aria-label="Open menu">
@@ -37,6 +44,15 @@
 {/if}
 
 <style>
+	.logo {
+		display:flex;
+		justify-content: center;
+		padding-top:6rem;
+	}
+
+	.socialLinks {
+		padding-top: 20rem;
+	}
 	button {
 		display: flex;
 		border: none;
@@ -52,8 +68,8 @@
 		position: fixed;
 		top: 0;
 		bottom: 0;
-		   left: 0;
-    right: 0;
+		left: 0;
+		right: 0;
 	}
 	nav {
 		display: flex;

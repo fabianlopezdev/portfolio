@@ -49,13 +49,13 @@
 	<Contact {contactLang} />
 </main>
 
-<footer class='header'>
+<footer>
 	<Footer {footerLang}/>
 </footer>
 
 
 <style>
-	.header {
+	header {
 		position: sticky;
 		top: 0;
 		z-index: 4;
@@ -70,5 +70,10 @@
 		width: 100%;
 		border-bottom: 0.5px solid var(--clr-shadow);
 		box-shadow: 0 0.5px 1px var(--clr-shadow);
+	}
+
+	footer {
+		display: flex;
+		justify-content: center;
 	}
 </style>
