@@ -1,29 +1,24 @@
-<script lang='ts'>
-  export let isScrollingDown;
+<script lang="ts">
 	let imgTapped = false;
-  // let scrolledUp = false
-	// function onImageTapped() {
-	// 	imgTapped = !imgTapped;
-	// 	console.log(imgTapped);
-	// }
+	let isTouchable = false;
 
-  // let scrollY = 0;
-	
-	// Define a function to handle the scroll event
-	// function handleScroll(event: UIEvent) {
-	// 	let previousScroll = scrollY;
-	// 	// Cast the event target to a document object
-	// 	if (event) {
-	// 		scrollY = (event.target as Document).scrollingElement?.scrollTop ?? 0;
-	// 	}
-	// 	scrollY > previousScroll ? console.log('down') : console.log('up')
-	// }
- 
+	function onImageTapped() {
+		if (!isTouchable) return;
+		imgTapped = !imgTapped;
+	}
+
+	function handleTouch() {
+		if (isTouchable) return;
+		isTouchable = true;
+		console.log('touchablleeee');
+	}
 </script>
 
-<button>
-	<div class="person" >
-		<div class="person-container" class:active={isScrollingDown}>
+<svelte:window on:touchstart={handleTouch} />
+
+<button on:click={onImageTapped}>
+	<div class="person">
+		<div class="person-container" class:active={imgTapped}>
 			<img class="person-circle" src="./blue-dots.jpg" alt="" />
 			<img class="person-img" src="./self-foto.png" alt="Fabian being welcoming" />
 		</div>
@@ -74,22 +69,19 @@
 		transition: transform calc(var(--transform-speed) * 1.2) ease;
 	}
 
-	@media (min-width: 600px) {
+	.active {
+		transform: scale(1.1);
+	}
+
+	.active .person-img {
+		transform: scale(1) translateY(-1.28rem);
+	}
+	@media (hover: hover) {
 		.person-container:hover {
 			transform: scale(1.1);
 		}
 
 		.person-container:hover .person-img {
-			transform: scale(1) translateY(-1.28rem);
-		}
-	}
-
-	@media (max-width: 599px) {
-		.active {
-			transform: scale(1.1);
-		}
-
-		.active .person-img {
 			transform: scale(1) translateY(-1.28rem);
 		}
 	}

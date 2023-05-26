@@ -1,5 +1,5 @@
 <script lang="ts">
-	import english from '../languages/en.json'
+	import english from '../languages/en.json';
 	import spanish from '../languages/es.json';
 	import { NavLinks, About, Projects, Contact, Header, Home, Footer } from '$components';
 	import type { Language } from '../types';
@@ -10,10 +10,10 @@
 	// Destructure lang from data and make it reactive
 	$: ({ lang } = data || 'en');
 
-	let navLinks: Language['navLinks']
-	let home: Language['home']
-	let contact: Language['contact']
-	let footer: Language['footer']
+	let navLinks: Language['navLinks'];
+	let home: Language['home'];
+	let contact: Language['contact'];
+	let footer: Language['footer'];
 	// Assign language based on lang and make it reactive
 	$: navLinksLang = lang === 'en' ? english.navLinks : spanish.navLinks;
 	$: homeLang = lang === 'en' ? english.home : spanish.home;
@@ -22,16 +22,14 @@
 
 	// Declare a variable to store the scroll position
 	let scrollY = 0;
-	// let storeScrollY = 
+	// let storeScrollY =
 	let bottomShadow = false;
 	// Define a function to handle the scroll event
 	function handleScroll(event: UIEvent) {
-
 		// Cast the event target to a document object
 		if (event) {
 			scrollY = (event.target as Document).scrollingElement?.scrollTop ?? 0;
 		}
-	
 	}
 
 	$: bottomShadow = scrollY > 0;
@@ -39,23 +37,21 @@
 
 <svelte:window on:scroll={handleScroll} />
 
+<header class="header" class:header-bottom-shadow={bottomShadow}>
+	<!-- Passing lang, because header has the language toggle -->
+	<Header {lang} {navLinksLang} />
+</header>
 
-	<header class="header" class:header-bottom-shadow={bottomShadow}>
-		<!-- Passing lang, because header has the language toggle -->
-		<Header  {lang} {navLinksLang} />
-	</header>
-	
-	<main>
+<main>
 	<Home {homeLang} />
-	<About {scrollY}/>
+	<About {scrollY} />
 	<Projects />
 	<Contact {contactLang} />
 </main>
 
 <footer>
-	<Footer {footerLang}/>
+	<Footer {footerLang} />
 </footer>
-
 
 <style>
 	header {
