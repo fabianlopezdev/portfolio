@@ -47,4 +47,14 @@
 	.person-container:hover .person-img {
 		transform: scale(1) translateY(-1.28rem);
 	}
+
+  @media (hover: none) {
+	.person-container:active {
+		transform: scale(1.1);
+	}
+
+	.person-container:active .person-img {
+		transform: scale(1) translateY(-1.28rem);
+	}
+}
 </style>
