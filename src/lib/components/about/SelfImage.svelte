@@ -1,18 +1,34 @@
 <script>
 
- 
+  $:imgTapped = false;
+  
+  function onImageTapped() {
+    imgTapped = !imgTapped;
+    console.log(imgTapped)
+  }
 
 </script>
 
-<div class="person">
-	<div class="person-container"> 
-		<img class="person-circle"  src="./blue-dots.jpg" alt="" />
-		<img class="person-img"  src="./self-foto.png" alt="Fabian being welcoming" />
+<button on:click={onImageTapped}>
+	<div class="person">
+		<div class="person-container" class:active={imgTapped}>
+			<img class="person-circle" src="./blue-dots.jpg" alt="" />
+			<img class="person-img" src="./self-foto.png" alt="Fabian being welcoming" />
+		</div>
 	</div>
-</div>
+</button>
 
 <style>
-
+	button {
+		background-color: transparent;
+		border: none;
+		color: inherit;
+		font-family: inherit;
+		font-size: inherit;
+		font-weight: inherit;
+		line-height: inherit;
+		padding: 0;
+	}
 
 	.person {
 		--transform-speed: 250ms;
@@ -49,14 +65,23 @@
 		transition: transform calc(var(--transform-speed) * 1.2) ease;
 	}
 
-  @media (min-width: 600px) {
-	.person-container:hover {
-		transform: scale(1.1);
+	@media (min-width: 600px) {
+		.person-container:hover {
+			transform: scale(1.1);
+		}
+
+		.person-container:hover .person-img {
+			transform: scale(1) translateY(-1.28rem);
+		}
 	}
 
-	.person-container:hover .person-img {
-		transform: scale(1) translateY(-1.28rem);
-	}
+  @media (max-width: 599px) {
+		.active {
+    transform: scale(1.1);
 }
 
+.active .person-img {
+    transform: scale(1) translateY(-1.28rem);
+}
+	}
 </style>
