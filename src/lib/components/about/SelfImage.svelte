@@ -1,17 +1,29 @@
-<script>
+<script lang='ts'>
+  export let isScrollingDown;
+	let imgTapped = false;
+  // let scrolledUp = false
+	// function onImageTapped() {
+	// 	imgTapped = !imgTapped;
+	// 	console.log(imgTapped);
+	// }
 
-  $:imgTapped = false;
-  
-  function onImageTapped() {
-    imgTapped = !imgTapped;
-    console.log(imgTapped)
-  }
-
+  // let scrollY = 0;
+	
+	// Define a function to handle the scroll event
+	// function handleScroll(event: UIEvent) {
+	// 	let previousScroll = scrollY;
+	// 	// Cast the event target to a document object
+	// 	if (event) {
+	// 		scrollY = (event.target as Document).scrollingElement?.scrollTop ?? 0;
+	// 	}
+	// 	scrollY > previousScroll ? console.log('down') : console.log('up')
+	// }
+ 
 </script>
 
-<button on:click={onImageTapped}>
-	<div class="person">
-		<div class="person-container" class:active={imgTapped}>
+<button>
+	<div class="person" >
+		<div class="person-container" class:active={isScrollingDown}>
 			<img class="person-circle" src="./blue-dots.jpg" alt="" />
 			<img class="person-img" src="./self-foto.png" alt="Fabian being welcoming" />
 		</div>
@@ -46,9 +58,6 @@
 		transition: transform var(--transform-speed) ease;
 	}
 
-	/* .person-container:hover {
-		transform: scale(1.1);
-	} */
 	.person-circle {
 		position: absolute;
 		inset: auto 0 0;
@@ -75,13 +84,13 @@
 		}
 	}
 
-  @media (max-width: 599px) {
+	@media (max-width: 599px) {
 		.active {
-    transform: scale(1.1);
-}
+			transform: scale(1.1);
+		}
 
-.active .person-img {
-    transform: scale(1) translateY(-1.28rem);
-}
+		.active .person-img {
+			transform: scale(1) translateY(-1.28rem);
+		}
 	}
 </style>

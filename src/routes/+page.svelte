@@ -22,13 +22,16 @@
 
 	// Declare a variable to store the scroll position
 	let scrollY = 0;
+	// let storeScrollY = 
 	let bottomShadow = false;
 	// Define a function to handle the scroll event
 	function handleScroll(event: UIEvent) {
+
 		// Cast the event target to a document object
 		if (event) {
 			scrollY = (event.target as Document).scrollingElement?.scrollTop ?? 0;
 		}
+	
 	}
 
 	$: bottomShadow = scrollY > 0;
@@ -44,7 +47,7 @@
 	
 	<main>
 	<Home {homeLang} />
-	<About />
+	<About {scrollY}/>
 	<Projects />
 	<Contact {contactLang} />
 </main>
