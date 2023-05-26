@@ -1,6 +1,6 @@
 <script>
 	import { SelfImage } from '$components';
-
+	
 	// document.body.ontouchstart
 
 	
