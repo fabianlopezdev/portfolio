@@ -1,14 +1,19 @@
 <script>
+
+ 
+
 </script>
 
 <div class="person">
-	<div class="person-container">
-		<img class="person-circle" src="./blue-dots.jpg" alt="" />
-		<img class="person-img" src="./self-foto.png" alt="Fabian being welcoming" />
+	<div class="person-container"> 
+		<img class="person-circle"  src="./blue-dots.jpg" alt="" />
+		<img class="person-img"  src="./self-foto.png" alt="Fabian being welcoming" />
 	</div>
 </div>
 
 <style>
+
+
 	.person {
 		--transform-speed: 250ms;
 		position: relative;
@@ -25,9 +30,9 @@
 		transition: transform var(--transform-speed) ease;
 	}
 
-	.person-container:hover {
+	/* .person-container:hover {
 		transform: scale(1.1);
-	}
+	} */
 	.person-circle {
 		position: absolute;
 		inset: auto 0 0;
@@ -44,17 +49,14 @@
 		transition: transform calc(var(--transform-speed) * 1.2) ease;
 	}
 
-	.person-container:hover .person-img {
-		transform: scale(1) translateY(-1.28rem);
-	}
-
-  @media (hover: none) {
-	.person-container:active {
+  @media (min-width: 600px) {
+	.person-container:hover {
 		transform: scale(1.1);
 	}
 
-	.person-container:active .person-img {
+	.person-container:hover .person-img {
 		transform: scale(1) translateY(-1.28rem);
 	}
 }
+
 </style>
