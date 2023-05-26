@@ -5,6 +5,7 @@ export { default as Contact } from './contact/ContactPage.svelte';
 export { default as LightDarkModeToggle } from './header/LightDarkModeToggle.svelte';
 export { default as LanguageToggle } from './header/LanguageToggle.svelte';
 export { default as Header } from './header/Header.svelte';
+export { default as SelfImage } from './about/SelfImage.svelte';
 export { default as Footer } from './footer/Footer.svelte';
 export { default as SocialLinks } from './SocialLinks.svelte';
 export { default as Button } from './Button.svelte';
