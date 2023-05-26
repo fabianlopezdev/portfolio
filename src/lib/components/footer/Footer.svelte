@@ -23,7 +23,7 @@
 			{footerLang.language}
 		</a>
 	</small>
-	<SocialLinks />
+	<SocialLinks gap={0.5}/>
 </nav>
 
 <nav class="footer mobile">
