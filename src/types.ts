@@ -18,6 +18,10 @@ export interface Language {
 		buttonContact: string;
 		buttonResume: string;
 	};
+	about: {
+		firstParagraph: string;
+		secondParagraph: string;
+	};
 	contact: {
 		h1: string;
 		cardGrid: {

@@ -10,13 +10,14 @@
 	// Destructure lang from data and make it reactive
 	$: ({ lang } = data || 'en');
 
-	let navLinks: Language['navLinks'];
-	let home: Language['home'];
-	let contact: Language['contact'];
-	let footer: Language['footer'];
+	// let navLinks: Language['navLinks'];
+	// let home: Language['home'];
+	// let contact: Language['contact'];
+	// let footer: Language['footer'];
 	// Assign language based on lang and make it reactive
 	$: navLinksLang = lang === 'en' ? english.navLinks : spanish.navLinks;
 	$: homeLang = lang === 'en' ? english.home : spanish.home;
+	$: aboutLang = lang === 'en' ? english.about : spanish.about;
 	$: contactLang = lang === 'en' ? english.contact : spanish.contact;
 	$: footerLang = lang === 'en' ? english.footer : spanish.footer;
 
@@ -44,7 +45,7 @@
 
 <main>
 	<Home {homeLang} />
-	<About {scrollY} />
+	<About {aboutLang}/>
 	<Projects />
 	<Contact {contactLang} />
 </main>

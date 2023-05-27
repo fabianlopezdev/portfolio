@@ -8,6 +8,10 @@
 		"buttonContact": "Contact",
 		"buttonResume": "Resume"
 	},
+	"about":{
+		"firstParagraph": "Hello! I'm Fabian Lopez a Full Stack JavaScript Developer who loves creating efficient, fabulous websites. My skills span Node.js, SQL and no-SQL databases, React, Next.js, and Svelte. But I don't stop there—I'm always eager to learn new technologies to use the best tools for the job. ",
+		"secondParagraph": "My journey has been rich and varied. I managed a transportation company for seven years and earned a Business Administration degree in a new country and a different language. These experiences, coupled with my passion for web development, allow me to understand both the technical and business aspects of every project."
+	},
 	"contact": {
 		"h1": "Let's build something great",
 		"cardGrid": {
