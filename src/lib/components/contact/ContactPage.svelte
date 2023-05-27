@@ -19,11 +19,11 @@
 
 <style>
 	section {
-		background-color: #c0e6ef;
+		/* background-color: #c0e6ef;
 		align-items: center;
 		justify-content: center;
 		gap: 3rem;
-		padding-bottom: 2rem;
+		padding-bottom: 2rem; */
 		/* overflow: hidden; */
 		/* height:min-content; */
 		/* max-height: 100%; */
