@@ -4,13 +4,15 @@
 	import type { Language } from '../../../types';
 	import { LoadingSpinner } from '$components';
 	export let formLang: Language['contact']['form'];
-
+	let name;
+	let persistName;
 	$: isLoading = false;
 	$: isEmailSent = null;
 	const onSubmit = () => {
+		persistName = name;
 		isEmailSent = null;
 		isLoading = true;
-		return ({ result, update }) => {
+		return ({ result, update}) => {
 			isLoading = false;
 			if (result.type === 'success') {
 				isEmailSent = true;
@@ -28,7 +30,7 @@
 	<form method="POST" action="/?/sendEmail" use:enhance={onSubmit}>
 		<p>{formLang.p}</p>
 		<label>
-			<input name="name" type="text" placeholder={formLang.name} required />
+			<input name="name" bind:value={name} type="text" placeholder={formLang.name} required />
 		</label>
 		<label>
 			<input name="email" type="email" placeholder={formLang.email} />
@@ -38,11 +40,11 @@
 		</label>
 		{#if isEmailSent === true}
 			<div class="success-alert">
-				<p>{formLang.success}</p>
+				<p>{persistName}{formLang.success} </p>
 			</div>
 		{:else if isEmailSent === false}
 			<div class="error-alert">
-				<p>{formLang.error}</p>
+				<p>{persistName}{formLang.error}</p>
 			</div>
 		{/if}
 		<button class="button" type="submit" disabled={isLoading}>

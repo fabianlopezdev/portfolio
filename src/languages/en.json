@@ -40,8 +40,8 @@
 			"subject": "Subject",
 			"message": "How can I help you?",
 			"button": "Submit",
-			"success": "Message sent.",
-			"error": "Error sending message. Try again."
+			"success": ", thank you for your message!",
+			"error": ", there was an error sendin the message. Please try again."
 		}
 	},
 	"footer": {

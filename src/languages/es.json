@@ -41,8 +41,8 @@
 			"subject": "Asunto",
 			"message": "En que puedo ayudarte?",
 			"button": "Enviar",
-			"success": "Mensaje enviado.",
-			"error": "Error enviando el mensaje. Prueba otra vez."
+			"success": ", gracias por el mensaje.",
+			"error": ", ha habido un error enviando el mensaje. Por favor, prueba otra vez."
 		}
 	},
 	"footer": {
