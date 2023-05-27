@@ -21,6 +21,7 @@ export interface Language {
 	about: {
 		firstParagraph: string;
 		secondParagraph: string;
+		thirdParagraph: string;
 	};
 	contact: {
 		h1: string;
@@ -43,7 +44,7 @@ export interface Language {
 			};
 		};
 		contactForm: {
-			p:string;
+			p: string;
 			name: string;
 			email: string;
 			subject: string;

@@ -6,12 +6,17 @@
 <section id="about">
 	<div class="about-container">
 		<div class="text">
-			<h2>About me</h2>
+			<h2>About me<span style="color: blue;">.</span></h2>
 			<p>
 				{aboutLang.firstParagraph}
+				<br>
+				<br>
+				{aboutLang.secondParagraph}
+				<br>
+				<br>
+				{aboutLang.thirdParagraph}
 			</p>
 			<p>
-				{aboutLang.secondParagraph}
 			</p>
 		</div>
 
@@ -36,8 +41,9 @@
 	}
 
 	.text {
-	 width: clamp(600px, 50vw, 900px);
-		/* margin-inline: 1rem; */
+	 width: clamp(400px, 50vw, 900px);
+		font-size: 1.3rem;
+		line-height: 1.6;
 	}
 
 	

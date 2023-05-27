@@ -25,6 +25,7 @@
 		font-weight: inherit;
 		line-height: inherit;
 		padding: 0;
+    margin-inline: 2rem;
 	}
 	.person {
 		--transform-speed: 250ms;

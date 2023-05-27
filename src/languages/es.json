@@ -9,8 +9,9 @@
 		"buttonResume": "CV"
 	},
 	"about": {
-		"firstParagraph": "¡Hola! Soy Fabián López, desarrollador JavaScript Full Stack a quien le encanta crear sitios web eficientes y fabulosos. Mis habilidades abarcan Node.js, bases de datos SQL y no-SQL, React, Next.js y Svelte. Pero no me detengo ahí, siempre estoy ansioso por aprender nuevas tecnologías para utilizar las mejores herramientas específicas para cada trabajo.",
-		"secondParagraph": "Mi trayectoria ha sido rica y variada. Dirigí una empresa de transporte durante siete años y obtuve un título en Administración de Empresas en un nuevo país y en un idioma diferente. Estas experiencias, junto con mi pasión por el desarrollo web, me permiten entender tanto los aspectos técnicos como los empresariales de cada proyecto."
+		"firstParagraph": "¡Hola! Soy Fabián López, desarrollador Full Stack a quien le encanta crear sitios web eficientes y fabulosos.Siempre estoy explorando nuevas tecnologías para ofrecer las mejores soluciones.",
+		"secondParagraph": "Mi trayectoria diversa incluye dirigir una empresa de transporte y obtener un título en Administración de Empresas en el extranjero. Junto con mi pasión por el desarrollo de software, aporto una comprensión única de los aspectos técnicos y comerciales de cada proyecto.",
+		"thirdParagraph": "Me comprometo a ayudarte a alcanzar tus metas"
 	},
 	"contact": {
 		"h1": "¿Tienes una idea? Cuéntamela",
