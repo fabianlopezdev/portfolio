@@ -94,7 +94,11 @@
   margin-left: 0.5rem;
 }
 label[for="project"] {
-  padding-left: 25px;
+  padding-left: 22px;
+}
+
+label[for="skills"] {
+  padding-right: 35px;
 }
 #skills:checked ~ .slider .dot {
   transform: translateX(100%);
