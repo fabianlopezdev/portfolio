@@ -1,11 +1,6 @@
 <script>
 	import { SelfImage } from '$components';
-	
-	// document.body.ontouchstart
-
-	
 </script>
-
 
 <section id="about">
 	<h2>About</h2>

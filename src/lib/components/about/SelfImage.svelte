@@ -1,10 +1,15 @@
 <script lang="ts">
+	let imgTouched = false;
+	
+	function handleTouch() {
+		imgTouched = !imgTouched;
+	}
 </script>
 
-<button>
+<button on:touchstart={handleTouch}>
 	<div class="person">
-		<div class="person-container">
-			<img class="person-circle" src="./blue-dots.avif" alt="" />
+		<div class="person-container" class:active={imgTouched}>
+			<img class="person-circle" src="./blue-dots.avif" alt=""/>
 			<img class="person-img" src="./fabian-photo.png" alt="Fabian being welcoming" />
 		</div>
 	</div>
@@ -21,14 +26,12 @@
 		line-height: inherit;
 		padding: 0;
 	}
-
 	.person {
 		--transform-speed: 250ms;
 		position: relative;
 		max-width: 15rem;
 		margin-inline: auto;
 	}
-
 	.person-container {
 		aspect-ratio: 1/ 1.25;
 		display: grid;
@@ -37,7 +40,6 @@
 		overflow: hidden;
 		transition: transform var(--transform-speed) ease;
 	}
-
 	.person-circle {
 		position: absolute;
 		inset: auto 0 0;
@@ -53,25 +55,17 @@
 		transform: scale(1);
 		transition: transform calc(var(--transform-speed) * 1.2) ease;
 	}
-
-	/* Detect not touchable screen */
+	.active {
+		transform: scale(1.1);
+	}
+	.active .person-img {
+		transform: scale(1) translateY(-1.28rem);
+	}
 	@media (hover: hover) {
 		.person-container:hover {
 			transform: scale(1.1);
 		}
-
 		.person-container:hover .person-img {
-			transform: scale(1) translateY(-1.28rem);
-		}
-	}
-
-	/* Detect touchable screen */
-	@media (pointer: coarse) {
-		.person-container:active {
-			transform: scale(1.1);
-		}
-
-		.person-container:active .person-img {
 			transform: scale(1) translateY(-1.28rem);
 		}
 	}
