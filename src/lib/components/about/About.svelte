@@ -44,7 +44,7 @@
 	
 	@media (max-width: 789px) {
 		.text {
-			margin-inline: 2rem;
+			margin-inline: 1rem;
 			/* width: clamp(450px, 100svw, 700px); */
 		}
 	}

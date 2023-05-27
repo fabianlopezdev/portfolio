@@ -45,6 +45,7 @@
 		/* color: var(--clr-accent) */
 	}
 	section {
+		min-height: calc(100svh - 3.7rem);
 		/* height: calc(100svh - var(--size-header)); */
 		/* display: flex;
 		flex-direction: column; */
