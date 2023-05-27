@@ -1,25 +1,10 @@
 <script lang="ts">
-	let imgTapped = false;
-	let isTouchable = false;
-
-	function onImageTapped() {
-		if (!isTouchable) return;
-		imgTapped = !imgTapped;
-	}
-
-	function handleTouch() {
-		if (isTouchable) return;
-		isTouchable = true;
-		console.log('touchablleeee');
-	}
 </script>
 
-<svelte:window on:touchstart={handleTouch} />
-
-<button on:click={onImageTapped}>
+<button>
 	<div class="person">
-		<div class="person-container" class:active={imgTapped}>
-			<img class="person-circle" src="./blue-dots.avif" alt=""/>
+		<div class="person-container">
+			<img class="person-circle" src="./blue-dots.avif" alt="" />
 			<img class="person-img" src="./fabian-photo.png" alt="Fabian being welcoming" />
 		</div>
 	</div>
@@ -69,19 +54,24 @@
 		transition: transform calc(var(--transform-speed) * 1.2) ease;
 	}
 
-	.active {
-		transform: scale(1.1);
-	}
-
-	.active .person-img {
-		transform: scale(1) translateY(-1.28rem);
-	}
+	/* Detect not touchable screen */
 	@media (hover: hover) {
 		.person-container:hover {
 			transform: scale(1.1);
 		}
 
 		.person-container:hover .person-img {
+			transform: scale(1) translateY(-1.28rem);
+		}
+	}
+
+	/* Detect touchable screen */
+	@media (pointer: coarse) {
+		.person-container:active {
+			transform: scale(1.1);
+		}
+
+		.person-container:active .person-img {
 			transform: scale(1) translateY(-1.28rem);
 		}
 	}
