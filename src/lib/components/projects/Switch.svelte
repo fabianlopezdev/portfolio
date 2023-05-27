@@ -46,6 +46,7 @@
     transition: color 0.2s;
      border-radius: 1rem;
      flex: 0 0 45%;
+     letter-spacing: 1px;
     /* border: 3px solid #d0dff0; */
 }
 
@@ -91,10 +92,10 @@
   height: 8px;
   background: blue; /* choose your desired color */
   border-radius: 50%;
-  margin-left: 0.5rem;
+  margin-left: 0.4rem;
 }
 label[for="project"] {
-  padding-left: 22px;
+  padding-left: 19px;
 }
 
 label[for="skills"] {
