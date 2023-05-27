@@ -1,6 +1,7 @@
 export { default as NavLinks } from './NavLinks.svelte';
 export { default as About } from './about/About.svelte';
 export { default as Projects } from './projects/Projects.svelte';
+export { default as Switch } from './projects/Switch.svelte';
 export { default as Contact } from './contact/ContactPage.svelte';
 export { default as LightDarkModeToggle } from './header/LightDarkModeToggle.svelte';
 export { default as LanguageToggle } from './header/LanguageToggle.svelte';
