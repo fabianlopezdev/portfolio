@@ -1,7 +1,7 @@
 <script lang="ts">
 	import english from '../languages/en.json';
 	import spanish from '../languages/es.json';
-	import { NavLinks, About, Projects, Contact, Header, Home, Footer } from '$components';
+	import { NavLinks, About, Work, Contact, Header, Home, Footer } from '$components';
 	import type { Language } from '../types';
 
 	//Data is received from a load function in page.server.ts
@@ -46,7 +46,7 @@
 <main>
 	<Home {homeLang} />
 	<About {aboutLang}/>
-	<Projects />
+	<Work />
 	<Contact {contactLang} />
 </main>
 

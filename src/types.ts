@@ -60,7 +60,7 @@ export interface Language {
 	};
 	navLinks: {
 		about: string;
-		projects: string;
+		work: string;
 		contact: string;
 	};
 }
