@@ -67,7 +67,7 @@
     z-index: -2;
     transform: rotate(-1deg);
     background-color: var(--clr-accent);
-    transition: width 0.5s ease-in-out;
+    transition: width 0.3s ease-in-out;
   }
   .logos input[type="radio"]:checked + label::before {
     width: 100%;
