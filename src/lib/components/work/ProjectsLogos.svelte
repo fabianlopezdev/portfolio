@@ -1,32 +1,30 @@
 <script></script>
-<svelte:head>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@200&family=Montserrat+Alternates:ital,wght@1,700&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&display=swap"
-    rel="stylesheet"
-  />
-</svelte:head>
+
 <div class="logos">
   <input type="radio" id="wannago" name="logos" checked />
   <label class="wannago" for="wannago">Wannago</label>
   <input type="radio" id="huddler" name="logos" />
   <label class="huddler" for="huddler">Huddler</label>
   <input type="radio" id="road-trip" name="logos" />
-  <label class="road-trip" for="road-trip">Road Trip</label>
+  <label class="road-trip" for="road-trip">Road trip</label>
 </div>
 <style>
   @font-face {
     font-family: "Overmuch Regular";
     src: url("/overmch.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
+   
+  }
+
+	 @font-face {
+    font-family: "Montserrat Alternates";
+    src: url("/MontserratAlternates-SemiBoldItalic.ttf") format("truetype");
+  
+  }
+
+	@font-face {
+    font-family: "Cabin Regular";
+    src: url("/Cabin-Regular.ttf") format("truetype");
+   
   }
   .wannago {
     font-family: "Montserrat Alternates", sans-serif;
@@ -39,7 +37,7 @@
   }
   .road-trip {
     font-family: "Cabin", sans-serif;
-    font-size: 3.9rem;
+    font-size: 4rem;
   }
   .logos {
     display: flex;

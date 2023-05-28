@@ -10,8 +10,8 @@
   .toggle {
     position: relative;
     display: flex;
-    max-width: 215px;
-    width: 15rem;
+    min-width: 17rem;
+    /* width:rem; */
     font-size: 15.8px;
     font-weight: 700;
     border-radius: 1rem;
@@ -26,10 +26,13 @@
     display: none;
   }
 
+  label {
+    padding: 0;
+  }
   .toggle label {
     position: relative;
     overflow: hidden;
-    padding: 10px 20px;
+    padding: 10px 0px;
     cursor: pointer;
     color: #000;
     z-index: 1;
@@ -38,6 +41,7 @@
     flex: 0 0 45%;
     letter-spacing: 1px;
     text-align: center;
+
   }
 
   .toggle .label-text {
@@ -101,7 +105,11 @@
   }
 
   label[for="project"] {
-    padding-left: 17px;
+    padding-left: 15px;
+  }
+
+  label[for="skills"] {
+    padding-right: 15px;
   }
 
   #skills:checked ~ .slider .dot {
