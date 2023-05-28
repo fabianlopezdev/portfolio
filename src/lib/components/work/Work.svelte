@@ -9,16 +9,16 @@
 		Work<span style="color: blue">.</span>
 	</h2>
 	<Switch bind:selectedOption={selectedOption}/>
-	<div class='projects-container'>
-		{#if selectedOption === 'projects'}
+	{#if selectedOption === 'projects'}
+	<div class='projects-container'  class:active={selectedOption === 'projects'}>
 			<ProjectsLogos bind:selectedLogo={selectedLogo}/>
+		</div>
 		{/if}
-	</div>
-	<div class='skills-container'>
-		{#if selectedOption === 'skills'}
+	{#if selectedOption === 'skills'}
+	<div class='skills-container' class:active={selectedOption === 'skills'}>
 			This is skills
+		</div>
 		{/if}
-	</div>
 </section>
 
 <style>
@@ -27,4 +27,6 @@
 		align-items: center;
 		gap: 1rem;
 	}
+
+	
 </style>

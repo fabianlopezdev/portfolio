@@ -12,24 +12,20 @@
   <label class="road-trip" for="road-trip">Road trip</label>
 </div>
 
-
 <style>
   @font-face {
     font-family: "Overmuch Regular";
     src: url("/overmch.ttf") format("truetype");
-   
   }
 
-	 @font-face {
+  @font-face {
     font-family: "Montserrat Alternates";
     src: url("/MontserratAlternates-SemiBoldItalic.ttf") format("truetype");
-  
   }
 
-	@font-face {
+  @font-face {
     font-family: "Cabin Regular";
     src: url("/Cabin-Regular.ttf") format("truetype");
-   
   }
   .wannago {
     font-family: "Montserrat Alternates", sans-serif;
@@ -53,6 +49,7 @@
   }
   .logos label {
     cursor: pointer;
+    transition: color 0.8s ease-in-out; /* Transition added here */
   }
   label {
     display: inline-block;
@@ -71,7 +68,6 @@
     transform: rotate(-1deg);
     background-color: var(--clr-accent);
     transition: width 0.5s ease-in-out;
-		/* border-radius: 5px; */
   }
   .logos input[type="radio"]:checked + label::before {
     width: 100%;
