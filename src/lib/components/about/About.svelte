@@ -4,9 +4,9 @@
 </script>
 
 <section id="about">
+	<h2>About me<span style="color: blue;">.</span></h2>
 	<div class="about-container">
 		<div class="text">
-			<h2>About me<span style="color: blue;">.</span></h2>
 			<p>
 				{aboutLang.firstParagraph}
 				<br>

@@ -1,7 +1,16 @@
+<script>
+  //Default selectedOption
+  export let selectedOption;
+  //Cannot use bind:group (like in ProjectsLogos, because it changes the behavior of the default selectedOption)
+  function handleRadioChange(event) {
+    selectedOption = event.target.id;
+  }
+</script>
+
 <div class="toggle">
-  <input type="radio" id="project" name="toggle" checked>
-  <label for="project"><span class='label-text'>Projects</span></label>
-  <input type="radio" id="skills" name="toggle">
+  <input type="radio" id="projects" name="toggle"  checked on:change={handleRadioChange}>
+  <label for="projects"><span class='label-text'>Projects</span></label>
+  <input type="radio" id="skills" name="toggle" on:change={handleRadioChange}>
   <label for="skills"><span class='label-text'>Skills</span></label>
   <span class="slider"></span>
 </div>
@@ -63,14 +72,15 @@
     border-radius: 1rem;
   }
 
-  #project:checked ~ label[for="project"] .label-text::after,
+  #projects:checked ~ label[for="projects"] .label-text::after,
   #skills:checked ~ label[for="skills"] .label-text::after {
     transform: scaleX(1);
   }
 
-  #project:checked ~ label[for="project"],
+  #projects:checked ~ label[for="projects"],
   #skills:checked ~ label[for="skills"] {
     color: black;
+    /* background: #f9fcfd; */
   }
 
   .slider {
@@ -81,7 +91,7 @@
     width: 50%;
     height: 100%;
     transition: left 0.2s;
-    z-index: 0;
+    /* z-index: 0; */
     border-radius: 1rem;
     color: blue;
     display: flex;
@@ -100,11 +110,9 @@
     background-color: #ddd;
   }
 
-  #skills:not(:checked) ~ label[for="skills"] .dot {
-    display:none;
-  }
 
-  label[for="project"] {
+
+  label[for="projects"] {
     padding-left: 15px;
   }
 
@@ -112,7 +120,6 @@
     padding-right: 15px;
   }
 
-  #skills:checked ~ .slider .dot {
-    transform: translateX(100%);
-  }
+ 
+
 </style>

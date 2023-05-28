@@ -71,7 +71,9 @@
 		max-width: 100%;
 		display: block;
 	}
-
+	:global(h2) {
+		font-size: 2rem;
+	}
 	:global(.button) {
 		display: flex;
 		justify-content: center;

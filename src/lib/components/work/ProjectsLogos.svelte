@@ -1,13 +1,18 @@
-<script></script>
+<script>
+	//Default checked
+  export let selectedLogo;
+</script>
 
 <div class="logos">
-  <input type="radio" id="wannago" name="logos" checked />
+  <input type="radio" id="wannago" name="logos" value="wannago" bind:group={selectedLogo}/>
   <label class="wannago" for="wannago">Wannago</label>
-  <input type="radio" id="huddler" name="logos" />
+  <input type="radio" id="huddler" name="logos" value="huddler" bind:group={selectedLogo} />
   <label class="huddler" for="huddler">Huddler</label>
-  <input type="radio" id="road-trip" name="logos" />
+  <input type="radio" id="road-trip" name="logos" value="road-trip" bind:group={selectedLogo} />
   <label class="road-trip" for="road-trip">Road trip</label>
 </div>
+
+
 <style>
   @font-face {
     font-family: "Overmuch Regular";
@@ -66,6 +71,7 @@
     transform: rotate(-1deg);
     background-color: var(--clr-accent);
     transition: width 0.5s ease-in-out;
+		/* border-radius: 5px; */
   }
   .logos input[type="radio"]:checked + label::before {
     width: 100%;
