@@ -14,5 +14,6 @@
 	section {
 		min-height: 100vh;
 		align-items: center;
+		gap: 1rem;
 	}
 </style>
