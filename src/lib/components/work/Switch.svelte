@@ -2,6 +2,8 @@
   //Default selectedOption
   export let selectedOption;
   //Cannot use bind:group (like in ProjectsLogos, because it changes the behavior of the default selectedOption)
+
+  export let switchLang;
   function handleRadioChange(event) {
     selectedOption = event.target.id;
   }

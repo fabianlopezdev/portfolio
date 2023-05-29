@@ -14,9 +14,13 @@
 		"thirdParagraph": "Me comprometo a ayudarte a alcanzar tus metas"
 	},
 	"work": {
+		"switch": {
+			"projects": "Proyectos",
+			"skills": "Competencias"
+		},
 		"projectCard": {
 			"wannago": {
-				"name": "Wannago",
+				"name": "¡Toma el control de tus planes con WannaGo! Diseña planes emocionantes, invita a tus amigos y familiares, y mantente actualizado en tiempo real. ¿Quién ha visto el plan? ¿Quién está dentro? ¿Quién está fuera? Con WannaGo, siempre estás al tanto. No solo hagas planes, dales vida con WannaGo. ¡WannaGo, donde los planes se hacen realidad!",
 				"description": "Wannago is an amazing app",
 				"githubLink": "https://github.com/Fabs-and/wannago",
 				"website": "https://www.wannago.in/",
@@ -37,7 +41,7 @@
 			},
 			"Huddler": {
 				"name": "Huddler",
-				"description": "Huddler is an amazing app",
+				"description": "Conoce y conecta con Huddler: la web social diseñada para unir a personas según sus intereses. Con Huddler, nunca más tendrás que hacer nada solo. Descubre nuevas actividades, únete a eventos existentes o lleva tus propias ideas a la realidad creando tus propios eventos. Ya sea pescar, hornear galletas o tocar el banjo, hay espacio para cada pasión en Huddler. Reúnete con personas de ideas afines y disfruta del placer de las experiencias compartidas. Encuentra tu tribu con Huddler.",
 				"githubLink": "https://github.com/Lucasoliveiralucas/huddler-front-end",
 				"role": "Diseño y desarrollo front'end",
 				"responsibilities": "Parte en el diseño de la web. Idear el algoritmo de 'recomendados'. Implementación de la autorización y de los ajustes del usuario",
@@ -45,7 +49,7 @@
 			},
 			"RoadTrip": {
 				"name": "Road Trip - Campgrounds",
-				"description": "Road trips is an amazing app",
+				"description": "Embárcate en tu próxima aventura con Road Trips - Campgrounds, la web creada para los entusiastas de los viajes por carretera. Descubre nuevos campamentos, comparte tus experiencias y contribuye a la vibrante comunidad agregando nuevas ubicaciones. Ya seas un viajero experimentado o estés comenzando, Road Trips - Campgrounds es tu guía para tu próxima gran aventura. Sal a la carretera y comienza el viaje con Road Trips - Campgrounds.",
 				"githubLink": "https://github.com/Fabs-and/road-trip-app",
 				"role": "Desarrollo del front-end y del back-end",
 				"responsibilities": "Refactorizar toda la aplicación de JavaScript a Typescript",

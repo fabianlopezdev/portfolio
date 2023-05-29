@@ -1,5 +1,14 @@
-<script>
+<script lang='ts'>
 	import { Switch, ProjectsLogos, ProjectCard } from '$components';
+
+	
+
+	import type { Language } from '../../../types';
+	export let workLang: Language['work'];
+
+	$: projectCardLang = workLang.projectCard
+	$: switchLang = workLang.projectCard
+
 	let selectedOption = 'projects';
 	let selectedProject = 'wannago';
 </script>
@@ -8,11 +17,11 @@
 	<h2>
 		Work<span style="color: blue">.</span>
 	</h2>
-	<Switch bind:selectedOption={selectedOption}/>
+	<Switch bind:selectedOption={selectedOption} {switchLang}/>
 	{#if selectedOption === 'projects'}
 	<div class='projects-container'  class:active={selectedOption === 'projects'}>
 			<ProjectsLogos bind:selectedProject={selectedProject}/>
-			<ProjectCard {selectedProject}/>
+			<ProjectCard {selectedProject} {projectCardLang}/>
 		</div>
 		{/if}
 	{#if selectedOption === 'skills'}

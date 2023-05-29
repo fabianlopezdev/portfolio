@@ -23,6 +23,44 @@ export interface Language {
 		secondParagraph: string;
 		thirdParagraph: string;
 	};
+	work: {
+		projectCard: {
+			wannago: {
+				name: string;
+				description: string;
+				githubLink: string;
+				website: string;
+				role: string;
+				responsibilities: string;
+				skills: string[];
+			};
+			huddler: {
+				name: string;
+				description: string;
+				githubLink: string;
+				role: string;
+				responsibilities: string;
+				skills: string[];
+			};
+			roadTrip: {
+				name: string;
+				description: string;
+				githubLink: string;
+				role: string;
+				responsibilities: string;
+				skills: string[];
+			};
+			portfolio: {
+				name: string;
+				description: string;
+				githubLink: string;
+				website: string;
+				role: string;
+				responsibilities: string;
+				skills: string[];
+			};
+		};
+	};
 	contact: {
 		h1: string;
 		cardGrid: {

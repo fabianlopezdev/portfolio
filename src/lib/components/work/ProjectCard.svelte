@@ -1,18 +1,29 @@
-<script>
+<script lang='ts'>
   import { generateProjectInfo } from '../../../utils/data';
   import GitHubIcon from 'svelte-icons/fa/FaGithub.svelte';
+
+  import type { Language } from '../../../types';
+  export let projectCardLang: Language['work']['projectCard'];
   export let selectedProject;
 
-  $: project = generateProjectInfo(selectedProject)
+  // console.log('seee', projectCardLang)
+    let project = projectCardLang.wannago;
+      $: {
+          if (selectedProject = 'wannago') {
+              console.log(projectCardLang)
+              project = projectCardLang.wannago
+            }
+          } 
+        
+      </script>
 
-</script>
 
 <div class='card-container'>
-  <h3>{project.name}</h3>
-  <p>{project.description}</p>
-  <a href={project?.githubLink} target='_blank'><div class='icons'><GitHubIcon/></div></a>
+<h3>{project.name}</h3>
+<p>{project.description}</p>
+ <a href={project?.githubLink} target='_blank'><div class='icons'><GitHubIcon/></div></a>
   
-</div>
+</div> 
 
 <style>
 .card-container {

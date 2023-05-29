@@ -18,6 +18,7 @@
 	$: navLinksLang = lang === 'en' ? english.navLinks : spanish.navLinks;
 	$: homeLang = lang === 'en' ? english.home : spanish.home;
 	$: aboutLang = lang === 'en' ? english.about : spanish.about;
+	$: workLang = lang === 'en' ? english.work : spanish.work;
 	$: contactLang = lang === 'en' ? english.contact : spanish.contact;
 	$: footerLang = lang === 'en' ? english.footer : spanish.footer;
 
@@ -46,7 +47,7 @@
 <main>
 	<Home {homeLang} />
 	<About {aboutLang}/>
-	<Work />
+	<Work {workLang}/>
 	<Contact {contactLang} />
 </main>
 
