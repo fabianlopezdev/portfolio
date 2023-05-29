@@ -5,7 +5,7 @@
 
 <div class="logos">
   <input type="radio" id="wannago" name="logos" value="wannago" bind:group={selectedProject}/>
-  <label class="wannago" for="wannago">Wannago</label>
+  <label class="wannago" for="wannago">WannaGo</label>
   <input type="radio" id="huddler" name="logos" value="huddler" bind:group={selectedProject} />
   <label class="huddler" for="huddler">Huddler</label>
   <input type="radio" id="road-trip" name="logos" value="road-trip" bind:group={selectedProject} />
@@ -57,7 +57,7 @@
   label {
     display: inline-block;
     position: relative;
-    color: #888;
+    color: #016aa1;
     height: 78px;
   }
   .logos label::before {
