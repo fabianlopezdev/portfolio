@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { generateProjectInfo } from '../../../utils/data';
 	import GitHubIcon from 'svelte-icons/fa/FaGithub.svelte';
 	import GoToArrow from 'svelte-icons/go/GoLinkExternal.svelte';
 	import type { Language, ProjectType } from '../../../types';
@@ -47,7 +46,7 @@
 		border: 1px solid black;
 		border-radius: 1rem;
 		/* width: 20rem; */
-		flex: 0 0 60%;
+		flex: 0 0 54%;
 	}
 
 	h3 {
