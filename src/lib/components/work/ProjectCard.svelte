@@ -7,12 +7,8 @@
 	export let selectedProject: string;
 
 	let project: ProjectType;
-	$: console.log('type', selectedProject);
-	$: console.log('lang', projectCardLang);
 	$: {
 		if (selectedProject === 'wannago') {
-			console.log(projectCardLang.wannago);
-
 			project = projectCardLang.wannago;
 		} else if (selectedProject === 'huddler') {
 			project = projectCardLang.huddler;
@@ -25,13 +21,13 @@
 <div class="card-container">
 	<h3>{project.name}</h3>
 	<p>{project.description}</p>
-  <ul class="skills-container">
-	{#each project.skills as skill}
+	<ul class="skills-container">
+		{#each project.skills as skill}
 			<li>
 				{skill}
 			</li>
-      {/each}
-		</ul>
+		{/each}
+	</ul>
 	<div class="icons-container">
 		<a href={project?.githubLink} target="_blank" rel="noopener noreferrer"
 			><div class="icons"><GitHubIcon /></div></a
@@ -58,30 +54,29 @@
 		margin: 0;
 	}
 
-  p {
-    margin: 7px 0;
-  }
-  .skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    padding:0;
-  }
-
-  .skills-container li{
-    padding: 0.4rem;
-    background-color: #d0dff0;
-    color: #016aa1;
-    border-radius: 5px;
-    margin-right: 7px;
-    margin-bottom: 7px;
-    font-weight: 500;
-  }
-  @media (max-width: 898px) {
-		.card-container {
-		flex: 0 0 95%;
-    /* margin-inline: 5rem; */
+	p {
+		margin: 7px 0;
+	}
+	.skills-container {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		padding: 0;
 	}
 
+	.skills-container li {
+		padding: 0.4rem;
+		background-color: #d0dff0;
+		color: #016aa1;
+		border-radius: 5px;
+		margin-right: 7px;
+		margin-bottom: 7px;
+		font-weight: 500;
+	}
+	@media (max-width: 898px) {
+		.card-container {
+			flex: 0 0 95%;
+			/* margin-inline: 5rem; */
+		}
 	}
 </style>
