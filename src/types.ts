@@ -38,6 +38,7 @@ export interface Language {
 				name: string;
 				description: string;
 				githubLink: string;
+				website?: string;
 				role: string;
 				responsibilities: string;
 				skills: string[];
@@ -46,6 +47,7 @@ export interface Language {
 				name: string;
 				description: string;
 				githubLink: string;
+				website?: string;
 				role: string;
 				responsibilities: string;
 				skills: string[];
