@@ -86,7 +86,7 @@
     width: 0%;
     height: 98%;
     top: 0px;
-    left: -20px;
+    left: -13px;
     z-index: -2;
     transform: rotate(-1deg);
     background-color: var(--clr-accent);
@@ -99,14 +99,18 @@
 }
 .logos input[type="radio"]:checked + .wannago::before {
   /* your custom styles here */
-  left: -14px;
+  left: -6px;
+}
+.logos input[type="radio"]:checked + .huddler::before {
+  /* your custom styles here */
+  left: -11px;
 }
   .logos input[type="radio"]:checked + label::before {
     width: 100%;
   }
   .logos input[type="radio"]:checked + label {
     color: white;
-    /* margin-left: 1rem; */
+    margin-left: 1rem;
     text-shadow: none;
   }
 
