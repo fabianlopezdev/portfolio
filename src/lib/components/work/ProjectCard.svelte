@@ -46,7 +46,6 @@
 		border: 1px solid black;
 		border-radius: 1rem;
 		/* width: 20rem; */
-		flex: 0 0 54%;
 	}
 
 	h3 {
@@ -72,10 +71,10 @@
 		margin-bottom: 7px;
 		font-weight: 500;
 	}
-	@media (max-width: 898px) {
-		.card-container {
-			flex: 0 0 95%;
-			/* margin-inline: 5rem; */
-		}
+
+@media (min-width: 995px) {
+		/* .project-card {
+			display: none;
+		} */
 	}
 </style>
