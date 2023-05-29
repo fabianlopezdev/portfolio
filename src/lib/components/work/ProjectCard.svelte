@@ -50,7 +50,7 @@
 		padding: 1rem;
 		border: 1px solid black;
 		border-radius: 1rem;
-		width: 20rem;
+		/* width: 20rem; */
 		flex: 0 0 60%;
 	}
 
@@ -77,4 +77,11 @@
     margin-bottom: 7px;
     font-weight: 500;
   }
+  @media (max-width: 898px) {
+		.card-container {
+		flex: 0 0 95%;
+    /* margin-inline: 5rem; */
+	}
+
+	}
 </style>

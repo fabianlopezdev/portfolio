@@ -40,11 +40,12 @@
 	}
 	
 	.projects-container {
-		width: clamp(350px, 50vw, 900px);
+		width: clamp(350px, 100vw, 900px);
 		display:flex;
 		justify-content: center;
 		align-items: center;
 		flex-wrap: wrap;
 		gap: 2rem;
+		padding-inline:1rem;
 	}
 </style>

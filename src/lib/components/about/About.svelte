@@ -57,7 +57,7 @@
 	@media (max-width: 765px) {
 		.text {
 			width: clamp(350px, 100vw, 700px);
-			padding: 0 1.5rem 0 1.5rem;
+			padding: 0 2rem 0 2rem;
 			/* width: clamp(450px, 100svw, 700px); */
 		}
 	}
