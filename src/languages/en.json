@@ -5,13 +5,62 @@
 		"slogan2": "your ",
 		"highlight2": "website",
 		"welcome": "Hello, I am Fabian and I develop fab webs.",
-		"buttonContact": "Contact",
+		"buttonContact": "Let's talk",
 		"buttonResume": "Resume"
 	},
-	"about":{
+	"about": {
 		"firstParagraph": "Hello! I'm Fabian Lopez, a Full Stack Developer who loves creating efficient and fabulous websites. I'm always exploring new technologies to deliver the best solutions.",
 		"secondParagraph": "My diverse journey includes running a transportation company and earning a Business Administration degree in a different country. Coupled with my passion for software development, I bring a unique understanding of both the technical and business aspects of every project.",
 		"thirdParagraph": "I'm committed to helping you achieve your goals."
+	},
+	"work": {
+		"projectCard": {
+			"wannago": {
+				"name": "Wannago",
+				"description": "Wannago is an amazing app",
+				"githubLink": "https://github.com/Fabs-and/wannago",
+				"website": "https://www.wannago.in/",
+				"role": "Design, Front-end & Back-end Development, Deployment",
+				"responsibilities": "UX/UI design. Entire development of the web app.",
+				"skills": [
+					"HTML",
+					"CSS",
+					"JavaScript",
+					"React",
+					"React Query",
+					"Koa.js",
+					"MongoDB",
+					"Mongoose",
+					"Amazon Cognito",
+					"Firebase"
+				]
+			},
+			"Huddler": {
+				"name": "Huddler",
+				"description": "Huddler is an amazing app",
+				"githubLink": "https://github.com/Lucasoliveiralucas/huddler-front-end",
+				"role": "Design & Front-end Development",
+				"responsibilities": "Aid in the desing of the site. Devised the 'recommended' algorithm. Implemented authorization & user settings",
+				"skills": ["HTML", "CSS", "Typescript", "NEXT.js", "Tailwind", "Amazon Cognito"]
+			},
+			"RoadTrip": {
+				"name": "Road Trip - Campgrounds",
+				"description": "Road trips is an amazing app",
+				"githubLink": "https://github.com/Fabs-and/road-trip-app",
+				"role": "Front-end & Back-end Development",
+				"responsibilities": "Refactor codebase from JavaScript to Typescript",
+				"skills": ["HTML", "CSS", "Typescript", "React", "Mapbox", "Express", "MongoDB", "Mongoose"]
+			},
+			"Portfolio": {
+				"name": "Fabian's Portfolio",
+				"description": "Fabian Lopez Gonzalez Portfolio",
+				"githubLink": "https://github.com/Fabs-and/portfolio",
+				"website": "https://portfolio-fabs-and.vercel.app/",
+				"role": "Design, Front-end Development, Deployment",
+				"responsibilities": "UX/UI design. Entire development of the web app.",
+				"skills": ["HTML", "CSS", "Typescript", "Svelte", "Sveltekit"]
+			}
+		}
 	},
 	"contact": {
 		"h1": "Let's build something great",
@@ -45,7 +94,7 @@
 		}
 	},
 	"footer": {
-		"madeWith":"Made with",
+		"madeWith": "Made with",
 		"language": "Svelte"
 	},
 	"navLinks": {

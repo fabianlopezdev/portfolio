@@ -1,7 +1,7 @@
 <script>
-	import { Switch, ProjectsLogos } from '$components';
+	import { Switch, ProjectsLogos, ProjectCard } from '$components';
 	let selectedOption = 'projects';
-	let selectedLogo = 'wannago';
+	let selectedProject = 'wannago';
 </script>
 
 <section id="work">
@@ -11,7 +11,8 @@
 	<Switch bind:selectedOption={selectedOption}/>
 	{#if selectedOption === 'projects'}
 	<div class='projects-container'  class:active={selectedOption === 'projects'}>
-			<ProjectsLogos bind:selectedLogo={selectedLogo}/>
+			<ProjectsLogos bind:selectedProject={selectedProject}/>
+			<ProjectCard {selectedProject}/>
 		</div>
 		{/if}
 	{#if selectedOption === 'skills'}
@@ -25,8 +26,15 @@
 	section {
 		min-height: 100vh;
 		align-items: center;
-		gap: 1rem;
+		/* gap: 1rem; */
 	}
-
 	
+	.projects-container {
+		width: clamp(350px, 50vw, 900px);
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 2rem;
+	}
 </style>

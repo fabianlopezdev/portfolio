@@ -20,7 +20,9 @@
     position: relative;
     display: flex;
     min-width: 17rem;
+    height: 3.5rem;
     /* width:rem; */
+    /* padding: 1rem; */
     font-size: 15.8px;
     font-weight: 700;
     border-radius: 1rem;

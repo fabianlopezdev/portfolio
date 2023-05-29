@@ -1,14 +1,14 @@
 <script>
 	//Default checked
-  export let selectedLogo;
+  export let selectedProject;
 </script>
 
 <div class="logos">
-  <input type="radio" id="wannago" name="logos" value="wannago" bind:group={selectedLogo}/>
+  <input type="radio" id="wannago" name="logos" value="wannago" bind:group={selectedProject}/>
   <label class="wannago" for="wannago">Wannago</label>
-  <input type="radio" id="huddler" name="logos" value="huddler" bind:group={selectedLogo} />
+  <input type="radio" id="huddler" name="logos" value="huddler" bind:group={selectedProject} />
   <label class="huddler" for="huddler">Huddler</label>
-  <input type="radio" id="road-trip" name="logos" value="road-trip" bind:group={selectedLogo} />
+  <input type="radio" id="road-trip" name="logos" value="road-trip" bind:group={selectedProject} />
   <label class="road-trip" for="road-trip">Road trip</label>
 </div>
 
@@ -29,27 +29,30 @@
   }
   .wannago {
     font-family: "Montserrat Alternates", sans-serif;
-    font-size: 3.4rem;
+    font-size: 4rem;
     letter-spacing: -5px;
   }
   .huddler {
     font-family: "Overmuch Regular", sans-serif;
-    font-size: 3.9rem;
+    font-size: 4.6rem;
   }
   .road-trip {
     font-family: "Cabin", sans-serif;
-    font-size: 4rem;
+    font-size: 4.8rem;
   }
   .logos {
     display: flex;
     flex-direction: column;
+		gap: 2rem;
+		padding: 3rem 0;
+		flex: 0 0 30%;
   }
   .logos input[type="radio"] {
     display: none;
   }
   .logos label {
     cursor: pointer;
-    transition: color 0.8s ease-in-out; /* Transition added here */
+    transition: color 0.5s ease-in-out; /* Transition added here */
   }
   label {
     display: inline-block;

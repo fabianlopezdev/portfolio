@@ -5,13 +5,62 @@
 		"slogan2": "tu página ",
 		"highlight2": "web",
 		"welcome": "Hola, soy Fabián y desarrollo páginas web.",
-		"buttonContact": "Contáctame",
+		"buttonContact": "Hablemos",
 		"buttonResume": "CV"
 	},
 	"about": {
 		"firstParagraph": "¡Hola! Soy Fabián López, desarrollador Full Stack a quien le encanta crear sitios web eficientes y fabulosos.Siempre estoy explorando nuevas tecnologías para ofrecer las mejores soluciones.",
 		"secondParagraph": "Mi trayectoria diversa incluye dirigir una empresa de transporte y obtener un título en Administración de Empresas en el extranjero. Junto con mi pasión por el desarrollo de software, aporto una comprensión única de los aspectos técnicos y comerciales de cada proyecto.",
 		"thirdParagraph": "Me comprometo a ayudarte a alcanzar tus metas"
+	},
+	"work": {
+		"projectCard": {
+			"wannago": {
+				"name": "Wannago",
+				"description": "Wannago is an amazing app",
+				"githubLink": "https://github.com/Fabs-and/wannago",
+				"website": "https://www.wannago.in/",
+				"role": "Diseño, Desarrollo del Front-end y del Back-end",
+				"responsibilities": "Diseño UX/UI. Desarrollo de toda la web app.",
+				"skills": [
+					"HTML",
+					"CSS",
+					"JavaScript",
+					"React",
+					"React Query",
+					"Koa.js",
+					"MongoDB",
+					"Mongoose",
+					"Amazon Cognito",
+					"Firebase"
+				]
+			},
+			"Huddler": {
+				"name": "Huddler",
+				"description": "Huddler is an amazing app",
+				"githubLink": "https://github.com/Lucasoliveiralucas/huddler-front-end",
+				"role": "Diseño y desarrollo front'end",
+				"responsibilities": "Parte en el diseño de la web. Idear el algoritmo de 'recomendados'. Implementación de la autorización y de los ajustes del usuario",
+				"skills": ["HTML", "CSS", "Typescript", "NEXT.js", "Tailwind", "Amazon Cognito"]
+			},
+			"RoadTrip": {
+				"name": "Road Trip - Campgrounds",
+				"description": "Road trips is an amazing app",
+				"githubLink": "https://github.com/Fabs-and/road-trip-app",
+				"role": "Desarrollo del front-end y del back-end",
+				"responsibilities": "Refactorizar toda la aplicación de JavaScript a Typescript",
+				"skills": ["HTML", "CSS", "Typescript", "React", "Mapbox", "Express", "MongoDB", "Mongoose"]
+			},
+			"Portfolio": {
+				"name": "Fabian's Portfolio",
+				"description": "Fabian Lopez Gonzalez Portfolio",
+				"githubLink": "https://github.com/Fabs-and/portfolio",
+				"website": "https://portfolio-fabs-and.vercel.app/",
+				"role": "Diseño, desarrollo front-end y back-end",
+				"responsibilities": "Diseño UX/UI. Desarrollo de toda la web app.",
+				"skills": ["HTML", "CSS", "Typescript", "Svelte", "Sveltekit"]
+			}
+		}
 	},
 	"contact": {
 		"h1": "¿Tienes una idea? Cuéntamela",
