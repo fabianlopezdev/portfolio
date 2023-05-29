@@ -102,3 +102,8 @@ export interface Language {
 		contact: string;
 	};
 }
+
+export type ProjectType =
+	| Language['work']['projectCard']['wannago']
+	| Language['work']['projectCard']['huddler']
+	| Language['work']['projectCard']['roadTrip'];

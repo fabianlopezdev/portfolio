@@ -9,6 +9,7 @@
 	$: projectCardLang = workLang.projectCard
 	$: switchLang = workLang.projectCard
 
+	
 	let selectedOption = 'projects';
 	let selectedProject = 'wannago';
 </script>
