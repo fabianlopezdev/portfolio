@@ -47,7 +47,7 @@
 				"responsibilities": "Aid in the desing of the site. Devised the 'recommended' algorithm. Implemented authorization & user settings",
 				"skills": ["HTML", "CSS", "Typescript", "NEXT.js", "Tailwind", "Amazon Cognito"]
 			},
-			"roadTrip": {
+			"road-trip": {
 				"name": "Road Trip - Campgrounds",
 				"description": "Embark on your next adventure with Road Trips - Campgrounds, the essential web for road trip enthusiasts. Discover new campsites, share your experiences with ratings, and contribute to the vibrant community by adding new locations. Whether you're a seasoned road tripper or just starting out, Road Trips - Campgrounds is your guide to the great outdoors. Set out on the open road and let the journey begin with Road Trips - Campgrounds.",
 				"githubLink": "https://github.com/Fabs-and/road-trip-app",

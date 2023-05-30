@@ -47,7 +47,7 @@
 				"responsibilities": "Parte en el diseño de la web. Idear el algoritmo de 'recomendados'. Implementación de la autorización y de los ajustes del usuario",
 				"skills": ["HTML", "CSS", "Typescript", "NEXT.js", "Tailwind", "Amazon Cognito"]
 			},
-			"roadTrip": {
+			"road-trip": {
 				"name": "Road Trip - Campgrounds",
 				"description": "Embárcate en tu próxima aventura con Road Trips - Campgrounds, la web creada para los entusiastas de los viajes por carretera. Descubre nuevos campamentos, comparte tus experiencias y contribuye a la vibrante comunidad agregando nuevas ubicaciones. Ya seas un viajero experimentado o estés comenzando, Road Trips - Campgrounds es tu guía para tu próxima gran aventura. Sal a la carretera y comienza el viaje con Road Trips - Campgrounds.",
 				"githubLink": "https://github.com/Fabs-and/road-trip-app",

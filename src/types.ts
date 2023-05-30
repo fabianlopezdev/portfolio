@@ -25,42 +25,13 @@ export interface Language {
 	};
 	work: {
 		projectCard: {
-			wannago: {
-				name: string;
-				description: string;
-				githubLink: string;
-				website: string;
-				role: string;
-				responsibilities: string;
-				skills: string[];
-			};
-			huddler: {
-				name: string;
-				description: string;
-				githubLink: string;
-				website?: string;
-				role: string;
-				responsibilities: string;
-				skills: string[];
-			};
-			roadTrip: {
-				name: string;
-				description: string;
-				githubLink: string;
-				website?: string;
-				role: string;
-				responsibilities: string;
-				skills: string[];
-			};
-			portfolio: {
-				name: string;
-				description: string;
-				githubLink: string;
-				website: string;
-				role: string;
-				responsibilities: string;
-				skills: string[];
-			};
+			name: string;
+			description: string;
+			githubLink: string;
+			website?: string;
+			role: string;
+			responsibilities: string;
+			skills: string[];
 		};
 	};
 	contact: {
@@ -105,7 +76,3 @@ export interface Language {
 	};
 }
 
-export type ProjectType =
-	| Language['work']['projectCard']['wannago']
-	| Language['work']['projectCard']['huddler']
-	| Language['work']['projectCard']['roadTrip'];

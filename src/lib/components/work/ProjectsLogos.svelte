@@ -3,8 +3,7 @@
 	// Default checked
 	export let selectedProject: string;
 	import type { Language } from '../../../types';
-	export let projectCardLang: Language['work']
-  ['projectCard'];
+	export let projectCardLang: Language['work']['projectCard'];
 </script>
 
 
@@ -144,10 +143,4 @@
 	.logos input[type='radio']:checked + label span {
 		display: none;
 	}
-
-  @media (max-width: 768px) {
-  .logos input[type='radio'] {
-    checked: false;
-  }
-}
 </style>

@@ -8,8 +8,18 @@
 	$: switchLang = workLang.projectCard;
 
 	let selectedOption = 'projects';
-	let selectedProject = 'wannago';
+	let selectedProject = '';
+
+	let innerWidth: number | undefined;
+
+	$: {if (innerWidth && innerWidth > 995) {
+		selectedProject = 'wannago';
+	}}
+
+	$:console.log('inner',innerWidth)
 </script>
+
+<svelte:window bind:innerWidth />
 
 <section id="work">
 	<h2>
