@@ -2,6 +2,7 @@
 	import GitHubIcon from 'svelte-icons/fa/FaGithub.svelte';
 	import GoToArrow from 'svelte-icons/go/GoLinkExternal.svelte';
 	import type { Language } from '../../../types';
+	import {Carousel} from '$components';
 	export let projectCardLang: Language['work']['projectCard'];
 	export let selectedProject: string;
   import {slide} from 'svelte/transition'

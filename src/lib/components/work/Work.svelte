@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Switch, ProjectsLogos, ProjectCard } from '$components';
+	import {Carousel} from '$components';
 
 	import type { Language } from '../../../types';
 	export let workLang: Language['work'];
@@ -19,6 +20,7 @@
 	$:console.log('inner',innerWidth)
 </script>
 
+
 <svelte:window bind:innerWidth />
 
 <section id="work">
@@ -37,7 +39,7 @@
 		</div>
 	{/if}
 	{#if selectedOption === 'skills'}
-		<div class="skills-container" class:active={selectedOption === 'skills'}>This is skills</div>
+		<div class="skills-container" class:active={selectedOption === 'skills'}><Carousel/></div>
 	{/if}
 </section>
 
