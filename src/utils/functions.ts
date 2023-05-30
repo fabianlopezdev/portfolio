@@ -1,16 +1,14 @@
-export default function scrollTo(event: MouseEvent) {
-	console.log('event', event)
-	const target = event.target as HTMLAnchorElement;
-	// Retrieve the `href` attribute of the target.
-	const selector = target.getAttribute('href');
-
-	// Check if a selector is found.
-	if (selector) {
-		const element = document.querySelector(selector);
-
-		// Check if an element is found.
+export default function scrollTo(id: string) {
+	if (id) {
+		const element = document.getElementById(id);
 		if (element) {
-			element.scrollIntoView({ behavior: 'smooth' });
+			const rect = element.getBoundingClientRect();
+			const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+			const top = rect.top + scrollTop;
+			window.scroll({
+				top: top, // Adjust this value to set the position of the element after scrolling
+				behavior: 'smooth'
+			});
 		}
 	}
 }

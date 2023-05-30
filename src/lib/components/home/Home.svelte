@@ -27,7 +27,7 @@
 
 	
 	<div class="buttons">
-		<Button --color="var(--clr-accent)" on:click={scrollTo} href={'#contact'} icon={'envelope'}
+		<Button --color="var(--clr-accent)" on:click={scrollTo} href='#contact' icon={'envelope'}
 			>{homeLang.buttonContact}</Button
 		>
 		<Button --color="var(--clr-font)" href={envResumeLink} icon={'download'}

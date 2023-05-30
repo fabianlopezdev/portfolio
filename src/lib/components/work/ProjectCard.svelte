@@ -15,7 +15,7 @@
 </script>
 
 {#if project} 
-	<div class="card-container" transition:slide={{duration: 500}}>
+	<div class="card-container" in:slide={{duration: 700}}>
 	<h3>{project.name}</h3>
 	<p>{project.description}</p>
 	<ul class="skills-container">

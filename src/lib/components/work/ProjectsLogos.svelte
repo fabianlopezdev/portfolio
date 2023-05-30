@@ -1,39 +1,43 @@
 <script lang="ts">
 	import { ProjectCard } from '$components';
-	// Default checked
-	export let selectedProject: string;
 	import type { Language } from '../../../types';
+
+	export let selectedProject: string;
 	export let projectCardLang: Language['work']['projectCard'];
+
   
+	function scrollToLabel(label) {
+		label.scrollIntoView({ behavior: 'smooth', block: 'start' }, 1000);
+	}
 </script>
 
-
 <div class="logos">
-	<input type="radio" id="wannago" name="logos" value="wannago" bind:group={selectedProject} />
-	<label class="wannago" for="wannago">WannaGo<span>&gt;</span></label>
+	<input type="radio" id="wannago" name="logos" value="wannago" bind:group={selectedProject} on:change={() => scrollToLabel(document.querySelector('.wannago'))} />
+	<label class="wannago project-label" for="wannago">WannaGo<span>&gt;</span></label>
 
-{#if selectedProject === 'wannago'}
-<div class='project-card'>
+	{#if selectedProject === 'wannago'}
+	<div class='project-card'>
+		<ProjectCard {selectedProject} {projectCardLang}/>
+	</div>
+	{/if}
 
-  <ProjectCard {selectedProject} {projectCardLang}/>
-</div>
-{/if}
-	<input type="radio" id="huddler" name="logos" value="huddler" bind:group={selectedProject} />
-	<label class="huddler" for="huddler">Huddler<span>&gt;</span></label>
+	<input type="radio" id="huddler" name="logos" value="huddler" bind:group={selectedProject} on:change={() => scrollToLabel(document.querySelector('.huddler'))} />
+	<label class="huddler project-label" for="huddler">Huddler<span>&gt;</span></label>
+
 	{#if selectedProject === 'huddler'}
-<div class='project-card'>
+	<div class='project-card'>
+		<ProjectCard {selectedProject} {projectCardLang}/>
+	</div>
+	{/if}
 
-  <ProjectCard {selectedProject} {projectCardLang}/>
-</div>
-{/if}
-	<input type="radio" id="road-trip" name="logos" value="road-trip" bind:group={selectedProject} />
-	<label class="road-trip" for="road-trip">Road trip<span>&gt;</span></label>
+	<input type="radio" id="road-trip" name="logos" value="road-trip" bind:group={selectedProject} on:change={() => scrollToLabel(document.querySelector('.road-trip'))} />
+	<label class="road-trip project-label" for="road-trip">Road trip<span>&gt;</span></label>
+
 	{#if selectedProject === 'road-trip'}
-<div class='project-card'>
-
-  <ProjectCard {selectedProject} {projectCardLang}/>
-</div>
-{/if}
+	<div class='project-card'>
+		<ProjectCard {selectedProject} {projectCardLang}/>
+	</div>
+	{/if}
 </div>
 
 <style>
