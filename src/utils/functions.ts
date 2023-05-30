@@ -1,14 +1,30 @@
-export default function scrollTo(id: string) {
-	if (id) {
-		const element = document.getElementById(id);
-		if (element) {
-			const rect = element.getBoundingClientRect();
-			const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-			const top = rect.top + scrollTop;
-			window.scroll({
-				top: top, // Adjust this value to set the position of the element after scrolling
-				behavior: 'smooth'
-			});
+export default function scrollTo(event: MouseEvent | Event) {
+	// Cast the event target to HTMLAnchorElement or HTMLInputElement
+	const target = event.target as HTMLAnchorElement | HTMLInputElement;
+
+	// Determine the attribute based on the event type
+	const attribute = event.type === 'click' ? 'href' : event.type === 'change' ? 'value' : '';
+
+	// Return early if the event type is neither click nor change
+	if (!attribute) {
+		return;
+	}
+
+	// Get the value of the attribute from the target element
+	const selector = target.getAttribute(attribute);
+
+	let element;
+	// Select the element based on the attribute
+	if (selector) {
+		if (attribute === 'href') {
+			element = document.querySelector(selector);
+		} else {
+			element = document.querySelector(`.${selector}`);
 		}
+	}
+
+	// Scroll to the element if it exists
+	if (element) {
+		element.scrollIntoView({ behavior: 'smooth', block: 'start' });
 	}
 }
