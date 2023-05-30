@@ -4,6 +4,7 @@
 	export let selectedProject: string;
 	import type { Language } from '../../../types';
 	export let projectCardLang: Language['work']['projectCard'];
+  
 </script>
 
 

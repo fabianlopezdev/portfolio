@@ -4,7 +4,7 @@
 	import type { Language } from '../../../types';
 	export let projectCardLang: Language['work']['projectCard'];
 	export let selectedProject: string;
-  import {fly} from 'svelte/transition'
+  import {slide} from 'svelte/transition'
 
 	let project: Language['work']['projectCard'];
 	$: {
@@ -15,7 +15,7 @@
 </script>
 
 {#if project} 
-	<div class="card-container" t>
+	<div class="card-container" transition:slide={{duration: 500}}>
 	<h3>{project.name}</h3>
 	<p>{project.description}</p>
 	<ul class="skills-container">
