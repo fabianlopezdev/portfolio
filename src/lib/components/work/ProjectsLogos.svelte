@@ -12,17 +12,26 @@
 	<label class="wannago" for="wannago">WannaGo<span>&gt;</span></label>
 
 {#if selectedProject === 'wannago'}
-<ProjectCard {selectedProject} {projectCardLang}/>
+<div class='project-card'>
+
+  <ProjectCard {selectedProject} {projectCardLang}/>
+</div>
 {/if}
 	<input type="radio" id="huddler" name="logos" value="huddler" bind:group={selectedProject} />
 	<label class="huddler" for="huddler">Huddler<span>&gt;</span></label>
 	{#if selectedProject === 'huddler'}
-<ProjectCard {selectedProject} {projectCardLang}/>
+<div class='project-card'>
+
+  <ProjectCard {selectedProject} {projectCardLang}/>
+</div>
 {/if}
 	<input type="radio" id="road-trip" name="logos" value="road-trip" bind:group={selectedProject} />
 	<label class="road-trip" for="road-trip">Road trip<span>&gt;</span></label>
 	{#if selectedProject === 'road-trip'}
-<ProjectCard {selectedProject} {projectCardLang}/>
+<div class='project-card'>
+
+  <ProjectCard {selectedProject} {projectCardLang}/>
+</div>
 {/if}
 </div>
 
@@ -143,4 +152,9 @@
 	.logos input[type='radio']:checked + label span {
 		display: none;
 	}
+
+  @media (min-width: 996px) {
+		.project-card {
+			display: none;
+		}}
 </style>
