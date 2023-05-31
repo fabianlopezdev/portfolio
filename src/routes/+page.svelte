@@ -36,7 +36,7 @@
 			currentScroll = (event.target as Document).scrollingElement?.scrollTop ?? 0;
 		}
 
-		if (prevScroll < currentScroll) isScrollDown = true;
+		if (prevScroll < currentScroll && currentScroll > 0) isScrollDown = true;
 		else isScrollDown = false;
 	}
 
