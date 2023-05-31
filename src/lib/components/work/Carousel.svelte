@@ -51,7 +51,7 @@
     position: relative;
     display: flex;
     overflow: hidden;
-    height: 200px;
+    height: 100%;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
   }

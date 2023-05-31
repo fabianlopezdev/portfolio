@@ -21,12 +21,15 @@
 
 {#if project}
 	<div class="card-container" in:slide={{ delay: 1000, duration: 1000 }}>
-		<div class="carousel">
+		<div class="carousel-container">
 			<Carousel />
 		</div>
 		<div class="details">
 			<!-- <h3>{project.name}</h3> -->
-			<p>
+			<h5>
+				Description:
+			</h5>
+			<p class='items-descriptions'>
 				{project.shortDescription}
 				<button class="open-modal-btn" on:click={() => dialog.showModal()}>{project.btnReadMore}</button>
 
@@ -38,6 +41,17 @@
 					>
 				</dialog>
 			</p>
+			<h5>
+				Role:
+			</h5>
+			<p class="items-descriptions">{project.role}</p>
+			<h5>
+				Responsibilities:
+			</h5>
+			<p class="items-descriptions">{project.responsibilities}</p>
+			<h5>
+				Skills:
+			</h5>
 			<ul class="skills-container">
 				{#each project.skills as skill}
 					<li>
@@ -47,11 +61,11 @@
 			</ul>
 			<div class="icons-container">
 				<a href={project?.githubLink} target="_blank" rel="noopener noreferrer"
-					><div class="icons"><GitHubIcon /></div></a
+					>GitHub<div class="icons"><GitHubIcon /></div></a
 				>
 				{#if project.website}
 					<a href={project?.website} target="_blank" rel="noopener noreferrer"
-						><div class="icons"><GoToArrow /></div></a
+						>Visit<div class="icons"><GoToArrow /></div></a
 					>
 				{/if}
 			</div>
@@ -60,6 +74,31 @@
 {/if}
 
 <style>
+	h5 {
+		margin: 0;
+		font-size: 1rem;
+	}
+	.items-descriptions {
+		font-size: 1rem;
+		margin: 0;
+	}
+
+	.project-description {
+		margin-bottom: 0;
+	}
+	a {
+		display: flex;
+		align-items: center;
+		font-size: 1rem;
+		gap: 2px;
+		text-decoration: underline;
+	}
+	.icons {
+		height: 1rem;
+		width: 1rem;
+		display: flex;
+		/* align-items: center; */
+	}
 	.open-modal-btn {
 		cursor: pointer;
 		background-color: var(--color);
@@ -90,7 +129,13 @@
 		background-color: #f9fcfd;
 		padding: 2rem;
 	}
-	.carousel {
+
+	.icons-container {
+		align-self: flex-end;
+		display: flex;
+		gap: 1rem;
+	}
+	.carousel-container {
 		/* height: 350px; */
 	}
 	.card-container {
@@ -98,19 +143,24 @@
 		/* background-color: rgba(255,255,255,0.7); */
 		box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
 		border-radius: 1rem;
-		font-size: 1.3rem;
+		font-size: 1rem;
 		line-height: 1.6;
-		height: 80dvh;
+		display: flex;
+		flex-direction: column;
 		/* width: 20rem; */
 		/* opacity: 0.5; */
 	}
 	.details {
-		padding: 1rem;
+		flex: 1;
+		/* padding: 1rem; */
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
 	}
 	h3 {
 		margin: 0;
 	}
-
+	
 	p {
 		margin: 7px 0;
 	}
@@ -120,6 +170,7 @@
 		list-style: none;
 		padding: 0;
 		font-size: 0.8rem;
+		margin: 0;
 	}
 
 	.skills-container li {
@@ -131,10 +182,24 @@
 		margin-bottom: 7px;
 		font-weight: 500;
 	}
+	
+	@media (max-width: 995px) {
+		.carousel-container {
+			flex: 0 0 30%;
+			overflow: hidden;
+		}
+		.card-container {
+			/* display: none; */
+			height: 80dvh;
+			width: 95dvw;
+			max-width: 430px; /*iphone 14 pro max width*/
+			max-height: 588px; /*iphone 14 pro max width*/
+		}
 
-	@media (min-width: 995px) {
-		/* .project-card {
-			display: none;
-		} */
+		.details {
+		padding-inline: 1rem;
+		display: flex;
+		flex-direction: column;
+	}
 	}
 </style>
