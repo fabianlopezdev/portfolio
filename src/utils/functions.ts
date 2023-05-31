@@ -25,7 +25,13 @@ export default function scrollTo(event: MouseEvent | Event) {
 
 	// Scroll to the element if it exists
 	if (element) {
-		element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		if (attribute === 'href') {
+			element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		} else {
+			setTimeout(()=> {
+				element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}, 200)
+		}
 		// Adjust scroll position
 		setTimeout(() => {
 			const offset = 8; // Replace 50 with your desired offset
