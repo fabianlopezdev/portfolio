@@ -4,7 +4,8 @@
 
 	export let selectedProject: string;
 	export let projectCardLang: Language['work']['projectCard'];
-
+  //Export innerWidth to not to scroll to the viewport in bigger screens
+  export let innerWidth;
 	import scrollTo from '../../../utils/functions';
 </script>
 
@@ -15,13 +16,13 @@
 		name="logos"
 		value="wannago"
 		bind:group={selectedProject}
-		on:change={scrollTo}
+		on:change={innerWidth < 996 && scrollTo}
 	/>
 	<label class="wannago project-label" for="wannago">WannaGo<span>&gt;</span></label>
 
 	{#if selectedProject === 'wannago'}
 		<div class="project-card">
-			<ProjectCard {selectedProject} {projectCardLang} />
+			<ProjectCard {selectedProject} {projectCardLang} isFromProjectsLogos={true} />
 		</div>
 	{/if}
 
@@ -31,7 +32,7 @@
 		name="logos"
 		value="huddler"
 		bind:group={selectedProject}
-		on:change={scrollTo}
+		on:change={innerWidth < 996 && scrollTo} 
 	/>
 	<label class="huddler project-label" for="huddler">Huddler<span>&gt;</span></label>
 
@@ -47,7 +48,7 @@
 		name="logos"
 		value="road-trip"
 		bind:group={selectedProject}
-		on:change={scrollTo}
+		on:change={innerWidth < 996 && scrollTo}
 	/>
 	<label class="road-trip project-label" for="road-trip">Road trip<span>&gt;</span></label>
 

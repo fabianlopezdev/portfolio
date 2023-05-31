@@ -30,7 +30,7 @@
 	{#if selectedOption === 'projects'}
 		<div class="projects-container" class:active={selectedOption === 'projects'}>
 			<div class="project-logos">
-				<ProjectsLogos bind:selectedProject {projectCardLang} />
+				<ProjectsLogos bind:selectedProject {projectCardLang} {innerWidth}/>
 			</div>
 			<div class="project-card">
 				<ProjectCard {selectedProject} {projectCardLang} />
