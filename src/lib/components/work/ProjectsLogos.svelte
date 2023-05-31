@@ -6,6 +6,12 @@
 	export let projectCardLang: Language['work']['projectCard'];
   //Export innerWidth to not to scroll to the viewport in bigger screens
   export let innerWidth;
+
+	let prevSelected: {[key: string]: boolean} = {};
+	$: {
+		prevSelected[selectedProject] = true;
+    console.log('prevSelected', prevSelected)
+	}
 	import scrollTo from '../../../utils/functions';
 </script>
 
@@ -20,7 +26,7 @@
 	/>
 	<label class="wannago project-label" for="wannago">WannaGo<span>&gt;</span></label>
 
-	{#if selectedProject === 'wannago'}
+	{#if selectedProject === 'wannago' || prevSelected['wannago']}
 		<div class="project-card">
 			<ProjectCard {selectedProject} {projectCardLang} isFromProjectsLogos={true} />
 		</div>
@@ -36,7 +42,7 @@
 	/>
 	<label class="huddler project-label" for="huddler">Huddler<span>&gt;</span></label>
 
-	{#if selectedProject === 'huddler'}
+	{#if selectedProject === 'huddler' || prevSelected['huddler']}
 		<div class="project-card">
 			<ProjectCard {selectedProject} {projectCardLang} />
 		</div>
@@ -52,7 +58,7 @@
 	/>
 	<label class="road-trip project-label" for="road-trip">Road trip<span>&gt;</span></label>
 
-	{#if selectedProject === 'road-trip'}
+	{#if selectedProject === 'road-trip' || prevSelected['road-trip']}
 		<div class="project-card">
 			<ProjectCard {selectedProject} {projectCardLang} />
 		</div>

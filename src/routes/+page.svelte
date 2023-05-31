@@ -46,6 +46,7 @@ function handleScroll(event: UIEvent) {
 	}
 }
 	$: isBottomShadow = currentScroll > 0;
+	$:isScrollDown;
 </script>
 
 <svelte:window on:scroll={handleScroll} />
