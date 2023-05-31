@@ -25,6 +25,7 @@ export interface Language {
 	};
 	work: {
 		projectCard: {
+			btnReadMore: string;
 			name: string;
 			shortDescripion: string;
 			description: string;

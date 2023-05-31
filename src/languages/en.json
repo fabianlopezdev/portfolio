@@ -20,6 +20,7 @@
 		},
 		"projectCard": {
 			"wannago": {
+				"btnReadMore": "Read more",
 				"name": "WannaGo",
 				"shortDescription": "Plan, invite, and track your events in real time.",
 				"description": "Take control of your plans with WannaGo! Craft exciting plans, invite your friends and family, and stay updated in real time. Who's seen the plan? Who's in? Who's out? With WannaGo, you're always in the loop. Don't just make plans—bring them to life with WannaGo. Let's get planning, let's get going, let's get engaged!",
@@ -36,12 +37,13 @@
 					"Koa.js",
 					"MongoDB",
 					"Mongoose",
-					"Amazon Cognito",
 					"Firebase"
 				]
 			},
 			"huddler": {
+				"btnReadMore": "Read more",
 				"name": "Huddler",
+				"shortDescription": "Share your interests, discover activities, and join or host events.",
 				"description": "Meet, connect, and create with Huddler—the web designed to bring people together based on shared interests. With Huddler, you'll never have to do things alone again. Discover new activities, join existing events, or bring your own ideas to life by creating your own. Whether it's fishing, baking cookies, or playing the banjo, there's room for every passion in Huddler. Huddle with like-minded individuals and embrace the joy of shared experiences. Find your tribe with Huddler.",
 				"githubLink": "https://github.com/Lucasoliveiralucas/huddler-front-end",
 				"role": "Design & Front-end Development",
@@ -49,7 +51,9 @@
 				"skills": ["HTML", "CSS", "Typescript", "NEXT.js", "Tailwind", "Amazon Cognito"]
 			},
 			"road-trip": {
+				"btnReadMore": "Read more",
 				"name": "Road Trip - Campgrounds",
+				"shortDescription": "Discover new campsites, share experiences, and contribute to the road trip community",
 				"description": "Embark on your next adventure with Road Trips - Campgrounds, the essential web for road trip enthusiasts. Discover new campsites, share your experiences with ratings, and contribute to the vibrant community by adding new locations. Whether you're a seasoned road tripper or just starting out, Road Trips - Campgrounds is your guide to the great outdoors. Set out on the open road and let the journey begin with Road Trips - Campgrounds.",
 				"githubLink": "https://github.com/Fabs-and/road-trip-app",
 				"role": "Front-end & Back-end Development",
@@ -57,7 +61,9 @@
 				"skills": ["HTML", "CSS", "Typescript", "React", "Mapbox", "Express", "MongoDB", "Mongoose"]
 			},
 			"portfolio": {
+				"btnReadMore": "Read more",
 				"name": "Fabian's Portfolio",
+				"shortDescription": "Planifica, invita y sigue tus eventos en tiempo real.",
 				"description": "Fabian Lopez Gonzalez Portfolio",
 				"githubLink": "https://github.com/Fabs-and/portfolio",
 				"website": "https://portfolio-fabs-and.vercel.app/",

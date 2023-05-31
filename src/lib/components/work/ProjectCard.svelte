@@ -25,10 +25,10 @@
 			<Carousel />
 		</div>
 		<div class="details">
-			<h3>{project.name}</h3>
+			<!-- <h3>{project.name}</h3> -->
 			<p>
 				{project.shortDescription}
-				<button class="open-modal-btn" on:click={() => dialog.showModal()}>Read more</button>
+				<button class="open-modal-btn" on:click={() => dialog.showModal()}>{project.btnReadMore}</button>
 
 				<dialog bind:this={dialog}>
 					<p>{project.description}</p>
@@ -116,7 +116,7 @@
 		flex-wrap: wrap;
 		list-style: none;
 		padding: 0;
-		font-size: 1rem;
+		font-size: 0.8rem;
 	}
 
 	.skills-container li {
