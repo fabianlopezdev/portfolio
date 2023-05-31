@@ -30,12 +30,12 @@ export default function scrollTo(event: MouseEvent | Event) {
 		} else {
 			setTimeout(()=> {
 				element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-			}, 200)
+			}, 400)
 		}
 		// Adjust scroll position
 		setTimeout(() => {
 			const offset = 8; // Replace 50 with your desired offset
 			window.scrollBy({ top: -offset, behavior: 'smooth' });
-		},500)
+		},800)
 	}
 }
