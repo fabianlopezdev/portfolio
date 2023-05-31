@@ -5,7 +5,8 @@
 	import { Carousel } from '$components';
 	export let projectCardLang: Language['work']['projectCard'];
 	export let selectedProject: string;
-	import { slide } from 'svelte/transition';
+	//Using out:fade just to delay the unmounting of the div to work properly with the scrollTo function
+	import { slide, fade } from 'svelte/transition';
 	export let isFromProjectsLogos = false;
 	let project: Language['work']['projectCard'];
 	
@@ -17,7 +18,7 @@
 </script>
 
 {#if project}
-	<div class="card-container" in:slide={{ delay: 1000, duration: 1000 }}>
+	<div class="card-container" in:slide={{ delay: 1000, duration: 1000 }} out:fade={{delay: 300, duration: 0}}>
 		<div class="carousel">
 			<Carousel />
 		</div>
