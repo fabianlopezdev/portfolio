@@ -23,23 +23,29 @@
 	$: footerLang = lang === 'en' ? english.footer : spanish.footer;
 
 	// Declare a variable to store the scroll position
-	let scrollY = 0;
-	// let storeScrollY =
-	let bottomShadow = false;
+	let currentScroll = 0;
+	// Declare a variable to store previous scroll
+	let prevScroll = 0;
+	let isBottomShadow = false;
+	let isScrollDown = false;
 	// Define a function to handle the scroll event
 	function handleScroll(event: UIEvent) {
 		// Cast the event target to a document object
 		if (event) {
-			scrollY = (event.target as Document).scrollingElement?.scrollTop ?? 0;
+			prevScroll = currentScroll;
+			currentScroll = (event.target as Document).scrollingElement?.scrollTop ?? 0;
 		}
+
+		if (prevScroll < currentScroll) isScrollDown = true;
+		else isScrollDown = false;
 	}
 
-	$: bottomShadow = scrollY > 0;
+	$: isBottomShadow = currentScroll > 0;
 </script>
 
 <svelte:window on:scroll={handleScroll} />
 
-<header class="header" class:header-bottom-shadow={bottomShadow}>
+<header class="header" class:header-bottom-shadow={!isScrollDown && currentScroll !== 0} class:disappearing-header={isScrollDown}>
 	<!-- Passing lang, because header has the language toggle -->
 	<Header {lang} {navLinksLang} />
 </header>
@@ -57,24 +63,32 @@
 
 <style>
 	header {
-		position: sticky;
-		top: 0;
-		z-index: 4;
-		background-color: var(--clr-bg);
-		box-sizing: border-box;
-		display: flex;
-		justify-content: center;
-	}
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  background-color: var(--clr-bg);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  /* Add a transition for the transform property */
+  transition: transform 0.3s ease-in-out;
+}
 
-	.header-bottom-shadow {
-		height: 100%;
-		width: 100%;
-		border-bottom: 0.5px solid var(--clr-shadow);
-		box-shadow: 0 0.5px 1px var(--clr-shadow);
-	}
+.header-bottom-shadow {
+  height: 100%;
+  width: 100%;
+  border-bottom: 0.5px solid var(--clr-shadow);
+  box-shadow: 0 0.5px 1px var(--clr-shadow);
+}
 
-	footer {
-		display: flex;
-		justify-content: center;
-	}
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+/* Use transform instead of display to hide and show the header */
+.disappearing-header {
+  transform: translateY(-100%);
+}
+
 </style>

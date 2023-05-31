@@ -44,7 +44,7 @@
 				"btnReadMore": "Read more",
 				"name": "Huddler",
 				"shortDescription": "Share your interests, discover activities, and join or host events.",
-				"description": "Meet, connect, and create with Huddler—the web designed to bring people together based on shared interests. With Huddler, you'll never have to do things alone again. Discover new activities, join existing events, or bring your own ideas to life by creating your own. Whether it's fishing, baking cookies, or playing the banjo, there's room for every passion in Huddler. Huddle with like-minded individuals and embrace the joy of shared experiences. Find your tribe with Huddler.",
+				"description": "Meet, connect, and create with Huddler—the web designed to bring people together based on shared interests. With Huddler, you'll never have to do things alone again. Discover new activities, join existing events, or bring your own ideas to life by creating your own events. Whether it's fishing, baking cookies, or playing the banjo, there's room for every passion in Huddler. Huddle with like-minded individuals and embrace the joy of shared experiences. Find your tribe with Huddler.",
 				"githubLink": "https://github.com/Lucasoliveiralucas/huddler-front-end",
 				"role": "Design & Front-end Development",
 				"responsibilities": "Aid in the desing of the site. Devised the 'recommended' algorithm. Implemented authorization & user settings",

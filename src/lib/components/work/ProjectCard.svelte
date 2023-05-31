@@ -65,6 +65,8 @@
 		background-color: var(--color);
 		border: none;
 		color: #016aa1;
+		font-weight: 700;
+		letter-spacing: 0.5px;
 		/* text-decoration: none; */
 	}
 
