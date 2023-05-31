@@ -26,6 +26,7 @@ export interface Language {
 	work: {
 		projectCard: {
 			name: string;
+			shortDescripion: string;
 			description: string;
 			githubLink: string;
 			website?: string;
