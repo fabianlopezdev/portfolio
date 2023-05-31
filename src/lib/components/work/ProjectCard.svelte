@@ -16,7 +16,7 @@
 </script>
 
 {#if project}
-	<div class="card-container" in:slide={{ duration: 700 }}>
+	<div class="card-container" in:slide={{delay: 200, duration: 700 }}>
 		<div class="carousel">
 			<Carousel />
 		</div>
