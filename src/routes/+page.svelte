@@ -28,18 +28,23 @@
 	let prevScroll = 0;
 	let isBottomShadow = false;
 	let isScrollDown = false;
+	// Define a constant for the scroll threshold
+const SCROLL_THRESHOLD = 7;  // Adjust this value as needed
 	// Define a function to handle the scroll event
-	function handleScroll(event: UIEvent) {
-		// Cast the event target to a document object
-		if (event) {
-			prevScroll = currentScroll;
-			currentScroll = (event.target as Document).scrollingElement?.scrollTop ?? 0;
-		}
-
-		if (prevScroll < currentScroll && currentScroll > 0) isScrollDown = true;
-		else isScrollDown = false;
+function handleScroll(event: UIEvent) {
+	// Cast the event target to a document object
+	if (event) {
+		prevScroll = currentScroll;
+		currentScroll = ((event.target as Document).scrollingElement?.scrollTop ?? 0);
 	}
 
+	// Check if the user scrolled more than the threshold before changing isScrollDown
+	if (prevScroll < currentScroll && currentScroll - prevScroll > SCROLL_THRESHOLD) {
+		isScrollDown = true;
+	} else if (prevScroll > currentScroll && prevScroll - currentScroll > SCROLL_THRESHOLD) {
+		isScrollDown = false;
+	}
+}
 	$: isBottomShadow = currentScroll > 0;
 </script>
 
