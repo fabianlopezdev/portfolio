@@ -135,7 +135,7 @@
 	}
 	.logos label {
 		cursor: pointer;
-		transition: color 0.5s ease-in-out;
+		transition: color 0.8s ease-in-out 0.5s;
 	}
 
 	.logos label::before {
@@ -148,7 +148,7 @@
 		z-index: -2;
 		transform: rotate(-1deg);
 		background-color: var(--clr-accent);
-		transition: width 0.3s ease-in-out;
+		transition: width 0.5s ease-in-out 0.5s;
 	}
 
 	/* Custom styles for each type when checked */
