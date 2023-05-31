@@ -100,6 +100,7 @@
 		border-radius: 1rem;
 		font-size: 1.3rem;
 		line-height: 1.6;
+		height: 80dvh;
 		/* width: 20rem; */
 		/* opacity: 0.5; */
 	}

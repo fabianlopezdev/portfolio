@@ -26,10 +26,10 @@ export default function scrollTo(event: MouseEvent | Event) {
 	// Scroll to the element if it exists
 	if (element) {
 		element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-		// Adjust scroll position
+		// Adjust scroll position (if header is showing all the time)
 		setTimeout(() => {
-			const offset = 8; // Replace 50 with your desired offset
+			const offset = -50; // Replace 50 with your desired offset
 			window.scrollBy({ top: -offset, behavior: 'smooth' });
-		},500)
+		},400)
 	}
 }
