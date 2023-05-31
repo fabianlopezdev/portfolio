@@ -78,7 +78,11 @@
 		border: none;
 	}
 	dialog {
-		position: relative;
+		position: fixed;
+		top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 		border: none;
 		border-radius: 1rem;
 		background-color: #f9fcfd;
