@@ -2,9 +2,9 @@
   import LeftArrowIcon from 'svelte-icons/io/IoIosArrowBack.svelte'
   import RightArrowIcon from 'svelte-icons/io/IoIosArrowForward.svelte'
   let slides = [
-    {src: '/photos/projects/wannago/dashboard - mobile 2.png', alt: 'Image 1 description'},
-    {src: '/photos/projects/wannago/dashboard - mobile.png', alt: 'Image 2 description'},
-    {src: '/photos/projects/wannago/main - mobile.png', alt: 'Image 3 description'},
+    {src: '/photos/projects/wannago/wannago-landing.png', alt: 'Image 1 description'},
+    {src: '/photos/projects/wannago/wannago-invitation.png', alt: 'Image 2 description'},
+    {src: '/photos/projects/wannago/wannago-general-stats.png', alt: 'Image 3 description'},
 
   ];
 
