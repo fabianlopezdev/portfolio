@@ -1,4 +1,4 @@
-<script>
+<script lang='ts'>
   import LeftArrowIcon from 'svelte-icons/io/IoIosArrowBack.svelte'
   import RightArrowIcon from 'svelte-icons/io/IoIosArrowForward.svelte'
   let slides = [
@@ -11,6 +11,8 @@
   let currentIndex = 0;
   let prevIndex = 0;
   let direction = '';
+
+
 
   function prevSlide() {
     direction = 'prev';
@@ -44,6 +46,12 @@
   {/each}
   <button on:click={prevSlide} class="carousel__button carousel__button--prev"><div class='icons'><LeftArrowIcon/></div></button>
   <button on:click={nextSlide} class="carousel__button carousel__button--next"><div class='icons'><RightArrowIcon/></button>
+
+  <div class="carousel__dots">
+    {#each slides as _, index}
+      <div class="carousel__dot" class:active-dot={currentIndex === index}></div>
+    {/each}
+  </div>
 </div>
 
 <style>
@@ -61,6 +69,7 @@
     width: 100%;
      height: 100%;
   object-fit: contain;
+  padding-bottom: 0.7rem;
   }
 
   .carousel__img.active {
@@ -93,7 +102,7 @@
     position: absolute;
     top: 50%;
      transform: translateY(-50%);
-    background-color: rgba(255,255,255,0.7);
+    background-color: inherit;
     border: none;
     padding: 10px;
     cursor: pointer;
@@ -105,6 +114,27 @@
 
   .carousel__button--next {
     right: 10px;
+  }
+
+  .carousel__dots {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel__dot {
+    width: 10px;
+    height: 10px;
+    background-color: #d0dff0;
+    border-radius: 50%;
+    margin: 0 5px;
+  }
+
+  .active-dot {
+    background-color: #96acc5;
   }
 
   @keyframes slide-in-from-right {
