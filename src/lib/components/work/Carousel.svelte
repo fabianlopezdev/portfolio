@@ -83,19 +83,19 @@
   }
 
   .carousel__img.next.active {
-    animation: slide-in-from-left 0.5s forwards;
+    animation: slide-in-from-left 0.5s forwards ease-in-out;
   }
 
   .carousel__img.next.outgoing {
-    animation: slide-out-to-right 0.5s forwards;
+    animation: slide-out-to-right 0.5s forwards ease-in-out;
   }
 
   .carousel__img.prev.active {
-    animation: slide-in-from-right 0.5s forwards;
+    animation: slide-in-from-right 0.5s forwards ease-in-out;
   }
 
   .carousel__img.prev.outgoing {
-    animation: slide-out-to-left 0.5s forwards;
+    animation: slide-out-to-left 0.5s forwards ease-in-out;
   }
 
   .carousel__button {
@@ -131,6 +131,7 @@
     background-color: #d0dff0;
     border-radius: 50%;
     margin: 0 5px;
+    transition: background-color 0.3s ease-in-out;
   }
 
   .active-dot {
