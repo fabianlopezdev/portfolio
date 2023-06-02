@@ -7,12 +7,12 @@
 
 	export let projectCardLang: Language['work']['projectCard'];
 
-	export let selectedProject: string;
+	export let selectedProject: keyof Language['work']['projectCard'];;
 
 	import { slide } from 'svelte/transition';
 
-	let project: Language['work']['projectCard'];
-	let dialog: HTMLAllCollection;
+	let project: any;
+	let dialog: HTMLDialogElement;
 
 	// Use reactive declaration instead of assignment
 	$: project = selectedProject ? projectCardLang[selectedProject] : null;

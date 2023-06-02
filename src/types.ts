@@ -26,14 +26,14 @@ export interface Language {
 	work: {
 		projectCard: {
 			btnReadMore: string;
-			name: string;
-			shortDescripion: string;
-			description: string;
+			Name: string;
+			ShortDescripion: string;
+			Description: string;
 			githubLink: string;
-			website?: string;
-			role: string;
-			responsibilities: string;
-			skills: string[];
+			Website?: string;
+			Role: string;
+			Responsibilities: string;
+			Skills: string[];
 		};
 	};
 	contact: {
