@@ -6,11 +6,10 @@
 	import CloseIcon from 'svelte-icons/io/IoIosClose.svelte';
 
 	export let projectCardLang: Language['work']['projectCard'];
+
 	export let selectedProject: string;
 
 	import { slide } from 'svelte/transition';
-
-	export let isFromProjectsLogos = false;
 
 	let project: Language['work']['projectCard'];
 	let dialog: HTMLAllCollection;
@@ -21,115 +20,90 @@
 
 {#if project}
 	<div class="card-container" in:slide={{ delay: 1000, duration: 1000 }}>
-		<div class="carousel-container">
-			<Carousel />
-		</div>
-		<div class="details">
-			<!-- Use semantic elements instead of generic ones -->
-			<section>
-				{#each Object.entries(project) as projectItem}
-					{#if projectItem.at(0) !== 'Description' && projectItem.at(0) !== 'Website' && projectItem.at(0) !== 'githubLink' && projectItem.at(0) !== 'Name'}
-						<section>
-							{#if projectItem.at(0) === 'Short Description'}
-								<h5>Description</h5>
-								<p class="items-descriptions">
-									{projectItem.at(1)}
-									<button class="open-modal-btn" on:click={() => dialog.showModal()}>
-										{project.btnReadMore}
-									</button>
-									<dialog bind:this={dialog}>
-										<p>{project.Description}</p>
-										<button class="close-modal-btn" on:click={() => dialog.close()}>
-											<div class="header-icons"><CloseIcon /></div>
-										</button>
-									</dialog>
-								</p>
-							{:else if projectItem.at(0) === 'Skills'}
-								<h5>{projectItem.at(0)}</h5>
-								<ul class="skills-container">
-									{#each projectItem.at(1) as skill}
-										<li>{skill}</li>
-									{/each}
-								</ul>
-							{:else}
-								<h5>{projectItem.at(0)}</h5>
-								<p class="items-descriptions">{projectItem.at(1)}</p>
-							{/if}
-
-						</section>
+		<Carousel />
+		<section>
+			{#each Object.entries(project) as projectItem}
+				{#if projectItem.at(0) === 'Short Description' || projectItem.at(0) === 'Role' || projectItem.at(0) === 'Responsibilities'}
+					{#if projectItem.at(0) === 'Short Description'}
+						<h4>Description</h4>
+						<p class="items-descriptions">
+							{projectItem.at(1)}
+							<button class="open-modal-btn" on:click={() => dialog.showModal()}>
+								{projectCardLang.btnReadMore}
+							</button>
+							<dialog bind:this={dialog}>
+								<p>{project.Description}</p>
+								<button class="close-modal-btn" on:click={() => dialog.close()}>
+									<div class="header-icons"><CloseIcon /></div>
+								</button>
+							</dialog>
+						</p>
+					{:else}
+						<h4>{projectItem.at(0)}</h4>
+						<p class="items-descriptions">{projectItem.at(1)}</p>
 					{/if}
-				{/each}
+				{/if}
+			{/each}
 
-				<div class="icons-container">
+			<h4>Skills</h4>
+			<ul class="skills-container">
+				{#each project.Skills as skill}
+					<li>{skill}</li>
+				{/each}
+			</ul>
+
+			<div class="icons-container">
+				<a
+					class="external-links"
+					href={project?.githubLink}
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="GitHub"
+				>
+					GitHub
+					<div class="icons"><GitHubIcon /></div>
+				</a>
+				{#if project.Website}
 					<a
-						href={project?.githubLink}
+						class="external-links"
+						href={project?.Website}
 						target="_blank"
 						rel="noopener noreferrer"
-						aria-label="GitHub"
+						aria-label="Visit website"
 					>
-						GitHub
-						<div class="icons"><GitHubIcon /></div>
+						Visit
+						<div class="icons"><GoToArrow /></div>
 					</a>
-					{#if project.website}
-						<a href={project?.website} target="_blank" rel="noopener noreferrer" aria-label="Visit website">
-							Visit
-							<div class="icons"><GoToArrow /></div>
-						</a>
-					{/if}
-				</div>
-			</section>
-		</div>
+				{/if}
+			</div>
+		</section>
 	</div>
 {/if}
 
 <style>
-	h5 {
-		margin: 0;
+	.card-container {
+		box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+		border-radius: 1rem;
 		font-size: 1rem;
+		line-height: 1.4;
+		margin-top: 1rem;
+	}
+	section {
+		padding-inline: 1rem;
+	}
+
+	h4 {
+		margin: 0;
+		margin-top: 10px;
 	}
 
 	.items-descriptions {
-		font-size: 1rem;
 		margin: 0;
 	}
 
-	.project-description {
-		margin-bottom: 0;
-	}
-
-	a {
-		display: flex;
-		align-items: center;
-		font-size: 1rem;
-		gap: 2px;
-		text-decoration: underline;
-	}
-
-	.icons {
-		height: 1rem;
-		width: 1rem;
-		display: flex;
-		/* align-items: center; */
-	}
-
-	.open-modal-btn {
-		cursor: pointer;
-		background-color: var(--color);
-		border: none;
-		color: #016aa1;
-		font-weight: 700;
-		letter-spacing: 0.5px;
-		/* text-decoration: none; */
-	}
-
-	.close-modal-btn {
-		position: absolute;
-		top: 0;
-		right: 0;
-		padding-top: 1rem;
-		padding-right: 1rem;
-		background-color: var(--color);
-		border: none;
+	.header-icons {
+		height: 2rem;
+		width: 2rem;
 	}
 
 	dialog {
@@ -144,43 +118,29 @@
 		padding: 2rem;
 	}
 
+	.open-modal-btn {
+		cursor: pointer;
+		background-color: var(--color);
+		border: none;
+		color: #016aa1;
+		font-size: 0.8rem;
+		padding: 0;
+	}
+
+	.close-modal-btn {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding-top: 1rem;
+		padding-right: 1rem;
+		background-color: var(--color);
+		border: none;
+	}
+
 	.icons-container {
 		align-self: flex-end;
 		display: flex;
 		gap: 1rem;
-	}
-
-	.carousel-container {
-		/* height: 350px; */
-	}
-
-	.card-container {
-		/* box-sizing: content-box; */
-		/* background-color: rgba(255,255,255,0.7); */
-		box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
-		border-radius: 1rem;
-		font-size: 1rem;
-		line-height: 1.6;
-		display: flex;
-		flex-direction: column;
-		/* width: 20rem; */
-		/* opacity: 0.5; */
-	}
-
-	.details {
-		flex: 1;
-		/* padding: 1rem; */
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-	}
-
-	h3 {
-		margin: 0;
-	}
-
-	p {
-		margin: 7px 0;
 	}
 
 	.skills-container {
@@ -202,36 +162,26 @@
 		font-weight: 500;
 	}
 
-	@media (max-width: 995px) {
-		.carousel-container {
-			flex: 0 0 30%;
-			overflow: hidden;
-		}
+	.external-links {
+		display: flex;
+		align-items: center;
+		gap: 2px;
+		text-decoration: underline;
+		padding-top: 5px;
+	}
 
+	.icons {
+		display: flex;
+		height: 1rem;
+		width: 1rem;
+	}
+
+	@media (max-width: 995px) {
 		.card-container {
-			/* display: none; */
 			height: 80dvh;
 			width: 95dvw;
 			max-width: 430px; /*iphone X width*/
 			max-height: 588px; /*iphone X height*/
-
-			/*iphone X width*/
-			/*iphone X height*/
-
-			/*iphone X width*/
-			/*iphone X height*/
-
-			/*iphone X width*/
-			/*iphone X height*/
-
-			/*iphone X width*/
-			/*iphone X height*/
-		}
-
-		.details {
-			padding-inline: 1rem;
-			display: flex;
-			flex-direction: column;
 		}
 	}
 </style>

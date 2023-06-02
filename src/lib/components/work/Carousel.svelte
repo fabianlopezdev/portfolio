@@ -51,7 +51,7 @@
     position: relative;
     display: flex;
     overflow: hidden;
-    height: 100%;
+    height: 30%;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
   }
@@ -59,8 +59,8 @@
   .carousel__img {
     display: none;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+     height: 100%;
+  object-fit: contain;
   }
 
   .carousel__img.active {
@@ -92,6 +92,7 @@
   .carousel__button {
     position: absolute;
     top: 50%;
+     transform: translateY(-50%);
     background-color: rgba(255,255,255,0.7);
     border: none;
     padding: 10px;
