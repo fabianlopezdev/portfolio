@@ -86,7 +86,7 @@
 		border-radius: 1rem;
 		font-size: 1rem;
 		line-height: 1.4;
-		margin-top: 1rem;
+		/* margin-top: 1rem; */
 	}
 	section {
 		padding-inline: 1rem;
