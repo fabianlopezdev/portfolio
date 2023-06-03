@@ -82,7 +82,8 @@
 
 <style>
 	.card-container {
-		box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+		box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.2);
+		/* border: solid 0.01rem black; */
 		border-radius: 1rem;
 		font-size: 1rem;
 		line-height: 1.4;

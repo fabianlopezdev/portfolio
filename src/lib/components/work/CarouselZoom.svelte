@@ -36,10 +36,7 @@
 	<button class="close-modal-btn" on:click={() => (isModalOpen = !isModalOpen)}>
 		<div class="header-icons"><CloseIcon /></div>
 	</button>
-
     {#each slides as slide, i}
-      {console.log('currentInd', currentIndex)}
-      {console.log('current i', i)}
       <img
         src={slide.src}
         alt={slide.alt}
