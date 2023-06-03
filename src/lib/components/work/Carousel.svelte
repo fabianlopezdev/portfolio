@@ -65,7 +65,7 @@
 		</button>
 		{/each}
 		{#if isModalOpen}
-			<CarouselZoom bind:currentIndex bind:prevIndex  {slides} bind:isModalOpen/>
+			<CarouselZoom bind:currentIndex  {slides} bind:isModalOpen/>
 		{/if}
 		<!-- <dialog bind:this={modal}>
 			{#if isModalOpen}
