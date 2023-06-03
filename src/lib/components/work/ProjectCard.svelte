@@ -82,11 +82,12 @@
 
 <style>
 	.card-container {
-		box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.2);
+		box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
 		/* border: solid 0.01rem black; */
 		border-radius: 1rem;
 		font-size: 1rem;
 		line-height: 1.4;
+		background-color: white;
 		/* margin-top: 1rem; */
 	}
 	section {

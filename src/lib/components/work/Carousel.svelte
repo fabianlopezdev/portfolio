@@ -1,7 +1,6 @@
 <script lang="ts">
 	import LeftArrowIcon from 'svelte-icons/io/IoIosArrowBack.svelte';
 	import RightArrowIcon from 'svelte-icons/io/IoIosArrowForward.svelte';
-	import CloseIcon from 'svelte-icons/io/IoIosClose.svelte';
 	import { CarouselZoom } from '$components';
 
 	let slides = [
@@ -17,44 +16,28 @@
 	function prevSlide() {
 		direction = 'prev';
 		prevIndex = currentIndex;
-		if (currentIndex === 0) {
-			currentIndex = slides.length - 1;
-		} else {
-			currentIndex--;
-		}
+		currentIndex = currentIndex === 0 ? slides.length - 1 : currentIndex - 1;
 	}
 
 	function nextSlide() {
 		direction = 'next';
 		prevIndex = currentIndex;
-		if (currentIndex === slides.length - 1) {
-			currentIndex = 0;
-		} else {
-			currentIndex++;
-		}
+		currentIndex = currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
 	}
+
 	let isModalOpen = false;
 
-	
-
 	//To not to let scrolling on the app while modal open
-	$: if (isModalOpen) {
-		console.log('helloooooo');
-		document.body.style.overflow = 'hidden';
-	} else {
-		document.body.style.overflow = '';
-	}
-
-	// $: if (modal) {
-	// 	modal.addEventListener('close', () => (currentIndex = modal.returnValue));
-
-	// 	console.log('return', modal.returnValue);
-	// }
+	$: isModalOpen ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = '');
 </script>
 
-<div class="carousel">
+<section class="carousel">
 	{#each slides as slide, index (slide.src)}
-		<button class="image-button"on:click={() => isModalOpen = !isModalOpen}>
+		<button
+			class="image-button"
+			on:click={() => (isModalOpen = !isModalOpen)}
+			aria-label="Open Image Modal"
+		>
 			<img
 				src={slide.src}
 				alt={slide.alt}
@@ -63,78 +46,57 @@
 				class:outgoing={prevIndex === index && currentIndex !== index}
 			/>
 		</button>
-		{/each}
-		{#if isModalOpen}
-			<CarouselZoom bind:currentIndex  {slides} bind:isModalOpen/>
-		{/if}
-		<!-- <dialog bind:this={modal}>
-			{#if isModalOpen}
-				<button class="close-modal-btn" on:click={handleCloseButton}>
-					<div class="header-icons"><CloseIcon /></div>
-				</button>
-				<CarouselZoom bind:currentIndex bind:prevIndex  {slides} {isModalOpen} />
-			{/if}
-		</dialog> -->
-	<button on:click={prevSlide} class="carousel__button carousel__button--prev"
-		><div class="icons"><LeftArrowIcon /></div></button
-	>
-	<button on:click={nextSlide} class="carousel__button carousel__button--next"
-		><div class="icons"><RightArrowIcon /></div></button
-	>
+	{/each}
 
-	<div class="carousel__dots">
+	{#if isModalOpen}
+		<CarouselZoom bind:currentIndex {slides} bind:isModalOpen />
+	{/if}
+
+	<button
+		on:click={prevSlide}
+		class="carousel__button carousel__button--prev"
+		aria-label="Previous Slide"
+	>
+		<div class="icons"><LeftArrowIcon /></div>
+	</button>
+
+	<button
+		on:click={nextSlide}
+		class="carousel__button carousel__button--next"
+		aria-label="Next Slide"
+	>
+		<div class="icons"><RightArrowIcon /></div>
+	</button>
+
+	<div role="list" class="carousel__dots">
 		{#each slides as _, index}
-			<div class="carousel__dot" class:active-dot={currentIndex === index} />
+			<div role="listitem" class="carousel__dot" class:active-dot={currentIndex === index} />
 		{/each}
 	</div>
-</div>
+</section>
 
 <style>
-	.header-icons {
-		height: 2rem;
-		width: 2rem;
-	}
-	.close-modal-btn {
-		/* background-color: red; */
-		z-index: 1;
-		color: #d0dff0;
-	}
-
-	.image-button {
-		cursor: pointer;
-		border: none;
-		outline: none;
-		background-color: transparent;
-		padding: 0;
-		display: block;
-	}
 	.carousel {
 		position: relative;
 		display: flex;
 		overflow: hidden;
 		height: 30%;
-		border-top-left-radius: 1rem;
-		border-top-right-radius: 1rem;
+		border-radius: 1rem 1rem 0 0;
 	}
 
 	.carousel__img {
 		display: none;
+		position: absolute;
+		top: 0;
 		width: 100%;
 		height: 100%;
 		object-fit: contain;
 		padding-bottom: 0.7rem;
-		position: absolute;
-		top: 0;
 	}
 
-	.carousel__img.active {
-		display: block;
-	}
-
+	.carousel__img.active,
 	.carousel__img.outgoing {
 		display: block;
-		position: absolute;
-		top: 0;
 	}
 
 	.carousel__img.next.active {
@@ -191,6 +153,15 @@
 
 	.active-dot {
 		background-color: #96acc5;
+	}
+
+	.image-button {
+		cursor: pointer;
+		border: none;
+		outline: none;
+		background-color: transparent;
+		padding: 0;
+		display: block;
 	}
 
 	@keyframes slide-in-from-right {

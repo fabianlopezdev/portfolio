@@ -1,238 +1,220 @@
 <script>
-  import LeftArrowIcon from 'svelte-icons/io/IoIosArrowBack.svelte';
-  import RightArrowIcon from 'svelte-icons/io/IoIosArrowForward.svelte';
-  import CloseIcon from 'svelte-icons/io/IoIosClose.svelte';
-  export let currentIndex = 0;
-  let isShowCarousel = false;
-  export let slides = [];
-  export let isModalOpen = false;
-  let prevIndex = 0;
-  // export let nextIndex;
+	import LeftArrowIcon from 'svelte-icons/io/IoIosArrowBack.svelte';
+	import RightArrowIcon from 'svelte-icons/io/IoIosArrowForward.svelte';
+	import CloseIcon from 'svelte-icons/io/IoIosClose.svelte';
 
-  let direction = '';
+	// Carousel control variables
+	export let currentIndex = 0;
+	let prevIndex = 0;
+	let direction = '';
+	export let slides = [];
 
-  function prevSlide() {
-    direction = 'prev';
-    prevIndex = currentIndex;
-    if (currentIndex === 0) {
-      currentIndex = slides.length - 1;
-    } else {
-      currentIndex--;
-    }
-  }
+	// Modal control variable
+	export let isModalOpen = false;
 
-  function nextSlide() {
-    direction = 'next';
-    prevIndex = currentIndex;
-    if (currentIndex === slides.length - 1) {
-      currentIndex = 0;
-    } else {
-      currentIndex++;
-    }
-  }
+	// Swipe control variables
+	let touchstartX = 0;
+	let touchendX = 0;
 
-  // New code for swipe gesture
-  let touchstartX = 0;
-  let touchendX = 0;
+	// Function to move to previous slide
+	function movePrevSlide() {
+		direction = 'prev';
+		prevIndex = currentIndex;
+		currentIndex = currentIndex === 0 ? slides.length - 1 : currentIndex - 1;
+	}
 
-  const handleTouchStart = (e) => {
-    touchstartX = e.touches[0].clientX;
-  };
+	// Function to move to next slide
+	function moveNextSlide() {
+		direction = 'next';
+		prevIndex = currentIndex;
+		currentIndex = currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
+	}
 
-  const handleTouchEnd = (e) => {
-    touchendX = e.changedTouches[0].clientX;
-    handleSwipe();
-  };
+	// Function to handle touch start
+	const handleTouchStart = (e) => {
+		touchstartX = e.touches[0].clientX;
+	};
 
-  const handleSwipe = () => {
-    if (touchendX < touchstartX) {
-      prevSlide();
-    }
+	// Function to handle touch end
+	const handleTouchEnd = (e) => {
+		touchendX = e.changedTouches[0].clientX;
+		handleSwipeGesture();
+	};
 
-    if (touchendX > touchstartX) {
-      nextSlide();
-    }
-  };
+	// Function to handle swipe gesture
+	const handleSwipeGesture = () => {
+		if (touchendX < touchstartX) movePrevSlide();
+		if (touchendX > touchstartX) moveNextSlide();
+	};
 </script>
 
-<!-- Added touchstart and touchend event handlers to the carousel div -->
-<div class="carousel" on:touchstart={handleTouchStart} on:touchend={handleTouchEnd}>
-  <button class="close-modal-btn" on:click={() => (isModalOpen = !isModalOpen)}>
-    <div class="header-icons"><CloseIcon /></div>
-  </button>
-  {#each slides as slide, i}
-    <img
-      src={slide.src}
-      alt={slide.alt}
-      class="carousel__img {direction}"
-      class:active={currentIndex === i}
-      class:outgoing={prevIndex === i && currentIndex !== i}
-    />
-  {/each}
+<main class="carousel" on:touchstart={handleTouchStart} on:touchend={handleTouchEnd}>
+	<button
+		class="close-modal-btn"
+		on:click={() => (isModalOpen = !isModalOpen)}
+		aria-label="Close Modal"
+	>
+		<div class="header-icons"><CloseIcon /></div>
+	</button>
+	{#each slides as slide, i (slide.src)}
+		<img
+			src={slide.src}
+			alt={slide.alt}
+			class="carousel__img {direction}"
+			class:active={currentIndex === i}
+			class:outgoing={prevIndex === i && currentIndex !== i}
+		/>
+	{/each}
 
-  <button on:click={prevSlide} class="carousel__button carousel__button--prev">
-    <div class="icons"><LeftArrowIcon /></div>
-  </button>
+	<button
+		on:click={movePrevSlide}
+		class="carousel__button carousel__button--prev"
+		aria-label="Previous Slide"
+	>
+		<div class="icons"><LeftArrowIcon /></div>
+	</button>
 
-  <button on:click={nextSlide} class="carousel__button carousel__button--next">
-    <div class="icons"><RightArrowIcon /></div>
-  </button>
+	<button
+		on:click={moveNextSlide}
+		class="carousel__button carousel__button--next"
+		aria-label="Next Slide"
+	>
+		<div class="icons"><RightArrowIcon /></div>
+	</button>
 
-  <div class="carousel__dots">
-    {#each slides as _, i}
-      <div class="carousel__dot" class:active-dot={currentIndex === i} />
-    {/each}
-  </div>
-</div>
+	<div class="carousel__dots">
+		{#each slides as _, i (i)}
+			<div class="carousel__dot" class:active-dot={currentIndex === i} />
+		{/each}
+	</div>
+</main>
 
 <style>
-	.close-modal-btn {
-		/* background-color: red; */
-		z-index: 5;
-		color: #d0dff0;
-	}
-	.carousel {
-		display: flex;
-		/* flex-direction: column;
-		justify-content: center;
-		align-items: center; */
-		position: fixed;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		background-color: black;
-		z-index: 1000;
-    height: 100dvh;
-	}
-	.carousel__img {
-		display: none;
+    /* Modal styles */
+    .carousel {
+        display: flex;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: black;
+        height: 100dvh;
+        z-index: 1000;
+    }
 
-		width: 100%;
-		height: auto;
-		object-fit: contain;
-    top:25%;
-    position: absolute;
-    padding-inline: 0.2rem;
-		/* position: fixed; */
-	}
+    .close-modal-btn {
+        z-index: 5;
+        color: #d0dff0;
+    }
 
-	.carousel__img.active {
-		display: block;
-		/* position: fixed; */
-	}
+    /* Image styles */
+    .carousel__img {
+        display: none;
+        position: absolute;
+        top: 25%;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        padding-inline: 0.2rem;
+    }
 
-	.carousel__img.outgoing {
-		display: block;
-    position:absolute;
-    top:25%;
-		/* position: absolute; */
-		/* top: 25%; */
+    .carousel__img.active {
+        display: block;
+    }
 
-		/* height: 50%;
- object-fit:contain; */
-		/* position: absolute;
- top: 0; */
-	}
+    .carousel__img.outgoing {
+        display: block;
+        position: absolute;
+        top: 25%;
+    }
 
-	.carousel__img.next.active {
-		animation: slide-in-from-left 0.5s forwards ease-in-out;
-	}
+    /* Button styles */
+    .carousel__button {
+        position: absolute;
+        top: 50%;
+        background-color: transparent;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        transform: translateY(-50%);
+    }
 
-	.carousel__img.next.outgoing {
-		animation: slide-out-to-right 0.5s forwards ease-in-out;
-	}
+    .icons, .header-icons {
+        color: #d0dff0;
+    }
 
-	.carousel__img.prev.active {
-		animation: slide-in-from-right 0.5s forwards ease-in-out;
-	}
+    .header-icons {
+        width: 2rem;
+        height: 2rem;
+    }
 
-	.carousel__img.prev.outgoing {
-		animation: slide-out-to-left 0.5s forwards ease-in-out;
-	}
+    .carousel__button--prev {
+        left: -5px;
+    }
 
-	.carousel__button {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		background-color: transparent;
-		border: none;
-		padding: 10px;
-		cursor: pointer;
-	}
+    .carousel__button--next {
+        right: -5px;
+    }
 
-	.icons {
-		color: #d0dff0;
-	}
+    /* Dot styles */
+    .carousel__dots {
+        position: absolute;
+        bottom: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-  .header-icons {
-    width: 2rem;
-    height: 2rem;
-  }
+    .carousel__dot {
+        width: 10px;
+        height: 10px;
+        background-color: #d0dff0;
+        border-radius: 50%;
+        margin: 0 5px;
+        transition: background-color 0.3s ease-in-out;
+    }
 
-	.carousel__button--prev {
-		left: -5px;
-	}
+    .active-dot {
+        background-color: #96acc5;
+    }
 
-	.carousel__button--next {
-		right: -5px;
-	}
+    /* Animation styles */
+    .carousel__img.next.active {
+        animation: slide-in-from-left 0.5s forwards ease-in-out;
+    }
 
-	.carousel__dots {
-		position: absolute;
-		bottom: 30px;
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
+    .carousel__img.next.outgoing {
+        animation: slide-out-to-right 0.5s forwards ease-in-out;
+    }
 
-	.carousel__dot {
-		width: 10px;
-		height: 10px;
-		background-color: #d0dff0;
-		border-radius: 50%;
-		margin: 0 5px;
-		transition: background-color 0.3s ease-in-out;
-	}
+    .carousel__img.prev.active {
+        animation: slide-in-from-right 0.5s forwards ease-in-out;
+    }
 
-	.active-dot {
-		background-color: #96acc5;
-	}
+    .carousel__img.prev.outgoing {
+        animation: slide-out-to-left 0.5s forwards ease-in-out;
+    }
 
-	@keyframes slide-in-from-right {
-		0% {
-			transform: translateX(100%);
-		}
-		100% {
-			transform: translateX(0);
-		}
-	}
+    /* Animations */
+    @keyframes slide-in-from-right {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(0); }
+    }
 
-	@keyframes slide-in-from-left {
-		0% {
-			transform: translateX(-100%);
-		}
-		100% {
-			transform: translateX(0);
-		}
-	}
+    @keyframes slide-in-from-left {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(0); }
+    }
 
-	@keyframes slide-out-to-right {
-		0% {
-			transform: translateX(0);
-		}
-		100% {
-			transform: translateX(100%);
-		}
-	}
+    @keyframes slide-out-to-right {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(100%); }
+    }
 
-	@keyframes slide-out-to-left {
-		0% {
-			transform: translateX(0);
-		}
-		100% {
-			transform: translateX(-100%);
-		}
-	}
+     @keyframes slide-out-to-left {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-100%); }
+    }
 </style>
