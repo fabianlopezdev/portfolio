@@ -6,7 +6,7 @@
 	let isShowCarousel = false;
 	export let slides = [];
 	export let isModalOpen = false;
-	let prevIndex = 0;
+	export let prevIndex = 0;
 	// export let nextIndex;
 
 	let direction = '';
@@ -158,7 +158,7 @@
 
 	.carousel__dots {
 		position: absolute;
-		bottom: 10px;
+		bottom: 30px;
 		width: 100%;
 		display: flex;
 		justify-content: center;
