@@ -80,13 +80,14 @@
 		left: 0;
 		right: 0;
 		background-color: black;
-		z-index: 3;
+		z-index: 1000;
+    height: 100dvh;
 	}
 	.carousel__img {
 		display: none;
 
-		/* height: auto; */
 		width: 100%;
+		height: auto;
 		object-fit: contain;
     top:25%;
     position: absolute;
