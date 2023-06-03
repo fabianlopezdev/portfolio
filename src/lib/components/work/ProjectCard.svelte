@@ -180,7 +180,7 @@
 
 	@media (max-width: 995px) {
 		.card-container {
-			height: 80dvh;
+			height: 80svh;
 			width: 95dvw;
 			max-width: 430px; /*iphone X width*/
 			max-height: 588px; /*iphone X height*/
