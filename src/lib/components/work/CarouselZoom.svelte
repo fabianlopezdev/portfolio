@@ -1,15 +1,15 @@
 <script>
 	import LeftArrowIcon from 'svelte-icons/io/IoIosArrowBack.svelte';
 	import RightArrowIcon from 'svelte-icons/io/IoIosArrowForward.svelte';
-
+	import CloseIcon from 'svelte-icons/io/IoIosClose.svelte';
 	export let currentIndex = 0;
-	
+	let isShowCarousel = false;
 	export let slides = [];
+	export let isModalOpen = false;
+	let prevIndex = 0;
+	// export let nextIndex;
 
-	export let prevIndex = 0;
-  // export let nextIndex;
-
-	 let direction = '';
+	let direction = '';
 
 	function prevSlide() {
 		direction = 'prev';
@@ -19,7 +19,6 @@
 		} else {
 			currentIndex--;
 		}
-
 	}
 
 	function nextSlide() {
@@ -30,61 +29,82 @@
 		} else {
 			currentIndex++;
 		}
-
 	}
 </script>
 
+<div class="carousel">
+	<button class="close-modal-btn" on:click={() => (isModalOpen = !isModalOpen)}>
+		<div class="header-icons"><CloseIcon /></div>
+	</button>
 
-
-  {#each slides as slide, i}
-	{console.log('currentInd', currentIndex)}
-	{console.log('current i', i)}
-	<img
-		src={slide.src}
-		alt={slide.alt}
-		class="carousel__img {direction}"
-		class:active={currentIndex === i}
-    class:outgoing={prevIndex === i && currentIndex !== i}
-	/>
-{/each}
-<button on:click={prevSlide} class="carousel__button carousel__button--prev"
-	><div class="icons"><LeftArrowIcon /></div></button
->
-<button on:click={nextSlide} class="carousel__button carousel__button--next"
-	><div class="icons"><RightArrowIcon /></div></button
->
-
-<div class="carousel__dots">
-  {#each slides as _, i}
-		<div class="carousel__dot" class:active-dot={currentIndex === i} />
+    {#each slides as slide, i}
+      {console.log('currentInd', currentIndex)}
+      {console.log('current i', i)}
+      <img
+        src={slide.src}
+        alt={slide.alt}
+        class="carousel__img {direction}"
+        class:active={currentIndex === i}
+        class:outgoing={prevIndex === i && currentIndex !== i}
+      />
     {/each}
-  </div>
-  
+
+	<button on:click={prevSlide} class="carousel__button carousel__button--prev"
+		><div class="icons"><LeftArrowIcon /></div></button
+	>
+	<button on:click={nextSlide} class="carousel__button carousel__button--next"
+		><div class="icons"><RightArrowIcon /></div></button
+	>
+
+	<div class="carousel__dots">
+		{#each slides as _, i}
+			<div class="carousel__dot" class:active-dot={currentIndex === i} />
+		{/each}
+	</div>
+</div>
 
 <style>
-  .carousel__img {
-		display: none;
-		/* height: 50%; */
-		/* width: 100%; */
-		height: auto;
-    width:100%;
-		object-fit: contain;
-		/* padding-bottom: 1rem; */
-    /* overflow: hidden; */
-		/* padding-right: 0.2rem; */
-		position: absolute;
-    top:25%;
-    padding-inline: 0.2rem;
+	.close-modal-btn {
+		/* background-color: red; */
+		z-index: 5;
+		color: #d0dff0;
 	}
-  
+	.carousel {
+		display: flex;
+		/* flex-direction: column;
+		justify-content: center;
+		align-items: center; */
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: black;
+		z-index: 3;
+	}
+	.carousel__img {
+		display: none;
+
+		/* height: auto; */
+		width: 100%;
+		object-fit: contain;
+    top:25%;
+    position: absolute;
+    padding-inline: 0.2rem;
+		/* position: fixed; */
+	}
+
 	.carousel__img.active {
 		display: block;
+		/* position: fixed; */
 	}
 
 	.carousel__img.outgoing {
 		display: block;
-    position: absolute;
-    top: 25%;
+    position:absolute;
+    top:25%;
+		/* position: absolute; */
+		/* top: 25%; */
 
 		/* height: 50%;
  object-fit:contain; */
@@ -121,6 +141,11 @@
 	.icons {
 		color: #d0dff0;
 	}
+
+  .header-icons {
+    width: 2rem;
+    height: 2rem;
+  }
 
 	.carousel__button--prev {
 		left: -5px;

@@ -13,9 +13,6 @@
 	let currentIndex = 0;
 	let prevIndex = 0;
 	let direction = '';
-	 let scrollPosition = 0;
-
-	let modal: HTMLDialogElement;
 
 	function prevSlide() {
 		direction = 'prev';
@@ -38,17 +35,7 @@
 	}
 	let isModalOpen = false;
 
-	function handleCloseButton() {
-		isModalOpen = false;
-		modal.close();
-		window.scrollTo(0, scrollPosition);
-	}
-
-	function handleImgClick() {
-		scrollPosition = window.pageYOffset;
-		isModalOpen = true;
-		modal.showModal();
-	}
+	
 
 	//To not to let scrolling on the app while modal open
 	$: if (isModalOpen) {
@@ -67,7 +54,7 @@
 
 <div class="carousel">
 	{#each slides as slide, index (slide.src)}
-		<button class="image-button" on:click={handleImgClick}>
+		<button class="image-button"on:click={() => isModalOpen = !isModalOpen}>
 			<img
 				src={slide.src}
 				alt={slide.alt}
@@ -77,14 +64,17 @@
 			/>
 		</button>
 		{/each}
-		<dialog bind:this={modal}>
+		{#if isModalOpen}
+			<CarouselZoom bind:currentIndex {slides} bind:isModalOpen/>
+		{/if}
+		<!-- <dialog bind:this={modal}>
 			{#if isModalOpen}
 				<button class="close-modal-btn" on:click={handleCloseButton}>
 					<div class="header-icons"><CloseIcon /></div>
 				</button>
 				<CarouselZoom bind:currentIndex bind:prevIndex  {slides} {isModalOpen} />
 			{/if}
-		</dialog>
+		</dialog> -->
 	<button on:click={prevSlide} class="carousel__button carousel__button--prev"
 		><div class="icons"><LeftArrowIcon /></div></button
 	>
@@ -109,29 +99,6 @@
 		z-index: 1;
 		color: #d0dff0;
 	}
-
-	dialog {
-		position: relative;
-	
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		border: none;
-		padding: 0;
-		margin: 0;
-		/* border-radius: 1rem; */
-		/* display: flex; */
-		background-color: black;
-		overflow: hidden;
-		/* padding: 2rem 0; */
-		/* overflow: auto; Add this line */
-		min-width: 100%; 
-		min-height: 100dvh;
-		/* box-sizing: border-box; Add this line */
-	}
-
-
 
 	.image-button {
 		cursor: pointer;
