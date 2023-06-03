@@ -127,7 +127,7 @@
 		padding: 0;
 	}
 
-	.close-modal-btn {
+	:global(.close-modal-btn) {
 		position: absolute;
 		top: 0;
 		right: 0;

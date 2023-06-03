@@ -17,6 +17,7 @@ export { default as Work } from './work/Work.svelte';
 export { default as ProjectsLogos } from './work/ProjectsLogos.svelte';
 export { default as ProjectCard } from './work/ProjectCard.svelte';
 export { default as Carousel } from './work/Carousel.svelte';
+export { default as CarouselZoom } from './work/CarouselZoom.svelte';
 export { default as Switch } from './work/Switch.svelte';
 
 //Contact
