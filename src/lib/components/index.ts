@@ -19,6 +19,7 @@ export { default as ProjectCard } from './work/ProjectCard.svelte';
 export { default as Carousel } from './work/Carousel.svelte';
 export { default as CarouselZoom } from './work/CarouselZoom.svelte';
 export { default as Switch } from './work/Switch.svelte';
+export { default as Skills } from './work/Skills.svelte';
 
 //Contact
 export { default as Contact } from './contact/ContactPage.svelte';

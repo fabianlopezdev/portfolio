@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Switch, ProjectsLogos, ProjectCard } from '$components';
+	import { Switch, ProjectsLogos, ProjectCard,Skills } from '$components';
 
 	import type { Language } from '../../../types';
 	export let workLang: Language['work'];
@@ -38,7 +38,7 @@
 		</div>
 	{/if}
 	{#if selectedOption === 'skills'}
-		<div class="skills-container" class:active={selectedOption === 'skills'}>still here</div>
+	<Skills/>
 	{/if}
 </section>
 
