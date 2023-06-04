@@ -123,4 +123,34 @@
 		margin: 0;
 		padding: 0;
 	}
+
+	:global(.close-modal-btn) {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding-top: 1rem;
+		padding-right: 1rem;
+		background-color: var(--color);
+		border: none;
+	}
+
+	:global(.skills-container) {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		padding: 0;
+		font-size: 0.8rem;
+		margin: 0;
+	}
+
+	:global(.skills-container li) {
+		padding: 0.4rem;
+		background-color: #d0dff0;
+		color: #016aa1;
+		border-radius: 5px;
+		margin-right: 7px;
+		margin-bottom: 7px;
+		font-weight: 500;
+	}
+
 </style>

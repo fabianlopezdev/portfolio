@@ -23,7 +23,7 @@
 			"wannago": {
 				"Name": "WannaGo",
 				"Short Description": "Planifica, invita y sigue tus eventos en tiempo real.",
-				"Description": "¡Toma el control de tus planes con WannaGo! Diseña planes emocionantes, invita a tus amigos y familiares, y mantente actualizado en tiempo real. ¿Quién ha visto el plan? ¿Quién está dentro? ¿Quién está fuera? Con WannaGo, siempre estás al tanto. No solo hagas planes, dales vida con WannaGo. ¡WannaGo, donde los planes se hacen realidad!",
+				"Description": "¡Controla tus planes con WannaGo! Crea eventos emocionantes, invita a tus seres queridos y mantente informado. ¿Quién ha visto el plan? ¿Quién está dentro? ¿Quién está fuera? Con WannaGo, siempre estás al tanto. No solo hagas planes, dales vida con WannaGo. ¡WannaGo, donde tus planes se hacen realidad!",
 				"githubLink": "https://github.com/Fabs-and/wannago",
 				"Website": "https://www.wannago.in/",
 				"Role": "Diseño, Desarrollo del Front-end y del Back-end",
@@ -54,7 +54,7 @@
 			"huddler": {
 				"Name": "Huddler",
 				"Short Description": "Comparte tus intereses, descubre actividades y únete o organiza eventos.",
-				"Description": "Conoce y conecta con Huddler: la web diseñada para unir a personas según sus intereses. Con Huddler, nunca más tendrás que hacer nada solo. Descubre nuevas actividades, únete a eventos existentes o lleva tus propias ideas a la realidad creando tus propios eventos. Ya sea pescar, hornear galletas o tocar el banjo, hay espacio para cada pasión en Huddler. Reúnete con personas de ideas afines y disfruta del placer de las experiencias compartidas. Encuentra tu tribu con Huddler.",
+				"Description": "Huddler es la web que une a personas por intereses comunes. Con Huddler, nunca más tendrás que hacer nada solo. Descubre, únete o inicia eventos, desde pescar hasta tocar el banjo. Huddler acoge todas las pasiones.Encuentra a los de tu onda y disfruta de experiencias compartidas. Encuentra tu tribu con Huddler.",
 				"githubLink": "https://github.com/Lucasoliveiralucas/huddler-front-end",
 				"Role": "Diseño y desarrollo front-end",
 				"Responsibilities": "Parte en el diseño de la web. Idear el algoritmo de 'recomendados'. Implementación de la autorización y de los ajustes del usuario",
@@ -74,7 +74,7 @@
 			"road-trip": {
 				"Name": "Road Trip - Campgrounds",
 				"Short Description": "Descubre sitios dónde acampar, comparte experiencias y contribuye a la comunidad de viajantes por carretera",
-				"Description": "Embárcate en tu próxima aventura con Road Trips - Campgrounds, la web creada para los entusiastas de los viajes por carretera. Descubre nuevos campamentos, comparte tus experiencias y contribuye a la vibrante comunidad agregando nuevas ubicaciones. Ya seas un viajero experimentado o estés comenzando, Road Trips - Campgrounds es tu guía para tu próxima gran aventura. Sal a la carretera y comienza el viaje con Road Trips - Campgrounds.",
+				"Description": "Inicia tu próxima aventura con Road Trips - Campgrounds, el lugar web para amantes de los viajes por carretera. Descubre campamentos, comparte experiencias, y añade nuevas ubicaciones. Ya seas un viajero experto o novato, Road Trips ' Campgrounds es tu guía al aire libre. Sal a la carretera con Road Trips - Campgrounds.",
 				"githubLink": "https://github.com/Fabs-and/road-trip-app",
 				"Role": "Desarrollo del front-end y del back-end",
 				"Responsibilities": "Refactorizar toda la aplicación de JavaScript a Typescript",

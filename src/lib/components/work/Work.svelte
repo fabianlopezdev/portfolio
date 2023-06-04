@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Switch, ProjectsLogos, ProjectCard,Skills } from '$components';
+	import { Switch, ProjectsLogos, ProjectCard,Skills, ProjectCardBig } from '$components';
 
 	import type { Language } from '../../../types';
 	export let workLang: Language['work'];
@@ -33,7 +33,7 @@
 				<ProjectsLogos bind:selectedProject {projectCardLang} {innerWidth}/>
 			</div>
 			<div class="project-card">
-				<ProjectCard {selectedProject} {projectCardLang} />
+				<ProjectCardBig {selectedProject} {projectCardLang} />
 			</div>
 		</div>
 	{/if}

@@ -21,7 +21,7 @@
 {#if project}
 	<div class="card-container" in:slide={{ delay: 1000, duration: 1000 }}>
 		<Carousel slides={project.Images}/>
-		<section>
+		<section class='card-info'>
 			{#each Object.entries(project) as projectItem}
 				{#if projectItem.at(0) === 'Short Description' || projectItem.at(0) === 'Role' || projectItem.at(0) === 'Responsibilities'}
 					{#if projectItem.at(0) === 'Short Description'}
@@ -81,6 +81,12 @@
 {/if}
 
 <style>
+	.card-info {
+		height: 70%;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: space-around;
+	}
 	.card-container {
 		box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
 		/* border: solid 0.01rem black; */
@@ -129,39 +135,11 @@
 		padding: 0;
 	}
 
-	:global(.close-modal-btn) {
-		position: absolute;
-		top: 0;
-		right: 0;
-		padding-top: 1rem;
-		padding-right: 1rem;
-		background-color: var(--color);
-		border: none;
-	}
-
+	
 	.icons-container {
 		align-self: flex-end;
 		display: flex;
 		gap: 1rem;
-	}
-
-	.skills-container {
-		display: flex;
-		flex-wrap: wrap;
-		list-style: none;
-		padding: 0;
-		font-size: 0.8rem;
-		margin: 0;
-	}
-
-	.skills-container li {
-		padding: 0.4rem;
-		background-color: #d0dff0;
-		color: #016aa1;
-		border-radius: 5px;
-		margin-right: 7px;
-		margin-bottom: 7px;
-		font-weight: 500;
 	}
 
 	.external-links {

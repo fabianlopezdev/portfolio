@@ -54,7 +54,7 @@
 			"huddler": {
 				"Name": "Huddler",
 				"Short Description": "Share your interests, discover activities, and join or host events.",
-				"Description": "Meet, connect, and create with Huddler—the web designed to bring people together based on shared interests. With Huddler, you'll never have to do things alone again. Discover new activities, join existing events, or bring your own ideas to life by creating your own events. Whether it's fishing, baking cookies, or playing the banjo, there's room for every passion in Huddler. Huddle with like-minded individuals and embrace the joy of shared experiences. Find your tribe with Huddler.",
+				"Description": "Connect and create with Huddler, a platform uniting people through shared passions. With Huddler, say goodbye to solo activities. Discover, join, or kick-off events, be it fishing or baking. At Huddler there is room for every passion. Mingle with like-minded folks, share joyful experiences. Find your tribe with Huddler.",
 				"githubLink": "https://github.com/Lucasoliveiralucas/huddler-front-end",
 				"Role": "Design & Front-end Development",
 				"Responsibilities": "Aid in the desing of the site. Devised the 'recommended' algorithm. Implemented authorization & user settings",
@@ -74,7 +74,7 @@
 			"road-trip": {
 				"Name": "Road Trip - Campgrounds",
 				"ShortDescription": "Discover new campsites, share experiences, and contribute to the road trip community",
-				"Description": "Embark on your next adventure with Road Trips - Campgrounds, the essential web for road trip enthusiasts. Discover new campsites, share your experiences with ratings, and contribute to the vibrant community by adding new locations. Whether you're a seasoned road tripper or just starting out, Road Trips - Campgrounds is your guide to the great outdoors. Set out on the open road and let the journey begin with Road Trips - Campgrounds.",
+				"Description": "Embark on your next journey with Road Trips - Campgrounds. It's the go-to web for road trip lovers. Find campsites, rate experiences, and add new locations. Whether a road trip expert or a newbie, it's your outdoor guide. Hit the open road with Road Trips - Campgrounds and let the adventure begin.",
 				"githubLink": "https://github.com/Fabs-and/road-trip-app",
 				"Role": "Front-end & Back-end Development",
 				"Responsibilities": "Refactor codebase from JavaScript to Typescript",
