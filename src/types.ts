@@ -34,6 +34,7 @@ export interface Language {
 			Role: string;
 			Responsibilities: string;
 			Skills: string[];
+			Images: object[];
 		};
 	};
 	contact: {

@@ -20,7 +20,7 @@
 
 {#if project}
 	<div class="card-container" in:slide={{ delay: 1000, duration: 1000 }}>
-		<Carousel />
+		<Carousel slides={project.Images}/>
 		<section>
 			{#each Object.entries(project) as projectItem}
 				{#if projectItem.at(0) === 'Short Description' || projectItem.at(0) === 'Role' || projectItem.at(0) === 'Responsibilities'}

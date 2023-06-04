@@ -3,11 +3,7 @@
 	import RightArrowIcon from 'svelte-icons/io/IoIosArrowForward.svelte';
 	import { CarouselZoom } from '$components';
 
-	let slides = [
-		{ src: '/photos/projects/wannago/wannago-landing.png', alt: 'Image 1 description' },
-		{ src: '/photos/projects/wannago/wannago-invitation.png', alt: 'Image 2 description' },
-		{ src: '/photos/projects/wannago/wannago-general-stats.png', alt: 'Image 3 description' }
-	];
+	export let slides;
 
 	let currentIndex = 0;
 	let prevIndex = 0;
@@ -24,7 +20,8 @@
 		prevIndex = currentIndex;
 		currentIndex = currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
 	}
-
+ console.log('imageees', slides);
+ 
 	let isModalOpen = false;
 
 	//To not to let scrolling on the app while modal open
@@ -32,7 +29,7 @@
 </script>
 
 <section class="carousel">
-	{#each slides as slide, index (slide.src)}
+	{#each slides as slide, index}
 		<button
 			class="image-button"
 			on:click={() => (isModalOpen = !isModalOpen)}

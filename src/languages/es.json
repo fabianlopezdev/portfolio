@@ -38,6 +38,17 @@
 					"MongoDB",
 					"Mongoose",
 					"Firebase"
+				],
+				"Images": [
+					{ "src": "/photos/projects/wannago/wannago-landing.png", "alt": "Image 1 description" },
+					{
+						"src": "/photos/projects/wannago/wannago-invitation.png",
+						"alt": "Image 2 description"
+					},
+					{
+						"src": "/photos/projects/wannago/wannago-general-stats.png",
+						"alt": "Image 3 description"
+					}
 				]
 			},
 			"huddler": {
@@ -47,7 +58,18 @@
 				"githubLink": "https://github.com/Lucasoliveiralucas/huddler-front-end",
 				"Role": "Diseño y desarrollo front-end",
 				"Responsibilities": "Parte en el diseño de la web. Idear el algoritmo de 'recomendados'. Implementación de la autorización y de los ajustes del usuario",
-				"Skills": ["HTML", "CSS", "Typescript", "NEXT.js", "Tailwind", "Amazon Cognito"]
+				"Skills": ["HTML", "CSS", "Typescript", "NEXT.js", "Tailwind", "Amazon Cognito"],
+				"Images": [
+					{ "src": "/photos/projects/wannago/wannago-landing.png", "alt": "Image 1 description" },
+					{
+						"src": "/photos/projects/wannago/wannago-invitation.png",
+						"alt": "Image 2 description"
+					},
+					{
+						"src": "/photos/projects/wannago/wannago-general-stats.png",
+						"alt": "Image 3 description"
+					}
+				]
 			},
 			"road-trip": {
 				"Name": "Road Trip - Campgrounds",
@@ -56,7 +78,27 @@
 				"githubLink": "https://github.com/Fabs-and/road-trip-app",
 				"Role": "Desarrollo del front-end y del back-end",
 				"Responsibilities": "Refactorizar toda la aplicación de JavaScript a Typescript",
-				"Skills": ["HTML", "CSS", "Typescript", "React", "Mapbox", "Express", "MongoDB", "Mongoose"]
+				"Skills": [
+					"HTML",
+					"CSS",
+					"Typescript",
+					"React",
+					"Mapbox",
+					"Express",
+					"MongoDB",
+					"Mongoose"
+				],
+				"Images": [
+					{ "src": "/photos/projects/wannago/wannago-landing.png", "alt": "Image 1 description" },
+					{
+						"src": "/photos/projects/wannago/wannago-invitation.png",
+						"alt": "Image 2 description"
+					},
+					{
+						"src": "/photos/projects/wannago/wannago-general-stats.png",
+						"alt": "Image 3 description"
+					}
+				]
 			},
 			"Portfolio": {
 				"Name": "Fabian's Portfolio",
@@ -66,7 +108,18 @@
 				"Website": "https://portfolio-fabs-and.vercel.app/",
 				"Role": "Diseño, desarrollo front-end y back-end",
 				"Responsibilities": "Diseño UX/UI. Desarrollo de toda la web app.",
-				"Skills": ["HTML", "CSS", "Typescript", "Svelte", "Sveltekit"]
+				"Skills": ["HTML", "CSS", "Typescript", "Svelte", "Sveltekit"],
+				"Images": [
+					{ "src": "/photos/projects/wannago/wannago-landing.png", "alt": "Image 1 description" },
+					{
+						"src": "/photos/projects/wannago/wannago-invitation.png",
+						"alt": "Image 2 description"
+					},
+					{
+						"src": "/photos/projects/wannago/wannago-general-stats.png",
+						"alt": "Image 3 description"
+					}
+				]
 			}
 		}
 	},
