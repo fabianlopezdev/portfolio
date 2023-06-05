@@ -30,7 +30,7 @@
 	.person {
 		--transform-speed: 250ms;
 		position: relative;
-		max-width: 15rem;
+		max-width: 20rem;
 		margin-inline: auto;
 	}
 	.person-container {
@@ -68,6 +68,13 @@
 		}
 		.person-container:hover .person-img {
 			transform: scale(1) translateY(-1.28rem);
+		}
+	}
+
+
+	@media (max-width: 430px) {
+		.person {
+			width: 15rem;
 		}
 	}
 </style>

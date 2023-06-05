@@ -35,7 +35,19 @@
 
 	.file .icons {
 		color: inherit;
+
 	}
+
+	.button:hover {
+		background-color: blue;
+	}
+
+	.button.file:hover {
+		background-color: black;
+	}
+	/* a:hover {
+		background-color: red;
+	} */
 
 	@media (max-width: 544px) {
 		.button {

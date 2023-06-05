@@ -3,62 +3,59 @@
 	export let aboutLang: Language['about'];
 </script>
 
-<section id="about">
-	<h2>About me<span style="color: blue;">.</span></h2>
-	<div class="about-container">
-		<div class="text">
-			<p>
-				{aboutLang.firstParagraph}
-				<br>
-				<br>
-				{aboutLang.secondParagraph}
-				<br>
-				<br>
-				{aboutLang.thirdParagraph}
-			</p>
-			<p>
-			</p>
-		</div>
-<div class='test'>
+<section id="about-section">
+	<h2 class="about-section__title">About<span style="color: blue;">.</span></h2>
 
-	<SelfImage />
-</div>
-	</div>
+	<article class="about-section__container">
+		<div class="about-section__text">
+			<p>{aboutLang.firstParagraph}</p>
+			<p>{aboutLang.secondParagraph}</p>
+			<p>{aboutLang.thirdParagraph}</p>
+		</div>
+		<aside class="about-section__image">
+			<SelfImage />
+		</aside>
+		<div />
+	</article>
 </section>
 
 <style>
-	section {
-		display: flex;
-		justify-content: center;
-		flex-direction: column;
-		align-items: center;
+	#about-section {
+		text-align: center;
+		max-width: 1000px;
 	}
-	.about-container {
-		/* width: clamp(375px, 100vw, 1600px); */
+	.about-section__title {
+		margin-bottom: 0;
+	}
+	.about-section__container {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		gap: 1rem;
-		flex-wrap: wrap-reverse;
+		text-align: left;
+		justify-self: center;
+		align-self: center;
+		margin: auto;
+		margin-inline: 1rem;
 	}
 
-	.text {
-	 width: clamp(350px, 50vw, 900px);
-	 /* flex: 30; */
-		font-size: 1.3rem;
+	.about-section__text {
+		font-size: clamp(1.3rem, 1.4vw, 1.6rem);
+		flex: 1;
 		line-height: 1.6;
 	}
-	.test {
-		/* flex:70; */
+
+	.about-section__image {
+		width: 20rem;
+		margin-bottom: 4rem;
+		text-align: center;
 	}
 
-	
-	
-	@media (max-width: 765px) {
-		.text {
-			width: clamp(350px, 100vw, 700px);
-			padding: 0 2rem 0 2rem;
-			/* width: clamp(450px, 100svw, 700px); */
+	@media (max-width: 800px) {
+		.about-section__container {
+			flex-direction: column-reverse;
+		}
+		.about-section__image {
+			margin-bottom: 0;
 		}
 	}
 </style>

@@ -18,7 +18,7 @@
 <style>
 	:root {
 		--clr-bg: #f9fcfd;
-		--clr-bg-items: white;
+		--clr-bg-items: #ffffef;
 		--clr-accent:#1863E5;
 		--clr-secondary: #016aa1;
 		--clr-font: #4A5469;
@@ -57,9 +57,10 @@
 	}
 
 	:global(section) {
-		/* min-height: calc(100svh - 3.7rem); */
+		/* min-height: 100vh;
+		min-height: 100svh; */
 		display: flex;
-		flex-direction: column;
+		flex-direction:column;
 	}
 
 	:global(a) {
