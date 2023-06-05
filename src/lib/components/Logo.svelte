@@ -23,46 +23,47 @@
 	}
 </style> -->
 <script>
-	// Variable to control the visibility of the SVG
   let showSvg = false;
+  let showDot = false;
 
-  // Delay the appearance of the SVG after 3 seconds
   setTimeout(() => {
     showSvg = true;
+    setTimeout(() => {
+      showDot = true;
+    }, 1000); // Adjust this time to match the duration of the text-line animation
   }, 1000);
 </script>
 
-
 <div class='logo'>
-{#if showSvg}
-	
-
-	<svg height="60" stroke="black" stroke-width="2" class="text-line" width="50%"
-	><text x="50%" dominant-baseline="middle" text-anchor="middle" y="50%">fab</text></svg
-	>
-	<span class='dot'>.</span>
-	{/if}
+  {#if showSvg}
+    <svg height="60" stroke="black" stroke-width="2" class="text-line" width="50%">
+      <text x="50%" dominant-baseline="middle" text-anchor="middle" y="50%">fab</text>
+    </svg>
+    {#if showDot}
+      <span class='dot'>.</span>
+    {/if}
+  {/if}
 </div>
 
-
-
 <style>
-
 	.logo {
 		position: relative;
 	}
 
-	.dot {
-		position: absolute;
-		color: blue;
-		font-size: 4rem;
-		bottom: 1px;
-		left: 4.1rem;
-	}
+.dot {
+	position: absolute;
+	color: blue;
+	font-size: 4rem;
+	bottom: 1px;
+	left: 4.1rem;
+
+}
+
+
 .text-line {
   stroke-dasharray: 500;
   stroke-dashoffset: 500;
-  animation: dash 4s linear forwards, filling 0.5s ease-in forwards;
+  animation: dash 4s linear forwards, filling 1s ease-in forwards;
 	/* animation-delay: 3s; */
   font-size: 3rem;
 	/* display: inline-block; */
