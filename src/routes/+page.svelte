@@ -58,9 +58,9 @@ function handleScroll(event: UIEvent) {
 
 <main>
 	<Home {homeLang} />
-	<About {aboutLang}/>
-	<Work {workLang}/>
-	<Contact {contactLang} />
+	<About {aboutLang} title={navLinksLang.about}/>
+	<Work {workLang} title={navLinksLang.work}/>
+	<Contact {contactLang} title={navLinksLang.contact}/>
 </main>
 
 <footer>

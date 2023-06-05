@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { SelfImage } from '$components';
 	export let aboutLang: Language['about'];
+	export let title;
 </script>
 
 <section id="about-section">
-	<h2 class="about-section__title">About<span style="color: blue;">.</span></h2>
+	<h2 class="about-section__title">{title}<span style="color: blue;">.</span></h2>
 
 	<article class="about-section__container">
 		<div class="about-section__text">

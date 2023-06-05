@@ -4,11 +4,12 @@
 	import type { Language } from '../../../types';
 
 	export let contactLang: Language['contact'];
-
+	export let title;
 
 </script>
 
 <section id="contact">
+	<h2>{title}</h2>
 	<h1>{contactLang.h1}<span>.</span></h1>
 	<div class='contact-container'>
 

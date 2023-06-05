@@ -3,6 +3,7 @@
 
 	import type { Language } from '../../../types';
 	export let workLang: Language['work'];
+	export let title;
 
 	$: projectCardLang = workLang.projectCard;
 	$: switchLang = workLang.projectCard;
@@ -24,7 +25,7 @@
 
 <section id="work">
 	<h2>
-		Work<span style="color: blue">.</span>
+		{title}<span style="color: blue">.</span>
 	</h2>
 	<Switch bind:selectedOption {switchLang} />
 	{#if selectedOption === 'projects'}
