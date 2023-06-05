@@ -30,7 +30,7 @@
     showSvg = true;
     setTimeout(() => {
       showDot = true;
-    }, 2000); // Adjust this time to match the duration of the text-line animation
+    }, 1500); // Adjust this time to match the duration of the text-line animation
   }, 1000);
 </script>
 
