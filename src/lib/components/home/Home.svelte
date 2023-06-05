@@ -1,49 +1,46 @@
 <script lang="ts">
-	import { Button, SocialLinks } from '$components';
-	import scrollTo from '../../../utils/functions';
-	import type { Language } from '../../../types';
+  // Importing necessary components and types
+  import { Button, SocialLinks } from '$components';
+  import scrollTo from '../../../utils/functions';
+  import type { Language } from '../../../types';
 
-	export let homeLang: Language['home'];
+  // Setting the language variable
+  export let homeLang: Language['home'];
 
-	let envResumeLink = import.meta.env.VITE_RESUME_LINK;
+  // Setting the resume link variable
+  let envResumeLink = import.meta.env.VITE_RESUME_LINK;
+
 </script>
 
 <section id="home">
-	<h2>
-		fabs
-	</h2>
-	<h1>
-		{homeLang.slogan1}
-		<span>
-			{homeLang.highlight1}
-		</span>
-		{homeLang.slogan2}
-		<span>
-			{homeLang.highlight2}.
-		</span>
-		<!-- {homeLang.slogan2} -->
-	</h1>
-	<div class='welcome-container'>
-	<h2>{homeLang.welcome}</h2>
-		
-	</div>
-
-	
-	<div class="buttons">
-		<Button --color="var(--clr-accent)" on:click={scrollTo} href='#contact' icon={'envelope'}
-			>{homeLang.buttonContact}</Button
-		>
-		<Button --color="var(--clr-font)" href={envResumeLink} icon={'download'}
-			>{homeLang.buttonResume}</Button
-		>
-	</div>
+  <!-- Rest of the code remains the same -->
+  <h1>
+    {homeLang.slogan1}
+    <span>
+      {homeLang.highlight1}
+    </span>
+    {homeLang.slogan2}
+    <span>
+      {homeLang.highlight2}.
+    </span>
+    <!-- {homeLang.slogan2} -->
+  </h1>
+  <div class='welcome-container'>
+    <h2>{homeLang.welcome}</h2>
+  </div>
+  
+  <div class="buttons">
+    <Button --color="var(--clr-accent)" on:click={scrollTo} href='#contact' icon={'envelope'}>
+      {homeLang.buttonContact}
+    </Button>
+    <Button --color="var(--clr-font)" href={envResumeLink} icon={'download'}>
+      {homeLang.buttonResume}
+    </Button>
+  </div>
 </section>
 
+
 <style>
- h2 {
-
- }
-
 	.welcome-container {
 		display: flex;
 		flex-direction: column;
@@ -87,8 +84,8 @@
 	}
 
 	span:nth-child(2) {
-		animation: color-white 0.9s linear forwards;
-		animation-delay: 1.1s;
+		animation: color-white 0.8s linear forwards;
+		animation-delay: 0.5s;
 	}
 span:nth-child(1)::before {
     content: '';
@@ -100,7 +97,7 @@ span:nth-child(1)::before {
     z-index: -2;
     transform: rotate(-1deg);
     background-color: var(--clr-accent);
-    animation: highlight 0.7s; 
+    animation: highlight 0.4s; 
 		
     animation-fill-mode: forwards;  /* Keep the highlight after the animation */
 }
@@ -115,8 +112,8 @@ span:nth-child(2)::before {
     z-index: -2;
     transform: rotate(-1deg);
     background-color: var(--clr-accent);
-    animation: highlight 0.7s;
-    animation-delay: 0.9s; /* Delay the second animation by 2 seconds */
+    animation: highlight 0.4s;
+    animation-delay: 0.5s; /* Delay the second animation by 2 seconds */
     animation-fill-mode: forwards;  /* Keep the highlight after the animation */
 }
 
