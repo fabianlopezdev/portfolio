@@ -9,7 +9,10 @@
 </script>
 
 <section id="home">
-		<h1>
+	<h2>
+		fabs
+	</h2>
+	<h1>
 		{homeLang.slogan1}
 		<span>
 			{homeLang.highlight1}
@@ -37,6 +40,10 @@
 </section>
 
 <style>
+ h2 {
+
+ }
+
 	.welcome-container {
 		display: flex;
 		flex-direction: column;
@@ -69,21 +76,59 @@
 		display: inline-block;
 		position: relative;
 		z-index: 1;
-		color: var(--clr-font-contrast);
+		color: black;
 		z-index: -1;
+
 	}
 	
-	span::before {
-		content: '';
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 5px;
-		left: -2px;
-		z-index: -2;
-		transform: rotate(-1deg);
-		background-color: var(--clr-accent);
+	span:nth-child(1) {
+		animation: color-white 0.8s linear forwards;
+		animation-delay: 0.2s;
 	}
+
+	span:nth-child(2) {
+		animation: color-white 0.9s linear forwards;
+		animation-delay: 1.1s;
+	}
+span:nth-child(1)::before {
+    content: '';
+    position: absolute;
+    width: 0;  /* Set initial width to 0 */
+    height: 100%;
+    top: 5px;
+    left: -2px;
+    z-index: -2;
+    transform: rotate(-1deg);
+    background-color: var(--clr-accent);
+    animation: highlight 0.7s; 
+		
+    animation-fill-mode: forwards;  /* Keep the highlight after the animation */
+}
+
+span:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    width: 0;  /* Set initial width to 0 */
+    height: 100%;
+    top: 5px;
+    left: -2px;
+    z-index: -2;
+    transform: rotate(-1deg);
+    background-color: var(--clr-accent);
+    animation: highlight 0.7s;
+    animation-delay: 0.9s; /* Delay the second animation by 2 seconds */
+    animation-fill-mode: forwards;  /* Keep the highlight after the animation */
+}
+
+@keyframes color-white {
+  0% { color: black; }
+  50% { color: gray; }
+  100% { color: white; }
+}
+	@keyframes highlight {
+    from { width: 0; }
+    to { width: 100%; }
+}
 	
 	h2 {
 		font-size: clamp(1.5rem, 3vw, 2rem);
@@ -125,4 +170,6 @@
 		}
 
 	}
+
+
 </style>
