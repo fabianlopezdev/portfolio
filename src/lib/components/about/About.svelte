@@ -51,11 +51,16 @@
 	}
 
 	@media (max-width: 800px) {
+		.about-section__title {
+			margin-bottom: 0.5rem;
+		}
 		.about-section__container {
 			flex-direction: column-reverse;
 		}
 		.about-section__image {
 			margin-bottom: 0;
+			/* width: 15rem; */
 		}
+		
 	}
 </style>
