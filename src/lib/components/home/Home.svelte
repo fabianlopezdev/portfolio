@@ -51,29 +51,57 @@
 	section {
 		min-height: calc(100svh - 3.7rem);
 		/* height: calc(100svh - var(--size-header)); */
-		/* display: flex;
-		flex-direction: column; */
-		justify-content: center;
-		align-items: center;
+		 display: flex; 
+		flex-direction: column; 
+		justify-content: space-evenly;
+		/* display: block; */
+		/* margin: auto; */
+		max-width: 1000px; 
+		/* justify-content: center; */
+		/* align-items: center; */
 		/* font-size: 1.5rem; */
 		text-align: center;
-		gap: 5rem;
-		padding: 2.5rem 0;
+		/* gap: 5rem; */
+		/* padding: 2.5rem 0; */
 	}
 	h1 {
-		font-size: clamp(2.9rem, 6vw, 5rem);
+		font-size: clamp(3.4rem, 13vw, 100px);
 		font-weight: 800;
-		width: 75%;
+		/* width: 75%; */
 		line-height: 1;
-		margin: 0;
-		padding: 0 0 1rem 0;
+		/* margin: 0; */
+		/* padding: 0 0 1rem 0; */
+		/* margin: auto; */
+		margin-top: 3rem;
+		margin-bottom: 1rem;
+		margin-inline:1rem;
 		/* color: gray; */
 	}
+
+	h2 {
+		font-size: clamp(2rem, 4vw, 2.5rem);
+		color: var(--clr-secondary);
+		margin-inline: 1rem;
+		line-height: 2rem;
+		margin-top: 3rem;
+		/* margin: 0; */
+		font-weight: 400;
+	}
+
+	.buttons {
+		display: flex;
+		gap: 1em;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-bottom: 4rem;
+		 /* margin-top: -1rem;  */
+	}
+
 	span {
 		display: inline-block;
 		position: relative;
 		z-index: 1;
-		color: black;
+		color: var(--clr-font);
 		z-index: -1;
 
 	}
@@ -118,7 +146,7 @@ span:nth-child(2)::before {
 }
 
 @keyframes color-white {
-  0% { color: black; }
+  0% { color:var(--clr-font); }
   50% { color: gray; }
   100% { color: white; }
 }
@@ -127,22 +155,8 @@ span:nth-child(2)::before {
     to { width: 100%; }
 }
 	
-	h2 {
-		font-size: clamp(1.5rem, 3vw, 2rem);
-		color: var(--clr-secondary);
-		margin: 0;
-		font-weight: 300;
-	}
-
-	.buttons {
-		display: flex;
-		gap: 1em;
-		flex-wrap: wrap;
-		justify-content: center;
-		 margin-top: -1rem; 
-	}
-
-	@media (max-width: 544px) {
+	
+	/* @media (max-width: 544px) {
 		section {
 			gap: 3rem;
 		}
@@ -154,19 +168,19 @@ span:nth-child(2)::before {
 
 			h2 {
 			margin: 0 2rem;
-		}
+		} */
 		/* .buttons {
 			gap: 0.5rem;
 		} */
-	}
+	/* } */
 
-	@media (max-height: 463px) {
+	/* @media (max-height: 463px) {
 		section {
 			margin-top: 2rem;
 			height: 100%;
 		}
 
-	}
+	} */
 
 
 </style>

@@ -19,9 +19,9 @@
 	:root {
 		--clr-bg: #f9fcfd;
 		--clr-bg-items: white;
-		--clr-accent: blue;
+		--clr-accent:#1863E5;
 		--clr-secondary: #016aa1;
-		--clr-font: black;
+		--clr-font: #4A5469;
 		--clr-font-contrast: white;
 		--clr-font-contrast-black-bg: white;
 		--clr-icons: gray;

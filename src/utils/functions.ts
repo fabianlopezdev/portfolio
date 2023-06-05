@@ -1,4 +1,5 @@
 export default function scrollTo(event: MouseEvent | Event) {
+	
 	// Cast the event target to HTMLAnchorElement or HTMLInputElement
 	const target = event.target as HTMLAnchorElement | HTMLInputElement;
 

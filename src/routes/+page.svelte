@@ -68,6 +68,11 @@ function handleScroll(event: UIEvent) {
 </footer>
 
 <style>
+	main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 	header {
   position: sticky;
   top: 0;
