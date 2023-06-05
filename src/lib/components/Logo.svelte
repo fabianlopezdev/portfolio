@@ -30,7 +30,7 @@
     showSvg = true;
     setTimeout(() => {
       showDot = true;
-    }, 1000); // Adjust this time to match the duration of the text-line animation
+    }, 2000); // Adjust this time to match the duration of the text-line animation
   }, 1000);
 </script>
 
@@ -63,7 +63,7 @@
 .text-line {
   stroke-dasharray: 500;
   stroke-dashoffset: 500;
-  animation: dash 4s linear forwards, filling 1s ease-in forwards;
+  animation: dash 2s linear forwards, filling 1s ease-in forwards;
 	/* animation-delay: 3s; */
   font-size: 3rem;
 	/* display: inline-block; */
