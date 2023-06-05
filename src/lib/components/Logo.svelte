@@ -44,7 +44,7 @@
 .text-line {
   stroke-dasharray: 500;
   stroke-dashoffset: 500;
-  animation: dash 5s linear forwards, filling 1.1s ease-in forwards;
+  animation: dash 2s linear forwards, filling 0.5s ease-in forwards;
 	/* animation-delay: 3s; */
   font-size: 3rem;
 }
