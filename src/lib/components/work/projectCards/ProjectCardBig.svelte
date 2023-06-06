@@ -16,16 +16,21 @@
 
 <svelte:window on:click={() => dialog.close()} />
 {#if project}
-	<section class="card-container" >
+	<section class="card-container">
 		<button class="imgs-container" on:click|stopPropagation={() => dialog.showModal()}>
 			{#each project.Images as image, i}
-				<img src={image.src} alt={image.alt} class="img {String.fromCharCode(97 + i)}" loading='lazy'/>
+				<img
+					src={image.src}
+					alt={image.alt}
+					class="img {String.fromCharCode(97 + i)}"
+					loading="lazy"
+				/>
 			{/each}
 		</button>
 
-		<dialog bind:this={dialog} >
+		<dialog bind:this={dialog}>
 			{#each project.Images as image, i}
-				<img src={image.src} alt={image.alt} class='img carousel' />
+				<img src={image.src} alt={image.alt} class="img carousel" />
 			{/each}
 			<button class="close-modal-btn" on:click={() => dialog.close()}>
 				<div class="header-icons"><CloseIcon /></div>
@@ -34,7 +39,7 @@
 		<h4>
 			{Object.keys(project).at(2)}
 		</h4>
-		<p class='description'>
+		<p class="description">
 			{project.Description || project.Descripción}
 		</p>
 
@@ -49,17 +54,23 @@
 				<h4>
 					{Object.keys(project).at(5)}
 				</h4>
-				<p class='responsibilities'>
+				<p class="responsibilities">
 					{project.Responsibilities || project.Responsabilidades}
 				</p>
 			</div>
 			<div class="skills">
-				<h4>Skills</h4>
+				<h4>{Object.keys(project).at(7)}</h4>
 				<div class="line" />
 				<ul class="skills-container">
-					{#each project.Skills as skill}
-						<li>{skill}</li>
-					{/each}
+					{#if project.Skills}
+						{#each project.Skills as skill}
+							<li>{skill}</li>
+						{/each}
+					{:else}
+						{#each project.Herramientas as skill}
+							<li>{skill}</li>
+						{/each}
+					{/if}
 				</ul>
 				<h4>Links</h4>
 				<div class="line" />
@@ -99,17 +110,18 @@
 		line-height: 1.6;
 		/* font-weight: 0.1rem; */
 	}
-	p.description, p.responsibilities  {
-		margin:0;
-		margin-bottom:0;
+	p.description,
+	p.responsibilities {
+		margin: 0;
+		margin-bottom: 0;
 	}
 
-  .img.carousel {
-    width: 45vw;
-    height: auto;
-    margin-bottom: 2rem;
-    border-radius: 1rem;
-  }
+	.img.carousel {
+		width: 45vw;
+		height: auto;
+		margin-bottom: 2rem;
+		border-radius: 1rem;
+	}
 
 	.line {
 		border-bottom: 1px solid rgb(221, 221, 221);
@@ -122,12 +134,12 @@
 	}
 
 	.imgs-container {
-    display: grid;
-    grid-template-areas: 
-    "a a b b"
-    "a a c c";
+		display: grid;
+		grid-template-areas:
+			'a a b b'
+			'a a c c';
 		grid-template-rows: 10vh 10vh;
-    gap: 0.5rem;
+		gap: 0.5rem;
 		background: none;
 		color: inherit;
 		border: none;
@@ -135,31 +147,31 @@
 		font: inherit;
 		cursor: pointer;
 		outline: inherit;
-}
-
-.img {
-    background-color: #d0dff0;
-    object-fit: contain;
-		width: 100%; 
-		height: 100%;
-    border: 1px solid rgb(221, 221, 221);
-}
-
-.img.a {
-    grid-area: a;
-    border-radius: 1rem 0 0 1rem;
 	}
-	
+
+	.img {
+		background-color: #d0dff0;
+		object-fit: contain;
+		width: 100%;
+		height: 100%;
+		border: 1px solid rgb(221, 221, 221);
+	}
+
+	.img.a {
+		grid-area: a;
+		border-radius: 1rem 0 0 1rem;
+	}
+
 	.img.b {
 		grid-area: b;
-    border-radius: 0 1rem 0 0;
+		border-radius: 0 1rem 0 0;
 	}
-	
+
 	.img.c {
 		grid-area: c;
-    border-radius: 0 0 1rem 0;
+		border-radius: 0 0 1rem 0;
 	}
-	
+
 	.info-container {
 		display: flex;
 		margin-top: 0.5rem;
@@ -185,14 +197,12 @@
 	}
 	.skills-container {
 		/* font-size: 1.1rem; */
-
 	}
 	h4 {
 		margin: 0;
 		margin-bottom: 0.5rem;
 		/* padding:0; */
 	}
-
 
 	.external-links {
 		display: flex;
@@ -219,26 +229,26 @@
 	}
 
 	/* Hide scrollbar for IE, Edge and Firefox */
-dialog {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
 	dialog {
-    margin: auto;
-    height: 86vh;
-    border: none;
-    border-radius: 1rem;
-    padding: 2rem 2rem 0 2rem;
-    /* position: relative; */
-    /* overflow: hidden; */
-  }
-  /* Hide scrollbar for Chrome, Safari and Opera */
-dialog::-webkit-scrollbar {
-  display: none;
-}
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
+	dialog {
+		margin: auto;
+		height: 86vh;
+		border: none;
+		border-radius: 1rem;
+		padding: 2rem 2rem 0 2rem;
+		/* position: relative; */
+		/* overflow: hidden; */
+	}
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	dialog::-webkit-scrollbar {
+		display: none;
+	}
 
-.header-icons {
-    width: 2.5rem;
-    height:2.5rem;
-  }
+	.header-icons {
+		width: 2.5rem;
+		height: 2.5rem;
+	}
 </style>

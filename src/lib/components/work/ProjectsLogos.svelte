@@ -4,13 +4,13 @@
 
 	export let selectedProject: string;
 	export let projectCardLang: Language['work']['projectCard'];
-  //Export innerWidth to not to scroll to the viewport in bigger screens
-  export let innerWidth;
-	
+	//Export innerWidth to not to scroll to the viewport in bigger screens
+	export let innerWidth;
+
 	import scrollTo from '../../../utils/functions';
 </script>
 
-<div class="logos">
+<div class="logos-container">
 	<input
 		type="radio"
 		id="wannago"
@@ -19,7 +19,7 @@
 		bind:group={selectedProject}
 		on:change={innerWidth < 996 && scrollTo}
 	/>
-	<label class="wannago project-label" for="wannago">WannaGo<span>&gt;</span></label>
+	<label class="wannago project-label" for="wannago">WannaGo<span class="arrow">&gt;</span></label>
 
 	{#if selectedProject === 'wannago'}
 		<div class="project-card">
@@ -33,9 +33,9 @@
 		name="logos"
 		value="huddler"
 		bind:group={selectedProject}
-		on:change={innerWidth < 996 && scrollTo} 
+		on:change={innerWidth < 996 && scrollTo}
 	/>
-	<label class="huddler project-label" for="huddler">Huddler<span>&gt;</span></label>
+	<label class="huddler project-label" for="huddler">Huddler<span class="arrow">&gt;</span></label>
 
 	{#if selectedProject === 'huddler'}
 		<div class="project-card">
@@ -51,7 +51,9 @@
 		bind:group={selectedProject}
 		on:change={innerWidth < 996 && scrollTo}
 	/>
-	<label class="road-trip project-label" for="road-trip">Road trip<span>&gt;</span></label>
+	<label class="road-trip project-label" for="road-trip"
+		>Road trip<span class="arrow">&gt;</span></label
+	>
 
 	{#if selectedProject === 'road-trip'}
 		<div class="project-card">
@@ -76,105 +78,105 @@
 		src: url('/Cabin-Regular.ttf') format('truetype');
 	}
 
-	/* Common styles for span */
-	span {
-		padding-left: 1rem;
-		font-family: system-ui;
-		font-size: 2rem;
-		vertical-align: 35%;
-		color: #01446c;
-		font-weight: 100;
-	}
-
-	/* Additional paddings for certain spans */
-	.road-trip span {
-		padding-left: 1.5rem;
-	}
-	.huddler span {
-		padding-left: 0.8rem;
+	/* Styles for .logos */
+	div.logos-container {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
 	}
 
 	/* Common styles for labels */
 	label {
-		display: inline-block;
 		position: relative;
-		color: #016aa1;
-		height: 78px;
-		text-shadow: 2px 2px 8px #c8d0d4;
-		-webkit-text-stroke: 1px #01446c;
+		height: 98px;
+		text-shadow: 3px 3px 5px rgba(0,0,0,0.2), 
+            	-3px -3px 5px rgba(255,255,255,0.7);;
+		cursor: pointer;
 		white-space: nowrap;
+		transition: color 0.5s ease-in-out 0.1s;
+		/* color: #007BFF; */
+		/* -webkit-text-stroke: 2px #01446c; */
+
+	
 	}
 
 	/* Specific styles for each label type */
-	.wannago {
+	label.wannago {
 		font-family: 'Montserrat Alternates', sans-serif;
 		font-size: 4rem;
 		letter-spacing: -5px;
 	}
 
-	.huddler {
+	label.huddler {
 		font-family: 'Overmuch Regular', sans-serif;
 		font-size: 4.6rem;
 		margin-left: 0.5rem;
 	}
 
-	.road-trip {
+	label.road-trip {
 		font-family: 'Cabin', sans-serif;
 		font-size: 5.3rem;
 		letter-spacing: -4px;
 	}
 
-	/* Styles for .logos */
-	.logos {
-		display: flex;
-		flex-direction: column;
-		gap: 2rem;
-		padding: 3rem 0;
-	}
-
-	.logos input[type='radio'] {
+	div.logos-container input {
 		display: none;
 	}
-	.logos label {
-		cursor: pointer;
-		transition: color 0.8s ease-in-out 0.5s;
+	div.logos-container input:checked + label {
+		color: white;
+		margin-left: 1rem;
+		text-shadow: none;
+		-webkit-text-stroke: 3px #01446c;
 	}
 
-	.logos label::before {
+	/*::before pseudoclass styles  */
+	div.logos-container label::before {
 		content: '';
 		position: absolute;
 		width: 0%;
-		height: 98%;
+		height: 75%;
 		top: 0px;
 		left: -13px;
 		z-index: -2;
 		transform: rotate(-1deg);
 		background-color: var(--clr-accent);
-		transition: width 0.5s ease-in-out 0.5s;
+		transition: width 0.3s ease-in-out 0.1s;
 	}
 
-	/* Custom styles for each type when checked */
-	.logos input[type='radio']:checked + .road-trip::before {
-		top: 13px;
-	}
-	.logos input[type='radio']:checked + .wannago::before {
-		left: -6px;
-	}
-	.logos input[type='radio']:checked + .huddler::before {
-		left: -11px;
-	}
-
-	.logos input[type='radio']:checked + label::before {
+	div.logos-container input:checked + label::before {
 		width: 100%;
 	}
 
-	.logos input[type='radio']:checked + label {
-		color: white;
-		margin-left: 1rem;
-		text-shadow: none;
+	/* Custom styles for each type when checked */
+	div.logos-container input:checked + label.road-trip::before {
+		top: 13px;
+	}
+	div.logos-container input:checked + label.wannago::before {
+		left: -6px;
+	}
+	div.logos-container input:checked + label.huddler::before {
+		left: -11px;
 	}
 
-	.logos input[type='radio']:checked + label span {
+	/* Common styles for span */
+	span.arrow {
+		padding-left: 1rem;
+		font-family: system-ui;
+		font-size: 2rem;
+		vertical-align: 35%;
+		/* color: #01446c; */
+		font-weight: 100;
+	}
+
+	/* Additional paddings for certain spans */
+	label.road-trip span {
+		padding-left: 1.5rem;
+	}
+	label.huddler span {
+		padding-left: 0.8rem;
+	}
+
+	div.logos-container input:checked + label span.arrow {
 		display: none;
 	}
 

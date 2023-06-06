@@ -47,10 +47,16 @@
 
 			<h4>Skills</h4>
 			<ul class="skills-container">
-				{#each project.Skills as skill}
-					<li>{skill}</li>
-				{/each}
-			</ul>
+					{#if project.Skills}
+						{#each project.Skills as skill}
+							<li>{skill}</li>
+						{/each}
+					{:else}
+						{#each project.Herramientas as skill}
+							<li>{skill}</li>
+						{/each}
+					{/if}
+				</ul>
 
 			<div class="icons-container">
 				<a

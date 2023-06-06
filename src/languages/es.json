@@ -28,7 +28,7 @@
 				"Website": "https://www.wannago.in/",
 				"Rol": "Diseño, Desarrollo del Front-end y del Back-end",
 				"Responsabilidades": "Diseño UX/UI. Desarrollo de toda la web app.",
-				"Skills": [
+				"Herramientas": [
 					"HTML",
 					"CSS",
 					"JavaScript",
@@ -58,7 +58,7 @@
 				"githubLink": "https://github.com/Lucasoliveiralucas/huddler-front-end",
 				"Role": "Diseño y desarrollo front-end",
 				"Responsibilities": "Ayudar en el diseño. Idear el algoritmo de 'recomendados'. Implementar la autorización y los ajustes del usuario",
-				"Skills": ["HTML", "CSS", "Typescript", "NEXT.js", "Tailwind", "Amazon Cognito"],
+				"Herramientas": ["HTML", "CSS", "Typescript", "NEXT.js", "Tailwind", "Amazon Cognito"],
 				"Images": [
 					{ "src": "/photos/projects/wannago/wannago-landing.png", "alt": "Image 1 description" },
 					{
@@ -78,7 +78,7 @@
 				"githubLink": "https://github.com/Fabs-and/road-trip-app",
 				"Role": "Desarrollo del front-end y del back-end",
 				"Responsibilities": "Refactorizar toda la aplicación de JavaScript a Typescript",
-				"Skills": [
+				"Herramientas": [
 					"HTML",
 					"CSS",
 					"Typescript",
@@ -108,7 +108,7 @@
 				"Website": "https://portfolio-fabs-and.vercel.app/",
 				"Role": "Diseño, desarrollo front-end y back-end",
 				"Responsibilities": "Diseño UX/UI. Desarrollo de toda la web app.",
-				"Skills": ["HTML", "CSS", "Typescript", "Svelte", "Sveltekit"],
+				"Herramientas": ["HTML", "CSS", "Typescript", "Svelte", "Sveltekit"],
 				"Images": [
 					{ "src": "/photos/projects/wannago/wannago-landing.png", "alt": "Image 1 description" },
 					{

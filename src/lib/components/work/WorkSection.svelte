@@ -65,5 +65,10 @@
 		.project-card {
 			display: none;
 		}
+
+		.project-logos {
+			min-height: 326px;
+		}
+		
 	}
 </style>
