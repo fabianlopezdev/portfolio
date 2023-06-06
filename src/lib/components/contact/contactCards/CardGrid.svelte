@@ -7,7 +7,7 @@
   import LinkedInIcon from 'svelte-icons/fa/FaLinkedinIn.svelte';
   import GitHubIcon from 'svelte-icons/fa/FaGithub.svelte';
   import FaRegCalendarCheck from 'svelte-icons/fa/FaRegCalendarCheck.svelte';
-	import Home from '$components/home/Home.svelte';
+	import Home from '$components/home/HomeSection.svelte';
 	import type { Language } from '../../../../types';
 
 	export let cardGrid: Language['contact']['cardGrid'];

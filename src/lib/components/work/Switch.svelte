@@ -33,6 +33,7 @@
     background-color: #ddd;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 2rem;
   }
 
   .toggle input[type="radio"] {

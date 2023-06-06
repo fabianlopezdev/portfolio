@@ -1,7 +1,7 @@
 <script lang="ts">
 	import english from '../languages/en.json';
 	import spanish from '../languages/es.json';
-	import { NavLinks, About, Work, Contact, Header, Home, Footer } from '$components';
+	import { WorkSection, ContactSection, Header, HomeSection, AboutSection, Footer } from '$components';
 	import type { Language } from '../types';
 
 	//Data is received from a load function in page.server.ts
@@ -57,10 +57,10 @@ function handleScroll(event: UIEvent) {
 </header>
 
 <main>
-	<Home {homeLang} />
-	<About {aboutLang} title={navLinksLang.about}/>
-	<Work {workLang} title={navLinksLang.work}/>
-	<Contact {contactLang} title={navLinksLang.contact}/>
+	<HomeSection {homeLang} />
+	<AboutSection {aboutLang} title={navLinksLang.about}/>
+	<WorkSection {workLang} title={navLinksLang.work}/>
+	<ContactSection {contactLang} title={navLinksLang.contact}/>
 </main>
 
 <footer>

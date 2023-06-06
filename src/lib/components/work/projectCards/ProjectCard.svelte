@@ -1,7 +1,7 @@
 <script lang="ts">
 	import GitHubIcon from 'svelte-icons/fa/FaGithub.svelte';
 	import GoToArrow from 'svelte-icons/go/GoLinkExternal.svelte';
-	import type { Language } from '../../../types';
+	import type { Language } from '../../../../types';
 	import { Carousel } from '$components';
 	import CloseIcon from 'svelte-icons/io/IoIosClose.svelte';
 

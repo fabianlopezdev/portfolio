@@ -16,17 +16,12 @@
 	$: {if (innerWidth && innerWidth > 995) {
 		selectedProject = 'wannago';
 	}}
-
-	$:console.log('inner',innerWidth)
 </script>
 
 
 <svelte:window bind:innerWidth />
 
 <section id="work">
-	<h2>
-		{title}<span style="color: blue">.</span>
-	</h2>
 	<Switch bind:selectedOption {switchLang} />
 	{#if selectedOption === 'projects'}
 		<div class="projects-container" class:active={selectedOption === 'projects'}>
@@ -45,28 +40,25 @@
 
 <style>
 	section {
-		min-height: 100vh;
-		align-items: center;
-		/* gap: 1rem; */
+		max-width: 1000px;
+		/* overflow-y:visible; */
 	}
 	
 	.projects-container {
-		width: clamp(375px, 100vw, 1000px);
 		display: flex;
-		justify-content: center;
 		align-items: center;
-		flex-wrap: wrap;
+		margin: auto;
+		/* flex-wrap: wrap; */
+		/* height: 560px; */
 		gap: 2rem;
-		padding-inline:1rem;
-		/* width: 900px; */
+		/* height: 100% */
 	}
 
 	.project-logos {
-		flex: 0 0 20%;
-	}
-
-	.project-card {
-		flex: 0 0 60%;
+		display: flex;
+		align-items: center;
+		min-height: 560px;
+		/* flex: 0 0 20%; */
 	}
 
 		@media (max-width: 995px) {

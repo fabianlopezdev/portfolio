@@ -47,7 +47,7 @@
 	}
 
 	h1 {
-		margin-top: 3rem;
+		margin-top: 1.5rem;
 		margin-bottom: 1rem;
 		margin-inline: 1rem;
 		font-size: clamp(3.4rem, 13vw, 100px);

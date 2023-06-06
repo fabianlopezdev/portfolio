@@ -23,7 +23,7 @@
 			"wannago": {
 				"Name": "WannaGo",
 				"Short Description": "Plan, invite, and track your events in real time.",
-				"Description": "Take control of your plans with WannaGo! Craft exciting plans, invite your friends and family, and stay updated in real time. Who's seen the plan? Who's in? Who's out? With WannaGo, you're always in the loop. Don't just make plans—bring them to life with WannaGo. Let's get planning, let's get going, let's get engaged!",
+				"Description":[ "Description","Take control of your plans with WannaGo! Craft exciting plans, invite your friends and family, and stay updated in real time. Who's seen the plan? Who's in? Who's out? With WannaGo, you're always in the loop. Don't just make plans—bring them to life with WannaGo. Let's get planning, let's get going, let's get engaged!"],
 				"githubLink": "https://github.com/Fabs-and/wannago",
 				"Website": "https://www.wannago.in/",
 				"Role": "Design, Front-end & Back-end Development, Deployment",
@@ -57,7 +57,7 @@
 				"Description": "Connect and create with Huddler, a platform uniting people through shared passions. With Huddler, say goodbye to solo activities. Discover, join, or kick-off events, be it fishing or baking. At Huddler there is room for every passion. Mingle with like-minded folks, share joyful experiences. Find your tribe with Huddler.",
 				"githubLink": "https://github.com/Lucasoliveiralucas/huddler-front-end",
 				"Role": "Design & Front-end Development",
-				"Responsibilities": "Aid in the desing of the site. Devised the 'recommended' algorithm. Implemented authorization & user settings",
+				"Responsibilities": "Helped in design. Devised the 'recommended' algorithm. Implemented authorization & user settings",
 				"Skills": ["HTML", "CSS", "Typescript", "NEXT.js", "Tailwind", "Amazon Cognito"],
 				"Images": [
 					{ "src": "/photos/projects/wannago/wannago-landing.png", "alt": "Image 1 description" },

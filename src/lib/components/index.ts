@@ -5,25 +5,25 @@ export { default as LanguageToggle } from './header/LanguageToggle.svelte';
 export { default as ModalMenu } from './header/ModalMenu.svelte';
 
 //Home Page
-export { default as Home } from './home/Home.svelte';
+export { default as HomeSection } from './home/HomeSection.svelte';
 
 //About me
-export { default as About } from './about/About.svelte';
+export { default as AboutSection } from './about/AboutSection.svelte';
 export { default as SelfImage } from './about/SelfImage.svelte';
 
 
 //Work
-export { default as Work } from './work/Work.svelte';
+export { default as WorkSection } from './work/WorkSection.svelte';
 export { default as ProjectsLogos } from './work/ProjectsLogos.svelte';
-export { default as ProjectCard } from './work/ProjectCard.svelte';
-export { default as ProjectCardBig } from './work/ProjectCardBig.svelte';
-export { default as Carousel } from './work/Carousel.svelte';
-export { default as CarouselZoom } from './work/CarouselZoom.svelte';
+export { default as ProjectCard } from './work/projectCards/ProjectCard.svelte';
+export { default as ProjectCardBig } from './work/projectCards/ProjectCardBig.svelte';
+export { default as Carousel } from './work/carousels/Carousel.svelte';
+export { default as CarouselZoom } from './work/carousels/CarouselZoom.svelte';
 export { default as Switch } from './work/Switch.svelte';
 export { default as Skills } from './work/Skills.svelte';
 
 //Contact
-export { default as Contact } from './contact/ContactPage.svelte';
+export { default as ContactSection } from './contact/ContactSection.svelte';
 export { default as ContactCard } from './contact/contactCards/ContactCard.svelte';
 export { default as CardGrid } from './contact/contactCards/CardGrid.svelte';
 export { default as ContactForm } from './contact/ContactForm.svelte';
