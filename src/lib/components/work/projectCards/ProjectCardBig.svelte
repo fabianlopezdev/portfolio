@@ -19,23 +19,19 @@
 	<section class="card-container">
 		<button class="imgs-container" on:click|stopPropagation={() => dialog.showModal()}>
 			{#each project.Images as image, i}
-				<img
-					src={image.src}
-					alt={image.alt}
-					class="img {String.fromCharCode(97 + i)}"
-					loading="lazy"
-				/>
+				<img src={image.src} alt={image.alt} class={String.fromCharCode(97 + i)} loading="lazy" />
 			{/each}
 		</button>
 
 		<dialog bind:this={dialog}>
 			{#each project.Images as image, i}
-				<img src={image.src} alt={image.alt} class="img carousel" />
+				<img src={image.src} alt={image.alt} class="carousel" />
 			{/each}
 			<button class="close-modal-btn" on:click={() => dialog.close()}>
 				<div class="header-icons"><CloseIcon /></div>
 			</button>
 		</dialog>
+
 		<h4>
 			{Object.keys(project).at(2)}
 		</h4>
@@ -58,6 +54,7 @@
 					{project.Responsibilities || project.Responsabilidades}
 				</p>
 			</div>
+
 			<div class="skills">
 				<h4>{Object.keys(project).at(7)}</h4>
 				<div class="line" />
@@ -104,36 +101,13 @@
 {/if}
 
 <style>
-	p {
-		margin: 0;
-		margin-bottom: 1rem;
-		line-height: 1.6;
-		/* font-weight: 0.1rem; */
-	}
-	p.description,
-	p.responsibilities {
-		margin: 0;
-		margin-bottom: 0;
-	}
-
-	.img.carousel {
-		width: 45vw;
-		height: auto;
-		margin-bottom: 2rem;
-		border-radius: 1rem;
-	}
-
-	.line {
-		border-bottom: 1px solid rgb(221, 221, 221);
-		width: 80%;
-		margin-bottom: 7px;
-	}
-	.card-container {
+	section.card-container {
 		justify-content: center;
 		max-height: 560px;
 	}
 
-	.imgs-container {
+	/* carcontainer/imgs-container */
+	button.imgs-container {
 		display: grid;
 		grid-template-areas:
 			'a a b b'
@@ -147,9 +121,10 @@
 		font: inherit;
 		cursor: pointer;
 		outline: inherit;
+		margin-bottom: 0.5rem;
 	}
 
-	.img {
+	img {
 		background-color: #d0dff0;
 		object-fit: contain;
 		width: 100%;
@@ -157,98 +132,106 @@
 		border: 1px solid rgb(221, 221, 221);
 	}
 
-	.img.a {
+	img.a {
 		grid-area: a;
 		border-radius: 1rem 0 0 1rem;
 	}
 
-	.img.b {
+	img.b {
 		grid-area: b;
 		border-radius: 0 1rem 0 0;
 	}
 
-	.img.c {
+	img.c {
 		grid-area: c;
 		border-radius: 0 0 1rem 0;
 	}
 
-	.info-container {
-		display: flex;
-		margin-top: 0.5rem;
-	}
-
-	.descriptions-container {
-		max-width: 245px;
-		padding-right: 1rem;
-	}
-	.skills {
-		display: flex;
-		flex-direction: column;
-		/* justify-content: center; */
-		align-items: center;
-		border: 1px solid rgb(221, 221, 221);
-		box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
-		/* border: solid 0.01rem black; */
-		border-radius: 1rem;
-		background-color: #fffefe;
-		padding-block: 0.5rem;
-		padding-inline: 1rem;
-		/* height: auto; */
-	}
-	.skills-container {
-		/* font-size: 1.1rem; */
-	}
-	h4 {
-		margin: 0;
-		margin-bottom: 0.5rem;
-		/* padding:0; */
-	}
-
-	.external-links {
-		display: flex;
-		align-items: center;
-		gap: 2px;
-		text-decoration: underline;
-		/* padding-top: 5px; */
-	}
-	.skills-container {
-		/* flex-grow: 1; */
-		margin: auto;
-	}
-	.icons-container {
-		align-self: flex-end;
-		display: flex;
-		gap: 1rem;
-	}
-	.skills-container li {
-	}
-	.icons {
-		display: flex;
-		height: 1rem;
-		width: 1rem;
-	}
-
-	/* Hide scrollbar for IE, Edge and Firefox */
-	dialog {
-		-ms-overflow-style: none; /* IE and Edge */
-		scrollbar-width: none; /* Firefox */
-	}
 	dialog {
 		margin: auto;
 		height: 86vh;
 		border: none;
 		border-radius: 1rem;
 		padding: 2rem 2rem 0 2rem;
-		/* position: relative; */
-		/* overflow: hidden; */
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
 	}
+
+	dialog img.carousel {
+		width: 45vw;
+		height: auto;
+		margin-bottom: 2rem;
+		border-radius: 1rem;
+	}
+
 	/* Hide scrollbar for Chrome, Safari and Opera */
 	dialog::-webkit-scrollbar {
 		display: none;
 	}
 
-	.header-icons {
+	div.header-icons {
 		width: 2.5rem;
 		height: 2.5rem;
+	}
+
+	/*card-container/info-container*/
+	div.info-container {
+		display: flex;
+		margin-top: 0.5rem;
+	}
+
+	h4 {
+		margin: 0;
+		margin-bottom: 0.5rem;
+	}
+
+	p {
+		margin: 0;
+		margin-bottom: 1rem;
+		line-height: 1.6;
+	}
+
+	p.description,
+	p.responsibilities {
+		margin-bottom: 0;
+	}
+
+	/*card-container/info-container/skills  */
+	.skills {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		border: 1px solid rgb(221, 221, 221);
+		box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+		border-radius: 1rem;
+		background-color: #fffefe;
+		padding-block: 0.5rem;
+		padding-inline: 1rem;
+		margin-left: 0.5rem;
+	}
+
+	div.line {
+		border-bottom: 1px solid rgb(221, 221, 221);
+		width: 80%;
+		margin-bottom: 7px;
+	}
+
+	a.external-links {
+		display: flex;
+		align-items: center;
+		gap: 2px;
+		text-decoration: underline;
+	}
+
+	div.icons-container {
+		align-self: flex-end;
+		display: flex;
+		gap: 1rem;
+	}
+
+	div.icons {
+		display: flex;
+		height: 1rem;
+		width: 1rem;
 	}
 </style>

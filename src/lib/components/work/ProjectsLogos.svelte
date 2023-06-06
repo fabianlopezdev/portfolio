@@ -89,15 +89,10 @@
 	label {
 		position: relative;
 		height: 98px;
-		text-shadow: 3px 3px 5px rgba(0,0,0,0.2), 
-            	-3px -3px 5px rgba(255,255,255,0.7);;
+		text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px -3px 5px rgba(255, 255, 255, 0.7);
 		cursor: pointer;
 		white-space: nowrap;
 		transition: color 0.5s ease-in-out 0.1s;
-		/* color: #007BFF; */
-		/* -webkit-text-stroke: 2px #01446c; */
-
-	
 	}
 
 	/* Specific styles for each label type */
@@ -164,7 +159,6 @@
 		font-family: system-ui;
 		font-size: 2rem;
 		vertical-align: 35%;
-		/* color: #01446c; */
 		font-weight: 100;
 	}
 
