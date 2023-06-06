@@ -22,7 +22,9 @@
 <svelte:window bind:innerWidth />
 
 <section id="work">
-	<Switch bind:selectedOption {switchLang} />
+	<div class='switch'>
+		<Switch bind:selectedOption {switchLang} />
+	</div>
 	{#if selectedOption === 'projects'}
 		<div class="projects-container" class:active={selectedOption === 'projects'}>
 			<div class="project-logos">
@@ -39,6 +41,10 @@
 </section>
 
 <style>
+	.switch {
+		display: flex;
+		justify-content: center;
+	}
 	section {
 		max-width: 1000px;
 		/* overflow-y:visible; */
