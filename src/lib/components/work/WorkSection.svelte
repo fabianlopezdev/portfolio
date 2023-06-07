@@ -36,8 +36,7 @@
 			<div
 				class="projects-container"
 				class:active={selectedOption === 'projects'}
-				in:fly={{ y: 0, x: innerWidth + 500, duration: 800, delay: 700 }}
-				out:fly={{ y: 0, x: innerWidth + 500, duration: 700 }}
+				in:fly={{ y: 0, x: innerWidth + 500, duration: 800 }}
 			>
 				<div class="project-logos">
 					<ProjectsLogos bind:selectedProject {projectCardLang} {innerWidth} />
@@ -51,8 +50,8 @@
 		{#if selectedOption === 'skills'}
 			<div
 				class="skills"
-				in:fly={{ y: 0, x: -innerWidth - 500, duration: 800, delay: 700 }}
-				out:fly={{ y: 0, x: -innerWidth - 500, duration: 700 }}
+				in:fly={{ y: 0, x: -innerWidth - 500, duration: 800}}
+				
 			>
 				<Skills />
 			</div>
@@ -64,7 +63,7 @@
 	section#work {
 		max-width: 1000px;
 		align-items: center;
-		/* overflow: hidden; */
+		/* overflow: hmls standingidden; */
 	}
 
 	div.switch {
@@ -75,7 +74,8 @@
 	div.conditional-container {
 		display: flex;
 		justify-content: center;
-		height: 36rem;
+		min-height: 25rem;
+		/* height: 36rem; */
 		width: 100vw;
 		overflow: hidden;
 	}
@@ -100,12 +100,6 @@
 	}
 
 	@media (max-width: 995px) {
-		div.conditional-container {
-			display: flex;
-			justify-content: center;
-			width: 100vw;
-			/* width: inherit; */
-		}
 		.project-card {
 			display: none;
 		}
