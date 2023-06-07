@@ -9,6 +9,7 @@
 	// import { cubicOut, elastic } from 'svelte/easing';
 	const [send, receive] = crossfade({ duration: 300, easing: quadInOut });
 
+
 	$: projectCardLang = workLang.projectCard;
 	$: switchLang = workLang.projectCard;
 
@@ -38,7 +39,7 @@
 				class:active={selectedOption === 'projects'}
 				in:fly={{ y: 0, x: innerWidth + 500, duration: 800 }}
 			>
-				<div class="project-logos">
+				<div  class="project-logos">
 					<ProjectsLogos bind:selectedProject {projectCardLang} {innerWidth} />
 				</div>
 				<div class="project-card">
@@ -63,7 +64,6 @@
 	section#work {
 		max-width: 1000px;
 		align-items: center;
-		/* overflow: hmls standingidden; */
 	}
 
 	div.switch {
@@ -75,7 +75,6 @@
 		display: flex;
 		justify-content: center;
 		min-height: 25rem;
-		/* height: 36rem; */
 		width: 100vw;
 		overflow: hidden;
 	}

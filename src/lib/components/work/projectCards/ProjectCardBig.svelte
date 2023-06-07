@@ -4,9 +4,9 @@
 	import GoToArrow from 'svelte-icons/go/GoLinkExternal.svelte';
 	import CloseIcon from 'svelte-icons/io/IoIosClose.svelte';
 	export let projectCardLang: Language['work']['projectCard'];
-	import { Carousel } from '$components';
 	export let selectedProject: keyof Language['work']['projectCard'];
-
+	import { fade } from 'svelte/transition';
+	// import {} from 'svelte/animate'
 	let project: any;
 	let dialog;
 
@@ -15,89 +15,92 @@
 </script>
 
 <svelte:window on:click={() => dialog.close()} />
-{#if project}
-	<section class="card-container">
-		<button class="imgs-container" on:click|stopPropagation={() => dialog.showModal()}>
-			{#each project.Images as image, i}
-				<img src={image.src} alt={image.alt} class={String.fromCharCode(97 + i)} loading="lazy" />
-			{/each}
-		</button>
-
-		<dialog bind:this={dialog}>
-			{#each project.Images as image, i}
-				<img src={image.src} alt={image.alt} class="carousel" />
-			{/each}
-			<button class="close-modal-btn" on:click={() => dialog.close()}>
-				<div class="header-icons"><CloseIcon /></div>
+	{#if project}
+	<!-- The each is used to make the transition work, since we give a key to project  -->
+	{#each [project] as project (project)}
+		<section class="card-container" in:fade={{ duration: 500, delay: 200}}>
+			<button class="imgs-container" on:click|stopPropagation={() => dialog.showModal()}>
+				{#each project.Images as image, i}
+					<img src={image.src} alt={image.alt} class={String.fromCharCode(97 + i)} loading="lazy" />
+				{/each}
 			</button>
-		</dialog>
 
-		<h4>
-			{Object.keys(project).at(2)}
-		</h4>
-		<p class="description">
-			{project.Description || project.Descripción}
-		</p>
+			<dialog bind:this={dialog}>
+				{#each project.Images as image, i}
+					<img src={image.src} alt={image.alt} class="carousel" />
+				{/each}
+				<button class="close-modal-btn" on:click={() => dialog.close()}>
+					<div class="header-icons"><CloseIcon /></div>
+				</button>
+			</dialog>
 
-		<div class="info-container">
-			<div class="descriptions-container">
-				<h4>
-					{Object.keys(project).at(6)}
-				</h4>
-				<p>
-					{project.Role || project.Rol}
-				</p>
-				<h4>
-					{Object.keys(project).at(5)}
-				</h4>
-				<p class="responsibilities">
-					{project.Responsibilities || project.Responsabilidades}
-				</p>
-			</div>
+			<h4>
+				{Object.keys(project).at(2)}
+			</h4>
+			<p class="description">
+				{project.Description || project.Descripción}
+			</p>
 
-			<div class="skills">
-				<h4>{Object.keys(project).at(7)}</h4>
-				<div class="line" />
-				<ul class="skills-container">
-					{#if project.Skills}
-						{#each project.Skills as skill}
-							<li>{skill}</li>
-						{/each}
-					{:else}
-						{#each project.Herramientas as skill}
-							<li>{skill}</li>
-						{/each}
-					{/if}
-				</ul>
-				<h4>Links</h4>
-				<div class="line" />
-				<div class="icons-container">
-					<a
-						class="external-links"
-						href={project?.githubLink}
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label="GitHub"
-					>
-						GitHub
-						<div class="icons"><GitHubIcon /></div>
-					</a>
-					{#if project.Website}
+			<div class="info-container">
+				<div class="descriptions-container">
+					<h4>
+						{Object.keys(project).at(6)}
+					</h4>
+					<p>
+						{project.Role || project.Rol}
+					</p>
+					<h4>
+						{Object.keys(project).at(5)}
+					</h4>
+					<p class="responsibilities">
+						{project.Responsibilities || project.Responsabilidades}
+					</p>
+				</div>
+
+				<div class="skills">
+					<h4>{Object.keys(project).at(7)}</h4>
+					<div class="line" />
+					<ul class="skills-container">
+						{#if project.Skills}
+							{#each project.Skills as skill}
+								<li>{skill}</li>
+							{/each}
+						{:else}
+							{#each project.Herramientas as skill}
+								<li>{skill}</li>
+							{/each}
+						{/if}
+					</ul>
+					<h4>Links</h4>
+					<div class="line" />
+					<div class="icons-container">
 						<a
 							class="external-links"
-							href={project?.Website}
+							href={project?.githubLink}
 							target="_blank"
 							rel="noopener noreferrer"
-							aria-label="Visit website"
+							aria-label="GitHub"
 						>
-							Visit
-							<div class="icons"><GoToArrow /></div>
+							GitHub
+							<div class="icons"><GitHubIcon /></div>
 						</a>
-					{/if}
+						{#if project.Website}
+							<a
+								class="external-links"
+								href={project?.Website}
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="Visit website"
+							>
+								Visit
+								<div class="icons"><GoToArrow /></div>
+							</a>
+						{/if}
+					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+	{/each}
 {/if}
 
 <style>
