@@ -103,8 +103,6 @@
 <style>
 	section.card-container {
 		justify-content: center;
-		max-height: 560px;
-		margin-bottom: 1rem;
 	}
 
 	/* carcontainer/imgs-container */

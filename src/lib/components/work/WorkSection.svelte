@@ -1,9 +1,13 @@
 <script lang="ts">
-	import { Switch, ProjectsLogos, ProjectCard,Skills, ProjectCardBig } from '$components';
-
+	import { Switch, ProjectsLogos, ProjectCard, Skills, ProjectCardBig } from '$components';
+	import { crossfade } from 'svelte/transition';
+	import { quadInOut } from 'svelte/easing';
 	import type { Language } from '../../../types';
 	export let workLang: Language['work'];
 	export let title;
+	import { fly, fade } from 'svelte/transition';
+	// import { cubicOut, elastic } from 'svelte/easing';
+	const [send, receive] = crossfade({ duration: 300, easing: quadInOut });
 
 	$: projectCardLang = workLang.projectCard;
 	$: switchLang = workLang.projectCard;
@@ -13,68 +17,97 @@
 
 	let innerWidth: number | undefined;
 
-	$: {if (innerWidth && innerWidth > 995) {
-		selectedProject = 'wannago';
-	}}
+	$: {
+		if (innerWidth && innerWidth > 995) {
+			selectedProject = 'wannago';
+		}
+	}
 </script>
-
 
 <svelte:window bind:innerWidth />
 
 <section id="work">
-	<div class='switch'>
+	<div class="switch">
 		<Switch bind:selectedOption {switchLang} />
 	</div>
-	{#if selectedOption === 'projects'}
-		<div class="projects-container" class:active={selectedOption === 'projects'}>
-			<div class="project-logos">
-				<ProjectsLogos bind:selectedProject {projectCardLang} {innerWidth}/>
+
+	<div class="conditional-container">
+		{#if selectedOption === 'projects'}
+			<div
+				class="projects-container"
+				class:active={selectedOption === 'projects'}
+				in:fly={{ y: 0, x: innerWidth + 500, duration: 800, delay: 700 }}
+				out:fly={{ y: 0, x: innerWidth + 500, duration: 700 }}
+			>
+				<div class="project-logos">
+					<ProjectsLogos bind:selectedProject {projectCardLang} {innerWidth} />
+				</div>
+				<div class="project-card">
+					<ProjectCardBig {selectedProject} {projectCardLang} />
+				</div>
 			</div>
-			<div class="project-card">
-				<ProjectCardBig {selectedProject} {projectCardLang} />
+		{/if}
+
+		{#if selectedOption === 'skills'}
+			<div
+				class="skills"
+				in:fly={{ y: 0, x: -innerWidth - 500, duration: 800, delay: 700 }}
+				out:fly={{ y: 0, x: -innerWidth - 500, duration: 700 }}
+			>
+				<Skills />
 			</div>
-		</div>
-	{/if}
-	{#if selectedOption === 'skills'}
-	<Skills/>
-	{/if}
+		{/if}
+	</div>
 </section>
 
 <style>
-	.switch {
+	section#work {
+		max-width: 1000px;
+		align-items: center;
+		/* overflow: hidden; */
+	}
+
+	div.switch {
 		display: flex;
 		justify-content: center;
 	}
-	section {
-		max-width: 1000px;
-		/* overflow-y:visible; */
+
+	div.conditional-container {
+		display: flex;
+		justify-content: center;
+		height: 36rem;
+		width: 100vw;
+		overflow: hidden;
 	}
-	
-	.projects-container {
+	div.projects-container {
 		display: flex;
 		align-items: center;
-		margin: auto;
-		/* flex-wrap: wrap; */
-		/* height: 560px; */
 		gap: 2rem;
-		/* height: 100% */
 	}
 
-	.project-logos {
+	div.project-logos {
 		display: flex;
 		align-items: center;
-		min-height: 560px;
-		/* flex: 0 0 20%; */
 	}
 
-		@media (max-width: 995px) {
+	div.project-card {
+		width: 38.412rem;
+	}
+
+	div.skills {
+		display: flex;
+		justify-content: center;
+	}
+
+	@media (max-width: 995px) {
+		div.conditional-container {
+			display: flex;
+			justify-content: center;
+			width: 100vw;
+			/* width: inherit; */
+		}
 		.project-card {
 			display: none;
 		}
-
-		.project-logos {
-			min-height: 326px;
-		}
-		
 	}
 </style>

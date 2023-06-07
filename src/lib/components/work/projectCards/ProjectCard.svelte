@@ -19,7 +19,7 @@
 </script>
 
 {#if project}
-	<div class="card-container" in:slide={{ delay: 1000, duration: 1000 }}>
+	<div class="card-container" >
 		<Carousel slides={project.Images}/>
 		<section class='card-info'>
 			{#each Object.entries(project) as projectItem}
