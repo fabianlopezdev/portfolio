@@ -12,7 +12,7 @@
 
 <form method="POST" action="/?/setLang" use:enhance>
 	<input type="hidden" name="lang" bind:value={lang} />
-	<button on:click={toggleLang}>
+	<button title='English / Spanish' on:click={toggleLang} aria-label='Toggle between English and Spanish'>
 		<span class="header-icons">
 			{lang === 'en' ? 'ES' : 'EN'}
 		</span>

@@ -6,8 +6,8 @@
 		showSvg = true;
 		setTimeout(() => {
 			showDot = true;
-		}, 1500); // Adjust this time to match the duration of the text-line animation
-	}, 1000);
+		}, 1000); // Adjust this time to match the duration of the text-line animation
+	}, 900);
 </script>
 
 <div class="logo">

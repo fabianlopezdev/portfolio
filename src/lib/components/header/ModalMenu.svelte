@@ -41,7 +41,7 @@
 		</div>
 	</div>
 {:else}
-	<button type="button" on:click|preventDefault={toggleMenu} aria-label="Open menu">
+	<button type="button" on:click|preventDefault={toggleMenu} aria-label="Open modal menu">
 		<div class="header-icons">
 			<HamburgerMenuIcon />
 		</div>
@@ -59,7 +59,7 @@
 		position: fixed;
 		left: 0;
 		right:0;
-		top: 30rem;
+		bottom: 6rem;
 	}
 	button {
 		display: flex;

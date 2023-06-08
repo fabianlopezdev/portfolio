@@ -12,7 +12,7 @@
 	}
 </script>
 
-<button aria-label="Toggle between light and dark mode" on:click={toggleTheme}>
+<button title='Light / Dark' aria-label="Toggle between light and dark mode" on:click={toggleTheme}>
 	<span class="header-icons">
 		{#if isDark}
 			<SunIcon />
