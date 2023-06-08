@@ -80,6 +80,7 @@
 		cursor: pointer;
 		white-space: nowrap;
 		transition: color 0.5s ease-in-out 0.1s;
+		color: var(--clr-font-logo)
 	}
 
 	/* Specific styles for each label type */

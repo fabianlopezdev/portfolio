@@ -23,7 +23,8 @@
     row-gap: 2rem;
 		margin: auto;
 		width: 90svw;
-		background-color: white;
+		border: 1px solid rgb(221, 221, 221);
+		background-color: var(--clr-bg-projectCard);
 		border-radius: 1rem;
 		box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 	}

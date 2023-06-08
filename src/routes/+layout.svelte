@@ -22,6 +22,9 @@
 		--clr-accent:#1863E5;
 		--clr-secondary: #016aa1;
 		--clr-font: #4A5469;
+		--clr-font-logo: #016aa1;
+		--clr-font-projectCard: var(--clr-font);
+		--clr-bg-projectCard: white;
 		--clr-font-contrast: white;
 		--clr-font-contrast-black-bg: white;
 		--clr-icons: gray;
@@ -35,6 +38,8 @@
 		--clr-bg-items: #d0dff0;
 		--clr-font: #d0dff0;
 		--clr-font-contrast-black-bg: var(--clr-accent);
+			--clr-font-projectCard: #016aa1;
+		--clr-bg-projectCard: #016aa1;
 		--clr-shadow: #202040;
 		--clr-accent: #007bff;
 		--clr-hover: #202040;

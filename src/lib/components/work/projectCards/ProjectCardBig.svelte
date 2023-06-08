@@ -218,7 +218,7 @@
 		border: 1px solid rgb(221, 221, 221);
 		box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 		border-radius: 1rem;
-		background-color: #fffefe;
+		background-color: var(--clr-bg-projectCard);
 		padding: 1rem;
 	}
 

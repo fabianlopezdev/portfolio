@@ -125,7 +125,7 @@
 
 	span.slider {
 		position: absolute;
-		background: white;
+		background: var(--clr-bg-items);
 		top: 0;
 		left: 0;
 		width: 50%;

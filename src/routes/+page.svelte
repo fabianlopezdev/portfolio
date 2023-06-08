@@ -9,8 +9,9 @@
 	export let data;
 
 	// Destructure lang from data and make it reactive
-	$: ({ lang } = data || 'en');
-
+	$: ({ lang } = data || 'es');
+	$: console.log('dataaaa', data);
+	
 	// let navLinks: Language['navLinks'];
 	// let home: Language['home'];
 	// let contact: Language['contact'];

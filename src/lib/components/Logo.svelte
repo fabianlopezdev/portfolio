@@ -22,6 +22,6 @@
 	}
   
   a {
-    color: black;
+    color: var(--clr-font);
   }
 </style>

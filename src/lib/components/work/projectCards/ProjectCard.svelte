@@ -101,8 +101,9 @@
 <style>
 	section.card-container {
 		border-radius: 1rem;
+		border: 1px solid rgb(221, 221, 221);
 		box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-		background-color: white;
+		background-color: var(--clr-bg-projectCard);
 		font-size: 1rem;
 		line-height: 1.4;
 		margin-inline: 0.5rem;
