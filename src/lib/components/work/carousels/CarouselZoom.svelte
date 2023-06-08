@@ -48,7 +48,7 @@
 	};
 </script>
 
-<main class="carousel" on:touchstart={handleTouchStart} on:touchend={handleTouchEnd}>
+<section class="carousel" on:touchstart={handleTouchStart} on:touchend={handleTouchEnd}>
 	<button
 		class="close-modal-btn"
 		on:click={() => (isModalOpen = !isModalOpen)}
@@ -56,7 +56,9 @@
 	>
 		<div class="header-icons"><CloseIcon /></div>
 	</button>
-	{#each slides as slide, i (slide.src)}
+    <div class='img-container'>
+
+        {#each slides as slide, i (slide.src)}
 		<img
 			src={slide.src}
 			alt={slide.alt}
@@ -65,7 +67,8 @@
 			class:outgoing={prevIndex === i && currentIndex !== i}
 		/>
 	{/each}
-
+    
+</div>
 	<button
 		on:click={movePrevSlide}
 		class="carousel__button carousel__button--prev"
@@ -87,18 +90,19 @@
 			<div class="carousel__dot" class:active-dot={currentIndex === i} />
 		{/each}
 	</div>
-</main>
+</section>
 
 <style>
     /* Modal styles */
     .carousel {
         display: flex;
+        align-items: center;
         position: fixed;
         top: 0;
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: black;
+        background-color:  rgba(0, 0, 0, 0.7);;
         height: 100dvh;
         z-index: 1000;
     }
@@ -112,11 +116,18 @@
     .carousel__img {
         display: none;
         position: absolute;
-        top: 25%;
         width: 100%;
         height: auto;
         object-fit: contain;
         padding-inline: 0.2rem;
+        background-color: #D0DFF0;
+    }
+
+    .img-container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
     }
 
     .carousel__img.active {
@@ -125,8 +136,7 @@
 
     .carousel__img.outgoing {
         display: block;
-        position: absolute;
-        top: 25%;
+
     }
 
     /* Button styles */
@@ -141,7 +151,7 @@
     }
 
     .icons, .header-icons {
-        color: #d0dff0;
+        /* color: #d0dff0; */
     }
 
     .header-icons {
@@ -170,14 +180,14 @@
     .carousel__dot {
         width: 10px;
         height: 10px;
-        background-color: #d0dff0;
+        background-color: #96acc5;
         border-radius: 50%;
         margin: 0 5px;
         transition: background-color 0.3s ease-in-out;
     }
 
     .active-dot {
-        background-color: #96acc5;
+        background-color: white;
     }
 
     /* Animation styles */

@@ -73,7 +73,7 @@
 </section>
 
 <style>
-	.carousel {
+	section.carousel {
 		position: relative;
 		display: flex;
 		overflow: hidden;
@@ -88,7 +88,6 @@
 		width: 100%;
 		height: 100%;
 		object-fit: contain;
-		/* margin-bottom: 0.5rem; */
 		padding-bottom: 0.7rem;
 		background-color: #D0DFF0;
 	}
