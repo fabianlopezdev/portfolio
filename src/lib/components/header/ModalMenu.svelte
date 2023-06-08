@@ -67,6 +67,7 @@
 		background-color: var(--clr-bg);
 		padding: 0;
 		z-index: 3;
+		color: gray;
 	}
 
 	.modal {
