@@ -1,71 +1,40 @@
 <script lang="ts">
-	import { ProjectCard } from '$components';
-	import type { Language } from '../../../types';
+    import { ProjectCard } from '$components';
+    import type { Language } from '../../../types';
+    import { innerWidth } from '../../../store';
+    import scrollTo from '../../../utils/functions';
 
-	export let selectedProject: string;
-	export let projectCardLang: Language['work']['projectCard'];
-	//Export innerWidth to not to scroll to the viewport in bigger screens
-	import {innerWidth} from '../../../store'
+    export let selectedProject: string;
+    export let projectCardLang: Language['work']['projectCard'];
 
-	import scrollTo from '../../../utils/functions';
+    let projects = [
+        { id: 'wannago', label: 'WannaGo', class: 'wannago' },
+        { id: 'road-trip', label: 'Road trip', class: 'road-trip' },
+        { id: 'huddler', label: 'Huddler', class: 'huddler' },
+    ];
 </script>
 
 <div class="logos-container">
-	<input
-		type="radio"
-		id="wannago"
-		name="logos"
-		value="wannago"
-		bind:group={selectedProject}
-		on:change={$innerWidth < 996 && scrollTo}
-	/>
-	<label class="wannago project-label" for="wannago">WannaGo<span class="arrow">&gt;</span></label>
-
-	{#if selectedProject === 'wannago'}
-		<div class="project-card">
-			{#if $innerWidth < 995}
-			<ProjectCard {selectedProject} {projectCardLang} />
-			{/if}
-		</div>
-	{/if}
-
-	<input
-		type="radio"
-		id="huddler"
-		name="logos"
-		value="huddler"
-		bind:group={selectedProject}
-		on:change={$innerWidth < 996 && scrollTo}
-		/>
-		<label class="huddler project-label" for="huddler">Huddler<span class="arrow">&gt;</span></label>
-		
-		{#if selectedProject === 'huddler'}
-		<div class="project-card">
-			{#if $innerWidth < 995}
-			<ProjectCard {selectedProject} {projectCardLang} />
-			{/if}
-		</div>
-		{/if}
-		
-		<input
-		type="radio"
-		id="road-trip"
-		name="logos"
-		value="road-trip"
-		bind:group={selectedProject}
-		on:change={$innerWidth < 996 && scrollTo}
-		/>
-		<label class="road-trip project-label" for="road-trip"
-		>Road trip<span class="arrow">&gt;</span></label
-		>
-		
-		{#if selectedProject === 'road-trip'}
-		<div class="project-card">
-			{#if $innerWidth < 995}
-			<ProjectCard {selectedProject} {projectCardLang} />
-			{/if}
-		</div>
-		{/if}
+    {#each projects as project (project.id)}
+        <input
+            type="radio"
+            id={project.id}
+            name="logos"
+            value={project.id}
+            bind:group={selectedProject}
+            on:change={$innerWidth < 996 && scrollTo}
+        />
+        <label class={`${project.class} project-label`} for={project.id}>
+            {project.label}<span class="arrow">&gt;</span>
+        </label>
+				{#if $innerWidth < 995}
+        {#if selectedProject === project.id}
+				<div class="project-card">
+					<ProjectCard {selectedProject} {projectCardLang} isFromProjectsLogos={true} />
+				</div>
+        {/if}
+				{/if}
+    {/each}
 </div>
 
 <style>

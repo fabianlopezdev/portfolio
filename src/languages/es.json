@@ -40,13 +40,13 @@
 				"githubLink": "https://github.com/Fabs-and/wannago",
 				"Website": "https://www.wannago.in/",
 				"Images": [
-					{ "src": "/photos/projects/wannago/wannago-landing.png", "alt": "Image 1 description" },
+					{ "src": "/photos/projects/wannago/wannago-landing.avif", "alt": "Image 1 description" },
 					{
-						"src": "/photos/projects/wannago/wannago-invitation.png",
+						"src": "/photos/projects/wannago/wannago-invitation.avif",
 						"alt": "Image 2 description"
 					},
 					{
-						"src": "/photos/projects/wannago/wannago-general-stats.png",
+						"src": "/photos/projects/wannago/wannago-general-stats.avif",
 						"alt": "Image 3 description"
 					}
 				]
@@ -58,18 +58,8 @@
 				"Rol": "Diseño y desarrollo front-end",
 				"Responsabilidades": "Ayudar en el diseño. Idear el algoritmo de 'recomendados'. Implementar la autorización y los ajustes del usuario",
 				"Herramientas": ["HTML", "CSS", "Typescript", "NEXT.js", "Tailwind", "Amazon Cognito"],
-				"githubLink": "https://github.com/Lucasoliveiralucas/huddler-front-end",
-				"Images": [
-					{ "src": "/photos/projects/wannago/wannago-landing.png", "alt": "Image 1 description" },
-					{
-						"src": "/photos/projects/wannago/wannago-invitation.png",
-						"alt": "Image 2 description"
-					},
-					{
-						"src": "/photos/projects/wannago/wannago-general-stats.png",
-						"alt": "Image 3 description"
-					}
-				]
+				"githubLink": "https://github.com/Lucasoliveiralucas/huddler-front-end"
+				
 			},
 			"road-trip": {
 				"Name": "Road Trip - Campgrounds",
@@ -89,14 +79,17 @@
 				],
 				"githubLink": "https://github.com/Fabs-and/road-trip-app",
 				"Images": [
-					{ "src": "/photos/projects/wannago/wannago-landing.png", "alt": "Image 1 description" },
 					{
-						"src": "/photos/projects/wannago/wannago-invitation.png",
-						"alt": "Image 2 description"
+						"src": "/photos/projects/roadtrip/roadtrip-landing.avif",
+						"alt": "Road trip landing page"
 					},
 					{
-						"src": "/photos/projects/wannago/wannago-general-stats.png",
-						"alt": "Image 3 description"
+						"src": "/photos/projects/roadtrip/roadtrip-camp-card.avif",
+						"alt": "Road trip campsite information card"
+					},
+					{
+						"src": "/photos/projects/roadtrip/roadtrip-form.avif",
+						"alt": "Road trip form for new campsites"
 					}
 				]
 			},
