@@ -139,6 +139,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		list-style: none;
+		gap: 0.5rem;
 		padding: 0;
 		font-size: 0.8rem;
 		margin: 0;
@@ -149,8 +150,8 @@
 		background-color: #d0dff0;
 		color: #016aa1;
 		border-radius: 5px;
-		margin-right: 7px;
-		margin-bottom: 7px;
+		/* margin-right: 7px; */
+		/* margin-bottom: 7px; */
 		font-weight: 500;
 	}
 

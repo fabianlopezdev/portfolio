@@ -11,9 +11,9 @@
 
 <div class="toggle">
 	<input type="radio" id="projects" name="toggle" checked on:change={handleRadioChange} />
-	<label for="projects"><span class="label-text">Projects</span></label>
+	<label for="projects"><span class="label-text">{switchLang.projects}</span></label>
 	<input type="radio" id="skills" name="toggle" on:change={handleRadioChange} />
-	<label for="skills"><span class="label-text">Skills</span></label>
+	<label for="skills"><span class="label-text">{switchLang.skills}</span></label>
 	<span class="slider" />
 </div>
 

@@ -61,6 +61,14 @@
 		</div>
 	{/if}
 </div>
+<svelte:head>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@200&family=Montserrat+Alternates:ital,wght@1,700;1,800&display=swap"
+		rel="stylesheet"
+	/>
+</svelte:head>
 
 <style>
 	@font-face {
@@ -68,25 +76,34 @@
 		src: url('/overmch.ttf') format('truetype');
 	}
 
-	@font-face {
+	/* @font-face { 
 		font-family: 'Montserrat Alternates';
 		src: url('/MontserratAlternates-SemiBoldItalic.ttf') format('truetype');
-	}
+	} */
 
 	@font-face {
 		font-family: 'Cabin Regular';
 		src: url('/Cabin-Regular.ttf') format('truetype');
 	}
 
+	.project-card{
+		margin: 0.5rem;
+	}
 	/* Styles for .logos */
 	div.logos-container {
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
+		align-items: center;
+		justify-content: center;
+		/* margin- */
+		/* gap: 0.5rem; */
+		/* margin-inline: 0.5rem; */
 	}
 
 	/* Common styles for labels */
 	label {
+		display: flex;
+		align-items: center;
 		position: relative;
 		height: 98px;
 		text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px -3px 5px rgba(255, 255, 255, 0.7);
@@ -100,6 +117,7 @@
 		font-family: 'Montserrat Alternates', sans-serif;
 		font-size: 4rem;
 		letter-spacing: -5px;
+		/* margin-block:auto; */
 	}
 
 	label.huddler {
@@ -119,7 +137,7 @@
 	}
 	div.logos-container input:checked + label {
 		color: white;
-		margin-left: 1rem;
+		margin-inline: 1rem;
 		text-shadow: none;
 		-webkit-text-stroke: 3px #01446c;
 	}
@@ -130,7 +148,7 @@
 		position: absolute;
 		width: 0%;
 		height: 75%;
-		top: 0px;
+		top: 10px;
 		left: -13px;
 		z-index: -2;
 		transform: rotate(-1deg);
@@ -139,20 +157,13 @@
 	}
 
 	div.logos-container input:checked + label::before {
-		width: 100%;
+		width: 108%;
 	}
 
 	/* Custom styles for each type when checked */
 	div.logos-container input:checked + label.road-trip::before {
 		top: 13px;
 	}
-	div.logos-container input:checked + label.wannago::before {
-		left: -6px;
-	}
-	div.logos-container input:checked + label.huddler::before {
-		left: -11px;
-	}
-
 	/* Common styles for span */
 	span.arrow {
 		padding-left: 1rem;
@@ -163,9 +174,6 @@
 	}
 
 	/* Additional paddings for certain spans */
-	label.road-trip span {
-		padding-left: 1.5rem;
-	}
 	label.huddler span {
 		padding-left: 0.8rem;
 	}
@@ -178,5 +186,7 @@
 		.project-card {
 			display: none;
 		}
+		
+	
 	}
 </style>

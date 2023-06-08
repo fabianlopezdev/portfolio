@@ -77,7 +77,7 @@
 		position: relative;
 		display: flex;
 		overflow: hidden;
-		height: 30%;
+		height: 10rem;
 		border-radius: 1rem 1rem 0 0;
 	}
 
@@ -88,7 +88,9 @@
 		width: 100%;
 		height: 100%;
 		object-fit: contain;
+		/* margin-bottom: 0.5rem; */
 		padding-bottom: 0.7rem;
+		background-color: #D0DFF0;
 	}
 
 	.carousel__img.active,
@@ -132,24 +134,25 @@
 
 	.carousel__dots {
 		position: absolute;
-		bottom: 10px;
+		bottom: 0px;
 		width: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		margin-block: 0.5rem;
 	}
 
 	.carousel__dot {
 		width: 10px;
 		height: 10px;
-		background-color: #d0dff0;
+		background-color: #96acc5;
 		border-radius: 50%;
 		margin: 0 5px;
 		transition: background-color 0.3s ease-in-out;
 	}
 
 	.active-dot {
-		background-color: #96acc5;
+		background-color: white;
 	}
 
 	.image-button {

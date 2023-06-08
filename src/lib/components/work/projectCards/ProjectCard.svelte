@@ -4,51 +4,52 @@
 	import type { Language } from '../../../../types';
 	import { Carousel } from '$components';
 	import CloseIcon from 'svelte-icons/io/IoIosClose.svelte';
-
+	import {fade} from 'svelte/transition'
 	export let projectCardLang: Language['work']['projectCard'];
 
-	export let selectedProject: keyof Language['work']['projectCard'];;
-
-	import { slide } from 'svelte/transition';
+	export let selectedProject: keyof Language['work']['projectCard'];
 
 	let project: any;
 	let dialog: HTMLDialogElement;
+	let projectArr;
 
 	// Use reactive declaration instead of assignment
-	$: project = selectedProject ? projectCardLang[selectedProject] : null;
+	$: {
+		project = selectedProject ? projectCardLang[selectedProject] : null;
+		projectArr = Object.entries(project);
+	}
 </script>
 
 {#if project}
-	<div class="card-container" >
-		<Carousel slides={project.Images}/>
-		<section class='card-info'>
-			{#each Object.entries(project) as projectItem}
-				{#if projectItem.at(0) === 'Short Description' || projectItem.at(0) === 'Role' || projectItem.at(0) === 'Responsibilities'}
-					{#if projectItem.at(0) === 'Short Description'}
-						<h4>Description</h4>
-						<p class="items-descriptions">
-							{projectItem.at(1)}
-							<button class="open-modal-btn" on:click={() => dialog.showModal()}>
-								{projectCardLang.btnReadMore}
-							</button>
-							<dialog bind:this={dialog}>
-								<p>{project.Description}</p>
-								<button class="close-modal-btn" on:click={() => dialog.close()}>
-									<div class="header-icons"><CloseIcon /></div>
-								</button>
-							</dialog>
-						</p>
-					{:else}
-						<h4>{projectItem.at(0)}</h4>
-						<p class="items-descriptions">{projectItem.at(1)}</p>
-					{/if}
-				{/if}
-			{/each}
+	<section class="card-container" in:fade={{duration: 1000,delay: 200}}>
+		<Carousel slides={project.Images} />
+		<div class="card-info">
 
-			<h4>Skills</h4>
-			<ul class="skills-container">
+			<article>
+				<h4 class="first-h4">{projectArr[2][0]}</h4>
+				<p class="items-descriptions">
+					{projectArr[1][1]}
+					<button class="open-modal-btn" on:click={() => dialog.showModal()}>
+						{projectCardLang.btnReadMore}
+					</button>
+				</p>
+			</article>
+
+			<article>
+				<h4>{projectArr[3][0]}</h4>
+				<p class="items-descriptions">{projectArr[3][1]}</p>
+			</article>
+
+			<article>
+				<h4>{projectArr[4][0]}</h4>
+				<p class="items-descriptions">{projectArr[4][1]}</p>
+			</article>
+
+			<article>
+				<h4>{projectArr[5][0]}</h4>
+				<ul class="skills-container">
 					{#if project.Skills}
-						{#each project.Skills as skill}
+						{#each projectArr[5][1] as skill}
 							<li>{skill}</li>
 						{/each}
 					{:else}
@@ -57,6 +58,7 @@
 						{/each}
 					{/if}
 				</ul>
+			</article>
 
 			<div class="icons-container">
 				<a
@@ -81,43 +83,58 @@
 						<div class="icons"><GoToArrow /></div>
 					</a>
 				{/if}
+				<dialog bind:this={dialog}>
+					<p>{projectArr[2][1]}</p>
+					<button class="close-modal-btn" on:click={() => dialog.close()}>
+						<div class="header-icons"><CloseIcon /></div>
+					</button>
+				</dialog>
 			</div>
-		</section>
-	</div>
+		</div>
+	</section>
 {/if}
 
 <style>
-	.card-info {
-		height: 70%;
-		display: flex;
-		justify-content: space-evenly;
-		align-items: space-around;
-	}
-	.card-container {
-		box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-		/* border: solid 0.01rem black; */
+	section.card-container {
 		border-radius: 1rem;
+		box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+		background-color: white;
 		font-size: 1rem;
 		line-height: 1.4;
-		background-color: white;
-		/* margin-top: 1rem; */
+		margin-inline: 0.5rem;
 	}
-	section {
-		padding-inline: 1rem;
+
+	div.card-info {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 1rem;
+	}
+
+	p.items-descriptions {
+		margin: 0;
 	}
 
 	h4 {
-		margin: 0;
-		margin-top: 10px;
+		margin: 1rem 0rem 0.3rem 0rem;
 	}
 
-	.items-descriptions {
-		margin: 0;
+	h4.first-h4 {
+		margin-top: 0;
 	}
 
 	.header-icons {
 		height: 2rem;
 		width: 2rem;
+	}
+
+	button.open-modal-btn {
+		cursor: pointer;
+		background-color: var(--color);
+		border: none;
+		color: #016aa1;
+		font-size: 0.8rem;
+		padding: 0;
 	}
 
 	dialog {
@@ -132,16 +149,6 @@
 		padding: 2rem;
 	}
 
-	.open-modal-btn {
-		cursor: pointer;
-		background-color: var(--color);
-		border: none;
-		color: #016aa1;
-		font-size: 0.8rem;
-		padding: 0;
-	}
-
-	
 	.icons-container {
 		align-self: flex-end;
 		display: flex;
@@ -153,7 +160,7 @@
 		align-items: center;
 		gap: 2px;
 		text-decoration: underline;
-		padding-top: 5px;
+		margin-top: 1rem;
 	}
 
 	.icons {
@@ -164,8 +171,6 @@
 
 	@media (max-width: 995px) {
 		.card-container {
-			height: 80svh;
-			width: 95dvw;
 			max-width: 430px; /*iphone X width*/
 			max-height: 588px; /*iphone X height*/
 		}

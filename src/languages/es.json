@@ -16,16 +16,14 @@
 	"work": {
 		"switch": {
 			"projects": "Proyectos",
-			"Skills": "Competencias"
+			"skills": "Herramientas"
 		},
 		"projectCard": {
 			"btnReadMore": "Sigue leyendo",
 			"wannago": {
 				"Name": "WannaGo",
-				"Short Description": "Planifica, invita y sigue tus eventos en tiempo real.",
+				"descripciónCorta": "Planifica, invita y sigue tus eventos en tiempo real.",
 				"Descripción": "¡Controla tus planes con WannaGo! Crea eventos emocionantes, invita a tus seres queridos y mantente informado. ¿Quién ha visto el plan? ¿Quién está dentro? ¿Quién está fuera? Con WannaGo, siempre estás al tanto. No solo hagas planes, dales vida con WannaGo. ¡WannaGo, donde tus planes se hacen realidad!",
-				"githubLink": "https://github.com/Fabs-and/wannago",
-				"Website": "https://www.wannago.in/",
 				"Rol": "Diseño, Desarrollo del Front-end y del Back-end",
 				"Responsabilidades": "Diseño UX/UI. Desarrollo de toda la web app.",
 				"Herramientas": [
@@ -39,6 +37,8 @@
 					"Mongoose",
 					"Firebase"
 				],
+				"githubLink": "https://github.com/Fabs-and/wannago",
+				"Website": "https://www.wannago.in/",
 				"Images": [
 					{ "src": "/photos/projects/wannago/wannago-landing.png", "alt": "Image 1 description" },
 					{
@@ -53,12 +53,12 @@
 			},
 			"huddler": {
 				"Name": "Huddler",
-				"Short Description": "Comparte tus intereses, descubre actividades y únete o organiza eventos.",
-				"Description": "Huddler es la web que une a personas por intereses comunes. Con Huddler, nunca más tendrás que hacer nada solo. Descubre, únete o inicia eventos, desde pescar hasta tocar el banjo. Huddler acoge todas las pasiones.Encuentra a los de tu onda y disfruta de experiencias compartidas. Encuentra tu tribu con Huddler.",
-				"githubLink": "https://github.com/Lucasoliveiralucas/huddler-front-end",
-				"Role": "Diseño y desarrollo front-end",
-				"Responsibilities": "Ayudar en el diseño. Idear el algoritmo de 'recomendados'. Implementar la autorización y los ajustes del usuario",
+				"descripciónCorta": "Comparte tus intereses, descubre actividades y únete o organiza eventos.",
+				"Descripción": "Huddler es la web que une a personas por intereses comunes. Con Huddler, nunca más tendrás que hacer nada solo. Descubre, únete o inicia eventos, desde pescar hasta tocar el banjo. Huddler acoge todas las pasiones.Encuentra a los de tu onda y disfruta de experiencias compartidas. Encuentra tu tribu con Huddler.",
+				"Rol": "Diseño y desarrollo front-end",
+				"Responsabilidades": "Ayudar en el diseño. Idear el algoritmo de 'recomendados'. Implementar la autorización y los ajustes del usuario",
 				"Herramientas": ["HTML", "CSS", "Typescript", "NEXT.js", "Tailwind", "Amazon Cognito"],
+				"githubLink": "https://github.com/Lucasoliveiralucas/huddler-front-end",
 				"Images": [
 					{ "src": "/photos/projects/wannago/wannago-landing.png", "alt": "Image 1 description" },
 					{
@@ -73,11 +73,10 @@
 			},
 			"road-trip": {
 				"Name": "Road Trip - Campgrounds",
-				"Short Description": "Descubre sitios dónde acampar, comparte experiencias y contribuye a la comunidad de viajantes por carretera",
-				"Description": "Inicia tu próxima aventura con Road Trips - Campgrounds, el lugar web para amantes de los viajes por carretera. Descubre campamentos, comparte experiencias, y añade nuevas ubicaciones. Ya seas un viajero experto o novato, Road Trips ' Campgrounds es tu guía al aire libre. Sal a la carretera con Road Trips - Campgrounds.",
-				"githubLink": "https://github.com/Fabs-and/road-trip-app",
-				"Role": "Desarrollo del front-end y del back-end",
-				"Responsibilities": "Refactorizar toda la aplicación de JavaScript a Typescript",
+				"descripciónCorta": "Descubre sitios dónde acampar, comparte experiencias y contribuye a la comunidad de viajantes por carretera",
+				"Descripción": "Inicia tu próxima aventura con Road Trips - Campgrounds, el lugar web para amantes de los viajes por carretera. Descubre campamentos, comparte experiencias, y añade nuevas ubicaciones. Ya seas un viajero experto o novato, Road Trips ' Campgrounds es tu guía al aire libre. Sal a la carretera con Road Trips - Campgrounds.",
+				"Rol": "Desarrollo del front-end y del back-end",
+				"Responsabilidades": "Refactorizar toda la aplicación de JavaScript a Typescript",
 				"Herramientas": [
 					"HTML",
 					"CSS",
@@ -88,6 +87,7 @@
 					"MongoDB",
 					"Mongoose"
 				],
+				"githubLink": "https://github.com/Fabs-and/road-trip-app",
 				"Images": [
 					{ "src": "/photos/projects/wannago/wannago-landing.png", "alt": "Image 1 description" },
 					{
@@ -102,13 +102,13 @@
 			},
 			"Portfolio": {
 				"Name": "Fabian's Portfolio",
-				"Short Description": "Planifica, invita y sigue tus eventos en tiempo real.",
-				"Description": "Fabian Lopez Gonzalez Portfolio",
+				"descripciónCorta": "Planifica, invita y sigue tus eventos en tiempo real.",
+				"Descripción": "Fabian Lopez Gonzalez Portfolio",
+				"Rol": "Diseño, desarrollo front-end y back-end",
+				"Responsabilidades": "Diseño UX/UI. Desarrollo de toda la web app.",
+				"Herramientas": ["HTML", "CSS", "Typescript", "Svelte", "Sveltekit"],
 				"githubLink": "https://github.com/Fabs-and/portfolio",
 				"Website": "https://portfolio-fabs-and.vercel.app/",
-				"Role": "Diseño, desarrollo front-end y back-end",
-				"Responsibilities": "Diseño UX/UI. Desarrollo de toda la web app.",
-				"Herramientas": ["HTML", "CSS", "Typescript", "Svelte", "Sveltekit"],
 				"Images": [
 					{ "src": "/photos/projects/wannago/wannago-landing.png", "alt": "Image 1 description" },
 					{

@@ -9,9 +9,10 @@
 	// import {} from 'svelte/animate'
 	let project: any;
 	let dialog;
-
+	
 	// Use reactive declaration instead of assignment
-	$: project = selectedProject ? projectCardLang[selectedProject] : null;
+	$: {project = selectedProject ? projectCardLang[selectedProject] : null
+	};
 </script>
 
 <svelte:window on:click={() => dialog.close()} />
@@ -44,13 +45,13 @@
 			<div class="info-container">
 				<div class="descriptions-container">
 					<h4>
-						{Object.keys(project).at(6)}
+						{Object.keys(project).at(3)}
 					</h4>
 					<p>
 						{project.Role || project.Rol}
 					</p>
 					<h4>
-						{Object.keys(project).at(5)}
+						{Object.keys(project).at(4)}
 					</h4>
 					<p class="responsibilities">
 						{project.Responsibilities || project.Responsabilidades}
@@ -58,7 +59,7 @@
 				</div>
 
 				<div class="skills">
-					<h4>{Object.keys(project).at(7)}</h4>
+					<h4>{Object.keys(project).at(5)}</h4>
 					<div class="line" />
 					<ul class="skills-container">
 						{#if project.Skills}
@@ -203,19 +204,24 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: space-evenly;
+		gap: 0.5rem;
 		border: 1px solid rgb(221, 221, 221);
-		box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+		box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 		border-radius: 1rem;
 		background-color: #fffefe;
-		padding-block: 0.5rem;
-		padding-inline: 1rem;
-		margin-left: 0.5rem;
+		padding: 1rem;
+		/* margin-left: 0.5rem; */
 	}
 
+	div.skills h4 {
+		margin: 0;
+	} 
 	div.line {
 		border-bottom: 1px solid rgb(221, 221, 221);
-		width: 80%;
-		margin-bottom: 7px;
+		width: 100%;
+		margin: 0;
+		/* margin-bottom: 7px; */
 	}
 
 	a.external-links {

@@ -11,7 +11,7 @@
 
 
 	$: projectCardLang = workLang.projectCard;
-	$: switchLang = workLang.projectCard;
+	$: switchLang = workLang.switch;
 
 	let selectedOption = 'projects';
 	let selectedProject = '';
