@@ -25,6 +25,7 @@
 					}
 				});
 			},
+			// Animation on scrolling in ::after underline
 			{
 				rootMargin: '0px',
 				threshold: 0.1

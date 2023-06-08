@@ -1,23 +1,63 @@
 <script>
-	//Default selectedOption
+	import { onMount } from 'svelte';
 	export let selectedOption;
-	//Cannot use bind:group (like in ProjectsLogos, because it changes the behavior of the default selectedOption)
-
 	export let switchLang;
+
 	function handleRadioChange(event) {
 		selectedOption = event.target.id;
 	}
+
+	onMount(() => {
+		const toggleContainer = document.getElementById('toggleContainer');
+		const projectLabel = document.querySelector('label[for="projects"]');
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting && !projectLabel.classList.contains('animate')) {
+						projectLabel.classList.add('animate');
+					} else if (!entry.isIntersecting && projectLabel.classList.contains('animate')) {
+						projectLabel.classList.remove('animate');
+					}
+				});
+			},
+			{ threshold: 0.1 }
+		);
+
+		observer.observe(toggleContainer);
+	});
 </script>
 
-<div class="toggle">
+<div class="toggle" id="toggleContainer">
 	<input type="radio" id="projects" name="toggle" checked on:change={handleRadioChange} />
-	<label for="projects"><span class="label-text">{switchLang.projects}</span></label>
+	<label for="projects" class:animate={selectedOption === 'projects'}>
+		<span class="label-text">{switchLang.projects}</span>
+	</label>
 	<input type="radio" id="skills" name="toggle" on:change={handleRadioChange} />
-	<label for="skills"><span class="label-text">{switchLang.skills}</span></label>
+	<label for="skills" class:animate={selectedOption === 'skills'}>
+		<span class="label-text">{switchLang.skills}</span>
+	</label>
 	<span class="slider" />
 </div>
 
 <style>
+	/* Hide the underline initially */
+	div.toggle label span.label-text::after {
+		transform: scaleX(0);
+	}
+
+	/* Apply the animation to the selected toggle label */
+	div.toggle label.animate span.label-text::after {
+		animation: animateUnderline 0.5s 1s;
+	}
+
+	@keyframes animateUnderline {
+		from {
+			transform: scaleX(0);
+		}
+		to {
+			transform: scaleX(1);
+		}
+	}
 	div.toggle {
 		position: relative;
 		display: flex;
@@ -72,17 +112,17 @@
 	#skills:checked ~ label[for='skills'] .label-text::after {
 		transform: scaleX(1);
 	}
-  
+
 	#projects:checked ~ label[for='projects'],
 	#skills:checked ~ label[for='skills'] {
-    color: black;
+		color: black;
 	}
-  .toggle input[type='radio']:not(:checked) + label {
-    color: #888;
-    background-color: #ddd;
-    z-index: 0;
-  }
-  
+	.toggle input[type='radio']:not(:checked) + label {
+		color: #888;
+		background-color: #ddd;
+		z-index: 0;
+	}
+
 	span.slider {
 		position: absolute;
 		background: white;
@@ -104,5 +144,4 @@
 		left: 50%;
 		border-left: 1px solid black;
 	}
-
 </style>
