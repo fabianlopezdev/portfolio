@@ -8,37 +8,42 @@
 </script>
 
 <nav class="footer desktop">
-	<div class="logo-and-copyright">
-		<!-- fontSize value is in rem -->
-		<Logo fontSize={2} />
+	<div class='wrapper'>
 
-		<small>©{currentYear} FabulousApps</small>
-	</div>
-	<small class="madewith-container">
-		{footerLang.madeWith}
-		<div class="icons">
-			<HeartIcon />
+		<div class="logo-and-copyright">
+			<!-- fontSize value is in rem -->
+			<Logo fontSize={2} />
+			
+			<small>©{currentYear} FabulousApps</small>
+		</div>
+		<!-- <small class="madewith-container">
+			{footerLang.madeWith}
+			<div class="icons">
+				<HeartIcon />
 		</div>
 		<a href="https://svelte.dev/" target="_blank" rel="noopener noreferrer">
 			{footerLang.language}
 		</a>
-	</small>
+	</small> -->
 	<SocialLinks gap={0.5}/>
+</div>
 </nav>
 
 <nav class="footer mobile">
-	<div class="logo-and-copyright">
-		<!-- fontSize value is in rem -->
-    <Logo fontSize={2} />
-		<small>
-      
-      ©{currentYear} FabulousApps</small>
+	<div class='wrapper'>
+
+		<div class="logo-and-copyright">
+			<!-- fontSize value is in rem -->
+			<Logo fontSize={2} />
+			<small>
+				
+				©{currentYear} FabulousApps</small>
 	</div>
 	<div class="social-and-svelte">
 		<div class="social">
 			<SocialLinks gap={0.5} />
 		</div>
-		<small class="madewith-mobile-container">
+		<!-- <small class="madewith-mobile-container">
 			{footerLang.madeWith}
 			<div class="icons">
 				<HeartIcon />
@@ -46,26 +51,35 @@
 			<a href="https://svelte.dev/" target="_blank" rel="noopener noreferrer">
 				{footerLang.language}
 			</a>
-		</small>
+		</small> -->
 	</div>
+</div>
 </nav>
 
 <style>
 	a:hover {
 		text-decoration: underline;
 	}
-
+	
 	.footer {
+		border-top: 0.5px solid var(--clr-shadow);
+		width: 100vw;
+		display: flex;
+		justify-content: center;
+	}
+	
+	.wrapper {
+		width: clamp(375px, 1000px, 1000px);
 		position: relative;
 		display: flex;
-		align-self: center;
+		justify-content: center;
 		align-items: center;
 		justify-content: space-between;
 		min-height: var(--size-header);
-		width: clamp(375px, 100vw, 866px);
 		padding: 0.5rem 1rem;
+		
 	}
-
+	
 	.logo-and-copyright {
 		display: flex;
 		flex-direction: column;

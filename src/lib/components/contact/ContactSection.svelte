@@ -40,7 +40,7 @@
 		align-items: center;
 		justify-content: center;
 		font-size: clamp(1.3rem, 1.4vw, 1.6rem);
-		gap: 3rem;
+		gap: 2rem;
 		flex-wrap: wrap;
 		margin-bottom: 2.1rem;
 	}
