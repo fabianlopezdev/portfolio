@@ -2,7 +2,8 @@
 	import LeftArrowIcon from 'svelte-icons/io/IoIosArrowBack.svelte';
 	import RightArrowIcon from 'svelte-icons/io/IoIosArrowForward.svelte';
 	import CloseIcon from 'svelte-icons/io/IoIosClose.svelte';
-
+    import {fade} from 'svelte/transition'
+    import {quartIn, quartOut} from 'svelte/easing'
 	// Carousel control variables
 	export let currentIndex = 0;
 	let prevIndex = 0;
@@ -48,7 +49,7 @@
 	};
 </script>
 
-<section class="carousel" on:touchstart={handleTouchStart} on:touchend={handleTouchEnd}>
+<section class="carousel" in:fade={{easing: quartOut}} out:fade={{easing: quartIn}} on:touchstart={handleTouchStart} on:touchend={handleTouchEnd}>
 	<button
 		class="close-modal-btn"
 		on:click={() => (isModalOpen = !isModalOpen)}
@@ -65,6 +66,7 @@
 			class="carousel__img {direction}"
 			class:active={currentIndex === i}
 			class:outgoing={prevIndex === i && currentIndex !== i}
+            loading='lazy'
 		/>
 	{/each}
     

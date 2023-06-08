@@ -16,10 +16,12 @@
 </script>
 
 <svelte:window on:click={() => dialog.close()} />
+
 	{#if project}
 	<!-- The each is used to make the transition work, since we give a key to project  -->
 	{#each [project] as project (project)}
 		<section class="card-container" in:fade={{ duration: 500, delay: 200}}>
+			{#if project.Images}
 			<button class="imgs-container" on:click|stopPropagation={() => dialog.showModal()}>
 				{#each project.Images as image, i}
 					<img src={image.src} alt={image.alt} class={String.fromCharCode(97 + i)} loading="lazy" />
@@ -34,7 +36,7 @@
 					<div class="header-icons"><CloseIcon /></div>
 				</button>
 			</dialog>
-
+			{/if}
 			<h4>
 				{Object.keys(project).at(2)}
 			</h4>

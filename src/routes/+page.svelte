@@ -2,8 +2,9 @@
 	import english from '../languages/en.json';
 	import spanish from '../languages/es.json';
 	import { WorkSection, ContactSection, Header, HomeSection, AboutSection, Footer } from '$components';
+	// import {writable} from 'svelte/store'
 	import type { Language } from '../types';
-
+	import {innerWidth} from '../store'
 	//Data is received from a load function in page.server.ts
 	export let data;
 
@@ -30,6 +31,8 @@
 	let isScrollDown = false;
 	// Define a constant for the scroll threshold
 const SCROLL_THRESHOLD = 7;  // Adjust this value as needed
+
+//  export let innerWidth = writable(0);
 	// Define a function to handle the scroll event
 function handleScroll(event: UIEvent) {
 	// Cast the event target to a document object
@@ -49,7 +52,7 @@ function handleScroll(event: UIEvent) {
 	$:isScrollDown;
 </script>
 
-<svelte:window on:scroll={handleScroll} />
+<svelte:window on:scroll={handleScroll} bind:innerWidth={$innerWidth}/>
 
 <header class="header" class:header-bottom-shadow={!isScrollDown && currentScroll !== 0} class:disappearing-header={isScrollDown}>
 	<!-- Passing lang, because header has the language toggle -->

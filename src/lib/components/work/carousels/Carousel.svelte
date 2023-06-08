@@ -41,6 +41,7 @@
 				class="carousel__img {direction}"
 				class:active={currentIndex === index}
 				class:outgoing={prevIndex === index && currentIndex !== index}
+				loading='lazy'
 			/>
 		</button>
 	{/each}

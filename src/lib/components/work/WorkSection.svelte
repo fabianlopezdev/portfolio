@@ -8,7 +8,8 @@
 	import { fly, fade } from 'svelte/transition';
 	// import { cubicOut, elastic } from 'svelte/easing';
 	const [send, receive] = crossfade({ duration: 300, easing: quadInOut });
-
+	//I am using innerWidth to dynamically rendery ProjectCardBid or ProjectCard (this one in ProjectLogos.svelte) instead of media queries, because media queries loads both and renders one, this way I only load and render one
+	import {innerWidth} from '../../../store'
 
 	$: projectCardLang = workLang.projectCard;
 	$: switchLang = workLang.switch;
@@ -16,16 +17,18 @@
 	let selectedOption = 'projects';
 	let selectedProject = '';
 
-	let innerWidth: number | undefined;
+	// let innerWidth: number | undefined;
 
 	$: {
-		if (innerWidth && innerWidth > 995) {
+		if ($innerWidth && $innerWidth > 995) {
 			selectedProject = 'wannago';
 		}
 	}
+
+	
 </script>
 
-<svelte:window bind:innerWidth />
+<!-- <svelte:window bind:innerWidth /> -->
 
 <section id="work">
 	<div class="switch">
@@ -37,21 +40,23 @@
 			<div
 				class="projects-container"
 				class:active={selectedOption === 'projects'}
-				in:fly={{ y: 0, x: innerWidth + 500, duration: 800 }}
+				in:fly={{ y: 0, x: $innerWidth + 500, duration: 800 }}
 			>
 				<div  class="project-logos">
 					<ProjectsLogos bind:selectedProject {projectCardLang} {innerWidth} />
 				</div>
+				{#if $innerWidth > 995}
 				<div class="project-card">
 					<ProjectCardBig {selectedProject} {projectCardLang} />
 				</div>
+				{/if}
 			</div>
 		{/if}
 
 		{#if selectedOption === 'skills'}
 			<div
 				class="skills"
-				in:fly={{ y: 0, x: -innerWidth - 500, duration: 800}}
+				in:fly={{ y: 0, x: -$innerWidth - 500, duration: 800}}
 				
 			>
 				<Skills />
@@ -98,9 +103,9 @@
 		justify-content: center;
 	}
 
-	@media (max-width: 995px) {
+	/* @media (max-width: 995px) {
 		.project-card {
 			display: none;
 		}
-	}
+	} */
 </style>

@@ -5,7 +5,7 @@
 	export let selectedProject: string;
 	export let projectCardLang: Language['work']['projectCard'];
 	//Export innerWidth to not to scroll to the viewport in bigger screens
-	export let innerWidth;
+	import {innerWidth} from '../../../store'
 
 	import scrollTo from '../../../utils/functions';
 </script>
@@ -17,13 +17,15 @@
 		name="logos"
 		value="wannago"
 		bind:group={selectedProject}
-		on:change={innerWidth < 996 && scrollTo}
+		on:change={$innerWidth < 996 && scrollTo}
 	/>
 	<label class="wannago project-label" for="wannago">WannaGo<span class="arrow">&gt;</span></label>
 
 	{#if selectedProject === 'wannago'}
 		<div class="project-card">
-			<ProjectCard {selectedProject} {projectCardLang} isFromProjectsLogos={true} />
+			{#if $innerWidth < 995}
+			<ProjectCard {selectedProject} {projectCardLang} />
+			{/if}
 		</div>
 	{/if}
 
@@ -33,57 +35,59 @@
 		name="logos"
 		value="huddler"
 		bind:group={selectedProject}
-		on:change={innerWidth < 996 && scrollTo}
-	/>
-	<label class="huddler project-label" for="huddler">Huddler<span class="arrow">&gt;</span></label>
-
-	{#if selectedProject === 'huddler'}
+		on:change={$innerWidth < 996 && scrollTo}
+		/>
+		<label class="huddler project-label" for="huddler">Huddler<span class="arrow">&gt;</span></label>
+		
+		{#if selectedProject === 'huddler'}
 		<div class="project-card">
+			{#if $innerWidth < 995}
 			<ProjectCard {selectedProject} {projectCardLang} />
+			{/if}
 		</div>
-	{/if}
-
-	<input
+		{/if}
+		
+		<input
 		type="radio"
 		id="road-trip"
 		name="logos"
 		value="road-trip"
 		bind:group={selectedProject}
-		on:change={innerWidth < 996 && scrollTo}
-	/>
-	<label class="road-trip project-label" for="road-trip"
+		on:change={$innerWidth < 996 && scrollTo}
+		/>
+		<label class="road-trip project-label" for="road-trip"
 		>Road trip<span class="arrow">&gt;</span></label
-	>
-
-	{#if selectedProject === 'road-trip'}
+		>
+		
+		{#if selectedProject === 'road-trip'}
 		<div class="project-card">
+			{#if $innerWidth < 995}
 			<ProjectCard {selectedProject} {projectCardLang} />
+			{/if}
 		</div>
-	{/if}
+		{/if}
 </div>
-<svelte:head>
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link
-		href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@200&family=Montserrat+Alternates:ital,wght@1,700;1,800&display=swap"
-		rel="stylesheet"
-	/>
-</svelte:head>
 
 <style>
 	@font-face {
 		font-family: 'Overmuch Regular';
-		src: url('/overmch.ttf') format('truetype');
+		 font-style: normal;
+ 		 font-weight: 700;
+		src: url('/fonts/overmch.woff2') format('truetype');
 	}
 
-	/* @font-face { 
+	@font-face { 
 		font-family: 'Montserrat Alternates';
-		src: url('/MontserratAlternates-SemiBoldItalic.ttf') format('truetype');
-	} */
+		font-style: normal;
+  	font-weight: 700;
+		src: url('/fonts/MontserratAlternates-SemiBoldItalic.woff2') format('truetype');
+	}
 
 	@font-face {
 		font-family: 'Cabin Regular';
-		src: url('/Cabin-Regular.ttf') format('truetype');
+		font-style: normal;
+  	font-weight: 700;
+		src: url('/fonts/Cabin-Regular.woff2') format('truetype');
 	}
 
 	.project-card{
@@ -182,11 +186,5 @@
 		display: none;
 	}
 
-	@media (min-width: 996px) {
-		.project-card {
-			display: none;
-		}
-		
 	
-	}
 </style>

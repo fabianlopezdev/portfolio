@@ -22,7 +22,11 @@
 
 {#if project}
 	<section class="card-container" in:fade={{duration: 1000,delay: 200}}>
-		<Carousel slides={project.Images} />
+		<div class='carousel'>
+		{#if project.Images}
+			<Carousel slides={project.Images} />
+			{/if}
+		</div>
 		<div class="card-info">
 
 			<article>
@@ -83,7 +87,7 @@
 						<div class="icons"><GoToArrow /></div>
 					</a>
 				{/if}
-				<dialog bind:this={dialog}>
+				<dialog bind:this={dialog} >
 					<p>{projectArr[2][1]}</p>
 					<button class="close-modal-btn" on:click={() => dialog.close()}>
 						<div class="header-icons"><CloseIcon /></div>
