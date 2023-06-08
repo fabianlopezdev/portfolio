@@ -3,7 +3,6 @@
 	import { Button } from '$components';
 	import scrollTo from '../../../utils/functions';
 	import type { Language } from '../../../types';
-
 	// Setting the language variable
 	export let homeLang: Language['home'];
 

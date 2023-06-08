@@ -1,11 +1,44 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { SelfImage } from '$components';
 	export let aboutLang: Language['about'];
 	export let title;
+
+	let aboutSection: HTMLElement;
+	let animatedDot: HTMLElement;
+	//Animation on scroll in the dot
+	onMount(() => {
+		let firstObservation = true;
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (firstObservation) {
+						firstObservation = false;
+						return;
+					}
+
+					if (entry.isIntersecting) {
+						animatedDot.classList.add('animate');
+						// Stop observing the element once it has intersected
+						observer.unobserve(aboutSection);
+					}
+				});
+			},
+			{
+				rootMargin: '0px',
+				threshold: 0.1
+			}
+		);
+
+		observer.observe(aboutSection);
+	});
 </script>
 
-<section id="about-section">
-	<h1 class="about-section__title">{title}<span style="color: blue;">.</span></h1>
+<section id="about-section" bind:this={aboutSection}>
+	<h1 class="about-section__title">
+		{title}<span id="animatedDot" bind:this={animatedDot} style="color: blue;">.</span>
+	</h1>
 
 	<article class="about-section__container">
 		<div class="about-section__text">
@@ -21,6 +54,14 @@
 </section>
 
 <style>
+	#animatedDot {
+		opacity: 0;
+		transition: opacity 1s 0.5s; /* duration and delay */
+	}
+
+	:global(#animatedDot.animate) {
+		opacity: 1;
+	}
 	#about-section {
 		text-align: center;
 		max-width: 1000px;
@@ -62,6 +103,5 @@
 			margin-bottom: 0;
 			/* width: 15rem; */
 		}
-		
 	}
 </style>
