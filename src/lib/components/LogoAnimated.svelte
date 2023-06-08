@@ -36,7 +36,7 @@
 		height: 3.1rem;
 		margin-top: 0.8rem;
 		margin-left: 0.3rem;
-		letter-spacing: -2px;
+		letter-spacing: -1px;
 	}
 
 	.text-line text {
@@ -53,7 +53,7 @@
 
 	@keyframes filling {
 		0%,
-		90% {
+		100% {
 			fill: black;
 			fill-opacity: 0;
 		}

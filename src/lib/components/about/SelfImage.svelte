@@ -10,7 +10,7 @@
 	<div class="person">
 		<div class="person-container" class:active={imgTouched}>
 			<img class="person-circle" src="./blue-dots.avif" alt=""/>
-			<img class="person-img" src="./fabian-photo.png" alt="Fabian being welcoming" />
+			<img class="person-img" src="./fabian-photo.avif" alt="Fabian being welcoming" />
 		</div>
 	</div>
 </button>
