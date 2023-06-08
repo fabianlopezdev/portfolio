@@ -90,6 +90,10 @@
 		right: 0;
 		bottom: 0;
 	}
+
+	.header-icons{
+		color: #F8FDFD 
+	}
 	@media (max-width: 658px) {
 		button {
 			display: flex;

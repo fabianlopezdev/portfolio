@@ -34,7 +34,7 @@
 		justify-content: space-between;
 		height: var(--height-header);
 		width: clamp(375px, 100vw, 1300px);
-		margin: 0.4rem 0.5rem 0.3rem 0.8rem;
+		margin: 0.4rem 0.7rem 0.3rem 0.8rem;
 	}
 
 	.icons-container {
@@ -67,15 +67,22 @@
 		.nav-links-container {
 			display: none;
 		}
-
+		
 		.icons-container:hover {
 			background-color: transparent;
 			color: inherit;
 		}
-
+		
 		.modal {
 			display: flex;
 			z-index: 3;
+		}
+	}
+	
+	@media only screen and (orientation: landscape) {
+		.header-container {
+		margin: 0.4rem 1rem 0.3rem 0.8rem;
+			
 		}
 	}
 </style>

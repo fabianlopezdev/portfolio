@@ -25,7 +25,6 @@
 <style>
 	button {
 	appearance: none;
-	
 		border: none;
 		border-radius: none;
 		color: gray;
