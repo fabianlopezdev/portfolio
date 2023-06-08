@@ -30,7 +30,7 @@
 	<form method="POST" action="/?/sendEmail" use:enhance={onSubmit}>
 		<p>{formLang.p}</p>
 		<label>
-			<input name="name" bind:value={name} type="text" placeholder={formLang.name} required />
+			<input name="name" bind:value={name} type="text" placeholder={formLang.Name} required />
 		</label>
 		<label>
 			<input name="email" type="email" placeholder={formLang.email} />
@@ -87,7 +87,7 @@
 		border: 0.3rem solid var(--clr-secondary);
 		border-radius: 1rem;
 		padding: 1rem;
-		width: 20rem;
+		width: 21.5rem;
 
 		/* max-width: 866px; */
 

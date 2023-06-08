@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Logo, LanguageToggle, LightDarkModeToggle, ModalMenu, NavLinks } from '$components';
+	import { LogoAnimated, LanguageToggle, LightDarkModeToggle, ModalMenu, NavLinks } from '$components';
 	import type { Language } from '../../../types';
 
 	export let lang: string | undefined;
@@ -8,7 +8,7 @@
 
 <nav class="header-container">
 	<!-- fontSize value is in rem -->
-	<Logo fontSize={3} />
+	<LogoAnimated/>
 	<ul class="icons-container">
 		<li>
 			<LightDarkModeToggle />

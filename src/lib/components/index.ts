@@ -36,4 +36,5 @@ export { default as SocialLinks } from './SocialLinks.svelte';
 export { default as Button } from './Button.svelte';
 export { default as LoadingSpinner } from './LoadingSpinner.svelte';
 export { default as Logo } from './Logo.svelte';
+export { default as LogoAnimated } from './LogoAnimated.svelte';
 export { default as NavLinks } from './NavLinks.svelte';

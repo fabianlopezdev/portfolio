@@ -18,7 +18,7 @@
 <style>
 	:root {
 		--clr-bg: #f9fcfd;
-		--clr-bg-items: #ffffef;
+		--clr-bg-items: white;
 		--clr-accent:#1863E5;
 		--clr-secondary: #016aa1;
 		--clr-font: #4A5469;
@@ -72,7 +72,7 @@
 		max-width: 100%;
 		display: block;
 	}
-	:global(h2) {
+	:global(h1) {
 		font-size: 2rem;
 	}
 	:global(.button) {

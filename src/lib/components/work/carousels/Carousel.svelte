@@ -20,8 +20,7 @@
 		prevIndex = currentIndex;
 		currentIndex = currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
 	}
- console.log('imageees', slides);
- 
+
 	let isModalOpen = false;
 
 	//To not to let scrolling on the app while modal open
@@ -42,6 +41,7 @@
 				class:active={currentIndex === index}
 				class:outgoing={prevIndex === index && currentIndex !== index}
 				loading='lazy'
+                aria-hidden={currentIndex !== index}
 			/>
 		</button>
 	{/each}
@@ -72,6 +72,7 @@
 		{/each}
 	</div>
 </section>
+
 
 <style>
 	section.carousel {

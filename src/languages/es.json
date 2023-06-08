@@ -142,7 +142,7 @@
 			"Name": "Nombre",
 			"email": "Tu correo electrónico",
 			"subject": "Asunto",
-			"message": "En que puedo ayudarte?",
+			"message": "En qué puedo ayudarte?",
 			"button": "Enviar",
 			"success": ", gracias por el mensaje.",
 			"error": ", ha habido un error enviando el mensaje. Por favor, prueba otra vez."

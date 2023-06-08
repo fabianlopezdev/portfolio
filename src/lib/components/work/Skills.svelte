@@ -20,7 +20,6 @@
 		grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
 		list-style-type: none;
 		padding: 1rem;
-		/* padding-bottom: 0; */
     row-gap: 2rem;
 		margin: auto;
 		width: 90svw;
@@ -37,8 +36,6 @@
 		margin-bottom: 0.5rem;
 		margin-top: 0;
 	}
-
-	
 
 	@media (min-width: 463px) {
 		.skills {

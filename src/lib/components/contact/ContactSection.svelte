@@ -1,58 +1,47 @@
-<script lang='ts'>
+<script lang="ts">
 	import CardGrid from './contactCards/CardGrid.svelte';
 	import ContactForm from './ContactForm.svelte';
 	import type { Language } from '../../../types';
 
 	export let contactLang: Language['contact'];
-	export let title;
-
+	export let title: string;
 </script>
 
 <section id="contact">
-	<h2>{title}</h2>
-	<h1>{contactLang.h1}<span>.</span></h1>
-	<div class='contact-container'>
-
-		<CardGrid cardGrid={contactLang.cardGrid}/>
+	<h1>{title}<span style="color: blue;">.</span></h1>
+	<h2>{contactLang.h1}.</h2>
+	<div class="contact-container">
+		<CardGrid cardGrid={contactLang.cardGrid} />
 		<ContactForm formLang={contactLang.contactForm} />
 	</div>
 </section>
 
 <style>
-	section {
-		/* background-color: #c0e6ef;
-		align-items: center;
-		justify-content: center;
-		gap: 3rem;
-		padding-bottom: 2rem; */
-		/* overflow: hidden; */
-		/* height:min-content; */
-		/* max-height: 100%; */
-		/* margin-top: 3.7rem;
-		margin-bottom: 3.7rem; */
-
-
-}
+	section#contact {
+		max-width: 1000px;
+	}
+	section h1 {
+		margin-bottom: 0;
+	}
 	
-
-	h1 {
-		font-size: clamp(1.5rem, 3vw, 2rem);
+	section h2 {
+		font-size: clamp(2rem, 4vw, 2.5rem);
 		color: var(--clr-secondary);
-		margin: 0;
+		font-weight: 400;
+		line-height: 2rem;
 	}
-	span {
-		color: black;
-		font-size: 3rem;
+
+	section h1, section h2 {
+		text-align: center;
 	}
-	.contact-container {
+
+	div.contact-container {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		font-size: clamp(1.3rem, 1.4vw, 1.6rem);
 		gap: 3rem;
 		flex-wrap: wrap;
-		/* padding: 0 0rem; */
-		/* max-height: fit-content; */
+		margin-bottom: 2.1rem;
 	}
-
-	
 </style>

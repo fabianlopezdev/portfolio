@@ -3,39 +3,46 @@
 	import GitHubIcon from 'svelte-icons/fa/FaGithub.svelte';
 	import GoToArrow from 'svelte-icons/go/GoLinkExternal.svelte';
 	import CloseIcon from 'svelte-icons/io/IoIosClose.svelte';
+	import { fade } from 'svelte/transition';
+
 	export let projectCardLang: Language['work']['projectCard'];
 	export let selectedProject: keyof Language['work']['projectCard'];
-	import { fade } from 'svelte/transition';
-	// import {} from 'svelte/animate'
-	let project: any;
-	let dialog;
-	
+
+	let project: Language['work']['projectCard'] | null;
+	let dialog: HTMLDialogElement;
+
 	// Use reactive declaration instead of assignment
-	$: {project = selectedProject ? projectCardLang[selectedProject] : null
-	};
+	$: {
+		project = selectedProject ? projectCardLang[selectedProject] : null;
+	}
 </script>
 
 <svelte:window on:click={() => dialog.close()} />
 
-	{#if project}
-	<!-- The each is used to make the transition work, since we give a key to project  -->
+{#if project}
+	<!-- The each is used to make the transition work, since we give a key to project, this gets rerendered instead of only the children  -->
 	{#each [project] as project (project)}
-		<section class="card-container" in:fade={{ duration: 500, delay: 200}}>
+		<section class="card-container" in:fade={{ duration: 500, delay: 200 }}>
 			{#if project.Images}
-			<button class="imgs-container" on:click|stopPropagation={() => dialog.showModal()}>
-				{#each project.Images as image, i}
-					<img src={image.src} alt={image.alt} class={String.fromCharCode(97 + i)} loading="lazy" />
-				{/each}
-			</button>
-
-			<dialog bind:this={dialog}>
-				{#each project.Images as image, i}
-					<img src={image.src} alt={image.alt} class="carousel" />
-				{/each}
-				<button class="close-modal-btn" on:click={() => dialog.close()}>
-					<div class="header-icons"><CloseIcon /></div>
+				<button class="imgs-container" on:click|stopPropagation={() => dialog.showModal()}>
+					{#each project.Images as image, i}
+						<img
+							src={image.src}
+							alt={image.alt}
+							class={String.fromCharCode(97 + i)}
+							loading="lazy"
+						/>
+					{/each}
 				</button>
-			</dialog>
+
+				<dialog bind:this={dialog}>
+					{#each project.Images as image, i}
+						<img src={image.src} alt={image.alt} class="carousel" />
+					{/each}
+					<button class="close-modal-btn" on:click={() => dialog.close()}>
+						<div class="header-icons"><CloseIcon /></div>
+					</button>
+				</dialog>
 			{/if}
 			<h4>
 				{Object.keys(project).at(2)}
@@ -213,17 +220,15 @@
 		border-radius: 1rem;
 		background-color: #fffefe;
 		padding: 1rem;
-		/* margin-left: 0.5rem; */
 	}
 
 	div.skills h4 {
 		margin: 0;
-	} 
+	}
 	div.line {
 		border-bottom: 1px solid rgb(221, 221, 221);
 		width: 100%;
 		margin: 0;
-		/* margin-bottom: 7px; */
 	}
 
 	a.external-links {

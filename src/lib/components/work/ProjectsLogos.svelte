@@ -1,65 +1,65 @@
 <script lang="ts">
-    import { ProjectCard } from '$components';
-    import type { Language } from '../../../types';
-    import { innerWidth } from '../../../store';
-    import scrollTo from '../../../utils/functions';
+	import { ProjectCard } from '$components';
+	import type { Language } from '../../../types';
+	import { innerWidth } from '../../../store';
+	import scrollTo from '../../../utils/functions';
 
-    export let selectedProject: string;
-    export let projectCardLang: Language['work']['projectCard'];
+	export let selectedProject: string;
+	export let projectCardLang: Language['work']['projectCard'];
 
-    let projects = [
-        { id: 'wannago', label: 'WannaGo', class: 'wannago' },
-        { id: 'road-trip', label: 'Road trip', class: 'road-trip' },
-        { id: 'huddler', label: 'Huddler', class: 'huddler' },
-    ];
+	let projects = [
+		{ id: 'wannago', label: 'WannaGo', class: 'wannago' },
+		{ id: 'road-trip', label: 'Road trip', class: 'road-trip' },
+		{ id: 'huddler', label: 'Huddler', class: 'huddler' }
+	];
 </script>
 
 <div class="logos-container">
-    {#each projects as project (project.id)}
-        <input
-            type="radio"
-            id={project.id}
-            name="logos"
-            value={project.id}
-            bind:group={selectedProject}
-            on:change={$innerWidth < 996 && scrollTo}
-        />
-        <label class={`${project.class} project-label`} for={project.id}>
-            {project.label}<span class="arrow">&gt;</span>
-        </label>
-				{#if $innerWidth < 995}
-        {#if selectedProject === project.id}
+	{#each projects as project (project.id)}
+		<input
+			type="radio"
+			id={project.id}
+			name="logos"
+			value={project.id}
+			bind:group={selectedProject}
+			on:change={$innerWidth < 996 && scrollTo}
+		/>
+		<label class={`${project.class} project-label`} for={project.id}>
+			{project.label}<span class="arrow">&gt;</span>
+		</label>
+		{#if $innerWidth < 995}
+			{#if selectedProject === project.id}
 				<div class="project-card">
 					<ProjectCard {selectedProject} {projectCardLang} isFromProjectsLogos={true} />
 				</div>
-        {/if}
-				{/if}
-    {/each}
+			{/if}
+		{/if}
+	{/each}
 </div>
 
 <style>
 	@font-face {
 		font-family: 'Overmuch Regular';
-		 font-style: normal;
- 		 font-weight: 700;
+		font-style: normal;
+		font-weight: 700;
 		src: url('/fonts/overmch.woff2') format('truetype');
 	}
 
-	@font-face { 
+	@font-face {
 		font-family: 'Montserrat Alternates';
 		font-style: normal;
-  	font-weight: 700;
+		font-weight: 700;
 		src: url('/fonts/MontserratAlternates-SemiBoldItalic.woff2') format('truetype');
 	}
 
 	@font-face {
 		font-family: 'Cabin Regular';
 		font-style: normal;
-  	font-weight: 700;
+		font-weight: 700;
 		src: url('/fonts/Cabin-Regular.woff2') format('truetype');
 	}
 
-	.project-card{
+	.project-card {
 		margin: 0.5rem;
 	}
 	/* Styles for .logos */
@@ -68,9 +68,6 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		/* margin- */
-		/* gap: 0.5rem; */
-		/* margin-inline: 0.5rem; */
 	}
 
 	/* Common styles for labels */
@@ -90,7 +87,6 @@
 		font-family: 'Montserrat Alternates', sans-serif;
 		font-size: 4rem;
 		letter-spacing: -5px;
-		/* margin-block:auto; */
 	}
 
 	label.huddler {
@@ -154,6 +150,4 @@
 	div.logos-container input:checked + label span.arrow {
 		display: none;
 	}
-
-	
 </style>

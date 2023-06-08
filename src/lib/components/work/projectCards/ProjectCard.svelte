@@ -75,7 +75,7 @@
 					GitHub
 					<div class="icons"><GitHubIcon /></div>
 				</a>
-				{#if project.Website}
+				{#if project?.Website}
 					<a
 						class="external-links"
 						href={project?.Website}
@@ -106,6 +106,7 @@
 		font-size: 1rem;
 		line-height: 1.4;
 		margin-inline: 0.5rem;
+		height: auto;
 	}
 
 	div.card-info {
@@ -176,7 +177,6 @@
 	@media (max-width: 995px) {
 		.card-container {
 			max-width: 430px; /*iphone X width*/
-			max-height: 588px; /*iphone X height*/
 		}
 	}
 </style>

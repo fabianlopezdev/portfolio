@@ -5,7 +5,7 @@
 </script>
 
 <section id="about-section">
-	<h2 class="about-section__title">{title}<span style="color: blue;">.</span></h2>
+	<h1 class="about-section__title">{title}<span style="color: blue;">.</span></h1>
 
 	<article class="about-section__container">
 		<div class="about-section__text">
