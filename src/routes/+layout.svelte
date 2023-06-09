@@ -2,7 +2,7 @@
 	let title = 'Fabulous Apps';
 	let description = 'Fabian Lopez Portfolio';
 	let image = `https://portfolio-fabs-and.vercel.app/meta-image.png`;
-	let url = 'https://portfolio-fabs-and.vercel.app/';
+	let url = 'https://fabapps.dev/';
 </script>
 
 <slot />
