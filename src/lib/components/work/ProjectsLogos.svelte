@@ -8,6 +8,7 @@
 	export let projectCardLang: Language['work']['projectCard'];
 
 	let projects = [
+		{ id: 'portfolio', label: 'fab.', class: 'portfolio' },
 		{ id: 'wannago', label: 'WannaGo', class: 'wannago' },
 		{ id: 'road-trip', label: 'Road trip', class: 'road-trip' },
 		{ id: 'huddler', label: 'Huddler', class: 'huddler' }
@@ -80,7 +81,7 @@
 		cursor: pointer;
 		white-space: nowrap;
 		transition: color 0.5s ease-in-out 0.1s;
-		color: var(--clr-font-logo)
+		color: var(--clr-font-logo);
 	}
 
 	/* Specific styles for each label type */
@@ -102,6 +103,14 @@
 		letter-spacing: -4px;
 	}
 
+	label.portfolio {
+		font-family: 'League Spartan', sans-serif;
+		font-size: 5.3rem;
+		letter-spacing: -5px;
+		font-weight: 700;
+		padding-inline: 6rem;
+	}
+
 	div.logos-container input {
 		display: none;
 	}
@@ -109,13 +118,15 @@
 		color: white;
 		margin-inline: 1rem;
 		text-shadow: none;
-		-webkit-text-stroke: 3px #01446c;
+		/* -webkit-text-stroke: 3px #01446c; */
 	}
 
 	/*::before pseudoclass styles  */
 	div.logos-container label::before {
 		content: '';
 		position: absolute;
+		margin:auto;
+		text-align: center;
 		width: 0%;
 		height: 75%;
 		top: 10px;
@@ -125,14 +136,31 @@
 		background-color: var(--clr-accent);
 		transition: width 0.3s ease-in-out 0.1s;
 	}
-
+	
+	div.logos-container label.portfolio::before {
+	/* Only change the initial left value for the portfolio label */
+		
+		/* width: 108%; */
+	}
+	
 	div.logos-container input:checked + label::before {
 		width: 108%;
+		/* transition: width 0.3s ease-in-out 0.1s, left 0.3s ease-in-out 0.1s, top 0.3s ease-in-out 0.1s; */
+		/* transition: width 0.3s ease-in-out 0.1s, left 0.3s ease-in-out 0.1s, top 0.3s ease-in-out 0.1s; */
 	}
 
 	/* Custom styles for each type when checked */
 	div.logos-container input:checked + label.road-trip::before {
 		top: 13px;
+	}
+
+	div.logos-container input:checked + label.portfolio::before {
+		/* left: -105px;
+		width: 280%;
+		height: 80%;
+		top: -1px; */
+		/* transition: none; */
+		transition: width 0.3s ease-in-out 0.1s;
 	}
 	/* Common styles for span */
 	span.arrow {

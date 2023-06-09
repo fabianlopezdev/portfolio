@@ -95,22 +95,45 @@
 			},
 			"Portfolio": {
 				"Name": "Fabian's Portfolio",
-				"descripciónCorta": "Planifica, invita y sigue tus eventos en tiempo real.",
-				"Descripción": "Fabian Lopez Gonzalez Portfolio",
-				"Rol": "Diseño, desarrollo front-end y back-end",
-				"Responsabilidades": "Diseño UX/UI. Desarrollo de toda la web app.",
-				"Herramientas": ["HTML", "CSS", "Typescript", "Svelte", "Sveltekit"],
+				"descripciónCorta": "Fabian Lopez Gonzalez Portfolio.",
+				"Descripción": "Mi portfolio. Aquí podrás conocer un poco de mi, podrás encontrar algunos de mis trabajos recientes, y podrás contactarme.",
+				"Rol": "Diseño y desarrollo front-end",
+				"Responsabilidades": "Diseño UX/UI para sobremesa y dispositivos móviles. Habilitar dos idiomas. Habilitar modo oscuro.",
+				"Herramientas": ["HTML", "CSS", "Typescript", "Svelte", "Sveltekit", "Vercel"],
 				"githubLink": "https://github.com/Fabs-and/portfolio",
 				"Website": "https://portfolio-fabs-and.vercel.app/",
 				"Images": [
-					{ "src": "/photos/projects/wannago/wannago-landing.png", "alt": "Image 1 description" },
 					{
-						"src": "/photos/projects/wannago/wannago-invitation.png",
-						"alt": "Image 2 description"
+						"src": "/photos/projects/portfolio/portfolio-landing.avif",
+						"alt": "Portfolio landing page"
 					},
 					{
-						"src": "/photos/projects/wannago/wannago-general-stats.png",
-						"alt": "Image 3 description"
+						"src": "/photos/projects/portfolio/portfolio-landing-dark.avif",
+						"alt": "Portfolio landing page dark"
+					},
+					{
+						"src": "/photos/projects/portfolio/portfolio-project.avif",
+						"alt": "Portfolio project detail"
+					},
+					{
+						"src": "/photos/projects/portfolio/portfolio-project-dark.avif",
+						"alt": "Portfolio project detail dark"
+					},
+					{
+						"src": "/photos/projects/portfolio/portfolio-toolkit.avif",
+						"alt": "Portfolio skills showcase"
+					},
+					{
+						"src": "/photos/projects/portfolio/portfolio-toolkit-dark.avif",
+						"alt": "Portfolio skills showcase"
+					},
+					{
+						"src": "/photos/projects/portfolio/portfolio-form.avif",
+						"alt": "Portfolio contact form"
+					},
+					{
+						"src": "/photos/projects/portfolio/portfolio-form-dark.avif",
+						"alt": "Portfolio contact form dark"
 					}
 				]
 			}

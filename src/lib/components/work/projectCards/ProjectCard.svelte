@@ -32,10 +32,14 @@
 			<article>
 				<h4 class="first-h4">{projectArr[2][0]}</h4>
 				<p class="items-descriptions">
+					{#if selectedProject === 'portfolio'}
+					{projectArr[2][1]}
+					{:else}
 					{projectArr[1][1]}
 					<button class="open-modal-btn" on:click={() => dialog.showModal()}>
 						{projectCardLang.btnReadMore}
 					</button>
+					{/if}
 				</p>
 			</article>
 

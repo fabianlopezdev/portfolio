@@ -25,7 +25,7 @@
 		<section class="card-container" in:fade={{ duration: 500, delay: 200 }}>
 			{#if project.Images}
 				<button class="imgs-container" on:click|stopPropagation={() => dialog.showModal()}>
-					{#each project.Images as image, i}
+					{#each project.Images.slice(0, 3) as image, i}
 						<img
 							src={image.src}
 							alt={image.alt}

@@ -18,7 +18,7 @@
 
 	$: {
 		if ($innerWidth && $innerWidth > 995) {
-			selectedProject = 'wannago';
+			selectedProject = 'portfolio';
 		}
 	}
 </script>
