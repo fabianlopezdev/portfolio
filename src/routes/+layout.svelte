@@ -33,7 +33,7 @@
 		--height-header: 3rem;
 	}
 
-	:global(.dark-mode) {
+	:global(.dark) {
 		--clr-bg: #000020;
 		--clr-bg-items: #d0dff0;
 		--clr-font: #d0dff0;

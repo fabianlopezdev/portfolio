@@ -5,7 +5,7 @@ export const actions = {
 		const formData = await request.formData();
 		const lang = formData.get('lang');
 		console.log('laaaand', lang);
-		
+
 		cookies.set('lang', lang as string);
 		return {
 			success: true
@@ -37,14 +37,13 @@ export const load = ({ cookies, request }) => {
 
 	const defaultLang = accepted.includes('es') ? 'es' : 'en';
 
-	
-	const currentCookie = cookies.get('lang');
+	let currentCookie = cookies.get('lang');
 	if (!currentCookie) {
 		cookies.set('lang', defaultLang);
+		currentCookie = defaultLang;
 	}
-	
+
 	return {
 		lang: currentCookie
 	};
-	//
 };
