@@ -1,14 +1,23 @@
 <script lang="ts">
+	import {animateOnScroll} from '../../../actions/intersectionObserver'
 	let imgTouched = false;
-	
+	let isScrollTransition = false;
 	function handleTouch() {
 		imgTouched = !imgTouched;
 	}
+
+	function handleAnimationEnd(event) {
+		if (isScrollTransition) return;
+		isScrollTransition = true;
+		console.log('the eveeeeeent', event)
+		event.currentTarget.classList.remove('animate');
+	}
+
 </script>
 
 <button on:touchstart={handleTouch}>
 	<div class="person">
-		<div class="person-container" class:active={imgTouched}>
+		<div use:animateOnScroll on:transitionend={handleAnimationEnd} class="person-container" class:active={imgTouched}>
 			<img class="person-circle" src="./blue-dots.avif" alt=""/>
 			<img class="person-img" src="./fabian-photo.avif" alt="Fabian being welcoming" />
 		</div>
@@ -28,7 +37,7 @@
     margin-inline: 1rem;
 	}
 	.person {
-		--transform-speed: 250ms;
+		--transform-speed: 500ms;
 		position: relative;
 		max-width: 20rem;
 		margin-inline: auto;
@@ -39,7 +48,7 @@
 		align-items: end;
 		border-radius: 0 0 100vw 100vw;
 		overflow: hidden;
-		transition: transform var(--transform-speed) ease;
+		transition: transform var(--transform-speed) ease 0.1s;
 	}
 	.person-circle {
 		position: absolute;
@@ -54,7 +63,7 @@
 		position: relative;
 		z-index: 2;
 		transform: scale(1);
-		transition: transform calc(var(--transform-speed) * 1.2) ease;
+		transition: transform calc(var(--transform-speed) * 1.2) ease 0.1s;
 	}
 	.active {
 		transform: scale(1.1);
@@ -62,6 +71,8 @@
 	.active .person-img {
 		transform: scale(1) translateY(-1.28rem);
 	}
+
+	
 	@media (hover: hover) {
 		.person-container:hover {
 			transform: scale(1.1);
@@ -70,6 +81,14 @@
 			transform: scale(1) translateY(-1.28rem);
 		}
 	}
+
+	:global(.person-container.animate) {
+	transform: scale(1.1);
+}
+
+:global(.person-container.animate .person-img) {
+	transform: scale(1) translateY(-1.28rem);
+}
 
 
 	@media (max-width: 430px) {
