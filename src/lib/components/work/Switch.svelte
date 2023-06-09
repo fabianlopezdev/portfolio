@@ -1,63 +1,24 @@
 <script>
-	import { onMount } from 'svelte';
+	import { animateOnScroll } from '../../../actions/intersectionObserver';
+	//Default selectedOption
 	export let selectedOption;
-	export let switchLang;
+	//Cannot use bind:group (like in ProjectsLogos, because it changes the behavior of the default selectedOption)
 
+	export let switchLang;
 	function handleRadioChange(event) {
 		selectedOption = event.target.id;
 	}
-
-	onMount(() => {
-		const toggleContainer = document.getElementById('toggleContainer');
-		const projectLabel = document.querySelector('label[for="projects"]');
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting && !projectLabel.classList.contains('animate')) {
-						projectLabel.classList.add('animate');
-					} else if (!entry.isIntersecting && projectLabel.classList.contains('animate')) {
-						projectLabel.classList.remove('animate');
-					}
-				});
-			},
-			{ threshold: 0.1 }
-		);
-
-		observer.observe(toggleContainer);
-	});
 </script>
 
-<div class="toggle" id="toggleContainer">
+<div class="toggle" use:animateOnScroll>
 	<input type="radio" id="projects" name="toggle" checked on:change={handleRadioChange} />
-	<label for="projects" class:animate={selectedOption === 'projects'}>
-		<span class="label-text">{switchLang.projects}</span>
-	</label>
+	<label for="projects"><span class="label-text">{switchLang.projects}</span></label>
 	<input type="radio" id="skills" name="toggle" on:change={handleRadioChange} />
-	<label for="skills" class:animate={selectedOption === 'skills'}>
-		<span class="label-text">{switchLang.skills}</span>
-	</label>
+	<label for="skills"><span class="label-text">{switchLang.skills}</span></label>
 	<span class="slider" />
 </div>
 
 <style>
-	/* Hide the underline initially */
-	div.toggle label span.label-text::after {
-		transform: scaleX(0);
-	}
-
-	/* Apply the animation to the selected toggle label */
-	div.toggle label.animate span.label-text::after {
-		animation: animateUnderline 0.5s 1s;
-	}
-
-	@keyframes animateUnderline {
-		from {
-			transform: scaleX(0);
-		}
-		to {
-			transform: scaleX(1);
-		}
-	}
 	div.toggle {
 		position: relative;
 		display: flex;
@@ -102,14 +63,14 @@
 		right: 0;
 		height: 2px;
 		background: blue;
-		transition: transform 0.5s;
+		transition: transform 0.5s 0.5s;
 		transform: scaleX(0);
 		transform-origin: center;
 		border-radius: 1rem;
 	}
 
-	#projects:checked ~ label[for='projects'] .label-text::after,
-	#skills:checked ~ label[for='skills'] .label-text::after {
+	.toggle.animate #projects:checked ~ label[for='projects'] .label-text::after,
+	.toggle.animate #skills:checked ~ label[for='skills'] .label-text::after {
 		transform: scaleX(1);
 	}
 
@@ -125,7 +86,7 @@
 
 	span.slider {
 		position: absolute;
-		background: var(--clr-bg-items);
+		background: white;
 		top: 0;
 		left: 0;
 		width: 50%;
