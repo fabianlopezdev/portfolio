@@ -68,8 +68,10 @@
 				</div>
 
 				<div class="skills">
-					<h4>{Object.keys(project).at(5)}</h4>
-					<div class="line" />
+					<div class='separator'>
+						<h4>{Object.keys(project).at(5)}</h4>
+						<div class="line" />
+					</div>
 					<ul class="skills-container">
 						{#if project.Skills}
 							{#each project.Skills as skill}
@@ -81,8 +83,10 @@
 							{/each}
 						{/if}
 					</ul>
-					<h4>Links</h4>
-					<div class="line" />
+						<div class='separator'>
+						<h4>Links</h4>
+						<div class="line" />
+					</div>
 					<div class="icons-container">
 						<a
 							class="external-links"
@@ -114,6 +118,7 @@
 {/if}
 
 <style>
+	
 	section.card-container {
 		justify-content: center;
 	}
@@ -191,6 +196,7 @@
 	div.info-container {
 		display: flex;
 		margin-top: 0.5rem;
+		gap: 1rem;
 	}
 
 	h4 {
@@ -209,8 +215,12 @@
 		margin-bottom: 0;
 	}
 
+	.descriptions-container {
+		flex: 30%;
+	}
 	/*card-container/info-container/skills  */
 	.skills {
+		flex: 50%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -221,10 +231,16 @@
 		border-radius: 1rem;
 		background-color: var(--clr-bg-projectCard);
 		padding: 1rem;
+		/* width: 70%; */
 	}
 
 	div.skills h4 {
 		margin: 0;
+	}
+
+	.separator {
+		width: 100%;
+		text-align: center;
 	}
 	div.line {
 		border-bottom: 1px solid rgb(221, 221, 221);
