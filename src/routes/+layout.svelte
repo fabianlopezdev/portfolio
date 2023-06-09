@@ -19,9 +19,9 @@
 	:root {
 		--clr-bg: #f9fcfd;
 		--clr-bg-items: white;
-		--clr-accent:#1863E5;
+		--clr-accent: #1863e5;
 		--clr-secondary: #016aa1;
-		--clr-font: #4A5469;
+		--clr-font: #4a5469;
 		--clr-font-logo: #016aa1;
 		--clr-font-projectCard: var(--clr-font);
 		--clr-bg-projectCard: white;
@@ -38,7 +38,7 @@
 		--clr-bg-items: #d0dff0;
 		--clr-font: #d0dff0;
 		--clr-font-contrast-black-bg: var(--clr-accent);
-			--clr-font-projectCard: #016aa1;
+		--clr-font-projectCard: #016aa1;
 		--clr-bg-projectCard: #016aa1;
 		--clr-shadow: #202040;
 		--clr-accent: #007bff;
@@ -65,7 +65,7 @@
 		/* min-height: 100vh;
 		min-height: 100svh; */
 		display: flex;
-		flex-direction:column;
+		flex-direction: column;
 	}
 
 	:global(a) {
@@ -160,4 +160,14 @@
 		font-weight: 500;
 	}
 
+	/* Animations on Scroll*/
+
+	:global(#animatedDot) {
+		opacity: 0;
+		transition: opacity 1s 0.5s; /* duration and delay */
+	}
+
+	:global(#animatedDot.animate) {
+		opacity: 1;
+	}
 </style>

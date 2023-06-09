@@ -1,31 +1,29 @@
-import { onMount } from 'svelte';
+export function animateOnScroll(node) {
+	let firstObservation = true;
 
-export function useIntersectionObserver(node, options) {
-	let observer;
+	const observer = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+				if (firstObservation) {
+					firstObservation = false;
+					return;
+				}
 
-	const defaultOptions = {
-		rootMargin: '0px',
-		threshold: 0.1
-	};
+				if (entry.isIntersecting) {
+					node.classList.add('animate');
+					console.log('nodee', node);
 
-	function callback(entries) {
-		entries.forEach((entry) => {
-			if (entry.isIntersecting) {
-				node.classList.add('animate');
-			} else {
-				node.classList.remove('animate');
-			}
-		});
-	}
+					// Stop observing the element once it has intersected
+					observer.unobserve(node);
+				}
+			});
+		},
 
-	onMount(() => {
-		observer = new IntersectionObserver(callback, { ...defaultOptions, ...options });
-		observer.observe(node);
+		{
+			rootMargin: '0px',
+			threshold: 0.1
+		}
+	);
 
-		return {
-			destroy() {
-				observer.disconnect();
-			}
-		};
-	});
+	observer.observe(node);
 }
