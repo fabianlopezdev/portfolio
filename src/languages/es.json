@@ -93,7 +93,7 @@
 					}
 				]
 			},
-			"Portfolio": {
+			"portfolio": {
 				"Name": "Fabian's Portfolio",
 				"descripciónCorta": "Fabian Lopez Gonzalez Portfolio.",
 				"Descripción": "Mi portfolio. Aquí podrás conocer un poco de mi, podrás encontrar algunos de mis trabajos recientes, y podrás contactarme.",
