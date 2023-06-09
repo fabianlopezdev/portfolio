@@ -35,6 +35,8 @@
 		height: var(--height-header);
 		width: clamp(375px, 100vw, 1300px);
 		margin: 0.4rem 0.7rem 0.3rem 0.8rem;
+		background-color: var(--clr-bg);
+		transition: background-color 0.5s ease, color 0.5s;
 	}
 
 	.icons-container {

@@ -87,6 +87,8 @@ function handleScroll(event: UIEvent) {
   justify-content: center;
   /* Add a transition for the transform property */
   transition: transform 0.3s ease-in-out;
+	
+		transition: background-color 0.5s ease, color 0.5s;
 }
 
 .header-bottom-shadow {

@@ -43,6 +43,7 @@
 		--clr-shadow: #202040;
 		--clr-accent: #007bff;
 		--clr-hover: #202040;
+		  /* transition: background 10s; */
 	}
 
 	/*To make the width to fit the entire screen in smaller screens*/
@@ -59,6 +60,7 @@
 		font-family: system-ui;
 		color: var(--clr-font);
 		margin: 0;
+		transition: background-color 0.5s, color 0.5s;
 	}
 
 	:global(section) {
