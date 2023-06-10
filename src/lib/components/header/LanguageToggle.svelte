@@ -24,7 +24,7 @@
 		appearance: none;
 		border: none;
 		border-radius: none;
-		color: gray;
+		color: var(--clr-font);
 		font-size: 0.9rem;
 		cursor: pointer;
 		background-color: inherit;

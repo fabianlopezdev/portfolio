@@ -10,11 +10,11 @@
 
 	function toggleMenu() {
 		isShowMenu = !isShowMenu;
-		  if (isShowMenu) {
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = '';
-  }
+		if (isShowMenu) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = '';
+		}
 	}
 
 	function handleLinkClick() {
@@ -29,15 +29,14 @@
 		</div>
 	</button>
 	<div class="modal">
-		<div class='logo'>
-			<Logo fontSize={4}/>
+		<div class="logo">
+			<Logo fontSize={4} />
 		</div>
 		<nav>
 			<NavLinks {navLinksLang} customClass="modal" on:linkClick={handleLinkClick} />
 		</nav>
-		<div class='socialLinks'>
-
-			<SocialLinks gap={1}/>
+		<div class="socialLinks">
+			<SocialLinks gap={1} />
 		</div>
 	</div>
 {:else}
@@ -50,15 +49,15 @@
 
 <style>
 	.logo {
-		display:flex;
+		display: flex;
 		justify-content: center;
-		padding-top:6rem;
+		padding-top: 6rem;
 	}
 
 	.socialLinks {
 		position: fixed;
 		left: 0;
-		right:0;
+		right: 0;
 		bottom: 6rem;
 	}
 	button {
@@ -67,7 +66,7 @@
 		background-color: var(--clr-bg);
 		padding: 0;
 		z-index: 3;
-		color: gray;
+		color: var(--clr-font);
 	}
 
 	.modal {

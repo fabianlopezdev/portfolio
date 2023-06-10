@@ -9,7 +9,7 @@
 </script>
 
 <section id="contact">
-	<h1>{title}<span id="animatedDot" use:animateOnScroll style="color: blue;">.</span></h1>
+	<h1>{title}<span id="animatedDot1" use:animateOnScroll style="color: blue;">.</span></h1>
 	<h2>{contactLang.h1}.</h2>
 	<div class="contact-container">
 		<CardGrid cardGrid={contactLang.cardGrid} />

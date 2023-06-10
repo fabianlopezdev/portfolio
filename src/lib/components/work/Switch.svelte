@@ -1,5 +1,5 @@
 <script>
-	import { animateOnScroll } from '../../../actions/intersectionObserver';
+	import {animateOnScroll} from '../../../actions/intersectionObserver'
 	//Default selectedOption
 	export let selectedOption;
 	//Cannot use bind:group (like in ProjectsLogos, because it changes the behavior of the default selectedOption)
@@ -62,28 +62,42 @@
 		left: 0;
 		right: 0;
 		height: 2px;
-		background: blue;
-		transition: transform 0.5s 0.5s;
+		background: white; 
+		transition: transform 0.5s;
 		transform: scaleX(0);
 		transform-origin: center;
 		border-radius: 1rem;
 	}
 
-	.toggle.animate #projects:checked ~ label[for='projects'] .label-text::after,
-	.toggle.animate #skills:checked ~ label[for='skills'] .label-text::after {
+	:global(div.toggle.animate #projects ~ label[for='projects'] .label-text::after) {
+		background: blue;
+		transform: scaleX(1);
+		
+	}
+
+	/* :global(div.toggle.animate span.label-text::after) {
+		background: blue;
+		transition: transform 0.5s;
+		transform: scaleX(0);
+		transform-origin: center;
+	} */
+
+	#projects:checked ~ label[for='projects'] .label-text::after,
+	#skills:checked ~ label[for='skills'] .label-text::after {
+		color: blue;
 		transform: scaleX(1);
 	}
-
+  
 	#projects:checked ~ label[for='projects'],
 	#skills:checked ~ label[for='skills'] {
-		color: black;
+    color: black;
 	}
-	.toggle input[type='radio']:not(:checked) + label {
-		color: #888;
-		background-color: #ddd;
-		z-index: 0;
-	}
-
+  .toggle input[type='radio']:not(:checked) + label {
+    color: #4a5469;
+    background-color: #ddd;
+    z-index: 0;
+  }
+  
 	span.slider {
 		position: absolute;
 		background: white;
@@ -105,4 +119,5 @@
 		left: 50%;
 		border-left: 1px solid black;
 	}
+
 </style>

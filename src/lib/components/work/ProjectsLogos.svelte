@@ -44,6 +44,7 @@
 		font-style: normal;
 		font-weight: 700;
 		src: url('/fonts/overmch.woff2') format('truetype');
+		font-display: swap;
 	}
 
 	@font-face {
@@ -51,6 +52,7 @@
 		font-style: normal;
 		font-weight: 700;
 		src: url('/fonts/MontserratAlternates-SemiBoldItalic.woff2') format('truetype');
+		font-display: swap;
 	}
 
 	@font-face {
@@ -58,6 +60,7 @@
 		font-style: normal;
 		font-weight: 700;
 		src: url('/fonts/Cabin-Regular.woff2') format('truetype');
+		font-display: swap;
 	}
 
 	.project-card {

@@ -104,6 +104,10 @@
 				"Website": "https://portfolio-fabs-and.vercel.app/",
 				"Images": [
 					{
+						"src": "/photos/projects/portfolio/portfolio-lighthouse.avif",
+						"alt": "Portfolio landing page"
+					},
+					{
 						"src": "/photos/projects/portfolio/portfolio-landing.avif",
 						"alt": "Portfolio landing page"
 					},

@@ -8,6 +8,7 @@
 <slot />
 
 <svelte:head>
+	{@html `<meta name="description" content="${description}" />`}
 	{@html `<meta property="og:title" content="${title}" />`}
 	{@html `<meta property="og:description" content="${description}" />`}
 	{@html `<meta property="og:image" itemprop="image" content="${image}" />`}
@@ -43,7 +44,7 @@
 		--clr-shadow: #202040;
 		--clr-accent: #007bff;
 		--clr-hover: #202040;
-		  /* transition: background 10s; */
+		/* transition: background 10s; */
 	}
 
 	/*To make the width to fit the entire screen in smaller screens*/
@@ -119,6 +120,7 @@
 
 	:global(.header-icons:hover) {
 		background-color: var(--clr-hover);
+		color: var(--clr-font);
 		border-radius: 6px;
 		transition: color 0.3s ease, background-color 0.3s ease;
 	}
@@ -169,7 +171,16 @@
 		transition: opacity 1s 0.5s; /* duration and delay */
 	}
 
+	:global(#animatedDot1) {
+		opacity: 0;
+		transition: opacity 1s 0.5s; /* duration and delay */
+	}
+
 	:global(#animatedDot.animate) {
+		opacity: 1;
+	}
+
+	:global(#animatedDot1.animate) {
 		opacity: 1;
 	}
 </style>

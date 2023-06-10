@@ -25,7 +25,7 @@
 			setTheme(theme);
 		} catch (e) {
 			console.error('Could not get theme from localStorage:', e);
-			setTheme('light');  // default to light theme if localStorage is inaccessible
+			setTheme('light'); // default to light theme if localStorage is inaccessible
 		}
 	});
 
@@ -51,7 +51,7 @@
 	</script>
 </svelte:head>
 
-<button title='Light / Dark' aria-label="Toggle between light and dark mode" on:click={toggleTheme}>
+<button title="Light / Dark" aria-label="Toggle between light and dark mode" on:click={toggleTheme}>
 	<span class="header-icons">
 		{#if isDark !== null}
 			{#if isDark}
@@ -65,10 +65,10 @@
 
 <style>
 	button {
-	appearance: none;
+		appearance: none;
 		border: none;
 		border-radius: none;
-		color: gray;
+		color: var(--clr-font);
 		font-size: 0.9rem;
 		cursor: pointer;
 		background-color: inherit;
@@ -79,6 +79,4 @@
 			width: 20.8px;
 		height: 20.8px;
 	} */
-
-
 </style>

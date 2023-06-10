@@ -19,7 +19,7 @@
 	<div class="person">
 		<div use:animateOnScroll on:transitionend={handleAnimationEnd} class="person-container" class:active={imgTouched}>
 			<img class="person-circle" src="./blue-dots.avif" alt=""/>
-			<img class="person-img" src="./fabian-photo.avif" alt="Fabian being welcoming" />
+			<img width="1" height="1" class="person-img" src="./fabian-photo.avif" alt="Fabian being welcoming" />
 		</div>
 	</div>
 </button>
@@ -51,10 +51,10 @@
 		transition: transform var(--transform-speed) ease 0.1s;
 	}
 	.person-circle {
+		aspect-ratio: 1/1;
 		position: absolute;
 		inset: auto 0 0;
 		width: 100%;
-		aspect-ratio: 1/1;
 		border-radius: 50%;
 		margin-inline: auto;
 		object-fit: cover;
@@ -64,6 +64,8 @@
 		z-index: 2;
 		transform: scale(1);
 		transition: transform calc(var(--transform-speed) * 1.2) ease 0.1s;
+		 width: 100%;  
+  	height: auto; 
 	}
 	.active {
 		transform: scale(1.1);
