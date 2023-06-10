@@ -11,8 +11,6 @@ export function animateOnScroll(node) {
 
 				if (entry.isIntersecting) {
 					node.classList.add('animate');
-					console.log('nodee', node);
-
 					// Stop observing the element once it has intersected
 					observer.unobserve(node);
 				}
