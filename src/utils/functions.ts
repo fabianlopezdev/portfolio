@@ -1,5 +1,4 @@
 export default function scrollTo(event: MouseEvent | Event) {
-	
 	// Cast the event target to HTMLAnchorElement or HTMLInputElement
 	const target = event.target as HTMLAnchorElement | HTMLInputElement;
 
@@ -23,14 +22,17 @@ export default function scrollTo(event: MouseEvent | Event) {
 			element = document.querySelector(`.${selector}`);
 		}
 	}
+	console.log('element', element);
 
 	// Scroll to the element if it exists
 	if (element) {
 		element.scrollIntoView({ behavior: 'smooth', block: 'start' });
 		// Adjust scroll position (if header is showing all the time)
-		setTimeout(() => {
-			const offset = -50; // Replace 50 with your desired offset
-			window.scrollBy({ top: -offset, behavior: 'smooth' });
-		},400)
+		// if (attribute === 'href') {
+			// setTimeout(() => {
+			// 	const offset = -50;
+			// 	window.scrollBy({ top: -offset, behavior: 'smooth' });
+			// }, 400);
+		}
 	}
-}
+

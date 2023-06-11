@@ -80,7 +80,7 @@
 		align-items: center;
 		position: relative;
 		height: 98px;
-		text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px -3px 5px rgba(255, 255, 255, 0.7);
+		/* text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px -3px 5px rgba(255, 255, 255, 0.7); */
 		cursor: pointer;
 		white-space: nowrap;
 		transition: color 0.5s ease-in-out 0.1s;
@@ -160,9 +160,9 @@
 	div.logos-container input:checked + label.portfolio::before {
 		/* left: -105px;
 		width: 280%;
-		height: 80%;
-		top: -1px; */
-		/* transition: none; */
+		height: 80%;*/
+		top: 2px; 
+		/* trans ition: none; */
 		transition: width 0.3s ease-in-out 0.1s;
 	}
 	/* Common styles for span */
