@@ -7,26 +7,41 @@
 </script>
 
 {#if icon === 'envelope'}
-	<a class='button' {href} on:click|preventDefault aria-label="Contact">
-		<slot />
-		<div class="icons">
-			<EnvelopeIcon aria-hidden="true" />
+	<a class="button" {href} on:click|preventDefault aria-label="Contact">
+		<div class='text'>
+			<slot />
+		</div>
+		<div class="center">
+			<div class="icons">
+				<EnvelopeIcon aria-hidden="true" />
+			</div>
 		</div>
 	</a>
 {:else}
-	<a class='button file' {href}  target={'_blank'} aria-label="Download resume">
+	<a class="button file" {href} target={'_blank'} aria-label="Download resume">
+		<div class='text'>
 		<slot />
-		<div class="icons">
-			<FileDownloadIcon aria-hidden="true" />
+		</div>
+		<div class='center'>
+			<div class="icons">
+				<FileDownloadIcon aria-hidden="true" />
+			</div>
 		</div>
 	</a>
 {/if}
 
 <style>
-
+	.text {
+		width: 5rem;
+	}
+	.center {
+		width: 2rem;
+		/* margin: auto; */
+	}
 
 	.icons {
 		color: inherit;
+		margin:auto;
 	}
 
 	.file {
@@ -35,7 +50,6 @@
 
 	.file .icons {
 		color: inherit;
-
 	}
 
 	.button:hover {
