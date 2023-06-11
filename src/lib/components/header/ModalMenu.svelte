@@ -3,7 +3,7 @@
 	import CloseIcon from 'svelte-icons/io/IoIosClose.svelte';
 	import { Logo, NavLinks, SocialLinks } from '$components';
 	import type { Language } from '../../../types';
-
+	import {fly, fade} from 'svelte/transition'
 	export let navLinksLang: Language['navLinks'];
 
 	let isShowMenu = false;
@@ -23,12 +23,13 @@
 </script>
 
 {#if isShowMenu}
-	<button type="button" on:click|preventDefault={toggleMenu} aria-label="Close menu">
+
+	<button type="button" on:click={toggleMenu} aria-label="Close menu">
 		<div class="header-icons">
 			<CloseIcon />
 		</div>
 	</button>
-	<div class="modal">
+	<div class="modal" in:fly={{duration: 500, x: 1000}}>
 		<div class="logo">
 			<Logo fontSize={4} />
 		</div>
@@ -39,15 +40,20 @@
 			<SocialLinks gap={1} />
 		</div>
 	</div>
+
 {:else}
-	<button type="button" on:click|preventDefault={toggleMenu} aria-label="Open modal menu">
+	<button type="button" on:click={toggleMenu} aria-label="Open modal menu">
 		<div class="header-icons">
 			<HamburgerMenuIcon />
 		</div>
 	</button>
 {/if}
 
+
 <style>
+	.hide {
+		display: none;
+	}
 	.logo {
 		display: flex;
 		justify-content: center;
