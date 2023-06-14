@@ -53,6 +53,7 @@
 	div.toggle span.label-text {
 		position: relative;
 		display: inline-block;
+		/* background: blue; */
 	}
 
 	div.toggle span.label-text::after {
@@ -62,30 +63,23 @@
 		left: 0;
 		right: 0;
 		height: 2px;
-		background: white; 
-		transition: transform 0.5s;
+		background: blue; 
+		transition: transform 0.5s 0.4s;
 		transform: scaleX(0);
 		transform-origin: center;
 		border-radius: 1rem;
 	}
 
-	:global(div.toggle.animate #projects ~ label[for='projects'] .label-text::after) {
-		background: blue;
-		transform: scaleX(1);
-		
+
+
+	:global(div.toggle.animate #projects:checked ~ label[for='projects'] .label-text::after),
+	:global(div.toggle.animate #skills:checked ~ label[for='skills'] .label-text::after) {
+    transform: scaleX(1);
 	}
 
-	/* :global(div.toggle.animate span.label-text::after) {
-		background: blue;
-		transition: transform 0.5s;
-		transform: scaleX(0);
-		transform-origin: center;
-	} */
-
-	#projects:checked ~ label[for='projects'] .label-text::after,
-	#skills:checked ~ label[for='skills'] .label-text::after {
-		color: blue;
-		transform: scaleX(1);
+	#projects:not(:checked) ~ label[for='projects'] .label-text::after,
+	#skills:not(:checked) ~ label[for='skills'] .label-text::after {	
+    transform: scaleX(0);
 	}
   
 	#projects:checked ~ label[for='projects'],
@@ -95,7 +89,7 @@
   .toggle input[type='radio']:not(:checked) + label {
     color: #4a5469;
     background-color: #ddd;
-    z-index: 0;
+    /* z-index: 0; */
   }
   
 	span.slider {
