@@ -106,7 +106,7 @@
 								rel="noopener noreferrer"
 								aria-label="Visit website"
 							>
-								Visit
+								Web
 								<div class="icons"><GoToArrow /></div>
 							</a>
 						{/if}
