@@ -31,7 +31,7 @@
 	</button>
 	<div class="modal" in:fly={{duration: 500, x: 1000}}>
 		<div class="logo">
-			<Logo fontSize={4} letterSpacing={0.25} dotSpace={4.3}/>
+			<Logo fontSize={4} letterSpacing={0.25}/>
 		</div>
 		<nav>
 			<NavLinks {navLinksLang} customClass="modal" on:linkClick={handleLinkClick} />
