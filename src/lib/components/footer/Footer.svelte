@@ -12,9 +12,8 @@
 
 		<div class="logo-and-copyright">
 			<!-- fontSize value is in rem -->
-			<Logo fontSize={2} />
-			
-			<small>©{currentYear} FabulousApps</small>
+			<Logo fontSize={2} letterSpacing={0.1} dotSpace={2.2}/>
+						<small>©{currentYear} FabulousApps</small>
 		</div>
 		<!-- <small class="madewith-container">
 			{footerLang.madeWith}

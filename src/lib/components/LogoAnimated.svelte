@@ -13,7 +13,7 @@
 <div class="logo">
 	{#if showSvg}
 		<svg height="60" stroke=var(--clr-font) stroke-width="2" class="text-line" width="50%">
-			<text x="50%" dominant-baseline="middle" text-anchor="middle" y="50%">fab</text>
+			<text x="50%" dominant-baseline="middle" text-anchor="middle" y="50%" letter-spacing="-3">fab</text>
 		</svg>
 		{#if showDot}
 			<span class="dot">.</span>

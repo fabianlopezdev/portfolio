@@ -82,6 +82,7 @@
 	}
 	:global(h1) {
 		font-size: 2rem;
+		letter-spacing: -0.1rem;
 	}
 	:global(.button) {
 		display: flex;
