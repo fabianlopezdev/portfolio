@@ -1,19 +1,25 @@
 <script>
 	let title = 'Fabulous Apps';
 	let description = 'Fabian Lopez Portfolio';
-	let image = `https://portfolio-fabs-and.vercel.app/test.png`;
+	let image = `https://fabapps.dev/meta-image.png`;
 	let url = 'https://fabapps.dev/';
 </script>
 
 <slot />
 
 <svelte:head>
-	{@html `<meta name="description" content="${description}" />`}
-	{@html `<meta property="og:title" content="${title}" />`}
-	{@html `<meta property="og:description" content="${description}" />`}
-	{@html `<meta property="og:image" itemprop="image" content="${image}" />`}
 	{@html `<meta property="og:url" content="${url}" />`}
-	{@html `<meta name="twitter:card" content="${image}" />`}
+	{@html `<meta property="og:type" content="website" />`}
+	{@html `<meta property="og:title" content="${title}" />`}
+	{@html `<meta name="description" content="${description}" />`}
+	{@html `<meta property="og:image" itemprop="image" content="${image}" />`}
+
+	{@html `<meta name="twitter:card" content="summary_large_image" />`}
+	{@html `<meta name="twitter:domain" content="fabapps.dev" />`}
+	{@html `<meta name="twitter:url" content="${url}" />`}
+	{@html `<meta name="twitter:title" content="${title}" />`}
+	{@html `<meta name="twitter:description" content="${description}" />`}
+	{@html `<meta name="twitter:image" content="${image}" />`}
 </svelte:head>
 
 <style>
