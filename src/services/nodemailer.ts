@@ -1,6 +1,8 @@
 import nodemailer from 'nodemailer';
 import type { PostRequest } from '../types';
 const envNodemailerPass = import.meta.env.VITE_NODEMAILER_PASS;
+const envGmailEmail = import.meta.env.VITE_GMAIL_EMAIL;
+const envFabappsEmail = import.meta.env.VITE_FABAPPS_EMAIL;
 
 export async function post(request: PostRequest) {
 	const { name, email, message } = request.body;
@@ -15,7 +17,7 @@ export async function post(request: PostRequest) {
 	const transporter = nodemailer.createTransport({
 		service: 'gmail',
 		auth: {
-			user: 'fabianin86@gmail.com',
+			user: envGmailEmail,
 			pass: envNodemailerPass
 		}
 	});
@@ -23,7 +25,7 @@ export async function post(request: PostRequest) {
 	// Set up email options
 	const mailOptions = {
 		from: email,
-		to: 'fabianin86@gmail.com',
+		to: envFabappsEmail,
 		subject: 'New contact form submission',
 		text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
 	};
