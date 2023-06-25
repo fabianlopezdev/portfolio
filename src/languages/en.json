@@ -143,9 +143,9 @@
 		"h1": "Let's build something great",
 		"cardGrid": {
 			"emailCard": {
-				"href": "fabianlopez@pm.me",
+				"href": "mailto:fabian@fabapps.dev",
 				"title": "Send me an email:",
-				"info": "fabianlopez@pm.me",
+				"info": "fabian@fabapp.dev",
 				"clicked": "Email copied to clipboard"
 			},
 			"whatsappCard": {

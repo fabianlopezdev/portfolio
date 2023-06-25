@@ -59,7 +59,6 @@
 				"Responsabilidades": "Ayudar en el diseño. Idear el algoritmo de 'recomendados'. Implementar la autorización y los ajustes del usuario",
 				"Herramientas": ["HTML", "CSS", "Typescript", "NEXT.js", "Tailwind", "Amazon Cognito"],
 				"githubLink": "https://github.com/Lucasoliveiralucas/huddler-front-end"
-				
 			},
 			"road-trip": {
 				"Name": "Road Trip - Campgrounds",
@@ -148,9 +147,9 @@
 
 		"cardGrid": {
 			"emailCard": {
-				"href": "fabianlopez@pm.me",
+				"href": "mailto:fabian@fabapps.dev",
 				"title": "Mándame un email:",
-				"info": "fabianlopez@pm.me",
+				"info": "fabian@fabapps.dev",
 				"clicked": "Email copiado en el portapapeles"
 			},
 			"whatsappCard": {
