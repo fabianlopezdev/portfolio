@@ -145,7 +145,7 @@
 			"emailCard": {
 				"href": "mailto:fabian@fabapps.dev",
 				"title": "Send me an email:",
-				"info": "fabian@fabapp.dev",
+				"info": "fabian@fabapps.dev",
 				"clicked": "Email copied to clipboard"
 			},
 			"whatsappCard": {
