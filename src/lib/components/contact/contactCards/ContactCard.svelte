@@ -4,7 +4,7 @@
 	export let cardTitle = '';
 	export let clicked = '';
 
-	$: isEmail = href.startsWith('fabianlopez');
+	$: isEmail = href.startsWith('fabian');
 	$: isEmailCopied = false;
 
 	const copyEmail = (e) => {
