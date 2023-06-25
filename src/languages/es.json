@@ -147,7 +147,7 @@
 
 		"cardGrid": {
 			"emailCard": {
-				"href": "mailto:fabian@fabapps.dev",
+				"href": "fabian@fabapps.dev",
 				"title": "Mándame un email:",
 				"info": "fabian@fabapps.dev",
 				"clicked": "Email copiado en el portapapeles"
