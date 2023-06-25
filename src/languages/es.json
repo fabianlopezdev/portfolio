@@ -171,7 +171,7 @@
 			"subject": "Asunto",
 			"message": "En qué puedo ayudarte?",
 			"button": "Enviar",
-			"success": ", gracias por el mensaje.",
+			"success": ", gracias por el mensaje. En seguida me pongo en contacto contigo.",
 			"error": ", ha habido un error enviando el mensaje. Por favor, prueba otra vez."
 		}
 	},

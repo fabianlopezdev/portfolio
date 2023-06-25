@@ -166,8 +166,8 @@
 			"subject": "Subject",
 			"message": "How can I help you?",
 			"button": "Submit",
-			"success": ", thank you for your message!",
-			"error": ", there was an error sendin the message. Please try again."
+			"success": ", thank you for your message! I will reach out to you shortly.",
+			"error": ", there was an error sending the message. Please try again."
 		}
 	},
 	"footer": {
