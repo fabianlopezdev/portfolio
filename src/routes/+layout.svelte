@@ -1,4 +1,9 @@
 <script>
+	//This three lines are for vercek analytics of the website
+	import { dev } from '$app/environment';
+	import { inject } from '@vercel/analytics';
+	inject({ mode: dev ? 'development' : 'production' });
+
 	let title = 'Fabulous Apps';
 	let description = 'Fabian Lopez Portfolio';
 	let image = `https://fabapps.dev/meta-image.png`;
