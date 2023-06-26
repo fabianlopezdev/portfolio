@@ -10,6 +10,7 @@
 <svelte:head>
 	{@html `<meta name="description" content="${description}" />`}
 	{@html `<meta property="og:url" content="${url}" />`}
+	{@html `<meta property="og:description" content="${description}"/>`}
 	{@html `<meta property="og:type" content="website" />`}
 	{@html `<meta property="og:title" content="${title}" />`}
 	{@html `<meta property="og:image" itemprop="image" content="${image}" />`}
