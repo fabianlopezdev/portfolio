@@ -3,6 +3,7 @@
 	import spanish from '../languages/es.json';
 	import {
 		MetaTags,
+		JsonLd,
 		WorkSection,
 		ContactSection,
 		Header,
@@ -12,6 +13,9 @@
 	} from '$components';
 	
 	import { innerWidth } from '../store';
+
+	import { personJsonLd } from '$components/personJsonLd';
+
 	//Data is received from a load function in page.server.ts
 	export let data;
 
@@ -58,6 +62,7 @@
 <svelte:window on:scroll={handleScroll} bind:innerWidth={$innerWidth} />
 
 <MetaTags {metaTagsLang}/>
+<JsonLd {personJsonLd}/>
 
 <header
 	class="header"
