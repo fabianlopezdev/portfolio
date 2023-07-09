@@ -9,6 +9,12 @@ export type PostRequest = {
 };
 
 export interface Language {
+	metaTags: {
+		title: string;
+		description: string;
+		image: string;
+		url: string;
+	};
 	home: {
 		slogan1: string;
 		highlight1: string;

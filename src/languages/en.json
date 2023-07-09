@@ -1,4 +1,10 @@
 {
+	"metaTags": {
+		"title": "Fabian Lopez's Portfolio | Full Stack Software Developer",
+		"description": "Fabian builds fabulous web apps with React, Astro, Svelte, and other frontend and backend technologies. Hire him to elevate your business with custom software solutions.",
+		"image": "https://fabapps.dev/meta-image.png",
+		"url": "https://fabapps.dev/"
+	},
 	"home": {
 		"slogan1": "Let's make your ",
 		"highlight1": "vision ",
@@ -23,7 +29,7 @@
 			"wannago": {
 				"Name": "WannaGo",
 				"Short Description": "Plan, invite, and track your events in real time.",
-				"Description":"Take control of your plans with WannaGo! Craft exciting plans, invite your friends and family, and stay updated in real time. Who's seen the plan? Who's in? Who's out? With WannaGo, you're always in the loop. Don't just make plans—bring them to life with WannaGo. Let's get planning, let's get going, let's get engaged!",
+				"Description": "Take control of your plans with WannaGo! Craft exciting plans, invite your friends and family, and stay updated in real time. Who's seen the plan? Who's in? Who's out? With WannaGo, you're always in the loop. Don't just make plans—bring them to life with WannaGo. Let's get planning, let's get going, let's get engaged!",
 				"Role": "Design, Front-end & Back-end Development, Deployment",
 				"Responsibilities": "UX/UI design. Entire development of the web app.",
 				"Skills": [
@@ -36,10 +42,10 @@
 					"MongoDB",
 					"Mongoose",
 					"Firebase"
-				], 
+				],
 				"githubLink": "https://github.com/Fabs-and/wannago",
 				"Website": "https://www.wannago.in/",
-				"Images":  [
+				"Images": [
 					{ "src": "/photos/projects/wannago/wannago-landing.avif", "alt": "Image 1 description" },
 					{
 						"src": "/photos/projects/wannago/wannago-invitation.avif",
@@ -82,7 +88,10 @@
 						"src": "/photos/projects/roadtrip/roadtrip-landing.avif",
 						"alt": "Road trip landing page"
 					},
-					{ "src": "/photos/projects/roadtrip/roadtrip-camp-card.avif", "alt": "Road trip campsite information card" },
+					{
+						"src": "/photos/projects/roadtrip/roadtrip-camp-card.avif",
+						"alt": "Road trip campsite information card"
+					},
 					{
 						"src": "/photos/projects/roadtrip/roadtrip-form.avif",
 						"alt": "Road trip form for new campsites"

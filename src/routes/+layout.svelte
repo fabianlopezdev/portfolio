@@ -3,30 +3,9 @@
 	import { dev } from '$app/environment';
 	import { inject } from '@vercel/analytics';
 	inject({ mode: dev ? 'development' : 'production' });
-
-	let title = 'Fabulous Apps';
-	let description = `Explore Fabian's projects developed with React, Astro, Svelte, and other technologies. Fabian can help elevate your business with custom software solutions.`;
-	let image = `https://fabapps.dev/meta-image.png`;
-	let url = 'https://fabapps.dev/';
 </script>
 
 <slot />
-
-<svelte:head>
-	{@html `<meta name="description" content="${description}" />`}
-	{@html `<meta property="og:url" content="${url}" />`}
-	{@html `<meta property="og:description" content="${description}"/>`}
-	{@html `<meta property="og:type" content="website" />`}
-	{@html `<meta property="og:title" content="${title}" />`}
-	{@html `<meta property="og:image" itemprop="image" content="${image}" />`}
-
-	{@html `<meta name="twitter:card" content="summary_large_image" />`}
-	{@html `<meta name="twitter:domain" content="fabapps.dev" />`}
-	{@html `<meta name="twitter:url" content="${url}" />`}
-	{@html `<meta name="twitter:title" content="${title}" />`}
-	{@html `<meta name="twitter:description" content="${description}" />`}
-	{@html `<meta name="twitter:image" content="${image}" />`}
-</svelte:head>
 
 <style>
 	:root {

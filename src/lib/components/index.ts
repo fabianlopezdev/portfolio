@@ -1,3 +1,6 @@
+//MetaTags
+export { default as MetaTags } from './MetaTags.svelte';
+
 //Header
 export { default as Header } from './header/Header.svelte';
 export { default as LightDarkModeToggle } from './header/LightDarkModeToggle.svelte';

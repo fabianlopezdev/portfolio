@@ -2,6 +2,7 @@
 	import english from '../languages/en.json';
 	import spanish from '../languages/es.json';
 	import {
+		MetaTags,
 		WorkSection,
 		ContactSection,
 		Header,
@@ -9,8 +10,7 @@
 		AboutSection,
 		Footer
 	} from '$components';
-	// import {writable} from 'svelte/store'
-	import type { Language } from '../types';
+	
 	import { innerWidth } from '../store';
 	//Data is received from a load function in page.server.ts
 	export let data;
@@ -19,6 +19,7 @@
 	$: ({ lang } = data || 'es');
 
 	$: navLinksLang = lang === 'en' ? english.navLinks : spanish.navLinks;
+		$: metaTagsLang = lang === 'en' ? english.metaTags : spanish.metaTags;
 	$: homeLang = lang === 'en' ? english.home : spanish.home;
 	$: aboutLang = lang === 'en' ? english.about : spanish.about;
 	$: workLang = lang === 'en' ? english.work : spanish.work;
@@ -55,6 +56,8 @@
 </script>
 
 <svelte:window on:scroll={handleScroll} bind:innerWidth={$innerWidth} />
+
+<MetaTags {metaTagsLang}/>
 
 <header
 	class="header"

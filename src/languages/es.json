@@ -1,4 +1,10 @@
 {
+	"metaTags": {
+		"title": "Fabian Lopez Porfolio | Desarrollador de software full stack",
+		"description": "Fabián desarrolla web apps modernas con React, Astro, Svelte y otras tecnologías frontend y backend. Contáctalo hoy mismo y crea soluciones web a tu medida.",
+		"image": "https://fabapps.dev/meta-image.png",
+		"url": "https://fabapps.dev/"
+	},
 	"home": {
 		"slogan1": "Hagamos de tu ",
 		"highlight1": "visión",
