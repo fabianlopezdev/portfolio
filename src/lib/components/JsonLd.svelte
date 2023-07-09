@@ -10,11 +10,11 @@ type PersonJsonLd = {
 		jobTitle: string;
 	};
   
-export let jsonLd: PersonJsonLd ;
+export let personJsonLd: PersonJsonLd ;
 
 </script>
 
 <svelte:head>
-  {@html `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`}
+  {@html `<script type="application/ld+json">${JSON.stringify(personJsonLd)}</script>`}
 </svelte:head>
 
