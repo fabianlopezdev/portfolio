@@ -4,14 +4,14 @@
 	export let letterSpacing: Number;
 </script>
 
-<h1 class="h1-font" style="font-size: {fontSize}rem; letter-spacing: -{letterSpacing}rem">
+<h2 class="h2-font" style="font-size: {fontSize}rem; letter-spacing: -{letterSpacing}rem">
 	<a href="#home"  on:click|preventDefault={(e) => scrollTo(e)}
 		>fab<span style="color: blue;">.</span>
 	</a>
-</h1>
+</h2>
 
 <style>
-	.h1-font {
+	.h2-font {
 		font-family: 'League Spartan', sans-serif;
 		font-weight: 900;
 		display: inline-block;

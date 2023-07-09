@@ -71,7 +71,7 @@
 		max-width: 100%;
 		display: block;
 	}
-	:global(h1) {
+	:global(h1, h2) {
 		font-size: 2rem;
 		letter-spacing: -0.1rem;
 	}

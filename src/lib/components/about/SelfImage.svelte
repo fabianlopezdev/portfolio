@@ -9,7 +9,6 @@
 	function handleAnimationEnd(event) {
 		if (isScrollTransition) return;
 		isScrollTransition = true;
-		console.log('the eveeeeeent', event)
 		event.currentTarget.classList.remove('animate');
 	}
 
@@ -18,7 +17,7 @@
 <button on:touchstart={handleTouch}>
 	<div class="person">
 		<div use:animateOnScroll on:transitionend={handleAnimationEnd} class="person-container" class:active={imgTouched}>
-			<img class="person-circle" src="./blue-dots.avif" alt=""/>
+			<img class="person-circle" src="./blue-dots.avif" alt="Background"/>
 			<img width="1" height="1" class="person-img" src="./fabian-photo.avif" alt="Fabian being welcoming" />
 		</div>
 	</div>

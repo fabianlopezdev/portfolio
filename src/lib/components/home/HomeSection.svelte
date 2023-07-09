@@ -12,7 +12,7 @@
 
 <section id="home">
 
-	<h1>
+	<h2>
 		{homeLang.slogan1}
 		<span>
 			{homeLang.highlight1}
@@ -21,9 +21,9 @@
 		<span>
 			{homeLang.highlight2}.
 		</span>
-	</h1>
+	</h2>
 
-	<h2>{homeLang.welcome}</h2>
+	<h1>{homeLang.welcome}</h1>
 
 	<div class="buttons">
 		<Button --color="var(--clr-accent)" on:click={scrollTo} href="#contact" icon={'envelope'}>
@@ -45,7 +45,7 @@
 		text-align: center;
 	}
 
-	h1 {
+	h2 {
 		margin-top: 1.5rem;
 		margin-bottom: 1rem;
 		margin-inline: 1rem;
@@ -55,7 +55,7 @@
 		letter-spacing: -0.2rem;
 	}
 
-	h2 {
+	h1 {
 		color: var(--clr-secondary);
 		margin-top: 3rem;
 		margin-inline: 1rem;

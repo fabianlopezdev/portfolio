@@ -9,8 +9,8 @@
 </script>
 
 <section id="contact">
-	<h1>{title}<span id="animatedDot1" use:animateOnScroll style="color: blue;">.</span></h1>
-	<h2>{contactLang.h1}.</h2>
+	<h2>{title}<span id="animatedDot1" use:animateOnScroll style="color: blue;">.</span></h2>
+	<h3>{contactLang.h1}.</h3>
 	<div class="contact-container">
 		<CardGrid cardGrid={contactLang.cardGrid} />
 		<ContactForm formLang={contactLang.contactForm} />
@@ -21,19 +21,19 @@
 	section#contact {
 		max-width: 1000px;
 	}
-	section h1 {
+	section h2 {
 		margin-bottom: 0;
 	}
 
-	section h2 {
+	section h3 {
 		font-size: clamp(2rem, 4vw, 2.5rem);
 		color: var(--clr-secondary);
 		font-weight: 400;
 		line-height: 2rem;
 	}
 
-	section h1,
-	section h2 {
+	section h2,
+	section h3 {
 		text-align: center;
 	}
 

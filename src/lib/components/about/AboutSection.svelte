@@ -6,9 +6,9 @@
 </script>
 
 <section id="about-section" >
-	<h1 class="about-section__title">
+	<h2 class="about-section__title">
 		{title}<span id="animatedDot" use:animateOnScroll style="color: blue;">.</span>
-	</h1>
+	</h2>
 
 	<article class="about-section__container">
 		<div class="about-section__text">
