@@ -5,7 +5,7 @@
 	inject({ mode: dev ? 'development' : 'production' });
 
 	let title = 'Fabulous Apps';
-	let description = 'Fabian Lopez Portfolio';
+	let description = `Explore Fabian's projects developed with React, Astro, Svelte, and other technologies. Fabian can help elevate your business with custom software solutions.`;
 	let image = `https://fabapps.dev/meta-image.png`;
 	let url = 'https://fabapps.dev/';
 </script>

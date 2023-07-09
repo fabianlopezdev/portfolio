@@ -26,7 +26,6 @@ export const actions = {
 			}
 		};
 		return await post(postRequest);
-		// console.log('event', name, email, message)
 	}
 };
 
