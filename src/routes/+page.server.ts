@@ -4,7 +4,6 @@ export const actions = {
 	setLang: async ({ cookies, request }) => {
 		const formData = await request.formData();
 		const lang = formData.get('lang');
-		console.log('laaaand', lang);
 
 		cookies.set('lang', lang as string);
 		return {
