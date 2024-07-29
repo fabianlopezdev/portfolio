@@ -7,7 +7,7 @@
 </script>
 
 {#if icon === 'envelope'}
-	<a class="button" {href} on:click|preventDefault aria-label="Contact">
+	<a class="g-button" {href} on:click|preventDefault aria-label="Contact">
 		<div class='text'>
 			<slot />
 		</div>
@@ -18,7 +18,7 @@
 		</div>
 	</a>
 {:else}
-	<a class="button file" {href} target={'_blank'} aria-label="Download resume">
+	<a class="g-button file" {href} target={'_blank'} aria-label="Download resume">
 		<div class='text'>
 		<slot />
 		</div>
@@ -31,17 +31,16 @@
 {/if}
 
 <style>
+
 	.text {
-		width: 5rem;
+		display: flex;
+		align-items: center;
 	}
-	.center {
-		width: 2rem;
-		/* margin: auto; */
-	}
+
 
 	.icons {
 		color: inherit;
-		margin:auto;
+	
 	}
 
 	.file {
@@ -52,16 +51,37 @@
 		color: inherit;
 	}
 
-	.button:hover {
-		background-color: blue;
-	}
+	.g-button {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
 
-	.button.file:hover {
-		background-color: black;
-	}
-	/* a:hover {
-		background-color: red;
-	} */
+.g-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.g-button:hover::before {
+  transform: translateX(100%);
+}
+
+.g-button:hover {
+  color: white; 
+}
+
+.g-button.file::before {
+  background-color: black;
+}
+
 
 	@media (max-width: 544px) {
 		.button {

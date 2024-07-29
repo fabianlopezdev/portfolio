@@ -75,7 +75,7 @@
 		font-size: 2rem;
 		letter-spacing: -0.1rem;
 	}
-	:global(.button) {
+	:global(.g-button) {
 		display: flex;
 		justify-content: center;
 		color: var(--clr-font-contrast);

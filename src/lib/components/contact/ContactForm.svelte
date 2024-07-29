@@ -47,7 +47,7 @@
 				<p>{persistName}{formLang.error}</p>
 			</div>
 		{/if}
-		<button class="button" type="submit" disabled={isLoading}>
+		<button class="g-button" type="submit" disabled={isLoading}>
 			{#if isLoading}
 				<LoadingSpinner />
 			{:else}
@@ -141,7 +141,7 @@
 		background-color: transparent;
 	}
 
-	.button {
+	.g-button {
 		align-items: center;
 		padding: 0.5rem;
 		border-radius: 0.5rem;
