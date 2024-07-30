@@ -34,7 +34,7 @@
 			{homeLang.buttonResume}
 		</Button>
 	</div>
-	<ScrollLine/>
+	<ScrollLine title={homeLang.buttonScroll}/>
 </section>
 
 <style>

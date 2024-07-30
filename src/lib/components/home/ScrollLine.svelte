@@ -1,4 +1,7 @@
 <script>
+
+export let title = '';
+
     function handleButtonClick() {
   
         const target = document.getElementById('about-section'); 
@@ -16,7 +19,7 @@
     
   
   <div class="svg-container">
-    <button id="pillButton" style="height: 30px;" title="Scroll to about section" on:click={handleButtonClick}>
+    <button id="pillButton" style="height: 30px;" title={title} on:click={handleButtonClick}>
       <svg
         width="18"
         height="29"

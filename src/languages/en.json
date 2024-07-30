@@ -12,7 +12,8 @@
 		"highlight2": "website",
 		"welcome": "Hello, I am Fabian, a full stack developer.",
 		"buttonContact": "Let's talk",
-		"buttonResume": "Resume"
+		"buttonResume": "Check my resume",
+		"buttonScroll": "Scroll down"
 	},
 	"about": {
 		"firstParagraph": "Hello! I'm Fabian Lopez, a Full Stack Developer who loves creating efficient and fabulous websites. I'm always exploring new technologies to deliver the best solutions.",

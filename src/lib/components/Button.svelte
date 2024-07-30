@@ -4,6 +4,7 @@
 
 	export let href = '';
 	export let icon = '';
+
 </script>
 
 {#if icon === 'envelope'}

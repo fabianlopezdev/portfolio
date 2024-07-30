@@ -11,8 +11,9 @@
 		"slogan2": "tu página ",
 		"highlight2": "web",
 		"welcome": "Hola, soy Fabián y soy desarrollador full stack.",
-		"buttonContact": "Hablemos",
-		"buttonResume": "CV"
+		"buttonContact": "¿Hablamos?",
+		"buttonResume": "Descarga mi CV",
+		"buttonScroll": "Desplázate hacia abajo"
 	},
 	"about": {
 		"firstParagraph": "¡Hola! Soy Fabián López, desarrollador Full Stack a quien le encanta crear sitios web eficientes y fabulosos. Siempre estoy explorando nuevas tecnologías para ofrecer las mejores soluciones.",
