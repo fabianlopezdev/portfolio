@@ -3,6 +3,7 @@
 	import { Button } from '$components';
 	import scrollTo from '../../../utils/functions';
 	import type { Language } from '../../../types';
+	import ScrollLine from './ScrollLine.svelte';
 	// Setting the language variable
 	export let homeLang: Language['home'];
 
@@ -33,6 +34,7 @@
 			{homeLang.buttonResume}
 		</Button>
 	</div>
+	<ScrollLine/>
 </section>
 
 <style>
@@ -136,6 +138,12 @@
 		}
 		to {
 			width: 100%;
+		}
+	}
+
+	@media (max-width: 648px) {
+		.buttons {
+			margin-bottom: 2rem;
 		}
 	}
 
