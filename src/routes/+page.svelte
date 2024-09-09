@@ -37,7 +37,7 @@
 	let isBottomShadow = false;
 	let isScrollDown = false;
 	// Define a constant for the scroll threshold
-	const SCROLL_THRESHOLD = 7; // Adjust this value as needed
+	const SCROLL_THRESHOLD = 25; // Adjust this value as needed
 
 	//  export let innerWidth = writable(0);
 	// Define a function to handle the scroll event
@@ -90,6 +90,7 @@
 		flex-direction: column;
 		align-items: center;
 	}
+
 	header {
 		position: sticky;
 		top: 0;

@@ -58,6 +58,8 @@
 	:global(section) {
 		/* min-height: 100vh;
 		min-height: 100svh; */
+		height: 100dvh;
+		scroll-snap-align: start;
 		display: flex;
 		flex-direction: column;
 	}

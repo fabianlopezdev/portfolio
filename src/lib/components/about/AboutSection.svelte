@@ -27,7 +27,7 @@
 
 	#about-section {
 		text-align: center;
-		max-width: 1000px;
+		max-width: 1300px;
 	}
 	.about-section__title {
 		margin-bottom: 0;

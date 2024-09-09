@@ -58,6 +58,7 @@ export let title = '';
       border: none;
       padding: 0;
       margin: 0;
+      margin-bottom: 2rem;
       cursor: pointer;
     }
 
