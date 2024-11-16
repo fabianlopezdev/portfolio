@@ -58,11 +58,18 @@
 	:global(section) {
 		/* min-height: 100vh;
 		min-height: 100svh; */
-		height: 100dvh;
 		scroll-snap-align: start;
 		display: flex;
 		flex-direction: column;
 	}
+	
+	@media(width > 760px) {
+		:global(section) {
+			height: 100dvh;
+
+		}
+	}
+
 
 	:global(a) {
 		text-decoration: none;
