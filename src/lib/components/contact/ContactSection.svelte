@@ -20,7 +20,7 @@
 <style>
 	section#contact {
 		max-width: 1000px;
-		height: calc(100vh - 3.81rem);
+		min-height: calc(100vh - 3.81rem);
 	}
 	section h2 {
 		margin-bottom: 0;

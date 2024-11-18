@@ -53,6 +53,8 @@
 		color: var(--clr-font);
 		margin: 0;
 		transition: background-color 0.5s, color 0.5s;
+		position: relative;
+		
 	}
 
 	:global(section) {
